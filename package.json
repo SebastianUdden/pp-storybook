@@ -11,6 +11,7 @@
   "author": "Sebastian Uddén <sebastian.udden@danielwellington.com>",
   "license": "MIT",
   "dependencies": {
+    "@storybook/theming": "^5.2.3",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
