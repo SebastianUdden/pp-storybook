@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-dev": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -12,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@storybook/theming": "^5.2.3",
+    "react-test-renderer": "^16.10.2",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {

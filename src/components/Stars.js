@@ -31,6 +31,7 @@ const Stars = ({
         {starsBackground.map((star, index) => (
           <Star
             id={`starbackground-${index}`}
+            key={`starbackground-${index}`}
             remainderRatio={1}
             {...size}
             color={backgroundColor}
@@ -45,6 +46,7 @@ const Stars = ({
         {stars.map((star, index) => (
           <Star
             id={`star-${index}`}
+            key={`star-${index}`}
             remainderRatio={1}
             {...size}
             color={color}

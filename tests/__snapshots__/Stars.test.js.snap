@@ -1,0 +1,396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stars renders correctly 1`] = `
+<div
+  className="sc-bwzfXH juFMoX"
+>
+  <div
+    className="sc-htpNat ckezCn"
+  >
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="starbackground-0"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="transparent"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#starbackground-0)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="starbackground-1"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="transparent"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#starbackground-1)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="starbackground-2"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="transparent"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#starbackground-2)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="starbackground-3"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="transparent"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#starbackground-3)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="starbackground-4"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="transparent"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#starbackground-4)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+  </div>
+  <div
+    className="sc-htpNat ckezCn"
+  >
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="star-0"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="orange"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#star-0)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="star-1"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="orange"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#star-1)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="star-2"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="orange"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#star-2)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="star-3"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="orange"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#star-3)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+    <svg
+      className="sc-bdVaJa gdAGaN"
+      onClick={[Function]}
+      viewBox="0 0 24 24"
+      width={24}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform="rotate(-55)"
+          id="star-4"
+          x1="-130%"
+          y1="0"
+        >
+          <stop
+            offset="70%"
+            stop-color="orange"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+          />
+          <stop
+            offset="0%"
+            stop-color="grey"
+            stop-opacity="0"
+          />
+        </linearGradient>
+      </defs>
+      <polygon
+        fill="url(#star-4)"
+        points="24,12 15.883281572999747,14.821369211003871 15.70820393249937,23.412678195541844 10.516718427000253,16.565071278216738 2.2917960675006324,19.05342302750968 7.2,12 2.2917960675006306,4.946576972490323 10.516718427000251,7.434928721783264 15.708203932499366,0.5873218044581563 15.883281572999747,9.178630788996127 "
+        style={
+          Object {
+            "fillRule": "nonzero",
+          }
+        }
+      />
+    </svg>
+  </div>
+</div>
+`;
