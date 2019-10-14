@@ -4,7 +4,7 @@
   "description": "A user-interface component library for Project P.I.L.L.O.W",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -15,11 +15,14 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.3",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
     "@storybook/addon-actions": "^5.2.3",
     "@storybook/addon-links": "^5.2.3",
     "@storybook/addons": "^5.2.3",
     "@storybook/react": "^5.2.3",
-    "babel-loader": "^8.0.6"
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0"
   }
 }
