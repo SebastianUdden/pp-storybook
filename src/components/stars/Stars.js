@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Star from "./Star";
+import Star from "../star/Star";
 
 const GridOverlay = styled.div`
   display: grid;

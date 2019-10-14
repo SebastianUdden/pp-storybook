@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import { Modal, Button } from "../src/index";
+import { Modal, Button } from "../../index";
 
 const TITLE = "This is a title";
 const DESCRIPTION = "This is a description";

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Star from "../src/components/Star";
+import Star from "./Star";
 
 export const actions = {};
 export const attributes = {

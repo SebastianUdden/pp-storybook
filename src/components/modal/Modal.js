@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
-import { MEDIA_MAX_SMALL, MEDIA_MIN_LARGE } from "./constants/sizes";
+import { MEDIA_MAX_SMALL, MEDIA_MIN_LARGE } from "../../constants/sizes";
 import {
   FADED_TEXT_COLOR,
   TRANSITION_DURATION,
@@ -10,7 +10,7 @@ import {
   DP6,
   ON_BACKGROUND,
   HIGH_EMPHASIS
-} from "./constants/theme";
+} from "../../constants/theme";
 
 const Overlay = styled.div`
   top: 0;

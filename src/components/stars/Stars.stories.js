@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Stars from "../src/components/Stars";
+import Stars from "./Stars";
 
 export const actions = {};
 export const size = {

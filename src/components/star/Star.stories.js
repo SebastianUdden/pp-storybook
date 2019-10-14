@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-
-import Star from "../src/components/Star";
+import Star from "./Star";
 
 export const actions = {};
 export const attributes = {

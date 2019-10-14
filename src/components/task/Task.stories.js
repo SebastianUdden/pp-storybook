@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import Task from "../src/components/Task";
+import Task from "./Task";
 
 export const task = {
   id: "1",
