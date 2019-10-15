@@ -2,7 +2,7 @@
 
 exports[`Button tests Button renders correctly 1`] = `
 <button
-  className="sc-bdVaJa kOHnq"
+  className="sc-bdVaJa jgwijM"
   onClick={[Function]}
 >
   Default Button
@@ -11,7 +11,7 @@ exports[`Button tests Button renders correctly 1`] = `
 
 exports[`Button tests Contained button renders correctly 1`] = `
 <button
-  className="sc-bdVaJa sc-ifAKCX hmsgCy"
+  className="sc-bdVaJa sc-ifAKCX cLkDai"
   color="#FFFFFF"
   onClick={[Function]}
 >
@@ -19,9 +19,19 @@ exports[`Button tests Contained button renders correctly 1`] = `
 </button>
 `;
 
+exports[`Button tests Fab button renders correctly 1`] = `
+<button
+  className="sc-bdVaJa sc-EHOje kKWnVJ"
+  color="#FFFFFF"
+  onClick={[Function]}
+>
+  Fab Button
+</button>
+`;
+
 exports[`Button tests Outline button renders correctly 1`] = `
 <button
-  className="sc-bdVaJa sc-htpNat kNSZir"
+  className="sc-bdVaJa sc-htpNat eaiRlt"
   color="#FFFFFF"
   onClick={[Function]}
 >
@@ -31,7 +41,7 @@ exports[`Button tests Outline button renders correctly 1`] = `
 
 exports[`Button tests Text button renders correctly 1`] = `
 <button
-  className="sc-bdVaJa sc-bwzfXH ftLMhZ"
+  className="sc-bdVaJa sc-bwzfXH ktMNKV"
   color="#FFFFFF"
   onClick={[Function]}
 >
@@ -41,7 +51,7 @@ exports[`Button tests Text button renders correctly 1`] = `
 
 exports[`Button tests Toggle button renders correctly 1`] = `
 <button
-  className="sc-bdVaJa sc-bxivhb dEDINV"
+  className="sc-bdVaJa sc-bxivhb eiWEvW"
   color="#FFFFFF"
   onClick={[Function]}
 >

@@ -6,6 +6,7 @@ import TextButton from "./TextButton";
 import OutlineButton from "./OutlineButton";
 import ToggleButton from "./ToggleButton";
 import ContainedButton from "./ContainedButton";
+import FabButton from "./FabButton";
 
 describe("Button tests", () => {
   test("Button renders correctly", () => {
@@ -49,6 +50,13 @@ describe("Button tests", () => {
       .create(
         <ToggleButton onClick={action("clicked")}>Toggle Button</ToggleButton>
       )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test("Fab button renders correctly", () => {
+    const tree = renderer
+      .create(<FabButton onClick={action("clicked")}>Fab Button</FabButton>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
