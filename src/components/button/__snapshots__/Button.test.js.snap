@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button tests Button renders correctly 1`] = `
+<button
+  className="sc-bdVaJa kOHnq"
+  onClick={[Function]}
+>
+  Default Button
+</button>
+`;
+
+exports[`Button tests Contained button renders correctly 1`] = `
+<button
+  className="sc-bdVaJa sc-ifAKCX hmsgCy"
+  color="#FFFFFF"
+  onClick={[Function]}
+>
+  Contained Button
+</button>
+`;
+
+exports[`Button tests Outline button renders correctly 1`] = `
+<button
+  className="sc-bdVaJa sc-htpNat kNSZir"
+  color="#FFFFFF"
+  onClick={[Function]}
+>
+  Outline Button
+</button>
+`;
+
+exports[`Button tests Text button renders correctly 1`] = `
+<button
+  className="sc-bdVaJa sc-bwzfXH ftLMhZ"
+  color="#FFFFFF"
+  onClick={[Function]}
+>
+  Text Button
+</button>
+`;
+
+exports[`Button tests Toggle button renders correctly 1`] = `
+<button
+  className="sc-bdVaJa sc-bxivhb dEDINV"
+  color="#FFFFFF"
+  onClick={[Function]}
+>
+  Toggle Button
+</button>
+`;
