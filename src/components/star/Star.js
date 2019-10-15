@@ -77,7 +77,7 @@ const Star = ({
         <linearGradient
           id={id}
           gradientTransform="rotate(-55)"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop stop-color={color} offset={`${fill}%`} />

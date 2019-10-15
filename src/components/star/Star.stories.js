@@ -9,7 +9,7 @@ export const attributes = {
 };
 
 storiesOf("Star", module)
-  .add("default", () => (
+  .add("default (not visible)", () => (
     <Star
       id="Default"
       color={"orange"}

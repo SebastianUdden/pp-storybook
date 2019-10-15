@@ -11,7 +11,7 @@ exports[`Star renders correctly 1`] = `
     <linearGradient
       gradientTransform="rotate(-55)"
       id="Default"
-      x1="-130%"
+      x1="-134%"
       y1="0"
     >
       <stop

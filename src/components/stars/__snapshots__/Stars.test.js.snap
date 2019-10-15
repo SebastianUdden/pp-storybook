@@ -17,7 +17,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="starbackground-0"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -55,7 +55,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="starbackground-1"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -93,7 +93,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="starbackground-2"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -131,7 +131,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="starbackground-3"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -169,7 +169,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="starbackground-4"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -211,7 +211,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="star-0"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -249,7 +249,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="star-1"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -287,7 +287,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="star-2"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -325,7 +325,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="star-3"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
@@ -363,7 +363,7 @@ exports[`Stars renders correctly 1`] = `
         <linearGradient
           gradientTransform="rotate(-55)"
           id="star-4"
-          x1="-130%"
+          x1="-134%"
           y1="0"
         >
           <stop
