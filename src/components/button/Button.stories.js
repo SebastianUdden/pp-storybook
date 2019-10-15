@@ -107,8 +107,8 @@ storiesOf("Button", module)
     <FabButton
       onClick={action("clicked")}
       color="#FFFFFF"
-      backgroundColor="#FF00AA"
-      backgroundColorHover="#FF22BB"
+      backgroundColor="#7700FF"
+      backgroundColorHover="#8632FF"
     >
       <SVG color={"white"} {...plus} size={24} />
     </FabButton>
