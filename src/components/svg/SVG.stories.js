@@ -16,5 +16,4 @@ storiesOf("SVG", module)
   .add("rocket", () => <SVG color={"white"} {...rocket} size={24} />)
   .add("rocket-colored", () => (
     <SVG color={"white"} {...rocketColored} size={24} />
-  ))
-  .add("cross", () => <SVG color={"white"} {...cross} size={24} />);
+  ));
