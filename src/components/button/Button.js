@@ -1,15 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledButton = styled.button`
-  background-color: ${p => p.backgroundColor || "inherit"};
-  padding: 0.5rem;
+export const Button = styled.button`
+  cursor: ${p => (p.disabled ? "default" : "pointer")};
+  text-transform: uppercase;
+  color: ${p => p.color || "inherit"};
+  padding: 0.8rem;
 `;
-
-const Button = ({ children, onClick, backgroundColor }) => (
-  <StyledButton onClick={onClick} backgroundColor={backgroundColor}>
-    {children}
-  </StyledButton>
-);
-
-export default Button;
