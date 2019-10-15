@@ -6,6 +6,7 @@ import { Button } from "./Button";
 export const StyledButton = styled(Button)`
   background-color: inherit;
   border: 1px solid ${p => p.backgroundColorHover || "inherit"};
+
   :hover {
     background-color: ${p =>
       p.backgroundColorHover && !p.disabled

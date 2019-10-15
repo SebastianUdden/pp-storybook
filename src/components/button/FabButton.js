@@ -14,10 +14,12 @@ import { Button } from "./Button";
 export const StyledButton = styled(Button)`
   background-color: ${p => p.backgroundColor || "inherit"};
   border-radius: 50%;
-  min-width: 2.5rem;
+  min-width: 3.3rem;
+  ${p => p.mini && `padding: 0rem; margin: 0`}
   border: none;
   box-shadow: ${p => (!p.disabled ? p.boxShadow : "inherit")};
   transition: box-shadow 0.1s ease-in, background-color ease-in 0.1s;
+
   :hover {
     background-color: ${p =>
       p.backgroundColorHover && !p.disabled
@@ -51,6 +53,7 @@ const FabButton = ({
   backgroundColorHover,
   boxShadow = DP6,
   raisedBoxShadow = DPraised,
+  mini,
   disabled
 }) => (
   <StyledButton
@@ -62,6 +65,7 @@ const FabButton = ({
     }
     boxShadow={boxShadow}
     raisedBoxShadow={raisedBoxShadow}
+    mini={mini}
     disabled={disabled}
   >
     {children}

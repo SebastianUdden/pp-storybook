@@ -16,6 +16,7 @@ export const StyledButton = styled(Button)`
   border: none;
   box-shadow: ${p => (!p.disabled ? p.boxShadow : "inherit")};
   transition: box-shadow 0.1s ease-in, background-color ease-in 0.1s;
+
   :hover {
     background-color: ${p =>
       p.backgroundColorHover && !p.disabled

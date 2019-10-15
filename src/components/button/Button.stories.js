@@ -112,4 +112,25 @@ storiesOf("Button", module)
     >
       <SVG color={"white"} {...plus} size={24} />
     </FabButton>
+  ))
+  .add("fab black", () => (
+    <FabButton
+      onClick={action("clicked")}
+      color="#FFFFFF"
+      backgroundColor="#000000"
+      backgroundColorHover="#111111"
+    >
+      <SVG color={"white"} {...plus} size={24} />
+    </FabButton>
+  ))
+  .add("fab mini black", () => (
+    <FabButton
+      onClick={action("clicked")}
+      color="#FFFFFF"
+      backgroundColor="#000000"
+      backgroundColorHover="#111111"
+      mini
+    >
+      <SVG color={"white"} {...plus} size={24} />
+    </FabButton>
   ));

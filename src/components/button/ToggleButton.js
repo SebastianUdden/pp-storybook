@@ -12,6 +12,7 @@ export const StyledButton = styled(Button)`
   margin: 0;
   background-color: ${p => (p.selected ? p.backgroundColor : "inherit")};
   border: 1px solid ${p => p.backgroundColorHover || "inherit"};
+
   :hover {
     background-color: ${p =>
       p.selected
