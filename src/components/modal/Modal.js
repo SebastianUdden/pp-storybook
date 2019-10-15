@@ -9,8 +9,11 @@ import {
   ON_SURFACE,
   DP6,
   ON_BACKGROUND,
-  HIGH_EMPHASIS
+  HIGH_EMPHASIS,
+  ON_PRIMARY_BACKGROUND
 } from "../../constants/theme";
+import SVG from "../svg/SVG";
+import { cross } from "../../svgs/cross";
 
 const Overlay = styled.div`
   top: 0;
@@ -69,7 +72,7 @@ const Header = styled.div`
   justify-content: center;
   min-height: 70px;
   margin-bottom: 1rem;
-  padding: 1rem 2rem 2rem 0.5rem;
+  padding: 0rem 2rem 0rem 0.5rem;
 
   > h3 {
     margin: 0;
@@ -91,7 +94,7 @@ const Close = styled.button`
   cursor: pointer;
   color: ${ON_SURFACE};
   transition: all 300ms ease;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
   display: flex;
   right: 32px;
@@ -99,8 +102,8 @@ const Close = styled.button`
 
   > svg {
     fill: ${ON_SURFACE};
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
   }
 
   ${MEDIA_MAX_SMALL} {
@@ -109,6 +112,12 @@ const Close = styled.button`
     > svg {
       height: 12px;
       width: 12px;
+    }
+  }
+
+  :hover {
+    > svg {
+      fill: ${ON_PRIMARY_BACKGROUND};
     }
   }
 `;
@@ -136,8 +145,10 @@ const Modal = ({ children, title, onClose, open }) => {
           <Wrapper>
             <InnerModal onClick={e => e.stopPropagation()}>
               <Header hasTitle={title}>
-                {title}
-                <Close onClick={onClose}>&times;</Close>
+                <h3>{title}</h3>
+                <Close onClick={onClose}>
+                  <SVG color={"white"} {...cross} size={24} />
+                </Close>
               </Header>
               {children}
             </InnerModal>

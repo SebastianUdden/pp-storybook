@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
-import { Modal, Button } from "../../index";
+import Button from "../button/ContainedButton";
+import TextButton from "../button/TextButton";
+import Modal from "./Modal";
+import { ON_PRIMARY_BACKGROUND } from "../../constants/theme";
 
-const TITLE = "This is a title";
-const DESCRIPTION = "This is a description";
+const TITLE = "A modal with title";
+const DESCRIPTION = "Would you like to do something?";
 
 storiesOf(`Modal`, module).add(`default`, () => {
   const [modalOpen, setModalOpen] = useState(true);
@@ -24,27 +27,27 @@ storiesOf(`Modal`, module).add(`default`, () => {
             style={{
               display: "flex",
               marginTop: "32px",
-              justifyContent: "center"
+              justifyContent: "flex-end"
             }}
           >
-            <Button
-              backgroundColor="#fff"
+            <TextButton
+              backgroundColorHover={ON_PRIMARY_BACKGROUND}
               onClick={() => {
                 setModalOpen(false);
                 onConfirm();
               }}
             >
               Yes
-            </Button>
-            <Button
-              backgroundColor="#fff"
+            </TextButton>
+            <TextButton
+              backgroundColorHover={ON_PRIMARY_BACKGROUND}
               onClick={() => {
                 setModalOpen(false);
                 onDeny();
               }}
             >
               No
-            </Button>
+            </TextButton>
           </div>
         </Modal>
       )}
