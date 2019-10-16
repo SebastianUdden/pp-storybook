@@ -15,7 +15,7 @@ export const StyledButton = styled(Button)`
   background-color: ${p => p.backgroundColor || "inherit"};
   border-radius: 50%;
   min-width: 3.3rem;
-  ${p => p.mini && `padding: 0rem; margin: 0`}
+  ${p => p.mini && `padding: 0.4rem; margin: 0; min-width: 2rem;`}
   border: none;
   box-shadow: ${p => (!p.disabled ? p.boxShadow : "inherit")};
   transition: box-shadow 0.1s ease-in, background-color ease-in 0.1s;
