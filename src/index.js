@@ -1,4 +1,4 @@
-export { default as Button } from "./components/button/Button";
+export { Button } from "./components/button/Button";
 export { default as TextButton } from "./components/button/TextButton";
 export { default as OutlineButton } from "./components/button/OutlineButton";
 export {
@@ -10,7 +10,7 @@ export { default as Modal } from "./components/modal/Modal";
 export { default as Star } from "./components/star/Star";
 export { default as Stars } from "./components/stars/Stars";
 export { default as SVG } from "./components/svg/SVG";
-export { default as Text } from "./components/text/Text";
+export { Text } from "./components/text/Text";
 export { cross } from "./svgs/cross";
 export { eyeHide } from "./svgs/eye-hide";
 export { eyeShow } from "./svgs/eye-show";
