@@ -1,5 +1,5 @@
 {
-  "name": "pp-storybook",
+  "name": "project-pillow-components",
   "version": "1.0.0",
   "description": "A user-interface component library for Project P.I.L.L.O.W",
   "main": "src/index.js",
