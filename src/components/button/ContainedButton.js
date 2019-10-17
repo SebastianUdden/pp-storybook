@@ -3,8 +3,8 @@ import styled from "styled-components";
 import {
   BACKGROUND_ACTIVE,
   ON_BACKGROUND,
-  DP6,
-  DPraised,
+  DP2,
+  DP8,
   SURFACE,
   ON_SURFACE,
   BACKGROUND
@@ -48,8 +48,8 @@ const ContainedButton = ({
   color = ON_BACKGROUND,
   backgroundColor = BACKGROUND,
   backgroundColorHover,
-  boxShadow = DP6,
-  raisedBoxShadow = DPraised,
+  boxShadow = DP2,
+  raisedBoxShadow = DP8,
   disabled
 }) => (
   <StyledButton

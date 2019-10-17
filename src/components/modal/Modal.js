@@ -13,7 +13,7 @@ import {
   ON_PRIMARY_BACKGROUND
 } from "../../constants/theme";
 import SVG from "../svg/SVG";
-import { cross } from "../../svgs/cross";
+import { cross } from "../../svgs/generic/cross";
 
 const Overlay = styled.div`
   top: 0;

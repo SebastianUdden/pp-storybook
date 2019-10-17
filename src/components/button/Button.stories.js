@@ -6,7 +6,7 @@ import OutlineButton from "./OutlineButton";
 import ContainedButton from "./ContainedButton";
 import ToggleButton from "./ToggleButton";
 import FabButton from "./FabButton";
-import { plus } from "../../svgs/plus";
+import { plus } from "../../svgs/generic/plus";
 import SVG from "../svg/SVG";
 
 storiesOf("Button", module)
