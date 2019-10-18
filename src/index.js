@@ -11,12 +11,9 @@ export { default as Star } from "./components/star/Star";
 export { default as Stars } from "./components/stars/Stars";
 export { default as SVG } from "./components/svg/SVG";
 
+export * from "./svgs/actions";
 export * from "./svgs/alert";
-
-export { Text } from "./components/text/Text";
-export { cross } from "./svgs/generic/cross";
-export { eyeHide } from "./svgs/generic/eye-hide";
-export { eyeShow } from "./svgs/generic/eye-show";
-export { plus } from "./svgs/generic/plus";
-export { rocket } from "./svgs/generic/rocket";
-export { rocketColored } from "./svgs/generic/rocketColored";
+export * from "./svgs/editor";
+export * from "./svgs/generic";
+export * from "./svgs/navigation";
+export * from "./svgs/toggle";

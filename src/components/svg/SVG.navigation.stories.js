@@ -2,7 +2,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import SVG from "./SVG";
 
-import { copyMe } from "../../svgs/editor/zCOPY_ME";
 import { apps } from "../../svgs/navigation/apps";
 import { arrowBack } from "../../svgs/navigation/arrow-back";
 import { arrowBackIos } from "../../svgs/navigation/arrow-back-ios";
@@ -17,8 +16,8 @@ import { arrowRight } from "../../svgs/navigation/arrow-right";
 import { arrowUpward } from "../../svgs/navigation/arrow-upward";
 import { cancel } from "../../svgs/navigation/cancel";
 import { check } from "../../svgs/navigation/check";
-import { chevronLeft } from "../../svgs/navigation/chevronLeft";
-import { chevronRight } from "../../svgs/navigation/chevronRight";
+import { chevronLeft } from "../../svgs/navigation/chevron-left";
+import { chevronRight } from "../../svgs/navigation/chevron-right";
 import { close } from "../../svgs/navigation/close";
 import { doubleArrow } from "../../svgs/navigation/double-arrow";
 import { expandLess } from "../../svgs/navigation/expand-less";
