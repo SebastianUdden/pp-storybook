@@ -1,14 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import SVG from "./SVG";
-import { cross } from "../../svgs/cross";
-import { eyeShow } from "../../svgs/eye-show";
-import { eyeHide } from "../../svgs/eye-hide";
-import { plus } from "../../svgs/plus";
-import { rocket } from "../../svgs/rocket";
-import { rocketColored } from "../../svgs/rocketColored";
+import { cross } from "../../svgs/generic/cross";
+import { eyeShow } from "../../svgs/generic/eye-show";
+import { eyeHide } from "../../svgs/generic/eye-hide";
+import { plus } from "../../svgs/generic/plus";
+import { rocket } from "../../svgs/generic/rocket";
+import { rocketColored } from "../../svgs/generic/rocketColored";
 
-storiesOf("SVG", module)
+storiesOf("SVG generic", module)
   .add("cross", () => <SVG color={"white"} {...cross} size={24} />)
   .add("eye-hide", () => <SVG color={"white"} {...eyeHide} size={24} />)
   .add("eye-show", () => <SVG color={"white"} {...eyeShow} size={24} />)
