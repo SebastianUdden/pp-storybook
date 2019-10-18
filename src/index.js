@@ -10,6 +10,9 @@ export { default as Modal } from "./components/modal/Modal";
 export { default as Star } from "./components/star/Star";
 export { default as Stars } from "./components/stars/Stars";
 export { default as SVG } from "./components/svg/SVG";
+
+export * from "./svgs/alert";
+
 export { Text } from "./components/text/Text";
 export { cross } from "./svgs/cross";
 export { eyeHide } from "./svgs/eye-hide";
