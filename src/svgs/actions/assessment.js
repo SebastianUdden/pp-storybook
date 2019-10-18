@@ -1,5 +1,5 @@
 import React from "react";
-export const assesment = {
+export const assessment = {
   viewBox: "0 0 24 24",
   path: (
     <>

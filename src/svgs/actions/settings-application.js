@@ -1,5 +1,5 @@
 import React from "react";
-export const settingsApplications = {
+export const settingsApplication = {
   viewBox: "0 0 24 24",
   path: (
     <>
