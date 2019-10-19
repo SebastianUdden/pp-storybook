@@ -1,4 +1,4 @@
-export { accessibiltyNew } from "./accessibility-new";
+export { accessibilityNew } from "./accessibility-new";
 export { accessibility } from "./accessibility";
 export { accessibleForward } from "./accessible-forward";
 export { accessible } from "./accessible";
@@ -113,7 +113,7 @@ export { list } from "./list";
 export { lockOpen } from "./lock-open";
 export { lock } from "./lock";
 export { loyalty } from "./loyalty";
-export { markUnredMailbox } from "./mark-unread-mailbox";
+export { markUnreadMailbox } from "./mark-unread-mailbox";
 export { maximize } from "./maximize";
 export { minimize } from "./minimize";
 export { motorcycle } from "./motorcycle";
