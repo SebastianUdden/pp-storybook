@@ -6,7 +6,7 @@ import { eyeShow } from "../../svgs/generic/eye-show";
 import { eyeHide } from "../../svgs/generic/eye-hide";
 import { plus } from "../../svgs/generic/plus";
 import { rocket } from "../../svgs/generic/rocket";
-import { rocketColored } from "../../svgs/generic/rocketColored";
+import { rocketColored } from "../../svgs/generic/rocket-colored";
 
 storiesOf("SVG generic", module)
   .add("cross", () => <SVG color={"white"} {...cross} size={24} />)
