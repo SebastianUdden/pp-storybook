@@ -2,7 +2,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import SVG from "./SVG";
 
-import { copyMe } from "../../svgs/editor/zCOPY_ME";
 import { addComment } from "../../svgs/editor/add-comment";
 import { attachFile } from "../../svgs/editor/attach-file";
 import { attachMoney } from "../../svgs/editor/attach-money";
@@ -153,8 +152,6 @@ storiesOf("SVG editor", module)
       <SVG color={"white"} size={24} {...verticalAlignCenter} />
       <SVG color={"white"} size={24} {...verticalAlignTop} />
       <SVG color={"white"} size={24} {...wrapText} />
-      <SVG color={"white"} size={24} {...copyMe} />
-      <SVG color={"white"} size={24} {...copyMe} />
     </>
   ))
   .add("add comment", () => <SVG color={"white"} size={24} {...addComment} />)
@@ -291,6 +288,4 @@ storiesOf("SVG editor", module)
   .add("vertical align top", () => (
     <SVG color={"white"} size={24} {...verticalAlignTop} />
   ))
-  .add("wrap text", () => <SVG color={"white"} size={24} {...wrapText} />)
-  .add("copyMe", () => <SVG color={"white"} size={24} {...copyMe} />)
-  .add("END", () => <SVG color={"white"} size={24} {...copyMe} />);
+  .add("wrap text", () => <SVG color={"white"} size={24} {...wrapText} />);

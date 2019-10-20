@@ -2,7 +2,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import SVG from "./SVG";
 
-import { copyMe } from "../../svgs/editor/zCOPY_ME";
 import { add } from "../../svgs/content/add";
 import { addBox } from "../../svgs/content/add-box";
 import { addCircle } from "../../svgs/content/add-circle";
@@ -107,8 +106,6 @@ storiesOf("SVG content", module)
       <SVG color={"white"} size={24} {...undo} />
       <SVG color={"white"} size={24} {...waves} />
       <SVG color={"white"} size={24} {...whereToVote} />
-      <SVG color={"white"} size={24} {...copyMe} />
-      <SVG color={"white"} size={24} {...copyMe} />
     </>
   ))
   .add("add", () => <SVG color={"white"} size={24} {...add} />)
@@ -174,6 +171,4 @@ storiesOf("SVG content", module)
   .add("waves", () => <SVG color={"white"} size={24} {...waves} />)
   .add("where to vote", () => (
     <SVG color={"white"} size={24} {...whereToVote} />
-  ))
-  .add("copyMe", () => <SVG color={"white"} size={24} {...copyMe} />)
-  .add("copyMe", () => <SVG color={"white"} size={24} {...copyMe} />);
+  ));
