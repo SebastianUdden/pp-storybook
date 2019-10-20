@@ -38,6 +38,44 @@ import { unfoldLess } from "../../svgs/navigation/unfold-less";
 import { unfoldMore } from "../../svgs/navigation/unfold-more";
 
 storiesOf("SVG navigation", module)
+  .add("all icons", () => (
+    <>
+      <SVG color={"white"} size={24} {...apps} />
+      <SVG color={"white"} size={24} {...arrowBack} />
+      <SVG color={"white"} size={24} {...arrowBackIos} />
+      <SVG color={"white"} size={24} {...arrowDown} />
+      <SVG color={"white"} size={24} {...arrowDropDown} />
+      <SVG color={"white"} size={24} {...arrowDropDownCircle} />
+      <SVG color={"white"} size={24} {...arrowDropUp} />
+      <SVG color={"white"} size={24} {...arrowForward} />
+      <SVG color={"white"} size={24} {...arrowForwardIos} />
+      <SVG color={"white"} size={24} {...arrowLeft} />
+      <SVG color={"white"} size={24} {...arrowRight} />
+      <SVG color={"white"} size={24} {...arrowUpward} />
+      <SVG color={"white"} size={24} {...cancel} />
+      <SVG color={"white"} size={24} {...check} />
+      <SVG color={"white"} size={24} {...chevronLeft} />
+      <SVG color={"white"} size={24} {...chevronRight} />
+      <SVG color={"white"} size={24} {...close} />
+      <SVG color={"white"} size={24} {...doubleArrow} />
+      <SVG color={"white"} size={24} {...expandLess} />
+      <SVG color={"white"} size={24} {...expandMore} />
+      <SVG color={"white"} size={24} {...firstPage} />
+      <SVG color={"white"} size={24} {...fullscreen} />
+      <SVG color={"white"} size={24} {...fullscreenExit} />
+      <SVG color={"white"} size={24} {...homeWork} />
+      <SVG color={"white"} size={24} {...lastPage} />
+      <SVG color={"white"} size={24} {...menu} />
+      <SVG color={"white"} size={24} {...menuOpen} />
+      <SVG color={"white"} size={24} {...moreHorizontal} />
+      <SVG color={"white"} size={24} {...moreVertical} />
+      <SVG color={"white"} size={24} {...refresh} />
+      <SVG color={"white"} size={24} {...subdirectoryArrowLeft} />
+      <SVG color={"white"} size={24} {...subdirectoryArrowRight} />
+      <SVG color={"white"} size={24} {...unfoldLess} />
+      <SVG color={"white"} size={24} {...unfoldMore} />
+    </>
+  ))
   .add("apps", () => <SVG color={"white"} size={24} {...apps} />)
   .add("arrow back", () => <SVG color={"white"} size={24} {...arrowBack} />)
   .add("arrow back ios", () => (

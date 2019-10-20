@@ -14,6 +14,20 @@ import { toggleOff } from "../../svgs/toggle/toggle-off";
 import { toggleOn } from "../../svgs/toggle/toggle-on";
 
 storiesOf("SVG toggle", module)
+  .add("all icons", () => (
+    <>
+      <SVG color={"white"} size={24} {...checkBox} />
+      <SVG color={"white"} size={24} {...checkBoxOutlineBlank} />
+      <SVG color={"white"} size={24} {...indeterminateCheckBox} />
+      <SVG color={"white"} size={24} {...radioButtonChecked} />
+      <SVG color={"white"} size={24} {...radioButtonUnchecked} />
+      <SVG color={"white"} size={24} {...star} />
+      <SVG color={"white"} size={24} {...starBorder} />
+      <SVG color={"white"} size={24} {...starHalf} />
+      <SVG color={"white"} size={24} {...toggleOff} />
+      <SVG color={"white"} size={24} {...toggleOn} />
+    </>
+  ))
   .add("check-box", () => <SVG color={"white"} size={24} {...checkBox} />)
   .add("check-box outline blank", () => (
     <SVG color={"white"} size={24} {...checkBoxOutlineBlank} />

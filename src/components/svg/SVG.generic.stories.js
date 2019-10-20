@@ -9,6 +9,16 @@ import { rocket } from "../../svgs/generic/rocket";
 import { rocketColored } from "../../svgs/generic/rocket-colored";
 
 storiesOf("SVG generic", module)
+  .add("all icons", () => (
+    <>
+      <SVG color={"white"} {...cross} size={24} />
+      <SVG color={"white"} {...eyeHide} size={24} />
+      <SVG color={"white"} {...eyeShow} size={24} />
+      <SVG color={"white"} {...plus} size={24} />
+      <SVG color={"white"} {...rocket} size={24} />
+      <SVG color={"white"} {...rocketColored} size={24} />
+    </>
+  ))
   .add("cross", () => <SVG color={"white"} {...cross} size={24} />)
   .add("eye-hide", () => <SVG color={"white"} {...eyeHide} size={24} />)
   .add("eye-show", () => <SVG color={"white"} {...eyeShow} size={24} />)
