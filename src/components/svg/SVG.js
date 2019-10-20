@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVG = ({ color, viewBox, path, size }) => {
+const SVG = ({ color = "white", viewBox, path, size = 24 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
