@@ -2,7 +2,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import SVG from "./SVG";
 
-import { copyMe } from "../../svgs/file/ZcopyMe";
 import { attachment } from "../../svgs/file/attachment";
 import { cloud } from "../../svgs/file/cloud";
 import { cloudCircle } from "../../svgs/file/cloud-circle";
@@ -50,5 +49,4 @@ storiesOf("SVG file", module)
   .add("folder open", () => <SVG color={"white"} size={24} {...folderOpen} />)
   .add("folder shared", () => (
     <SVG color={"white"} size={24} {...folderShared} />
-  ))
-  .add("copyMe", () => <SVG color={"white"} size={24} {...copyMe} />);
+  ));
