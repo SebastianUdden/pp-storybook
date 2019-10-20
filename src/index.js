@@ -15,6 +15,7 @@ export { Text } from "./components/text/Text";
 export * from "./svgs/actions";
 export * from "./svgs/alert";
 export * from "./svgs/editor";
+export * from "./svgs/file";
 export * from "./svgs/generic";
 export * from "./svgs/navigation";
 export * from "./svgs/toggle";
