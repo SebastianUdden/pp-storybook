@@ -250,709 +250,493 @@ import { zoomOut } from "../../svgs/actions/zoom-out";
 storiesOf("SVG actions", module)
   .add("all actions", () => (
     <>
-      <SVG color={"white"} size={24} {...rotation3d} />
-      <SVG color={"white"} size={24} {...accessibility} />
-      <SVG color={"white"} size={24} {...accessibilityNew} />
-      <SVG color={"white"} size={24} {...accessible} />
-      <SVG color={"white"} size={24} {...accessibleForward} />
-      <SVG color={"white"} size={24} {...accountBalance} />
-      <SVG color={"white"} size={24} {...accountBalanceWallet} />
-      <SVG color={"white"} size={24} {...accountBox} />
-      <SVG color={"white"} size={24} {...accountCircle} />
-      <SVG color={"white"} size={24} {...addShoppingCart} />
-      <SVG color={"white"} size={24} {...alarm} />
-      <SVG color={"white"} size={24} {...alarmAdd} />
-      <SVG color={"white"} size={24} {...alarmOff} />
-      <SVG color={"white"} size={24} {...alarmOn} />
-      <SVG color={"white"} size={24} {...allInbox} />
-      <SVG color={"white"} size={24} {...allOut} />
-      <SVG color={"white"} size={24} {...android} />
-      <SVG color={"white"} size={24} {...announcement} />
-      <SVG color={"white"} size={24} {...arrowRightAlt} />
-      <SVG color={"white"} size={24} {...aspectRatio} />
-      <SVG color={"white"} size={24} {...assessment} />
-      <SVG color={"white"} size={24} {...assignment} />
-      <SVG color={"white"} size={24} {...assignmentIndividual} />
-      <SVG color={"white"} size={24} {...assignmentLate} />
-      <SVG color={"white"} size={24} {...assignmentReturn} />
-      <SVG color={"white"} size={24} {...assignmentReturned} />
-      <SVG color={"white"} size={24} {...assignmentTurnedIn} />
-      <SVG color={"white"} size={24} {...autoRenew} />
-      <SVG color={"white"} size={24} {...backup} />
-      <SVG color={"white"} size={24} {...book} />
-      <SVG color={"white"} size={24} {...bookmark} />
-      <SVG color={"white"} size={24} {...bookmarkBorder} />
-      <SVG color={"white"} size={24} {...bookmarks} />
-      <SVG color={"white"} size={24} {...bugReport} />
-      <SVG color={"white"} size={24} {...build} />
-      <SVG color={"white"} size={24} {...cached} />
-      <SVG color={"white"} size={24} {...calendarToday} />
-      <SVG color={"white"} size={24} {...calendarViewDay} />
-      <SVG color={"white"} size={24} {...cameraEnhance} />
-      <SVG color={"white"} size={24} {...cancelScheduleSend} />
-      <SVG color={"white"} size={24} {...cardGiftcard} />
-      <SVG color={"white"} size={24} {...cardMembership} />
-      <SVG color={"white"} size={24} {...cardTravel} />
-      <SVG color={"white"} size={24} {...changeHistory} />
-      <SVG color={"white"} size={24} {...checkCircle} />
-      <SVG color={"white"} size={24} {...checkCircleOutline} />
-      <SVG color={"white"} size={24} {...chromeReader} />
-      <SVG color={"white"} size={24} {...code} />
-      <SVG color={"white"} size={24} {...commute} />
-      <SVG color={"white"} size={24} {...compareArrows} />
-      <SVG color={"white"} size={24} {...contactSupport} />
-      <SVG color={"white"} size={24} {...contactless} />
-      <SVG color={"white"} size={24} {...copyright} />
-      <SVG color={"white"} size={24} {...creditCard} />
-      <SVG color={"white"} size={24} {...dashboard} />
-      <SVG color={"white"} size={24} {...dateRange} />
-      <SVG color={"white"} size={24} {...deleteTrashcan} />
-      <SVG color={"white"} size={24} {...deleteTrashcanForever} />
-      <SVG color={"white"} size={24} {...deleteTrashcanOutline} />
-      <SVG color={"white"} size={24} {...description} />
-      <SVG color={"white"} size={24} {...dns} />
-      <SVG color={"white"} size={24} {...done} />
-      <SVG color={"white"} size={24} {...doneAll} />
-      <SVG color={"white"} size={24} {...doneOutline} />
-      <SVG color={"white"} size={24} {...donutLarge} />
-      <SVG color={"white"} size={24} {...donutSmall} />
-      <SVG color={"white"} size={24} {...dragIndicator} />
-      <SVG color={"white"} size={24} {...eco} />
-      <SVG color={"white"} size={24} {...eject} />
-      <SVG color={"white"} size={24} {...euroSymbol} />
-      <SVG color={"white"} size={24} {...event} />
-      <SVG color={"white"} size={24} {...eventSeat} />
-      <SVG color={"white"} size={24} {...exitToApp} />
-      <SVG color={"white"} size={24} {...explore} />
-      <SVG color={"white"} size={24} {...exploreOff} />
-      <SVG color={"white"} size={24} {...extension} />
-      <SVG color={"white"} size={24} {...face} />
-      <SVG color={"white"} size={24} {...favorite} />
-      <SVG color={"white"} size={24} {...favoriteBorder} />
-      <SVG color={"white"} size={24} {...feedback} />
-      <SVG color={"white"} size={24} {...findInPage} />
-      <SVG color={"white"} size={24} {...findReplace} />
-      <SVG color={"white"} size={24} {...fingerprint} />
-      <SVG color={"white"} size={24} {...flightLand} />
-      <SVG color={"white"} size={24} {...flightTakeoff} />
-      <SVG color={"white"} size={24} {...flipToBack} />
-      <SVG color={"white"} size={24} {...flipToFront} />
-      <SVG color={"white"} size={24} {...gavel} />
-      <SVG color={"white"} size={24} {...getApp} />
-      <SVG color={"white"} size={24} {...gif} />
-      <SVG color={"white"} size={24} {...googleTranslate} />
-      <SVG color={"white"} size={24} {...grade} />
-      <SVG color={"white"} size={24} {...groupWork} />
-      <SVG color={"white"} size={24} {...help} />
-      <SVG color={"white"} size={24} {...helpOutline} />
-      <SVG color={"white"} size={24} {...highlightOff} />
-      <SVG color={"white"} size={24} {...history} />
-      <SVG color={"white"} size={24} {...home} />
-      <SVG color={"white"} size={24} {...horizontalSplit} />
-      <SVG color={"white"} size={24} {...hourglassEmpty} />
-      <SVG color={"white"} size={24} {...hourglassFull} />
-      <SVG color={"white"} size={24} {...http} />
-      <SVG color={"white"} size={24} {...https} />
-      <SVG color={"white"} size={24} {...importantDevices} />
-      <SVG color={"white"} size={24} {...info} />
-      <SVG color={"white"} size={24} {...input} />
-      <SVG color={"white"} size={24} {...invertColors} />
-      <SVG color={"white"} size={24} {...label} />
-      <SVG color={"white"} size={24} {...labelImportant} />
-      <SVG color={"white"} size={24} {...labelOff} />
-      <SVG color={"white"} size={24} {...language} />
-      <SVG color={"white"} size={24} {...launch} />
-      <SVG color={"white"} size={24} {...lineStyle} />
-      <SVG color={"white"} size={24} {...lineWeight} />
-      <SVG color={"white"} size={24} {...list} />
-      <SVG color={"white"} size={24} {...lock} />
-      <SVG color={"white"} size={24} {...lockOpen} />
-      <SVG color={"white"} size={24} {...loyalty} />
-      <SVG color={"white"} size={24} {...markUnreadMailbox} />
-      <SVG color={"white"} size={24} {...maximize} />
-      <SVG color={"white"} size={24} {...minimize} />
-      <SVG color={"white"} size={24} {...motorcycle} />
-      <SVG color={"white"} size={24} {...noteAdd} />
-      <SVG color={"white"} size={24} {...offlineBolt} />
-      <SVG color={"white"} size={24} {...offlinePin} />
-      <SVG color={"white"} size={24} {...opacity} />
-      <SVG color={"white"} size={24} {...openInBrowser} />
-      <SVG color={"white"} size={24} {...openInNew} />
-      <SVG color={"white"} size={24} {...openWith} />
-      <SVG color={"white"} size={24} {...pageview} />
-      <SVG color={"white"} size={24} {...panTool} />
-      <SVG color={"white"} size={24} {...payment} />
-      <SVG color={"white"} size={24} {...permitCameraMic} />
-      <SVG color={"white"} size={24} {...permitContactCalendar} />
-      <SVG color={"white"} size={24} {...permitDataSetting} />
-      <SVG color={"white"} size={24} {...permitDeviceInformation} />
-      <SVG color={"white"} size={24} {...permitIdentity} />
-      <SVG color={"white"} size={24} {...permitMedia} />
-      <SVG color={"white"} size={24} {...permitPhoneMsg} />
-      <SVG color={"white"} size={24} {...permitScanWifi} />
-      <SVG color={"white"} size={24} {...pets} />
-      <SVG color={"white"} size={24} {...pictureInPicture} />
-      <SVG color={"white"} size={24} {...pictureInPictureAlt} />
-      <SVG color={"white"} size={24} {...playForWork} />
-      <SVG color={"white"} size={24} {...polymer} />
-      <SVG color={"white"} size={24} {...powerSetting} />
-      <SVG color={"white"} size={24} {...pregnantWoman} />
-      <SVG color={"white"} size={24} {...print} />
-      <SVG color={"white"} size={24} {...queryBuilder} />
-      <SVG color={"white"} size={24} {...questionAnswer} />
-      <SVG color={"white"} size={24} {...receipt} />
-      <SVG color={"white"} size={24} {...recordVoiceOver} />
-      <SVG color={"white"} size={24} {...redeem} />
-      <SVG color={"white"} size={24} {...removeShoppingCart} />
-      <SVG color={"white"} size={24} {...reorder} />
-      <SVG color={"white"} size={24} {...reportProblem} />
-      <SVG color={"white"} size={24} {...restore} />
-      <SVG color={"white"} size={24} {...restoreFromTrash} />
-      <SVG color={"white"} size={24} {...restorePage} />
-      <SVG color={"white"} size={24} {...room} />
-      <SVG color={"white"} size={24} {...roundedCorner} />
-      <SVG color={"white"} size={24} {...rowing} />
-      <SVG color={"white"} size={24} {...schedule} />
-      <SVG color={"white"} size={24} {...search} />
-      <SVG color={"white"} size={24} {...settingsApplication} />
-      <SVG color={"white"} size={24} {...settingsBackupRestore} />
-      <SVG color={"white"} size={24} {...settingsBluetooth} />
-      <SVG color={"white"} size={24} {...settingsBrightness} />
-      <SVG color={"white"} size={24} {...settingsCellphone} />
-      <SVG color={"white"} size={24} {...settingsEthernet} />
-      <SVG color={"white"} size={24} {...settingsInputAntenna} />
-      <SVG color={"white"} size={24} {...settingsInputComponent} />
-      <SVG color={"white"} size={24} {...settingsInputComposite} />
-      <SVG color={"white"} size={24} {...settingsInputHdmi} />
-      <SVG color={"white"} size={24} {...settingsInputVideo} />
-      <SVG color={"white"} size={24} {...settingsOverscan} />
-      <SVG color={"white"} size={24} {...settingsPhone} />
-      <SVG color={"white"} size={24} {...settingsPower} />
-      <SVG color={"white"} size={24} {...settingsRemote} />
-      <SVG color={"white"} size={24} {...settingsVoice} />
-      <SVG color={"white"} size={24} {...shop} />
-      <SVG color={"white"} size={24} {...shopTwo} />
-      <SVG color={"white"} size={24} {...shoppingBasket} />
-      <SVG color={"white"} size={24} {...shoppingCart} />
-      <SVG color={"white"} size={24} {...speakerNotes} />
-      <SVG color={"white"} size={24} {...speakerNotesOff} />
-      <SVG color={"white"} size={24} {...spellcheck} />
-      <SVG color={"white"} size={24} {...stars} />
-      <SVG color={"white"} size={24} {...store} />
-      <SVG color={"white"} size={24} {...subject} />
-      <SVG color={"white"} size={24} {...supervisedUserCircle} />
-      <SVG color={"white"} size={24} {...supervisorAccount} />
-      <SVG color={"white"} size={24} {...swapHorizontal} />
-      <SVG color={"white"} size={24} {...swapHorizontalCircle} />
-      <SVG color={"white"} size={24} {...swapVertical} />
-      <SVG color={"white"} size={24} {...swapVerticalCircle} />
-      <SVG color={"white"} size={24} {...syncAlt} />
-      <SVG color={"white"} size={24} {...systemUpdate} />
-      <SVG color={"white"} size={24} {...tab} />
-      <SVG color={"white"} size={24} {...tabUnselected} />
-      <SVG color={"white"} size={24} {...textRotateUp} />
-      <SVG color={"white"} size={24} {...textRotateVertical} />
-      <SVG color={"white"} size={24} {...textRotateAngleDown} />
-      <SVG color={"white"} size={24} {...textRotateAngleUp} />
-      <SVG color={"white"} size={24} {...textRotateDown} />
-      <SVG color={"white"} size={24} {...textRotateNone} />
-      <SVG color={"white"} size={24} {...theaters} />
-      <SVG color={"white"} size={24} {...thumbsDown} />
-      <SVG color={"white"} size={24} {...thumbsUp} />
-      <SVG color={"white"} size={24} {...thumbsUpDown} />
-      <SVG color={"white"} size={24} {...timeline} />
-      <SVG color={"white"} size={24} {...toc} />
-      <SVG color={"white"} size={24} {...today} />
-      <SVG color={"white"} size={24} {...toll} />
-      <SVG color={"white"} size={24} {...touchApp} />
-      <SVG color={"white"} size={24} {...trackChanges} />
-      <SVG color={"white"} size={24} {...translate} />
-      <SVG color={"white"} size={24} {...trendingDown} />
-      <SVG color={"white"} size={24} {...trendingFlat} />
-      <SVG color={"white"} size={24} {...trendingUp} />
-      <SVG color={"white"} size={24} {...update} />
-      <SVG color={"white"} size={24} {...verifiedUser} />
-      <SVG color={"white"} size={24} {...verticalSplit} />
-      <SVG color={"white"} size={24} {...viewAgenda} />
-      <SVG color={"white"} size={24} {...viewArray} />
-      <SVG color={"white"} size={24} {...viewCarousel} />
-      <SVG color={"white"} size={24} {...viewColumn} />
-      <SVG color={"white"} size={24} {...viewDay} />
-      <SVG color={"white"} size={24} {...viewHeadline} />
-      <SVG color={"white"} size={24} {...viewList} />
-      <SVG color={"white"} size={24} {...viewModule} />
-      <SVG color={"white"} size={24} {...viewQuilt} />
-      <SVG color={"white"} size={24} {...viewStream} />
-      <SVG color={"white"} size={24} {...viewWeek} />
-      <SVG color={"white"} size={24} {...visibility} />
-      <SVG color={"white"} size={24} {...visibilityOff} />
-      <SVG color={"white"} size={24} {...voiceOverOff} />
-      <SVG color={"white"} size={24} {...watchLater} />
-      <SVG color={"white"} size={24} {...work} />
-      <SVG color={"white"} size={24} {...workOff} />
-      <SVG color={"white"} size={24} {...workOutline} />
-      <SVG color={"white"} size={24} {...youtubeSearch} />
-      <SVG color={"white"} size={24} {...zoomIn} />
-      <SVG color={"white"} size={24} {...zoomOut} />
+      <SVG {...rotation3d} />
+      <SVG {...accessibility} />
+      <SVG {...accessibilityNew} />
+      <SVG {...accessible} />
+      <SVG {...accessibleForward} />
+      <SVG {...accountBalance} />
+      <SVG {...accountBalanceWallet} />
+      <SVG {...accountBox} />
+      <SVG {...accountCircle} />
+      <SVG {...addShoppingCart} />
+      <SVG {...alarm} />
+      <SVG {...alarmAdd} />
+      <SVG {...alarmOff} />
+      <SVG {...alarmOn} />
+      <SVG {...allInbox} />
+      <SVG {...allOut} />
+      <SVG {...android} />
+      <SVG {...announcement} />
+      <SVG {...arrowRightAlt} />
+      <SVG {...aspectRatio} />
+      <SVG {...assessment} />
+      <SVG {...assignment} />
+      <SVG {...assignmentIndividual} />
+      <SVG {...assignmentLate} />
+      <SVG {...assignmentReturn} />
+      <SVG {...assignmentReturned} />
+      <SVG {...assignmentTurnedIn} />
+      <SVG {...autoRenew} />
+      <SVG {...backup} />
+      <SVG {...book} />
+      <SVG {...bookmark} />
+      <SVG {...bookmarkBorder} />
+      <SVG {...bookmarks} />
+      <SVG {...bugReport} />
+      <SVG {...build} />
+      <SVG {...cached} />
+      <SVG {...calendarToday} />
+      <SVG {...calendarViewDay} />
+      <SVG {...cameraEnhance} />
+      <SVG {...cancelScheduleSend} />
+      <SVG {...cardGiftcard} />
+      <SVG {...cardMembership} />
+      <SVG {...cardTravel} />
+      <SVG {...changeHistory} />
+      <SVG {...checkCircle} />
+      <SVG {...checkCircleOutline} />
+      <SVG {...chromeReader} />
+      <SVG {...code} />
+      <SVG {...commute} />
+      <SVG {...compareArrows} />
+      <SVG {...contactSupport} />
+      <SVG {...contactless} />
+      <SVG {...copyright} />
+      <SVG {...creditCard} />
+      <SVG {...dashboard} />
+      <SVG {...dateRange} />
+      <SVG {...deleteTrashcan} />
+      <SVG {...deleteTrashcanForever} />
+      <SVG {...deleteTrashcanOutline} />
+      <SVG {...description} />
+      <SVG {...dns} />
+      <SVG {...done} />
+      <SVG {...doneAll} />
+      <SVG {...doneOutline} />
+      <SVG {...donutLarge} />
+      <SVG {...donutSmall} />
+      <SVG {...dragIndicator} />
+      <SVG {...eco} />
+      <SVG {...eject} />
+      <SVG {...euroSymbol} />
+      <SVG {...event} />
+      <SVG {...eventSeat} />
+      <SVG {...exitToApp} />
+      <SVG {...explore} />
+      <SVG {...exploreOff} />
+      <SVG {...extension} />
+      <SVG {...face} />
+      <SVG {...favorite} />
+      <SVG {...favoriteBorder} />
+      <SVG {...feedback} />
+      <SVG {...findInPage} />
+      <SVG {...findReplace} />
+      <SVG {...fingerprint} />
+      <SVG {...flightLand} />
+      <SVG {...flightTakeoff} />
+      <SVG {...flipToBack} />
+      <SVG {...flipToFront} />
+      <SVG {...gavel} />
+      <SVG {...getApp} />
+      <SVG {...gif} />
+      <SVG {...googleTranslate} />
+      <SVG {...grade} />
+      <SVG {...groupWork} />
+      <SVG {...help} />
+      <SVG {...helpOutline} />
+      <SVG {...highlightOff} />
+      <SVG {...history} />
+      <SVG {...home} />
+      <SVG {...horizontalSplit} />
+      <SVG {...hourglassEmpty} />
+      <SVG {...hourglassFull} />
+      <SVG {...http} />
+      <SVG {...https} />
+      <SVG {...importantDevices} />
+      <SVG {...info} />
+      <SVG {...input} />
+      <SVG {...invertColors} />
+      <SVG {...label} />
+      <SVG {...labelImportant} />
+      <SVG {...labelOff} />
+      <SVG {...language} />
+      <SVG {...launch} />
+      <SVG {...lineStyle} />
+      <SVG {...lineWeight} />
+      <SVG {...list} />
+      <SVG {...lock} />
+      <SVG {...lockOpen} />
+      <SVG {...loyalty} />
+      <SVG {...markUnreadMailbox} />
+      <SVG {...maximize} />
+      <SVG {...minimize} />
+      <SVG {...motorcycle} />
+      <SVG {...noteAdd} />
+      <SVG {...offlineBolt} />
+      <SVG {...offlinePin} />
+      <SVG {...opacity} />
+      <SVG {...openInBrowser} />
+      <SVG {...openInNew} />
+      <SVG {...openWith} />
+      <SVG {...pageview} />
+      <SVG {...panTool} />
+      <SVG {...payment} />
+      <SVG {...permitCameraMic} />
+      <SVG {...permitContactCalendar} />
+      <SVG {...permitDataSetting} />
+      <SVG {...permitDeviceInformation} />
+      <SVG {...permitIdentity} />
+      <SVG {...permitMedia} />
+      <SVG {...permitPhoneMsg} />
+      <SVG {...permitScanWifi} />
+      <SVG {...pets} />
+      <SVG {...pictureInPicture} />
+      <SVG {...pictureInPictureAlt} />
+      <SVG {...playForWork} />
+      <SVG {...polymer} />
+      <SVG {...powerSetting} />
+      <SVG {...pregnantWoman} />
+      <SVG {...print} />
+      <SVG {...queryBuilder} />
+      <SVG {...questionAnswer} />
+      <SVG {...receipt} />
+      <SVG {...recordVoiceOver} />
+      <SVG {...redeem} />
+      <SVG {...removeShoppingCart} />
+      <SVG {...reorder} />
+      <SVG {...reportProblem} />
+      <SVG {...restore} />
+      <SVG {...restoreFromTrash} />
+      <SVG {...restorePage} />
+      <SVG {...room} />
+      <SVG {...roundedCorner} />
+      <SVG {...rowing} />
+      <SVG {...schedule} />
+      <SVG {...search} />
+      <SVG {...settingsApplication} />
+      <SVG {...settingsBackupRestore} />
+      <SVG {...settingsBluetooth} />
+      <SVG {...settingsBrightness} />
+      <SVG {...settingsCellphone} />
+      <SVG {...settingsEthernet} />
+      <SVG {...settingsInputAntenna} />
+      <SVG {...settingsInputComponent} />
+      <SVG {...settingsInputComposite} />
+      <SVG {...settingsInputHdmi} />
+      <SVG {...settingsInputVideo} />
+      <SVG {...settingsOverscan} />
+      <SVG {...settingsPhone} />
+      <SVG {...settingsPower} />
+      <SVG {...settingsRemote} />
+      <SVG {...settingsVoice} />
+      <SVG {...shop} />
+      <SVG {...shopTwo} />
+      <SVG {...shoppingBasket} />
+      <SVG {...shoppingCart} />
+      <SVG {...speakerNotes} />
+      <SVG {...speakerNotesOff} />
+      <SVG {...spellcheck} />
+      <SVG {...stars} />
+      <SVG {...store} />
+      <SVG {...subject} />
+      <SVG {...supervisedUserCircle} />
+      <SVG {...supervisorAccount} />
+      <SVG {...swapHorizontal} />
+      <SVG {...swapHorizontalCircle} />
+      <SVG {...swapVertical} />
+      <SVG {...swapVerticalCircle} />
+      <SVG {...syncAlt} />
+      <SVG {...systemUpdate} />
+      <SVG {...tab} />
+      <SVG {...tabUnselected} />
+      <SVG {...textRotateUp} />
+      <SVG {...textRotateVertical} />
+      <SVG {...textRotateAngleDown} />
+      <SVG {...textRotateAngleUp} />
+      <SVG {...textRotateDown} />
+      <SVG {...textRotateNone} />
+      <SVG {...theaters} />
+      <SVG {...thumbsDown} />
+      <SVG {...thumbsUp} />
+      <SVG {...thumbsUpDown} />
+      <SVG {...timeline} />
+      <SVG {...toc} />
+      <SVG {...today} />
+      <SVG {...toll} />
+      <SVG {...touchApp} />
+      <SVG {...trackChanges} />
+      <SVG {...translate} />
+      <SVG {...trendingDown} />
+      <SVG {...trendingFlat} />
+      <SVG {...trendingUp} />
+      <SVG {...update} />
+      <SVG {...verifiedUser} />
+      <SVG {...verticalSplit} />
+      <SVG {...viewAgenda} />
+      <SVG {...viewArray} />
+      <SVG {...viewCarousel} />
+      <SVG {...viewColumn} />
+      <SVG {...viewDay} />
+      <SVG {...viewHeadline} />
+      <SVG {...viewList} />
+      <SVG {...viewModule} />
+      <SVG {...viewQuilt} />
+      <SVG {...viewStream} />
+      <SVG {...viewWeek} />
+      <SVG {...visibility} />
+      <SVG {...visibilityOff} />
+      <SVG {...voiceOverOff} />
+      <SVG {...watchLater} />
+      <SVG {...work} />
+      <SVG {...workOff} />
+      <SVG {...workOutline} />
+      <SVG {...youtubeSearch} />
+      <SVG {...zoomIn} />
+      <SVG {...zoomOut} />
     </>
   ))
-  .add("3D rotation", () => <SVG color={"white"} size={24} {...rotation3d} />)
-  .add("accessibility", () => (
-    <SVG color={"white"} size={24} {...accessibility} />
-  ))
-  .add("accessibility new", () => (
-    <SVG color={"white"} size={24} {...accessibilityNew} />
-  ))
-  .add("accessible", () => <SVG color={"white"} size={24} {...accessible} />)
-  .add("accessible forward", () => (
-    <SVG color={"white"} size={24} {...accessibleForward} />
-  ))
-  .add("account balance", () => (
-    <SVG color={"white"} size={24} {...accountBalance} />
-  ))
-  .add("account balance wallet", () => (
-    <SVG color={"white"} size={24} {...accountBalanceWallet} />
-  ))
-  .add("account box", () => <SVG color={"white"} size={24} {...accountBox} />)
-  .add("account circle", () => (
-    <SVG color={"white"} size={24} {...accountCircle} />
-  ))
-  .add("add shopping cart", () => (
-    <SVG color={"white"} size={24} {...addShoppingCart} />
-  ))
-  .add("alarm", () => <SVG color={"white"} size={24} {...alarm} />)
-  .add("alarm add", () => <SVG color={"white"} size={24} {...alarmAdd} />)
-  .add("alarm off", () => <SVG color={"white"} size={24} {...alarmOff} />)
-  .add("alarm on", () => <SVG color={"white"} size={24} {...alarmOn} />)
-  .add("all inbox", () => <SVG color={"white"} size={24} {...allInbox} />)
-  .add("all out", () => <SVG color={"white"} size={24} {...allOut} />)
-  .add("android", () => <SVG color={"white"} size={24} {...android} />)
-  .add("announcement", () => (
-    <SVG color={"white"} size={24} {...announcement} />
-  ))
-  .add("arrow right alt", () => (
-    <SVG color={"white"} size={24} {...arrowRightAlt} />
-  ))
-  .add("aspect ratio", () => <SVG color={"white"} size={24} {...aspectRatio} />)
-  .add("assessment", () => <SVG color={"white"} size={24} {...assessment} />)
-  .add("assignment", () => <SVG color={"white"} size={24} {...assignment} />)
-  .add("assignment individual", () => (
-    <SVG color={"white"} size={24} {...assignmentIndividual} />
-  ))
-  .add("assignment late", () => (
-    <SVG color={"white"} size={24} {...assignmentLate} />
-  ))
-  .add("assignment return", () => (
-    <SVG color={"white"} size={24} {...assignmentReturn} />
-  ))
-  .add("assignment returned", () => (
-    <SVG color={"white"} size={24} {...assignmentReturned} />
-  ))
-  .add("assignment turned in", () => (
-    <SVG color={"white"} size={24} {...assignmentTurnedIn} />
-  ))
-  .add("auto renew", () => <SVG color={"white"} size={24} {...autoRenew} />)
-  .add("backup", () => <SVG color={"white"} size={24} {...backup} />)
-  .add("book", () => <SVG color={"white"} size={24} {...book} />)
-  .add("bookmark", () => <SVG color={"white"} size={24} {...bookmark} />)
-  .add("bookmark border", () => (
-    <SVG color={"white"} size={24} {...bookmarkBorder} />
-  ))
-  .add("bookmarks", () => <SVG color={"white"} size={24} {...bookmarks} />)
-  .add("bug report", () => <SVG color={"white"} size={24} {...bugReport} />)
-  .add("build", () => <SVG color={"white"} size={24} {...build} />)
-  .add("cached", () => <SVG color={"white"} size={24} {...cached} />)
-  .add("calendar today", () => (
-    <SVG color={"white"} size={24} {...calendarToday} />
-  ))
-  .add("calendar view day", () => (
-    <SVG color={"white"} size={24} {...calendarViewDay} />
-  ))
-  .add("camera enhance", () => (
-    <SVG color={"white"} size={24} {...cameraEnhance} />
-  ))
-  .add("cancel schedule send", () => (
-    <SVG color={"white"} size={24} {...cancelScheduleSend} />
-  ))
-  .add("card giftcard", () => (
-    <SVG color={"white"} size={24} {...cardGiftcard} />
-  ))
-  .add("card membership", () => (
-    <SVG color={"white"} size={24} {...cardMembership} />
-  ))
-  .add("card travel", () => <SVG color={"white"} size={24} {...cardTravel} />)
-  .add("change history", () => (
-    <SVG color={"white"} size={24} {...changeHistory} />
-  ))
-  .add("check circle", () => <SVG color={"white"} size={24} {...checkCircle} />)
-  .add("check circle outline", () => (
-    <SVG color={"white"} size={24} {...checkCircleOutline} />
-  ))
-  .add("chrome reader", () => (
-    <SVG color={"white"} size={24} {...chromeReader} />
-  ))
-  .add("code", () => <SVG color={"white"} size={24} {...code} />)
-  .add("commute", () => <SVG color={"white"} size={24} {...commute} />)
-  .add("compare arrows", () => (
-    <SVG color={"white"} size={24} {...compareArrows} />
-  ))
-  .add("contact support", () => (
-    <SVG color={"white"} size={24} {...contactSupport} />
-  ))
-  .add("contactless", () => <SVG color={"white"} size={24} {...contactless} />)
-  .add("copyright", () => <SVG color={"white"} size={24} {...copyright} />)
-  .add("credit card", () => <SVG color={"white"} size={24} {...creditCard} />)
-  .add("dashboard", () => <SVG color={"white"} size={24} {...dashboard} />)
-  .add("date range", () => <SVG color={"white"} size={24} {...dateRange} />)
-  .add("delete trashcan", () => (
-    <SVG color={"white"} size={24} {...deleteTrashcan} />
-  ))
-  .add("delete trashcan forever", () => (
-    <SVG color={"white"} size={24} {...deleteTrashcanForever} />
-  ))
-  .add("delete trashcan outline", () => (
-    <SVG color={"white"} size={24} {...deleteTrashcanOutline} />
-  ))
-  .add("description", () => <SVG color={"white"} size={24} {...description} />)
-  .add("dns", () => <SVG color={"white"} size={24} {...dns} />)
-  .add("done", () => <SVG color={"white"} size={24} {...done} />)
-  .add("done all", () => <SVG color={"white"} size={24} {...doneAll} />)
-  .add("done outline", () => <SVG color={"white"} size={24} {...doneOutline} />)
-  .add("donut large", () => <SVG color={"white"} size={24} {...donutLarge} />)
-  .add("donut small", () => <SVG color={"white"} size={24} {...donutSmall} />)
-  .add("drag indicator", () => (
-    <SVG color={"white"} size={24} {...dragIndicator} />
-  ))
-  .add("eco", () => <SVG color={"white"} size={24} {...eco} />)
-  .add("eject", () => <SVG color={"white"} size={24} {...eject} />)
-  .add("euro symbol", () => <SVG color={"white"} size={24} {...euroSymbol} />)
-  .add("event", () => <SVG color={"white"} size={24} {...event} />)
-  .add("event seat", () => <SVG color={"white"} size={24} {...eventSeat} />)
-  .add("exit to app", () => <SVG color={"white"} size={24} {...exitToApp} />)
-  .add("explore", () => <SVG color={"white"} size={24} {...explore} />)
-  .add("explore off", () => <SVG color={"white"} size={24} {...exploreOff} />)
-  .add("extension", () => <SVG color={"white"} size={24} {...extension} />)
-  .add("face", () => <SVG color={"white"} size={24} {...face} />)
-  .add("favorite", () => <SVG color={"white"} size={24} {...favorite} />)
-  .add("favorite border", () => (
-    <SVG color={"white"} size={24} {...favoriteBorder} />
-  ))
-  .add("feedback", () => <SVG color={"white"} size={24} {...feedback} />)
-  .add("find in page", () => <SVG color={"white"} size={24} {...findInPage} />)
-  .add("find and replace", () => (
-    <SVG color={"white"} size={24} {...findReplace} />
-  ))
-  .add("fingerprint", () => <SVG color={"white"} size={24} {...fingerprint} />)
-  .add("flight land", () => <SVG color={"white"} size={24} {...flightLand} />)
-  .add("flight takeoff", () => (
-    <SVG color={"white"} size={24} {...flightTakeoff} />
-  ))
-  .add("flip to back", () => <SVG color={"white"} size={24} {...flipToBack} />)
-  .add("flip to front", () => (
-    <SVG color={"white"} size={24} {...flipToFront} />
-  ))
-  .add("gavel", () => <SVG color={"white"} size={24} {...gavel} />)
-  .add("get app", () => <SVG color={"white"} size={24} {...getApp} />)
-  .add("gif", () => <SVG color={"white"} size={24} {...gif} />)
-  .add("google translate", () => (
-    <SVG color={"white"} size={24} {...googleTranslate} />
-  ))
-  .add("grade", () => <SVG color={"white"} size={24} {...grade} />)
-  .add("group work", () => <SVG color={"white"} size={24} {...groupWork} />)
-  .add("help", () => <SVG color={"white"} size={24} {...help} />)
-  .add("help outline", () => <SVG color={"white"} size={24} {...helpOutline} />)
-  .add("highlight off", () => (
-    <SVG color={"white"} size={24} {...highlightOff} />
-  ))
-  .add("history", () => <SVG color={"white"} size={24} {...history} />)
-  .add("home", () => <SVG color={"white"} size={24} {...home} />)
-  .add("horizontal split", () => (
-    <SVG color={"white"} size={24} {...horizontalSplit} />
-  ))
-  .add("hourglass empty", () => (
-    <SVG color={"white"} size={24} {...hourglassEmpty} />
-  ))
-  .add("hourglass full", () => (
-    <SVG color={"white"} size={24} {...hourglassFull} />
-  ))
-  .add("http", () => <SVG color={"white"} size={24} {...http} />)
-  .add("https", () => <SVG color={"white"} size={24} {...https} />)
-  .add("important devices", () => (
-    <SVG color={"white"} size={24} {...importantDevices} />
-  ))
-  .add("info", () => <SVG color={"white"} size={24} {...info} />)
-  .add("input", () => <SVG color={"white"} size={24} {...input} />)
-  .add("invert colors", () => (
-    <SVG color={"white"} size={24} {...invertColors} />
-  ))
-  .add("label", () => <SVG color={"white"} size={24} {...label} />)
-  .add("label important", () => (
-    <SVG color={"white"} size={24} {...labelImportant} />
-  ))
-  .add("label off", () => <SVG color={"white"} size={24} {...labelOff} />)
-  .add("language", () => <SVG color={"white"} size={24} {...language} />)
-  .add("launch", () => <SVG color={"white"} size={24} {...launch} />)
-  .add("line style", () => <SVG color={"white"} size={24} {...lineStyle} />)
-  .add("line weight", () => <SVG color={"white"} size={24} {...lineWeight} />)
-  .add("list", () => <SVG color={"white"} size={24} {...list} />)
-  .add("lock", () => <SVG color={"white"} size={24} {...lock} />)
-  .add("lock open", () => <SVG color={"white"} size={24} {...lockOpen} />)
-  .add("loyalty", () => <SVG color={"white"} size={24} {...loyalty} />)
-  .add("mark unread mailbox", () => (
-    <SVG color={"white"} size={24} {...markUnreadMailbox} />
-  ))
-  .add("maximize", () => <SVG color={"white"} size={24} {...maximize} />)
-  .add("minimize", () => <SVG color={"white"} size={24} {...minimize} />)
-  .add("motorcycle", () => <SVG color={"white"} size={24} {...motorcycle} />)
-  .add("note add", () => <SVG color={"white"} size={24} {...noteAdd} />)
-  .add("offline bolt", () => <SVG color={"white"} size={24} {...offlineBolt} />)
-  .add("offline pin", () => <SVG color={"white"} size={24} {...offlinePin} />)
-  .add("opacity", () => <SVG color={"white"} size={24} {...opacity} />)
-  .add("open in browser", () => (
-    <SVG color={"white"} size={24} {...openInBrowser} />
-  ))
-  .add("open in new", () => <SVG color={"white"} size={24} {...openInNew} />)
-  .add("open with", () => <SVG color={"white"} size={24} {...openWith} />)
-  .add("pageview", () => <SVG color={"white"} size={24} {...pageview} />)
-  .add("pan tool", () => <SVG color={"white"} size={24} {...panTool} />)
-  .add("payment", () => <SVG color={"white"} size={24} {...payment} />)
-  .add("permit camera/mic", () => (
-    <SVG color={"white"} size={24} {...permitCameraMic} />
-  ))
-  .add("permit contact/calendar", () => (
-    <SVG color={"white"} size={24} {...permitContactCalendar} />
-  ))
-  .add("permit data setting", () => (
-    <SVG color={"white"} size={24} {...permitDataSetting} />
-  ))
-  .add("permit device information", () => (
-    <SVG color={"white"} size={24} {...permitDeviceInformation} />
-  ))
-  .add("permit identity", () => (
-    <SVG color={"white"} size={24} {...permitIdentity} />
-  ))
-  .add("permit media", () => <SVG color={"white"} size={24} {...permitMedia} />)
-  .add("permit phone/message", () => (
-    <SVG color={"white"} size={24} {...permitPhoneMsg} />
-  ))
-  .add("permit scan wifi", () => (
-    <SVG color={"white"} size={24} {...permitScanWifi} />
-  ))
-  .add("pets", () => <SVG color={"white"} size={24} {...pets} />)
-  .add("picture in picture", () => (
-    <SVG color={"white"} size={24} {...pictureInPicture} />
-  ))
-  .add("picture in picture alt", () => (
-    <SVG color={"white"} size={24} {...pictureInPictureAlt} />
-  ))
-  .add("play for work", () => (
-    <SVG color={"white"} size={24} {...playForWork} />
-  ))
-  .add("polymer", () => <SVG color={"white"} size={24} {...polymer} />)
-  .add("power setting", () => (
-    <SVG color={"white"} size={24} {...powerSetting} />
-  ))
-  .add("pregnant woman", () => (
-    <SVG color={"white"} size={24} {...pregnantWoman} />
-  ))
-  .add("print", () => <SVG color={"white"} size={24} {...print} />)
-  .add("query builder", () => (
-    <SVG color={"white"} size={24} {...queryBuilder} />
-  ))
-  .add("question answer", () => (
-    <SVG color={"white"} size={24} {...questionAnswer} />
-  ))
-  .add("receipt", () => <SVG color={"white"} size={24} {...receipt} />)
-  .add("record voice over", () => (
-    <SVG color={"white"} size={24} {...recordVoiceOver} />
-  ))
-  .add("redeem", () => <SVG color={"white"} size={24} {...redeem} />)
-  .add("remove shopping cart", () => (
-    <SVG color={"white"} size={24} {...removeShoppingCart} />
-  ))
-  .add("reorder", () => <SVG color={"white"} size={24} {...reorder} />)
-  .add("report problem", () => (
-    <SVG color={"white"} size={24} {...reportProblem} />
-  ))
-  .add("restore", () => <SVG color={"white"} size={24} {...restore} />)
-  .add("restore from trash", () => (
-    <SVG color={"white"} size={24} {...restoreFromTrash} />
-  ))
-  .add("restore page", () => <SVG color={"white"} size={24} {...restorePage} />)
-  .add("room", () => <SVG color={"white"} size={24} {...room} />)
-  .add("rounded corner", () => (
-    <SVG color={"white"} size={24} {...roundedCorner} />
-  ))
-  .add("rowing", () => <SVG color={"white"} size={24} {...rowing} />)
-  .add("schedule", () => <SVG color={"white"} size={24} {...schedule} />)
-  .add("search", () => <SVG color={"white"} size={24} {...search} />)
-  .add("settings applications", () => (
-    <SVG color={"white"} size={24} {...settingsApplication} />
-  ))
-  .add("settings backup restore", () => (
-    <SVG color={"white"} size={24} {...settingsBackupRestore} />
-  ))
-  .add("settings bluetooth", () => (
-    <SVG color={"white"} size={24} {...settingsBluetooth} />
-  ))
-  .add("settings brightness", () => (
-    <SVG color={"white"} size={24} {...settingsBrightness} />
-  ))
-  .add("settings cellphone", () => (
-    <SVG color={"white"} size={24} {...settingsCellphone} />
-  ))
-  .add("settings ethernet", () => (
-    <SVG color={"white"} size={24} {...settingsEthernet} />
-  ))
-  .add("settings input antenna", () => (
-    <SVG color={"white"} size={24} {...settingsInputAntenna} />
-  ))
-  .add("settings input component", () => (
-    <SVG color={"white"} size={24} {...settingsInputComponent} />
-  ))
-  .add("settings input composite", () => (
-    <SVG color={"white"} size={24} {...settingsInputComposite} />
-  ))
-  .add("settings input hdmi", () => (
-    <SVG color={"white"} size={24} {...settingsInputHdmi} />
-  ))
-  .add("settings input video", () => (
-    <SVG color={"white"} size={24} {...settingsInputVideo} />
-  ))
-  .add("settings overscan", () => (
-    <SVG color={"white"} size={24} {...settingsOverscan} />
-  ))
-  .add("settings phone", () => (
-    <SVG color={"white"} size={24} {...settingsPhone} />
-  ))
-  .add("settings power", () => (
-    <SVG color={"white"} size={24} {...settingsPower} />
-  ))
-  .add("settings remote", () => (
-    <SVG color={"white"} size={24} {...settingsRemote} />
-  ))
-  .add("settings voice", () => (
-    <SVG color={"white"} size={24} {...settingsVoice} />
-  ))
-  .add("shop", () => <SVG color={"white"} size={24} {...shop} />)
-  .add("shop two", () => <SVG color={"white"} size={24} {...shopTwo} />)
-  .add("shopping basket", () => (
-    <SVG color={"white"} size={24} {...shoppingBasket} />
-  ))
-  .add("shopping cart", () => (
-    <SVG color={"white"} size={24} {...shoppingCart} />
-  ))
-  .add("speaker notes", () => (
-    <SVG color={"white"} size={24} {...speakerNotes} />
-  ))
-  .add("speaker notes off", () => (
-    <SVG color={"white"} size={24} {...speakerNotesOff} />
-  ))
-  .add("spellcheck", () => <SVG color={"white"} size={24} {...spellcheck} />)
-  .add("stars", () => <SVG color={"white"} size={24} {...stars} />)
-  .add("store", () => <SVG color={"white"} size={24} {...store} />)
-  .add("subject", () => <SVG color={"white"} size={24} {...subject} />)
-  .add("supervised user circle", () => (
-    <SVG color={"white"} size={24} {...supervisedUserCircle} />
-  ))
-  .add("supervisor account", () => (
-    <SVG color={"white"} size={24} {...supervisorAccount} />
-  ))
-  .add("swap horizontal", () => (
-    <SVG color={"white"} size={24} {...swapHorizontal} />
-  ))
-  .add("swap horizontal circle", () => (
-    <SVG color={"white"} size={24} {...swapHorizontalCircle} />
-  ))
-  .add("swap vertical", () => (
-    <SVG color={"white"} size={24} {...swapVertical} />
-  ))
-  .add("swap vertical circle", () => (
-    <SVG color={"white"} size={24} {...swapVerticalCircle} />
-  ))
-  .add("sync alt", () => <SVG color={"white"} size={24} {...syncAlt} />)
-  .add("system update", () => (
-    <SVG color={"white"} size={24} {...systemUpdate} />
-  ))
-  .add("tab", () => <SVG color={"white"} size={24} {...tab} />)
-  .add("tab unselected", () => (
-    <SVG color={"white"} size={24} {...tabUnselected} />
-  ))
-  .add("text rotate up", () => (
-    <SVG color={"white"} size={24} {...textRotateUp} />
-  ))
-  .add("text rotate vertical", () => (
-    <SVG color={"white"} size={24} {...textRotateVertical} />
-  ))
-  .add("text rotate angle down", () => (
-    <SVG color={"white"} size={24} {...textRotateAngleDown} />
-  ))
-  .add("text rotate angle up", () => (
-    <SVG color={"white"} size={24} {...textRotateAngleUp} />
-  ))
-  .add("text rotate down", () => (
-    <SVG color={"white"} size={24} {...textRotateDown} />
-  ))
-  .add("text rotate none", () => (
-    <SVG color={"white"} size={24} {...textRotateNone} />
-  ))
-  .add("theaters", () => <SVG color={"white"} size={24} {...theaters} />)
-  .add("thumbs down", () => <SVG color={"white"} size={24} {...thumbsDown} />)
-  .add("thumbs up", () => <SVG color={"white"} size={24} {...thumbsUp} />)
-  .add("thumbs up/down", () => (
-    <SVG color={"white"} size={24} {...thumbsUpDown} />
-  ))
-  .add("timeline", () => <SVG color={"white"} size={24} {...timeline} />)
-  .add("toc", () => <SVG color={"white"} size={24} {...toc} />)
-  .add("today", () => <SVG color={"white"} size={24} {...today} />)
-  .add("toll", () => <SVG color={"white"} size={24} {...toll} />)
-  .add("touch app", () => <SVG color={"white"} size={24} {...touchApp} />)
-  .add("track changes", () => (
-    <SVG color={"white"} size={24} {...trackChanges} />
-  ))
-  .add("translate", () => <SVG color={"white"} size={24} {...translate} />)
-  .add("trending down", () => (
-    <SVG color={"white"} size={24} {...trendingDown} />
-  ))
-  .add("trending flat", () => (
-    <SVG color={"white"} size={24} {...trendingFlat} />
-  ))
-  .add("trending up", () => <SVG color={"white"} size={24} {...trendingUp} />)
-  .add("update", () => <SVG color={"white"} size={24} {...update} />)
-  .add("verified user", () => (
-    <SVG color={"white"} size={24} {...verifiedUser} />
-  ))
-  .add("vertical split", () => (
-    <SVG color={"white"} size={24} {...verticalSplit} />
-  ))
-  .add("view agenda", () => <SVG color={"white"} size={24} {...viewAgenda} />)
-  .add("view array", () => <SVG color={"white"} size={24} {...viewArray} />)
-  .add("view carousel", () => (
-    <SVG color={"white"} size={24} {...viewCarousel} />
-  ))
-  .add("view column", () => <SVG color={"white"} size={24} {...viewColumn} />)
-  .add("view day", () => <SVG color={"white"} size={24} {...viewDay} />)
-  .add("view headline", () => (
-    <SVG color={"white"} size={24} {...viewHeadline} />
-  ))
-  .add("view list", () => <SVG color={"white"} size={24} {...viewList} />)
-  .add("view module", () => <SVG color={"white"} size={24} {...viewModule} />)
-  .add("view quilt", () => <SVG color={"white"} size={24} {...viewQuilt} />)
-  .add("view stream", () => <SVG color={"white"} size={24} {...viewStream} />)
-  .add("view week", () => <SVG color={"white"} size={24} {...viewWeek} />)
-  .add("visibility", () => <SVG color={"white"} size={24} {...visibility} />)
-  .add("visibility off", () => (
-    <SVG color={"white"} size={24} {...visibilityOff} />
-  ))
-  .add("voice over off", () => (
-    <SVG color={"white"} size={24} {...voiceOverOff} />
-  ))
-  .add("watch later", () => <SVG color={"white"} size={24} {...watchLater} />)
-  .add("work", () => <SVG color={"white"} size={24} {...work} />)
-  .add("work off", () => <SVG color={"white"} size={24} {...workOff} />)
-  .add("work outline", () => <SVG color={"white"} size={24} {...workOutline} />)
-  .add("youtube search", () => (
-    <SVG color={"white"} size={24} {...youtubeSearch} />
-  ))
-  .add("zoom in", () => <SVG color={"white"} size={24} {...zoomIn} />)
-  .add("zoom out", () => <SVG color={"white"} size={24} {...zoomOut} />);
+  .add("3D rotation", () => <SVG {...rotation3d} />)
+  .add("accessibility", () => <SVG {...accessibility} />)
+  .add("accessibility new", () => <SVG {...accessibilityNew} />)
+  .add("accessible", () => <SVG {...accessible} />)
+  .add("accessible forward", () => <SVG {...accessibleForward} />)
+  .add("account balance", () => <SVG {...accountBalance} />)
+  .add("account balance wallet", () => <SVG {...accountBalanceWallet} />)
+  .add("account box", () => <SVG {...accountBox} />)
+  .add("account circle", () => <SVG {...accountCircle} />)
+  .add("add shopping cart", () => <SVG {...addShoppingCart} />)
+  .add("alarm", () => <SVG {...alarm} />)
+  .add("alarm add", () => <SVG {...alarmAdd} />)
+  .add("alarm off", () => <SVG {...alarmOff} />)
+  .add("alarm on", () => <SVG {...alarmOn} />)
+  .add("all inbox", () => <SVG {...allInbox} />)
+  .add("all out", () => <SVG {...allOut} />)
+  .add("android", () => <SVG {...android} />)
+  .add("announcement", () => <SVG {...announcement} />)
+  .add("arrow right alt", () => <SVG {...arrowRightAlt} />)
+  .add("aspect ratio", () => <SVG {...aspectRatio} />)
+  .add("assessment", () => <SVG {...assessment} />)
+  .add("assignment", () => <SVG {...assignment} />)
+  .add("assignment individual", () => <SVG {...assignmentIndividual} />)
+  .add("assignment late", () => <SVG {...assignmentLate} />)
+  .add("assignment return", () => <SVG {...assignmentReturn} />)
+  .add("assignment returned", () => <SVG {...assignmentReturned} />)
+  .add("assignment turned in", () => <SVG {...assignmentTurnedIn} />)
+  .add("auto renew", () => <SVG {...autoRenew} />)
+  .add("backup", () => <SVG {...backup} />)
+  .add("book", () => <SVG {...book} />)
+  .add("bookmark", () => <SVG {...bookmark} />)
+  .add("bookmark border", () => <SVG {...bookmarkBorder} />)
+  .add("bookmarks", () => <SVG {...bookmarks} />)
+  .add("bug report", () => <SVG {...bugReport} />)
+  .add("build", () => <SVG {...build} />)
+  .add("cached", () => <SVG {...cached} />)
+  .add("calendar today", () => <SVG {...calendarToday} />)
+  .add("calendar view day", () => <SVG {...calendarViewDay} />)
+  .add("camera enhance", () => <SVG {...cameraEnhance} />)
+  .add("cancel schedule send", () => <SVG {...cancelScheduleSend} />)
+  .add("card giftcard", () => <SVG {...cardGiftcard} />)
+  .add("card membership", () => <SVG {...cardMembership} />)
+  .add("card travel", () => <SVG {...cardTravel} />)
+  .add("change history", () => <SVG {...changeHistory} />)
+  .add("check circle", () => <SVG {...checkCircle} />)
+  .add("check circle outline", () => <SVG {...checkCircleOutline} />)
+  .add("chrome reader", () => <SVG {...chromeReader} />)
+  .add("code", () => <SVG {...code} />)
+  .add("commute", () => <SVG {...commute} />)
+  .add("compare arrows", () => <SVG {...compareArrows} />)
+  .add("contact support", () => <SVG {...contactSupport} />)
+  .add("contactless", () => <SVG {...contactless} />)
+  .add("copyright", () => <SVG {...copyright} />)
+  .add("credit card", () => <SVG {...creditCard} />)
+  .add("dashboard", () => <SVG {...dashboard} />)
+  .add("date range", () => <SVG {...dateRange} />)
+  .add("delete trashcan", () => <SVG {...deleteTrashcan} />)
+  .add("delete trashcan forever", () => <SVG {...deleteTrashcanForever} />)
+  .add("delete trashcan outline", () => <SVG {...deleteTrashcanOutline} />)
+  .add("description", () => <SVG {...description} />)
+  .add("dns", () => <SVG {...dns} />)
+  .add("done", () => <SVG {...done} />)
+  .add("done all", () => <SVG {...doneAll} />)
+  .add("done outline", () => <SVG {...doneOutline} />)
+  .add("donut large", () => <SVG {...donutLarge} />)
+  .add("donut small", () => <SVG {...donutSmall} />)
+  .add("drag indicator", () => <SVG {...dragIndicator} />)
+  .add("eco", () => <SVG {...eco} />)
+  .add("eject", () => <SVG {...eject} />)
+  .add("euro symbol", () => <SVG {...euroSymbol} />)
+  .add("event", () => <SVG {...event} />)
+  .add("event seat", () => <SVG {...eventSeat} />)
+  .add("exit to app", () => <SVG {...exitToApp} />)
+  .add("explore", () => <SVG {...explore} />)
+  .add("explore off", () => <SVG {...exploreOff} />)
+  .add("extension", () => <SVG {...extension} />)
+  .add("face", () => <SVG {...face} />)
+  .add("favorite", () => <SVG {...favorite} />)
+  .add("favorite border", () => <SVG {...favoriteBorder} />)
+  .add("feedback", () => <SVG {...feedback} />)
+  .add("find in page", () => <SVG {...findInPage} />)
+  .add("find and replace", () => <SVG {...findReplace} />)
+  .add("fingerprint", () => <SVG {...fingerprint} />)
+  .add("flight land", () => <SVG {...flightLand} />)
+  .add("flight takeoff", () => <SVG {...flightTakeoff} />)
+  .add("flip to back", () => <SVG {...flipToBack} />)
+  .add("flip to front", () => <SVG {...flipToFront} />)
+  .add("gavel", () => <SVG {...gavel} />)
+  .add("get app", () => <SVG {...getApp} />)
+  .add("gif", () => <SVG {...gif} />)
+  .add("google translate", () => <SVG {...googleTranslate} />)
+  .add("grade", () => <SVG {...grade} />)
+  .add("group work", () => <SVG {...groupWork} />)
+  .add("help", () => <SVG {...help} />)
+  .add("help outline", () => <SVG {...helpOutline} />)
+  .add("highlight off", () => <SVG {...highlightOff} />)
+  .add("history", () => <SVG {...history} />)
+  .add("home", () => <SVG {...home} />)
+  .add("horizontal split", () => <SVG {...horizontalSplit} />)
+  .add("hourglass empty", () => <SVG {...hourglassEmpty} />)
+  .add("hourglass full", () => <SVG {...hourglassFull} />)
+  .add("http", () => <SVG {...http} />)
+  .add("https", () => <SVG {...https} />)
+  .add("important devices", () => <SVG {...importantDevices} />)
+  .add("info", () => <SVG {...info} />)
+  .add("input", () => <SVG {...input} />)
+  .add("invert colors", () => <SVG {...invertColors} />)
+  .add("label", () => <SVG {...label} />)
+  .add("label important", () => <SVG {...labelImportant} />)
+  .add("label off", () => <SVG {...labelOff} />)
+  .add("language", () => <SVG {...language} />)
+  .add("launch", () => <SVG {...launch} />)
+  .add("line style", () => <SVG {...lineStyle} />)
+  .add("line weight", () => <SVG {...lineWeight} />)
+  .add("list", () => <SVG {...list} />)
+  .add("lock", () => <SVG {...lock} />)
+  .add("lock open", () => <SVG {...lockOpen} />)
+  .add("loyalty", () => <SVG {...loyalty} />)
+  .add("mark unread mailbox", () => <SVG {...markUnreadMailbox} />)
+  .add("maximize", () => <SVG {...maximize} />)
+  .add("minimize", () => <SVG {...minimize} />)
+  .add("motorcycle", () => <SVG {...motorcycle} />)
+  .add("note add", () => <SVG {...noteAdd} />)
+  .add("offline bolt", () => <SVG {...offlineBolt} />)
+  .add("offline pin", () => <SVG {...offlinePin} />)
+  .add("opacity", () => <SVG {...opacity} />)
+  .add("open in browser", () => <SVG {...openInBrowser} />)
+  .add("open in new", () => <SVG {...openInNew} />)
+  .add("open with", () => <SVG {...openWith} />)
+  .add("pageview", () => <SVG {...pageview} />)
+  .add("pan tool", () => <SVG {...panTool} />)
+  .add("payment", () => <SVG {...payment} />)
+  .add("permit camera/mic", () => <SVG {...permitCameraMic} />)
+  .add("permit contact/calendar", () => <SVG {...permitContactCalendar} />)
+  .add("permit data setting", () => <SVG {...permitDataSetting} />)
+  .add("permit device information", () => <SVG {...permitDeviceInformation} />)
+  .add("permit identity", () => <SVG {...permitIdentity} />)
+  .add("permit media", () => <SVG {...permitMedia} />)
+  .add("permit phone/message", () => <SVG {...permitPhoneMsg} />)
+  .add("permit scan wifi", () => <SVG {...permitScanWifi} />)
+  .add("pets", () => <SVG {...pets} />)
+  .add("picture in picture", () => <SVG {...pictureInPicture} />)
+  .add("picture in picture alt", () => <SVG {...pictureInPictureAlt} />)
+  .add("play for work", () => <SVG {...playForWork} />)
+  .add("polymer", () => <SVG {...polymer} />)
+  .add("power setting", () => <SVG {...powerSetting} />)
+  .add("pregnant woman", () => <SVG {...pregnantWoman} />)
+  .add("print", () => <SVG {...print} />)
+  .add("query builder", () => <SVG {...queryBuilder} />)
+  .add("question answer", () => <SVG {...questionAnswer} />)
+  .add("receipt", () => <SVG {...receipt} />)
+  .add("record voice over", () => <SVG {...recordVoiceOver} />)
+  .add("redeem", () => <SVG {...redeem} />)
+  .add("remove shopping cart", () => <SVG {...removeShoppingCart} />)
+  .add("reorder", () => <SVG {...reorder} />)
+  .add("report problem", () => <SVG {...reportProblem} />)
+  .add("restore", () => <SVG {...restore} />)
+  .add("restore from trash", () => <SVG {...restoreFromTrash} />)
+  .add("restore page", () => <SVG {...restorePage} />)
+  .add("room", () => <SVG {...room} />)
+  .add("rounded corner", () => <SVG {...roundedCorner} />)
+  .add("rowing", () => <SVG {...rowing} />)
+  .add("schedule", () => <SVG {...schedule} />)
+  .add("search", () => <SVG {...search} />)
+  .add("settings applications", () => <SVG {...settingsApplication} />)
+  .add("settings backup restore", () => <SVG {...settingsBackupRestore} />)
+  .add("settings bluetooth", () => <SVG {...settingsBluetooth} />)
+  .add("settings brightness", () => <SVG {...settingsBrightness} />)
+  .add("settings cellphone", () => <SVG {...settingsCellphone} />)
+  .add("settings ethernet", () => <SVG {...settingsEthernet} />)
+  .add("settings input antenna", () => <SVG {...settingsInputAntenna} />)
+  .add("settings input component", () => <SVG {...settingsInputComponent} />)
+  .add("settings input composite", () => <SVG {...settingsInputComposite} />)
+  .add("settings input hdmi", () => <SVG {...settingsInputHdmi} />)
+  .add("settings input video", () => <SVG {...settingsInputVideo} />)
+  .add("settings overscan", () => <SVG {...settingsOverscan} />)
+  .add("settings phone", () => <SVG {...settingsPhone} />)
+  .add("settings power", () => <SVG {...settingsPower} />)
+  .add("settings remote", () => <SVG {...settingsRemote} />)
+  .add("settings voice", () => <SVG {...settingsVoice} />)
+  .add("shop", () => <SVG {...shop} />)
+  .add("shop two", () => <SVG {...shopTwo} />)
+  .add("shopping basket", () => <SVG {...shoppingBasket} />)
+  .add("shopping cart", () => <SVG {...shoppingCart} />)
+  .add("speaker notes", () => <SVG {...speakerNotes} />)
+  .add("speaker notes off", () => <SVG {...speakerNotesOff} />)
+  .add("spellcheck", () => <SVG {...spellcheck} />)
+  .add("stars", () => <SVG {...stars} />)
+  .add("store", () => <SVG {...store} />)
+  .add("subject", () => <SVG {...subject} />)
+  .add("supervised user circle", () => <SVG {...supervisedUserCircle} />)
+  .add("supervisor account", () => <SVG {...supervisorAccount} />)
+  .add("swap horizontal", () => <SVG {...swapHorizontal} />)
+  .add("swap horizontal circle", () => <SVG {...swapHorizontalCircle} />)
+  .add("swap vertical", () => <SVG {...swapVertical} />)
+  .add("swap vertical circle", () => <SVG {...swapVerticalCircle} />)
+  .add("sync alt", () => <SVG {...syncAlt} />)
+  .add("system update", () => <SVG {...systemUpdate} />)
+  .add("tab", () => <SVG {...tab} />)
+  .add("tab unselected", () => <SVG {...tabUnselected} />)
+  .add("text rotate up", () => <SVG {...textRotateUp} />)
+  .add("text rotate vertical", () => <SVG {...textRotateVertical} />)
+  .add("text rotate angle down", () => <SVG {...textRotateAngleDown} />)
+  .add("text rotate angle up", () => <SVG {...textRotateAngleUp} />)
+  .add("text rotate down", () => <SVG {...textRotateDown} />)
+  .add("text rotate none", () => <SVG {...textRotateNone} />)
+  .add("theaters", () => <SVG {...theaters} />)
+  .add("thumbs down", () => <SVG {...thumbsDown} />)
+  .add("thumbs up", () => <SVG {...thumbsUp} />)
+  .add("thumbs up/down", () => <SVG {...thumbsUpDown} />)
+  .add("timeline", () => <SVG {...timeline} />)
+  .add("toc", () => <SVG {...toc} />)
+  .add("today", () => <SVG {...today} />)
+  .add("toll", () => <SVG {...toll} />)
+  .add("touch app", () => <SVG {...touchApp} />)
+  .add("track changes", () => <SVG {...trackChanges} />)
+  .add("translate", () => <SVG {...translate} />)
+  .add("trending down", () => <SVG {...trendingDown} />)
+  .add("trending flat", () => <SVG {...trendingFlat} />)
+  .add("trending up", () => <SVG {...trendingUp} />)
+  .add("update", () => <SVG {...update} />)
+  .add("verified user", () => <SVG {...verifiedUser} />)
+  .add("vertical split", () => <SVG {...verticalSplit} />)
+  .add("view agenda", () => <SVG {...viewAgenda} />)
+  .add("view array", () => <SVG {...viewArray} />)
+  .add("view carousel", () => <SVG {...viewCarousel} />)
+  .add("view column", () => <SVG {...viewColumn} />)
+  .add("view day", () => <SVG {...viewDay} />)
+  .add("view headline", () => <SVG {...viewHeadline} />)
+  .add("view list", () => <SVG {...viewList} />)
+  .add("view module", () => <SVG {...viewModule} />)
+  .add("view quilt", () => <SVG {...viewQuilt} />)
+  .add("view stream", () => <SVG {...viewStream} />)
+  .add("view week", () => <SVG {...viewWeek} />)
+  .add("visibility", () => <SVG {...visibility} />)
+  .add("visibility off", () => <SVG {...visibilityOff} />)
+  .add("voice over off", () => <SVG {...voiceOverOff} />)
+  .add("watch later", () => <SVG {...watchLater} />)
+  .add("work", () => <SVG {...work} />)
+  .add("work off", () => <SVG {...workOff} />)
+  .add("work outline", () => <SVG {...workOutline} />)
+  .add("youtube search", () => <SVG {...youtubeSearch} />)
+  .add("zoom in", () => <SVG {...zoomIn} />)
+  .add("zoom out", () => <SVG {...zoomOut} />);

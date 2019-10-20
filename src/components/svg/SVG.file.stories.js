@@ -18,35 +18,29 @@ import { folderShared } from "../../svgs/file/folder-shared";
 storiesOf("SVG file", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} size={24} {...attachment} />
-      <SVG color={"white"} size={24} {...cloud} />
-      <SVG color={"white"} size={24} {...cloudCircle} />
-      <SVG color={"white"} size={24} {...cloudDone} />
-      <SVG color={"white"} size={24} {...cloudDownload} />
-      <SVG color={"white"} size={24} {...cloudOff} />
-      <SVG color={"white"} size={24} {...cloudQueue} />
-      <SVG color={"white"} size={24} {...cloudUpload} />
-      <SVG color={"white"} size={24} {...createNewFolder} />
-      <SVG color={"white"} size={24} {...folder} />
-      <SVG color={"white"} size={24} {...folderOpen} />
-      <SVG color={"white"} size={24} {...folderShared} />
+      <SVG {...attachment} />
+      <SVG {...cloud} />
+      <SVG {...cloudCircle} />
+      <SVG {...cloudDone} />
+      <SVG {...cloudDownload} />
+      <SVG {...cloudOff} />
+      <SVG {...cloudQueue} />
+      <SVG {...cloudUpload} />
+      <SVG {...createNewFolder} />
+      <SVG {...folder} />
+      <SVG {...folderOpen} />
+      <SVG {...folderShared} />
     </>
   ))
-  .add("attachment", () => <SVG color={"white"} size={24} {...attachment} />)
-  .add("cloud", () => <SVG color={"white"} size={24} {...cloud} />)
-  .add("cloud circle", () => <SVG color={"white"} size={24} {...cloudCircle} />)
-  .add("cloud done", () => <SVG color={"white"} size={24} {...cloudDone} />)
-  .add("cloud download", () => (
-    <SVG color={"white"} size={24} {...cloudDownload} />
-  ))
-  .add("cloud off", () => <SVG color={"white"} size={24} {...cloudOff} />)
-  .add("cloud queue", () => <SVG color={"white"} size={24} {...cloudQueue} />)
-  .add("cloud upload", () => <SVG color={"white"} size={24} {...cloudUpload} />)
-  .add("create new folder", () => (
-    <SVG color={"white"} size={24} {...createNewFolder} />
-  ))
-  .add("folder", () => <SVG color={"white"} size={24} {...folder} />)
-  .add("folder open", () => <SVG color={"white"} size={24} {...folderOpen} />)
-  .add("folder shared", () => (
-    <SVG color={"white"} size={24} {...folderShared} />
-  ));
+  .add("attachment", () => <SVG {...attachment} />)
+  .add("cloud", () => <SVG {...cloud} />)
+  .add("cloud circle", () => <SVG {...cloudCircle} />)
+  .add("cloud done", () => <SVG {...cloudDone} />)
+  .add("cloud download", () => <SVG {...cloudDownload} />)
+  .add("cloud off", () => <SVG {...cloudOff} />)
+  .add("cloud queue", () => <SVG {...cloudQueue} />)
+  .add("cloud upload", () => <SVG {...cloudUpload} />)
+  .add("create new folder", () => <SVG {...createNewFolder} />)
+  .add("folder", () => <SVG {...folder} />)
+  .add("folder open", () => <SVG {...folderOpen} />)
+  .add("folder shared", () => <SVG {...folderShared} />);

@@ -11,19 +11,15 @@ import { warning } from "../../svgs/alert/warning";
 storiesOf("SVG alert", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} size={24} {...addAlert} />
-      <SVG color={"white"} size={24} {...error} />
-      <SVG color={"white"} size={24} {...errorOutline} />
-      <SVG color={"white"} size={24} {...notificationImportant} />
-      <SVG color={"white"} size={24} {...warning} />
+      <SVG {...addAlert} />
+      <SVG {...error} />
+      <SVG {...errorOutline} />
+      <SVG {...notificationImportant} />
+      <SVG {...warning} />
     </>
   ))
-  .add("add alert", () => <SVG color={"white"} size={24} {...addAlert} />)
-  .add("error", () => <SVG color={"white"} size={24} {...error} />)
-  .add("error outline", () => (
-    <SVG color={"white"} size={24} {...errorOutline} />
-  ))
-  .add("notification important", () => (
-    <SVG color={"white"} size={24} {...notificationImportant} />
-  ))
-  .add("warning", () => <SVG color={"white"} size={24} {...warning} />);
+  .add("add alert", () => <SVG {...addAlert} />)
+  .add("error", () => <SVG {...error} />)
+  .add("error outline", () => <SVG {...errorOutline} />)
+  .add("notification important", () => <SVG {...notificationImportant} />)
+  .add("warning", () => <SVG {...warning} />);

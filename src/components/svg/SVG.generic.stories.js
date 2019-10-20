@@ -11,19 +11,17 @@ import { rocketColored } from "../../svgs/generic/rocket-colored";
 storiesOf("SVG generic", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} {...cross} size={24} />
-      <SVG color={"white"} {...eyeHide} size={24} />
-      <SVG color={"white"} {...eyeShow} size={24} />
-      <SVG color={"white"} {...plus} size={24} />
-      <SVG color={"white"} {...rocket} size={24} />
-      <SVG color={"white"} {...rocketColored} size={24} />
+      <SVG {...cross} />
+      <SVG {...eyeHide} />
+      <SVG {...eyeShow} />
+      <SVG {...plus} />
+      <SVG {...rocket} />
+      <SVG {...rocketColored} />
     </>
   ))
-  .add("cross", () => <SVG color={"white"} {...cross} size={24} />)
-  .add("eye-hide", () => <SVG color={"white"} {...eyeHide} size={24} />)
-  .add("eye-show", () => <SVG color={"white"} {...eyeShow} size={24} />)
-  .add("plus", () => <SVG color={"white"} {...plus} size={24} />)
-  .add("rocket", () => <SVG color={"white"} {...rocket} size={24} />)
-  .add("rocket-colored", () => (
-    <SVG color={"white"} {...rocketColored} size={24} />
-  ));
+  .add("cross", () => <SVG {...cross} />)
+  .add("eye-hide", () => <SVG {...eyeHide} />)
+  .add("eye-show", () => <SVG {...eyeShow} />)
+  .add("plus", () => <SVG {...plus} />)
+  .add("rocket", () => <SVG {...rocket} />)
+  .add("rocket-colored", () => <SVG {...rocketColored} />);

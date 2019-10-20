@@ -79,213 +79,151 @@ import { wrapText } from "../../svgs/editor/wrap-text";
 storiesOf("SVG editor", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} size={24} {...addComment} />
-      <SVG color={"white"} size={24} {...attachFile} />
-      <SVG color={"white"} size={24} {...attachMoney} />
-      <SVG color={"white"} size={24} {...barChart} />
-      <SVG color={"white"} size={24} {...borderAll} />
-      <SVG color={"white"} size={24} {...borderClear} />
-      <SVG color={"white"} size={24} {...borderHorizontal} />
-      <SVG color={"white"} size={24} {...borderVertical} />
-      <SVG color={"white"} size={24} {...borderInner} />
-      <SVG color={"white"} size={24} {...borderTop} />
-      <SVG color={"white"} size={24} {...borderRight} />
-      <SVG color={"white"} size={24} {...borderBottom} />
-      <SVG color={"white"} size={24} {...borderLeft} />
-      <SVG color={"white"} size={24} {...borderOuter} />
-      <SVG color={"white"} size={24} {...borderStyle} />
-      <SVG color={"white"} size={24} {...bubbleChart} />
-      <SVG color={"white"} size={24} {...dragHandle} />
-      <SVG color={"white"} size={24} {...formatAlignCenter} />
-      <SVG color={"white"} size={24} {...formatAlignJustify} />
-      <SVG color={"white"} size={24} {...formatAlignLeft} />
-      <SVG color={"white"} size={24} {...formatAlignRight} />
-      <SVG color={"white"} size={24} {...formatBold} />
-      <SVG color={"white"} size={24} {...formatClear} />
-      <SVG color={"white"} size={24} {...formatColorReset} />
-      <SVG color={"white"} size={24} {...formatIndentIncrease} />
-      <SVG color={"white"} size={24} {...formatIndentDecrease} />
-      <SVG color={"white"} size={24} {...formatItalic} />
-      <SVG color={"white"} size={24} {...formatLineSpacing} />
-      <SVG color={"white"} size={24} {...formatListBulleted} />
-      <SVG color={"white"} size={24} {...formatListNumbered} />
-      <SVG color={"white"} size={24} {...formatListNumberedRtl} />
-      <SVG color={"white"} size={24} {...formatPaint} />
-      <SVG color={"white"} size={24} {...formatQuote} />
-      <SVG color={"white"} size={24} {...formatShapes} />
-      <SVG color={"white"} size={24} {...formatSize} />
-      <SVG color={"white"} size={24} {...formatStrikeThrough} />
-      <SVG color={"white"} size={24} {...formatTextDirection} />
-      <SVG color={"white"} size={24} {...formatTextDirectionRtl} />
-      <SVG color={"white"} size={24} {...formatUnderlined} />
-      <SVG color={"white"} size={24} {...functions} />
-      <SVG color={"white"} size={24} {...height} />
-      <SVG color={"white"} size={24} {...highlight} />
-      <SVG color={"white"} size={24} {...insertChart} />
-      <SVG color={"white"} size={24} {...insertChartOutlined} />
-      <SVG color={"white"} size={24} {...insertComment} />
-      <SVG color={"white"} size={24} {...insertDriveFile} />
-      <SVG color={"white"} size={24} {...insertEmoticon} />
-      <SVG color={"white"} size={24} {...insertInvitation} />
-      <SVG color={"white"} size={24} {...insertLink} />
-      <SVG color={"white"} size={24} {...insertPhoto} />
-      <SVG color={"white"} size={24} {...linearScale} />
-      <SVG color={"white"} size={24} {...mergeType} />
-      <SVG color={"white"} size={24} {...modeComment} />
-      <SVG color={"white"} size={24} {...monetizationOn} />
-      <SVG color={"white"} size={24} {...moneyOff} />
-      <SVG color={"white"} size={24} {...multilineChart} />
-      <SVG color={"white"} size={24} {...notes} />
-      <SVG color={"white"} size={24} {...pieChart} />
-      <SVG color={"white"} size={24} {...postAdd} />
-      <SVG color={"white"} size={24} {...publish} />
-      <SVG color={"white"} size={24} {...scatterPlot} />
-      <SVG color={"white"} size={24} {...score} />
-      <SVG color={"white"} size={24} {...shortText} />
-      <SVG color={"white"} size={24} {...showChart} />
-      <SVG color={"white"} size={24} {...spaceBar} />
-      <SVG color={"white"} size={24} {...strikeThroughS} />
-      <SVG color={"white"} size={24} {...tableChart} />
-      <SVG color={"white"} size={24} {...textFields} />
-      <SVG color={"white"} size={24} {...title} />
-      <SVG color={"white"} size={24} {...verticalAlignBottom} />
-      <SVG color={"white"} size={24} {...verticalAlignCenter} />
-      <SVG color={"white"} size={24} {...verticalAlignTop} />
-      <SVG color={"white"} size={24} {...wrapText} />
+      <SVG {...addComment} />
+      <SVG {...attachFile} />
+      <SVG {...attachMoney} />
+      <SVG {...barChart} />
+      <SVG {...borderAll} />
+      <SVG {...borderClear} />
+      <SVG {...borderHorizontal} />
+      <SVG {...borderVertical} />
+      <SVG {...borderInner} />
+      <SVG {...borderTop} />
+      <SVG {...borderRight} />
+      <SVG {...borderBottom} />
+      <SVG {...borderLeft} />
+      <SVG {...borderOuter} />
+      <SVG {...borderStyle} />
+      <SVG {...bubbleChart} />
+      <SVG {...dragHandle} />
+      <SVG {...formatAlignCenter} />
+      <SVG {...formatAlignJustify} />
+      <SVG {...formatAlignLeft} />
+      <SVG {...formatAlignRight} />
+      <SVG {...formatBold} />
+      <SVG {...formatClear} />
+      <SVG {...formatColorReset} />
+      <SVG {...formatIndentIncrease} />
+      <SVG {...formatIndentDecrease} />
+      <SVG {...formatItalic} />
+      <SVG {...formatLineSpacing} />
+      <SVG {...formatListBulleted} />
+      <SVG {...formatListNumbered} />
+      <SVG {...formatListNumberedRtl} />
+      <SVG {...formatPaint} />
+      <SVG {...formatQuote} />
+      <SVG {...formatShapes} />
+      <SVG {...formatSize} />
+      <SVG {...formatStrikeThrough} />
+      <SVG {...formatTextDirection} />
+      <SVG {...formatTextDirectionRtl} />
+      <SVG {...formatUnderlined} />
+      <SVG {...functions} />
+      <SVG {...height} />
+      <SVG {...highlight} />
+      <SVG {...insertChart} />
+      <SVG {...insertChartOutlined} />
+      <SVG {...insertComment} />
+      <SVG {...insertDriveFile} />
+      <SVG {...insertEmoticon} />
+      <SVG {...insertInvitation} />
+      <SVG {...insertLink} />
+      <SVG {...insertPhoto} />
+      <SVG {...linearScale} />
+      <SVG {...mergeType} />
+      <SVG {...modeComment} />
+      <SVG {...monetizationOn} />
+      <SVG {...moneyOff} />
+      <SVG {...multilineChart} />
+      <SVG {...notes} />
+      <SVG {...pieChart} />
+      <SVG {...postAdd} />
+      <SVG {...publish} />
+      <SVG {...scatterPlot} />
+      <SVG {...score} />
+      <SVG {...shortText} />
+      <SVG {...showChart} />
+      <SVG {...spaceBar} />
+      <SVG {...strikeThroughS} />
+      <SVG {...tableChart} />
+      <SVG {...textFields} />
+      <SVG {...title} />
+      <SVG {...verticalAlignBottom} />
+      <SVG {...verticalAlignCenter} />
+      <SVG {...verticalAlignTop} />
+      <SVG {...wrapText} />
     </>
   ))
-  .add("add comment", () => <SVG color={"white"} size={24} {...addComment} />)
-  .add("attach file", () => <SVG color={"white"} size={24} {...attachFile} />)
-  .add("attach money", () => <SVG color={"white"} size={24} {...attachMoney} />)
-  .add("bar chart", () => <SVG color={"white"} size={24} {...barChart} />)
-  .add("border all", () => <SVG color={"white"} size={24} {...borderAll} />)
-  .add("border bottom", () => (
-    <SVG color={"white"} size={24} {...borderBottom} />
-  ))
-  .add("border clear", () => <SVG color={"white"} size={24} {...borderClear} />)
-  .add("border horizontal", () => (
-    <SVG color={"white"} size={24} {...borderHorizontal} />
-  ))
-  .add("border inner", () => <SVG color={"white"} size={24} {...borderInner} />)
-  .add("border left", () => <SVG color={"white"} size={24} {...borderLeft} />)
-  .add("border outer", () => <SVG color={"white"} size={24} {...borderOuter} />)
-  .add("border right", () => <SVG color={"white"} size={24} {...borderRight} />)
-  .add("border style", () => <SVG color={"white"} size={24} {...borderStyle} />)
-  .add("border top", () => <SVG color={"white"} size={24} {...borderTop} />)
-  .add("border vertical", () => (
-    <SVG color={"white"} size={24} {...borderVertical} />
-  ))
-  .add("bubble chart", () => <SVG color={"white"} size={24} {...bubbleChart} />)
-  .add("drag handle", () => <SVG color={"white"} size={24} {...dragHandle} />)
-  .add("format align center", () => (
-    <SVG color={"white"} size={24} {...formatAlignCenter} />
-  ))
-  .add("format align justify", () => (
-    <SVG color={"white"} size={24} {...formatAlignJustify} />
-  ))
-  .add("format align left", () => (
-    <SVG color={"white"} size={24} {...formatAlignLeft} />
-  ))
-  .add("format align right", () => (
-    <SVG color={"white"} size={24} {...formatAlignRight} />
-  ))
-  .add("format bold", () => <SVG color={"white"} size={24} {...formatBold} />)
-  .add("format clear", () => <SVG color={"white"} size={24} {...formatClear} />)
-  .add("format color reset", () => (
-    <SVG color={"white"} size={24} {...formatColorReset} />
-  ))
-  .add("format indent increase", () => (
-    <SVG color={"white"} size={24} {...formatIndentIncrease} />
-  ))
-  .add("format indent decrease", () => (
-    <SVG color={"white"} size={24} {...formatIndentDecrease} />
-  ))
-  .add("format italic", () => (
-    <SVG color={"white"} size={24} {...formatItalic} />
-  ))
-  .add("format line spacing", () => (
-    <SVG color={"white"} size={24} {...formatLineSpacing} />
-  ))
-  .add("format list bulleted", () => (
-    <SVG color={"white"} size={24} {...formatListBulleted} />
-  ))
-  .add("format list numbered", () => (
-    <SVG color={"white"} size={24} {...formatListNumbered} />
-  ))
-  .add("format list numbered rtl", () => (
-    <SVG color={"white"} size={24} {...formatListNumberedRtl} />
-  ))
-  .add("format paint", () => <SVG color={"white"} size={24} {...formatPaint} />)
-  .add("format quote", () => <SVG color={"white"} size={24} {...formatQuote} />)
-  .add("format shapes", () => (
-    <SVG color={"white"} size={24} {...formatShapes} />
-  ))
-  .add("format size", () => <SVG color={"white"} size={24} {...formatSize} />)
-  .add("format strike through", () => (
-    <SVG color={"white"} size={24} {...formatStrikeThrough} />
-  ))
-  .add("format text direction", () => (
-    <SVG color={"white"} size={24} {...formatTextDirection} />
-  ))
-  .add("format text direction rtl", () => (
-    <SVG color={"white"} size={24} {...formatTextDirectionRtl} />
-  ))
-  .add("format underlined", () => (
-    <SVG color={"white"} size={24} {...formatUnderlined} />
-  ))
-  .add("functions", () => <SVG color={"white"} size={24} {...functions} />)
-  .add("height", () => <SVG color={"white"} size={24} {...height} />)
-  .add("highlight", () => <SVG color={"white"} size={24} {...highlight} />)
-  .add("insert chart", () => <SVG color={"white"} size={24} {...insertChart} />)
-  .add("insert chart outlined", () => (
-    <SVG color={"white"} size={24} {...insertChartOutlined} />
-  ))
-  .add("insert comment", () => (
-    <SVG color={"white"} size={24} {...insertComment} />
-  ))
-  .add("insert drive file", () => (
-    <SVG color={"white"} size={24} {...insertDriveFile} />
-  ))
-  .add("insert emoticon", () => (
-    <SVG color={"white"} size={24} {...insertEmoticon} />
-  ))
-  .add("insert invitation", () => (
-    <SVG color={"white"} size={24} {...insertInvitation} />
-  ))
-  .add("insert link", () => <SVG color={"white"} size={24} {...insertLink} />)
-  .add("insert photo", () => <SVG color={"white"} size={24} {...insertPhoto} />)
-  .add("linear scale", () => <SVG color={"white"} size={24} {...linearScale} />)
-  .add("merge type", () => <SVG color={"white"} size={24} {...mergeType} />)
-  .add("mode comment", () => <SVG color={"white"} size={24} {...modeComment} />)
-  .add("monetization on", () => (
-    <SVG color={"white"} size={24} {...monetizationOn} />
-  ))
-  .add("money off", () => <SVG color={"white"} size={24} {...moneyOff} />)
-  .add("multiline chart", () => (
-    <SVG color={"white"} size={24} {...multilineChart} />
-  ))
-  .add("notes", () => <SVG color={"white"} size={24} {...notes} />)
-  .add("pie chart", () => <SVG color={"white"} size={24} {...pieChart} />)
-  .add("post add", () => <SVG color={"white"} size={24} {...postAdd} />)
-  .add("publish", () => <SVG color={"white"} size={24} {...publish} />)
-  .add("scatter plot", () => <SVG color={"white"} size={24} {...scatterPlot} />)
-  .add("score", () => <SVG color={"white"} size={24} {...score} />)
-  .add("short text", () => <SVG color={"white"} size={24} {...shortText} />)
-  .add("show chart", () => <SVG color={"white"} size={24} {...showChart} />)
-  .add("spacebar", () => <SVG color={"white"} size={24} {...spaceBar} />)
-  .add("strike through s", () => (
-    <SVG color={"white"} size={24} {...strikeThroughS} />
-  ))
-  .add("table chart", () => <SVG color={"white"} size={24} {...tableChart} />)
-  .add("text fields", () => <SVG color={"white"} size={24} {...textFields} />)
-  .add("title", () => <SVG color={"white"} size={24} {...title} />)
-  .add("vertical align bottom", () => (
-    <SVG color={"white"} size={24} {...verticalAlignBottom} />
-  ))
-  .add("vertical align center", () => (
-    <SVG color={"white"} size={24} {...verticalAlignCenter} />
-  ))
-  .add("vertical align top", () => (
-    <SVG color={"white"} size={24} {...verticalAlignTop} />
-  ))
-  .add("wrap text", () => <SVG color={"white"} size={24} {...wrapText} />);
+  .add("add comment", () => <SVG {...addComment} />)
+  .add("attach file", () => <SVG {...attachFile} />)
+  .add("attach money", () => <SVG {...attachMoney} />)
+  .add("bar chart", () => <SVG {...barChart} />)
+  .add("border all", () => <SVG {...borderAll} />)
+  .add("border bottom", () => <SVG {...borderBottom} />)
+  .add("border clear", () => <SVG {...borderClear} />)
+  .add("border horizontal", () => <SVG {...borderHorizontal} />)
+  .add("border inner", () => <SVG {...borderInner} />)
+  .add("border left", () => <SVG {...borderLeft} />)
+  .add("border outer", () => <SVG {...borderOuter} />)
+  .add("border right", () => <SVG {...borderRight} />)
+  .add("border style", () => <SVG {...borderStyle} />)
+  .add("border top", () => <SVG {...borderTop} />)
+  .add("border vertical", () => <SVG {...borderVertical} />)
+  .add("bubble chart", () => <SVG {...bubbleChart} />)
+  .add("drag handle", () => <SVG {...dragHandle} />)
+  .add("format align center", () => <SVG {...formatAlignCenter} />)
+  .add("format align justify", () => <SVG {...formatAlignJustify} />)
+  .add("format align left", () => <SVG {...formatAlignLeft} />)
+  .add("format align right", () => <SVG {...formatAlignRight} />)
+  .add("format bold", () => <SVG {...formatBold} />)
+  .add("format clear", () => <SVG {...formatClear} />)
+  .add("format color reset", () => <SVG {...formatColorReset} />)
+  .add("format indent increase", () => <SVG {...formatIndentIncrease} />)
+  .add("format indent decrease", () => <SVG {...formatIndentDecrease} />)
+  .add("format italic", () => <SVG {...formatItalic} />)
+  .add("format line spacing", () => <SVG {...formatLineSpacing} />)
+  .add("format list bulleted", () => <SVG {...formatListBulleted} />)
+  .add("format list numbered", () => <SVG {...formatListNumbered} />)
+  .add("format list numbered rtl", () => <SVG {...formatListNumberedRtl} />)
+  .add("format paint", () => <SVG {...formatPaint} />)
+  .add("format quote", () => <SVG {...formatQuote} />)
+  .add("format shapes", () => <SVG {...formatShapes} />)
+  .add("format size", () => <SVG {...formatSize} />)
+  .add("format strike through", () => <SVG {...formatStrikeThrough} />)
+  .add("format text direction", () => <SVG {...formatTextDirection} />)
+  .add("format text direction rtl", () => <SVG {...formatTextDirectionRtl} />)
+  .add("format underlined", () => <SVG {...formatUnderlined} />)
+  .add("functions", () => <SVG {...functions} />)
+  .add("height", () => <SVG {...height} />)
+  .add("highlight", () => <SVG {...highlight} />)
+  .add("insert chart", () => <SVG {...insertChart} />)
+  .add("insert chart outlined", () => <SVG {...insertChartOutlined} />)
+  .add("insert comment", () => <SVG {...insertComment} />)
+  .add("insert drive file", () => <SVG {...insertDriveFile} />)
+  .add("insert emoticon", () => <SVG {...insertEmoticon} />)
+  .add("insert invitation", () => <SVG {...insertInvitation} />)
+  .add("insert link", () => <SVG {...insertLink} />)
+  .add("insert photo", () => <SVG {...insertPhoto} />)
+  .add("linear scale", () => <SVG {...linearScale} />)
+  .add("merge type", () => <SVG {...mergeType} />)
+  .add("mode comment", () => <SVG {...modeComment} />)
+  .add("monetization on", () => <SVG {...monetizationOn} />)
+  .add("money off", () => <SVG {...moneyOff} />)
+  .add("multiline chart", () => <SVG {...multilineChart} />)
+  .add("notes", () => <SVG {...notes} />)
+  .add("pie chart", () => <SVG {...pieChart} />)
+  .add("post add", () => <SVG {...postAdd} />)
+  .add("publish", () => <SVG {...publish} />)
+  .add("scatter plot", () => <SVG {...scatterPlot} />)
+  .add("score", () => <SVG {...score} />)
+  .add("short text", () => <SVG {...shortText} />)
+  .add("show chart", () => <SVG {...showChart} />)
+  .add("spacebar", () => <SVG {...spaceBar} />)
+  .add("strike through s", () => <SVG {...strikeThroughS} />)
+  .add("table chart", () => <SVG {...tableChart} />)
+  .add("text fields", () => <SVG {...textFields} />)
+  .add("title", () => <SVG {...title} />)
+  .add("vertical align bottom", () => <SVG {...verticalAlignBottom} />)
+  .add("vertical align center", () => <SVG {...verticalAlignCenter} />)
+  .add("vertical align top", () => <SVG {...verticalAlignTop} />)
+  .add("wrap text", () => <SVG {...wrapText} />);

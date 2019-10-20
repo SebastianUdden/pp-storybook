@@ -16,33 +16,25 @@ import { toggleOn } from "../../svgs/toggle/toggle-on";
 storiesOf("SVG toggle", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} size={24} {...checkBox} />
-      <SVG color={"white"} size={24} {...checkBoxOutlineBlank} />
-      <SVG color={"white"} size={24} {...indeterminateCheckBox} />
-      <SVG color={"white"} size={24} {...radioButtonChecked} />
-      <SVG color={"white"} size={24} {...radioButtonUnchecked} />
-      <SVG color={"white"} size={24} {...star} />
-      <SVG color={"white"} size={24} {...starBorder} />
-      <SVG color={"white"} size={24} {...starHalf} />
-      <SVG color={"white"} size={24} {...toggleOff} />
-      <SVG color={"white"} size={24} {...toggleOn} />
+      <SVG {...checkBox} />
+      <SVG {...checkBoxOutlineBlank} />
+      <SVG {...indeterminateCheckBox} />
+      <SVG {...radioButtonChecked} />
+      <SVG {...radioButtonUnchecked} />
+      <SVG {...star} />
+      <SVG {...starBorder} />
+      <SVG {...starHalf} />
+      <SVG {...toggleOff} />
+      <SVG {...toggleOn} />
     </>
   ))
-  .add("check-box", () => <SVG color={"white"} size={24} {...checkBox} />)
-  .add("check-box outline blank", () => (
-    <SVG color={"white"} size={24} {...checkBoxOutlineBlank} />
-  ))
-  .add("indeterminate check-box", () => (
-    <SVG color={"white"} size={24} {...indeterminateCheckBox} />
-  ))
-  .add("radio-button checked", () => (
-    <SVG color={"white"} size={24} {...radioButtonChecked} />
-  ))
-  .add("radio-button unchecked", () => (
-    <SVG color={"white"} size={24} {...radioButtonUnchecked} />
-  ))
-  .add("star", () => <SVG color={"white"} size={24} {...star} />)
-  .add("star border", () => <SVG color={"white"} size={24} {...starBorder} />)
-  .add("star half", () => <SVG color={"white"} size={24} {...starHalf} />)
-  .add("toggle off", () => <SVG color={"white"} size={24} {...toggleOff} />)
-  .add("toggle on", () => <SVG color={"white"} size={24} {...toggleOn} />);
+  .add("check-box", () => <SVG {...checkBox} />)
+  .add("check-box outline blank", () => <SVG {...checkBoxOutlineBlank} />)
+  .add("indeterminate check-box", () => <SVG {...indeterminateCheckBox} />)
+  .add("radio-button checked", () => <SVG {...radioButtonChecked} />)
+  .add("radio-button unchecked", () => <SVG {...radioButtonUnchecked} />)
+  .add("star", () => <SVG {...star} />)
+  .add("star border", () => <SVG {...starBorder} />)
+  .add("star half", () => <SVG {...starHalf} />)
+  .add("toggle off", () => <SVG {...toggleOff} />)
+  .add("toggle on", () => <SVG {...toggleOn} />);

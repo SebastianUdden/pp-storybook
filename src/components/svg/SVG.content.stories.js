@@ -56,119 +56,105 @@ import { whereToVote } from "../../svgs/content/where-to-vote";
 storiesOf("SVG content", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} size={24} {...add} />
-      <SVG color={"white"} size={24} {...addBox} />
-      <SVG color={"white"} size={24} {...addCircle} />
-      <SVG color={"white"} size={24} {...addCircleOutline} />
-      <SVG color={"white"} size={24} {...ampStories} />
-      <SVG color={"white"} size={24} {...archive} />
-      <SVG color={"white"} size={24} {...backspace} />
-      <SVG color={"white"} size={24} {...ballot} />
-      <SVG color={"white"} size={24} {...block} />
-      <SVG color={"white"} size={24} {...clear} />
-      <SVG color={"white"} size={24} {...create} />
-      <SVG color={"white"} size={24} {...deleteSweep} />
-      <SVG color={"white"} size={24} {...drafts} />
-      <SVG color={"white"} size={24} {...dynamicFeed} />
-      <SVG color={"white"} size={24} {...fileCopy} />
-      <SVG color={"white"} size={24} {...filterList} />
-      <SVG color={"white"} size={24} {...flag} />
-      <SVG color={"white"} size={24} {...flagOutline} />
-      <SVG color={"white"} size={24} {...fontDownload} />
-      <SVG color={"white"} size={24} {...forward} />
-      <SVG color={"white"} size={24} {...gesture} />
-      <SVG color={"white"} size={24} {...howToRegister} />
-      <SVG color={"white"} size={24} {...howToVote} />
-      <SVG color={"white"} size={24} {...inbox} />
-      <SVG color={"white"} size={24} {...link} />
-      <SVG color={"white"} size={24} {...linkOff} />
-      <SVG color={"white"} size={24} {...lowPriority} />
-      <SVG color={"white"} size={24} {...mail} />
-      <SVG color={"white"} size={24} {...moveToInbox} />
-      <SVG color={"white"} size={24} {...nextWeek} />
-      <SVG color={"white"} size={24} {...policy} />
-      <SVG color={"white"} size={24} {...redo} />
-      <SVG color={"white"} size={24} {...remove} />
-      <SVG color={"white"} size={24} {...removeCircle} />
-      <SVG color={"white"} size={24} {...removeCircleOutline} />
-      <SVG color={"white"} size={24} {...reply} />
-      <SVG color={"white"} size={24} {...replyAll} />
-      <SVG color={"white"} size={24} {...report} />
-      <SVG color={"white"} size={24} {...reportOff} />
-      <SVG color={"white"} size={24} {...save} />
-      <SVG color={"white"} size={24} {...saveAlt} />
-      <SVG color={"white"} size={24} {...selectAll} />
-      <SVG color={"white"} size={24} {...send} />
-      <SVG color={"white"} size={24} {...sort} />
-      <SVG color={"white"} size={24} {...squareMeter} />
-      <SVG color={"white"} size={24} {...textFormat} />
-      <SVG color={"white"} size={24} {...unarchive} />
-      <SVG color={"white"} size={24} {...undo} />
-      <SVG color={"white"} size={24} {...waves} />
-      <SVG color={"white"} size={24} {...whereToVote} />
+      <SVG {...add} />
+      <SVG {...addBox} />
+      <SVG {...addCircle} />
+      <SVG {...addCircleOutline} />
+      <SVG {...ampStories} />
+      <SVG {...archive} />
+      <SVG {...backspace} />
+      <SVG {...ballot} />
+      <SVG {...block} />
+      <SVG {...clear} />
+      <SVG {...create} />
+      <SVG {...deleteSweep} />
+      <SVG {...drafts} />
+      <SVG {...dynamicFeed} />
+      <SVG {...fileCopy} />
+      <SVG {...filterList} />
+      <SVG {...flag} />
+      <SVG {...flagOutline} />
+      <SVG {...fontDownload} />
+      <SVG {...forward} />
+      <SVG {...gesture} />
+      <SVG {...howToRegister} />
+      <SVG {...howToVote} />
+      <SVG {...inbox} />
+      <SVG {...link} />
+      <SVG {...linkOff} />
+      <SVG {...lowPriority} />
+      <SVG {...mail} />
+      <SVG {...moveToInbox} />
+      <SVG {...nextWeek} />
+      <SVG {...policy} />
+      <SVG {...redo} />
+      <SVG {...remove} />
+      <SVG {...removeCircle} />
+      <SVG {...removeCircleOutline} />
+      <SVG {...reply} />
+      <SVG {...replyAll} />
+      <SVG {...report} />
+      <SVG {...reportOff} />
+      <SVG {...save} />
+      <SVG {...saveAlt} />
+      <SVG {...selectAll} />
+      <SVG {...send} />
+      <SVG {...sort} />
+      <SVG {...squareMeter} />
+      <SVG {...textFormat} />
+      <SVG {...unarchive} />
+      <SVG {...undo} />
+      <SVG {...waves} />
+      <SVG {...whereToVote} />
     </>
   ))
-  .add("add", () => <SVG color={"white"} size={24} {...add} />)
-  .add("add box", () => <SVG color={"white"} size={24} {...addBox} />)
-  .add("add circle", () => <SVG color={"white"} size={24} {...addCircle} />)
-  .add("add circle outline", () => (
-    <SVG color={"white"} size={24} {...addCircleOutline} />
-  ))
-  .add("amp stories", () => <SVG color={"white"} size={24} {...ampStories} />)
-  .add("archive", () => <SVG color={"white"} size={24} {...archive} />)
-  .add("backspace", () => <SVG color={"white"} size={24} {...backspace} />)
-  .add("ballot", () => <SVG color={"white"} size={24} {...ballot} />)
-  .add("block", () => <SVG color={"white"} size={24} {...block} />)
-  .add("clear", () => <SVG color={"white"} size={24} {...clear} />)
-  .add("create", () => <SVG color={"white"} size={24} {...create} />)
-  .add("delete sweep", () => <SVG color={"white"} size={24} {...deleteSweep} />)
-  .add("drafts", () => <SVG color={"white"} size={24} {...drafts} />)
-  .add("dynamic feed", () => <SVG color={"white"} size={24} {...dynamicFeed} />)
-  .add("file copy", () => <SVG color={"white"} size={24} {...fileCopy} />)
-  .add("filter list", () => <SVG color={"white"} size={24} {...filterList} />)
-  .add("flag", () => <SVG color={"white"} size={24} {...flag} />)
-  .add("flag outline", () => <SVG color={"white"} size={24} {...flagOutline} />)
-  .add("font download", () => (
-    <SVG color={"white"} size={24} {...fontDownload} />
-  ))
-  .add("forward", () => <SVG color={"white"} size={24} {...forward} />)
-  .add("gesture", () => <SVG color={"white"} size={24} {...gesture} />)
-  .add("how to register", () => (
-    <SVG color={"white"} size={24} {...howToRegister} />
-  ))
-  .add("how to vote", () => <SVG color={"white"} size={24} {...howToVote} />)
-  .add("inbox", () => <SVG color={"white"} size={24} {...inbox} />)
-  .add("link", () => <SVG color={"white"} size={24} {...link} />)
-  .add("link off", () => <SVG color={"white"} size={24} {...linkOff} />)
-  .add("low priority", () => <SVG color={"white"} size={24} {...lowPriority} />)
-  .add("mail", () => <SVG color={"white"} size={24} {...mail} />)
-  .add("move to inbox", () => (
-    <SVG color={"white"} size={24} {...moveToInbox} />
-  ))
-  .add("next week", () => <SVG color={"white"} size={24} {...nextWeek} />)
-  .add("policy", () => <SVG color={"white"} size={24} {...policy} />)
-  .add("redo", () => <SVG color={"white"} size={24} {...redo} />)
-  .add("remove", () => <SVG color={"white"} size={24} {...remove} />)
-  .add("remove circle", () => (
-    <SVG color={"white"} size={24} {...removeCircle} />
-  ))
-  .add("remove circle outline", () => (
-    <SVG color={"white"} size={24} {...removeCircleOutline} />
-  ))
-  .add("reply", () => <SVG color={"white"} size={24} {...reply} />)
-  .add("reply all", () => <SVG color={"white"} size={24} {...replyAll} />)
-  .add("report", () => <SVG color={"white"} size={24} {...report} />)
-  .add("report off", () => <SVG color={"white"} size={24} {...reportOff} />)
-  .add("save", () => <SVG color={"white"} size={24} {...save} />)
-  .add("save alt", () => <SVG color={"white"} size={24} {...saveAlt} />)
-  .add("select all", () => <SVG color={"white"} size={24} {...selectAll} />)
-  .add("send", () => <SVG color={"white"} size={24} {...send} />)
-  .add("sort", () => <SVG color={"white"} size={24} {...sort} />)
-  .add("square meter", () => <SVG color={"white"} size={24} {...squareMeter} />)
-  .add("text format", () => <SVG color={"white"} size={24} {...textFormat} />)
-  .add("unarchive", () => <SVG color={"white"} size={24} {...unarchive} />)
-  .add("undo", () => <SVG color={"white"} size={24} {...undo} />)
-  .add("waves", () => <SVG color={"white"} size={24} {...waves} />)
-  .add("where to vote", () => (
-    <SVG color={"white"} size={24} {...whereToVote} />
-  ));
+  .add("add", () => <SVG {...add} />)
+  .add("add box", () => <SVG {...addBox} />)
+  .add("add circle", () => <SVG {...addCircle} />)
+  .add("add circle outline", () => <SVG {...addCircleOutline} />)
+  .add("amp stories", () => <SVG {...ampStories} />)
+  .add("archive", () => <SVG {...archive} />)
+  .add("backspace", () => <SVG {...backspace} />)
+  .add("ballot", () => <SVG {...ballot} />)
+  .add("block", () => <SVG {...block} />)
+  .add("clear", () => <SVG {...clear} />)
+  .add("create", () => <SVG {...create} />)
+  .add("delete sweep", () => <SVG {...deleteSweep} />)
+  .add("drafts", () => <SVG {...drafts} />)
+  .add("dynamic feed", () => <SVG {...dynamicFeed} />)
+  .add("file copy", () => <SVG {...fileCopy} />)
+  .add("filter list", () => <SVG {...filterList} />)
+  .add("flag", () => <SVG {...flag} />)
+  .add("flag outline", () => <SVG {...flagOutline} />)
+  .add("font download", () => <SVG {...fontDownload} />)
+  .add("forward", () => <SVG {...forward} />)
+  .add("gesture", () => <SVG {...gesture} />)
+  .add("how to register", () => <SVG {...howToRegister} />)
+  .add("how to vote", () => <SVG {...howToVote} />)
+  .add("inbox", () => <SVG {...inbox} />)
+  .add("link", () => <SVG {...link} />)
+  .add("link off", () => <SVG {...linkOff} />)
+  .add("low priority", () => <SVG {...lowPriority} />)
+  .add("mail", () => <SVG {...mail} />)
+  .add("move to inbox", () => <SVG {...moveToInbox} />)
+  .add("next week", () => <SVG {...nextWeek} />)
+  .add("policy", () => <SVG {...policy} />)
+  .add("redo", () => <SVG {...redo} />)
+  .add("remove", () => <SVG {...remove} />)
+  .add("remove circle", () => <SVG {...removeCircle} />)
+  .add("remove circle outline", () => <SVG {...removeCircleOutline} />)
+  .add("reply", () => <SVG {...reply} />)
+  .add("reply all", () => <SVG {...replyAll} />)
+  .add("report", () => <SVG {...report} />)
+  .add("report off", () => <SVG {...reportOff} />)
+  .add("save", () => <SVG {...save} />)
+  .add("save alt", () => <SVG {...saveAlt} />)
+  .add("select all", () => <SVG {...selectAll} />)
+  .add("send", () => <SVG {...send} />)
+  .add("sort", () => <SVG {...sort} />)
+  .add("square meter", () => <SVG {...squareMeter} />)
+  .add("text format", () => <SVG {...textFormat} />)
+  .add("unarchive", () => <SVG {...unarchive} />)
+  .add("undo", () => <SVG {...undo} />)
+  .add("waves", () => <SVG {...waves} />)
+  .add("where to vote", () => <SVG {...whereToVote} />);

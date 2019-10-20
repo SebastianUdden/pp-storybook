@@ -40,97 +40,73 @@ import { unfoldMore } from "../../svgs/navigation/unfold-more";
 storiesOf("SVG navigation", module)
   .add("all icons", () => (
     <>
-      <SVG color={"white"} size={24} {...apps} />
-      <SVG color={"white"} size={24} {...arrowBack} />
-      <SVG color={"white"} size={24} {...arrowBackIos} />
-      <SVG color={"white"} size={24} {...arrowDown} />
-      <SVG color={"white"} size={24} {...arrowDropDown} />
-      <SVG color={"white"} size={24} {...arrowDropDownCircle} />
-      <SVG color={"white"} size={24} {...arrowDropUp} />
-      <SVG color={"white"} size={24} {...arrowForward} />
-      <SVG color={"white"} size={24} {...arrowForwardIos} />
-      <SVG color={"white"} size={24} {...arrowLeft} />
-      <SVG color={"white"} size={24} {...arrowRight} />
-      <SVG color={"white"} size={24} {...arrowUpward} />
-      <SVG color={"white"} size={24} {...cancel} />
-      <SVG color={"white"} size={24} {...check} />
-      <SVG color={"white"} size={24} {...chevronLeft} />
-      <SVG color={"white"} size={24} {...chevronRight} />
-      <SVG color={"white"} size={24} {...close} />
-      <SVG color={"white"} size={24} {...doubleArrow} />
-      <SVG color={"white"} size={24} {...expandLess} />
-      <SVG color={"white"} size={24} {...expandMore} />
-      <SVG color={"white"} size={24} {...firstPage} />
-      <SVG color={"white"} size={24} {...fullscreen} />
-      <SVG color={"white"} size={24} {...fullscreenExit} />
-      <SVG color={"white"} size={24} {...homeWork} />
-      <SVG color={"white"} size={24} {...lastPage} />
-      <SVG color={"white"} size={24} {...menu} />
-      <SVG color={"white"} size={24} {...menuOpen} />
-      <SVG color={"white"} size={24} {...moreHorizontal} />
-      <SVG color={"white"} size={24} {...moreVertical} />
-      <SVG color={"white"} size={24} {...refresh} />
-      <SVG color={"white"} size={24} {...subdirectoryArrowLeft} />
-      <SVG color={"white"} size={24} {...subdirectoryArrowRight} />
-      <SVG color={"white"} size={24} {...unfoldLess} />
-      <SVG color={"white"} size={24} {...unfoldMore} />
+      <SVG {...apps} />
+      <SVG {...arrowBack} />
+      <SVG {...arrowBackIos} />
+      <SVG {...arrowDown} />
+      <SVG {...arrowDropDown} />
+      <SVG {...arrowDropDownCircle} />
+      <SVG {...arrowDropUp} />
+      <SVG {...arrowForward} />
+      <SVG {...arrowForwardIos} />
+      <SVG {...arrowLeft} />
+      <SVG {...arrowRight} />
+      <SVG {...arrowUpward} />
+      <SVG {...cancel} />
+      <SVG {...check} />
+      <SVG {...chevronLeft} />
+      <SVG {...chevronRight} />
+      <SVG {...close} />
+      <SVG {...doubleArrow} />
+      <SVG {...expandLess} />
+      <SVG {...expandMore} />
+      <SVG {...firstPage} />
+      <SVG {...fullscreen} />
+      <SVG {...fullscreenExit} />
+      <SVG {...homeWork} />
+      <SVG {...lastPage} />
+      <SVG {...menu} />
+      <SVG {...menuOpen} />
+      <SVG {...moreHorizontal} />
+      <SVG {...moreVertical} />
+      <SVG {...refresh} />
+      <SVG {...subdirectoryArrowLeft} />
+      <SVG {...subdirectoryArrowRight} />
+      <SVG {...unfoldLess} />
+      <SVG {...unfoldMore} />
     </>
   ))
-  .add("apps", () => <SVG color={"white"} size={24} {...apps} />)
-  .add("arrow back", () => <SVG color={"white"} size={24} {...arrowBack} />)
-  .add("arrow back ios", () => (
-    <SVG color={"white"} size={24} {...arrowBackIos} />
-  ))
-  .add("arrow down", () => <SVG color={"white"} size={24} {...arrowDown} />)
-  .add("arrow drop down", () => (
-    <SVG color={"white"} size={24} {...arrowDropDown} />
-  ))
-  .add("arrow drop down circle", () => (
-    <SVG color={"white"} size={24} {...arrowDropDownCircle} />
-  ))
-  .add("arrow drop up", () => (
-    <SVG color={"white"} size={24} {...arrowDropUp} />
-  ))
-  .add("arrow forward", () => (
-    <SVG color={"white"} size={24} {...arrowForward} />
-  ))
-  .add("arrow forward ios", () => (
-    <SVG color={"white"} size={24} {...arrowForwardIos} />
-  ))
-  .add("arrow left", () => <SVG color={"white"} size={24} {...arrowLeft} />)
-  .add("arrow right", () => <SVG color={"white"} size={24} {...arrowRight} />)
-  .add("arrow upward", () => <SVG color={"white"} size={24} {...arrowUpward} />)
-  .add("cancel", () => <SVG color={"white"} size={24} {...cancel} />)
-  .add("check", () => <SVG color={"white"} size={24} {...check} />)
-  .add("chevron left", () => <SVG color={"white"} size={24} {...chevronLeft} />)
-  .add("chevron right", () => (
-    <SVG color={"white"} size={24} {...chevronRight} />
-  ))
-  .add("close", () => <SVG color={"white"} size={24} {...close} />)
-  .add("double arrow", () => <SVG color={"white"} size={24} {...doubleArrow} />)
-  .add("expand less", () => <SVG color={"white"} size={24} {...expandLess} />)
-  .add("expand more", () => <SVG color={"white"} size={24} {...expandMore} />)
-  .add("first page", () => <SVG color={"white"} size={24} {...firstPage} />)
-  .add("fullscreen", () => <SVG color={"white"} size={24} {...fullscreen} />)
-  .add("fullscreen exit", () => (
-    <SVG color={"white"} size={24} {...fullscreenExit} />
-  ))
-  .add("home/work", () => <SVG color={"white"} size={24} {...homeWork} />)
-  .add("last page", () => <SVG color={"white"} size={24} {...lastPage} />)
-  .add("menu", () => <SVG color={"white"} size={24} {...menu} />)
-  .add("menu open", () => <SVG color={"white"} size={24} {...menuOpen} />)
-  .add("more horizontal", () => (
-    <SVG color={"white"} size={24} {...moreHorizontal} />
-  ))
-  .add("more vertical", () => (
-    <SVG color={"white"} size={24} {...moreVertical} />
-  ))
-  .add("refresh", () => <SVG color={"white"} size={24} {...refresh} />)
-  .add("subdirectory arrow left", () => (
-    <SVG color={"white"} size={24} {...subdirectoryArrowLeft} />
-  ))
-  .add("subdirectory arrow right", () => (
-    <SVG color={"white"} size={24} {...subdirectoryArrowRight} />
-  ))
-  .add("unfold less", () => <SVG color={"white"} size={24} {...unfoldLess} />)
-  .add("unfold more", () => <SVG color={"white"} size={24} {...unfoldMore} />);
+  .add("apps", () => <SVG {...apps} />)
+  .add("arrow back", () => <SVG {...arrowBack} />)
+  .add("arrow back ios", () => <SVG {...arrowBackIos} />)
+  .add("arrow down", () => <SVG {...arrowDown} />)
+  .add("arrow drop down", () => <SVG {...arrowDropDown} />)
+  .add("arrow drop down circle", () => <SVG {...arrowDropDownCircle} />)
+  .add("arrow drop up", () => <SVG {...arrowDropUp} />)
+  .add("arrow forward", () => <SVG {...arrowForward} />)
+  .add("arrow forward ios", () => <SVG {...arrowForwardIos} />)
+  .add("arrow left", () => <SVG {...arrowLeft} />)
+  .add("arrow right", () => <SVG {...arrowRight} />)
+  .add("arrow upward", () => <SVG {...arrowUpward} />)
+  .add("cancel", () => <SVG {...cancel} />)
+  .add("check", () => <SVG {...check} />)
+  .add("chevron left", () => <SVG {...chevronLeft} />)
+  .add("chevron right", () => <SVG {...chevronRight} />)
+  .add("close", () => <SVG {...close} />)
+  .add("double arrow", () => <SVG {...doubleArrow} />)
+  .add("expand less", () => <SVG {...expandLess} />)
+  .add("expand more", () => <SVG {...expandMore} />)
+  .add("first page", () => <SVG {...firstPage} />)
+  .add("fullscreen", () => <SVG {...fullscreen} />)
+  .add("fullscreen exit", () => <SVG {...fullscreenExit} />)
+  .add("home/work", () => <SVG {...homeWork} />)
+  .add("last page", () => <SVG {...lastPage} />)
+  .add("menu", () => <SVG {...menu} />)
+  .add("menu open", () => <SVG {...menuOpen} />)
+  .add("more horizontal", () => <SVG {...moreHorizontal} />)
+  .add("more vertical", () => <SVG {...moreVertical} />)
+  .add("refresh", () => <SVG {...refresh} />)
+  .add("subdirectory arrow left", () => <SVG {...subdirectoryArrowLeft} />)
+  .add("subdirectory arrow right", () => <SVG {...subdirectoryArrowRight} />)
+  .add("unfold less", () => <SVG {...unfoldLess} />)
+  .add("unfold more", () => <SVG {...unfoldMore} />);
