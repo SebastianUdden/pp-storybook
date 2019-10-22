@@ -32,6 +32,7 @@ const Search = ({ previousSearchValue, value, onChange, onBack, onClose }) => {
         </ActionItemWrapper>
       )}
       <Input
+        id="Search"
         placeholder="Search"
         previousSearchValue={previousSearchValue}
         value={value}
