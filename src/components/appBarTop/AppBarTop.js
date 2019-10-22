@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -9,6 +9,8 @@ const Container = styled.div`
   margin: 0;
   background-color: black;
   color: white;
+  transform: ${p => (p.show ? "translateY(0%)" : "translateY(-100%)")};
+  transition: transform 0.4s;
 
   position: sticky;
   overflow: hidden;
@@ -16,7 +18,27 @@ const Container = styled.div`
 `;
 
 const AppBarTop = ({ children, type = "regular" }) => {
-  return <Container large={type !== "regular"}>{children}</Container>;
+  let [pos, setPos] = useState(window.pageYOffset);
+  let [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let temp = window.pageYOffset;
+
+      setVisible(pos > temp);
+      setPos(temp);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  return (
+    <Container large={type !== "regular"} show={visible}>
+      {children}
+    </Container>
+  );
 };
 
 export default AppBarTop;
