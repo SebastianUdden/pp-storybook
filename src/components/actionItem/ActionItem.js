@@ -24,8 +24,18 @@ const Item = styled(Button)`
   }
 `;
 
-const ActionItem = ({ backgroundColorHover, color, svg, noBorder }) => (
-  <Item backgroundColorHover={backgroundColorHover} noBorder={noBorder}>
+const ActionItem = ({
+  backgroundColorHover,
+  color,
+  svg,
+  noBorder,
+  onClick
+}) => (
+  <Item
+    backgroundColorHover={backgroundColorHover}
+    noBorder={noBorder}
+    onClick={onClick}
+  >
     <SVG {...svg} color={color} />
   </Item>
 );
