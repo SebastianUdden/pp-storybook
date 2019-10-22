@@ -87,4 +87,48 @@ storiesOf("App bar top", module)
         <MockParagraphs />
       </div>
     );
+  })
+  .add("appbar <> search", () => {
+    const [value, setValue] = useState("Ergo, the search persists...");
+    const [showSearch, setShowSearch] = useState(true);
+
+    return (
+      <div>
+        <AppBarTop>
+          {!showSearch && (
+            <>
+              <InnerWrapper>
+                <ActionItem svg={menu} />
+                <Title>Regular Appbar</Title>
+              </InnerWrapper>
+              <InnerWrapper>
+                <ActionItem
+                  svg={search}
+                  onClick={() => {
+                    setShowSearch(true);
+                    setTimeout(
+                      () => document.getElementById("Search").focus(),
+                      50
+                    );
+                  }}
+                />
+              </InnerWrapper>
+            </>
+          )}
+          {showSearch && (
+            <Search
+              value={value}
+              previousSearchValue="Ergo, the search persists..."
+              onChange={e => setValue(e.target.value)}
+              onBack={() => {
+                setShowSearch(false);
+                setValue("");
+              }}
+              onClose={() => setShowSearch(false)}
+            />
+          )}
+        </AppBarTop>
+        <MockParagraphs />
+      </div>
+    );
   });
