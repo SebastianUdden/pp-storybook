@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
 import { Button } from "../button/Button";
@@ -10,6 +10,9 @@ const Item = styled(Button)`
   padding: 2rem;
   margin: 0;
   min-width: 3rem;
+  transform: ${p =>
+    p.animate ? `rotate(0), scale(1)` : `rotate(270deg) scale(0.4)`};
+  transition: transform 0.2s;
 
   ${MEDIA_MAX_MEDIUM} {
     padding: 1.5rem 1rem;
@@ -29,20 +32,39 @@ const Item = styled(Button)`
   }
 `;
 
+const SVGWrapper = styled.div`
+  height: 100%;
+  border-radius: 50%;
+  :hover {
+    background-color: ${p => p.backgroundColorHover}11;
+  }
+`;
+
 const ActionItem = ({
   backgroundColorHover,
+  rotate,
   color,
   svg,
   noBorder,
   onClick
-}) => (
-  <Item
-    backgroundColorHover={backgroundColorHover}
-    noBorder={noBorder}
-    onClick={onClick}
-  >
-    <SVG {...svg} color={color} />
-  </Item>
-);
+}) => {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+  return (
+    <Item
+      backgroundColorHover={backgroundColorHover}
+      noBorder={noBorder}
+      onClick={onClick}
+      rotate={rotate}
+      animate={animate}
+    >
+      <SVGWrapper backgroundColorHover={color}>
+        <SVG {...svg} color={color} />
+      </SVGWrapper>
+    </Item>
+  );
+};
 
 export default ActionItem;
