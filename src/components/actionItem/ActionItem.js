@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
 import { Button } from "../button/Button";
+import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 
 const Item = styled(Button)`
   background-color: inherit;
@@ -9,6 +10,10 @@ const Item = styled(Button)`
   padding: 2rem;
   margin: 0;
   min-width: 3rem;
+
+  ${MEDIA_MAX_MEDIUM} {
+    padding: 1.5rem 1rem;
+  }
 
   :hover {
     background-color: ${p =>

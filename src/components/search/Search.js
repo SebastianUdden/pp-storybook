@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { arrowBack } from "../../svgs/navigation/arrow-back";
 import { close } from "../../svgs/navigation/close";
@@ -16,14 +16,28 @@ const Input = styled.input`
   width: 100%;
   font-size: x-large;
   color: #555;
-  padding: 0 2rem 0 ${p => (p.previousSearchValue ? "0.2rem" : "2rem")};
+  padding: 0 0 0 ${p => (p.previousSearchValue ? "0.2rem" : "2rem")};
   border: none;
   outline: none;
+
+  ::-webkit-search-decoration,
+  ::-webkit-search-cancel-button,
+  ::-webkit-search-results-button,
+  ::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
 `;
 
 const ActionItemWrapper = styled.div``;
 
-const Search = ({ previousSearchValue, value, onChange, onBack, onClose }) => {
+const Search = ({
+  previousSearchValue,
+  value,
+  onChange,
+  onBack,
+  onClose,
+  onSubmit
+}) => {
   return (
     <Wrapper>
       {previousSearchValue && (
@@ -33,6 +47,7 @@ const Search = ({ previousSearchValue, value, onChange, onBack, onClose }) => {
       )}
       <Input
         id="Search"
+        type="search"
         placeholder="Search"
         previousSearchValue={previousSearchValue}
         value={value}
