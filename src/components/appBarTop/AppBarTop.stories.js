@@ -7,10 +7,12 @@ import { menu } from "../../svgs/navigation/menu";
 import { moreVertical } from "../../svgs/navigation/more-vertical";
 import { favorite } from "../../svgs/actions/favorite";
 import { search } from "../../svgs/actions/search";
-import MockParagraphs from "./MockParagraph";
+import MockParagraphs from "../searchParagraphs/SearchParagraphs";
 import ActionItem from "../actionItem/ActionItem";
 import Search from "../search/Search";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
+import SearchParagraphs from "../searchParagraphs/SearchParagraphs";
+import { MOCK_PARAGRAPHS } from "../../constants/mocks";
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -19,7 +21,7 @@ const InnerWrapper = styled.div`
 
 const Title = styled.h1`
   font-size: x-large;
-  margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 1.5rem;
+  margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 0.2rem;
   padding: 0;
   ${MEDIA_MAX_MEDIUM} {
     margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 0.2rem;
@@ -40,7 +42,7 @@ storiesOf("App bar top", module)
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
       </AppBarTop>
-      <MockParagraphs />
+      <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
     </div>
   ))
   .add("prominent", () => (
@@ -56,7 +58,7 @@ storiesOf("App bar top", module)
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
       </AppBarTop>
-      <MockParagraphs />
+      <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
     </div>
   ))
   .add("with dynamic action items", () => (
@@ -72,29 +74,30 @@ storiesOf("App bar top", module)
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
       </AppBarTop>
-      <MockParagraphs />
+      <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
     </div>
   ))
   .add("search", () => {
-    const [value, setValue] = useState("Ergo, the search persists...");
+    const [value, setValue] = useState("farm-to-table");
     return (
       <div>
         <AppBarTop>
           <Search
             value={value}
-            previousSearchValue="Ergo, the search persists..."
+            previousSearchValue="farm-to-table"
             onChange={e => setValue(e.target.value)}
             onBack={() => setValue("")}
             onClose={() => setValue("")}
           />
         </AppBarTop>
-        <MockParagraphs />
+        <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
       </div>
     );
   })
   .add("appbar <> search", () => {
-    const [value, setValue] = useState("Ergo, the search persists...");
+    const [value, setValue] = useState("farm-to-table");
     const [showSearch, setShowSearch] = useState(true);
+    const [searchValue, setSearchValue] = useState("");
 
     return (
       <div>
@@ -112,7 +115,7 @@ storiesOf("App bar top", module)
                     setShowSearch(true);
                     setTimeout(
                       () => document.getElementById("Search").focus(),
-                      50
+                      200
                     );
                   }}
                 />
@@ -122,17 +125,22 @@ storiesOf("App bar top", module)
           {showSearch && (
             <Search
               value={value}
-              previousSearchValue="Ergo, the search persists..."
+              previousSearchValue="farm-to-table"
               onChange={e => setValue(e.target.value)}
               onBack={() => {
                 setShowSearch(false);
                 setValue("");
+                setSearchValue("");
               }}
               onClose={() => setShowSearch(false)}
+              onSubmit={value => setSearchValue(value)}
             />
           )}
         </AppBarTop>
-        <MockParagraphs />
+        <SearchParagraphs
+          searchValue={searchValue}
+          paragraphs={MOCK_PARAGRAPHS}
+        />
       </div>
     );
   });

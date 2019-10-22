@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { arrowBack } from "../../svgs/navigation/arrow-back";
 import { close } from "../../svgs/navigation/close";
 import ActionItem from "../actionItem/ActionItem";
+import useKeyPress from "../../hooks/keyPress";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +20,8 @@ const Input = styled.input`
   padding: 0 0 0 ${p => (p.previousSearchValue ? "0.2rem" : "2rem")};
   border: none;
   outline: none;
+  transform: ${p => (p.animate ? `translateY(0%)` : `translateY(100%)`)};
+  transition: transform 0.2s;
 
   ::-webkit-search-decoration,
   ::-webkit-search-cancel-button,
@@ -38,11 +41,29 @@ const Search = ({
   onClose,
   onSubmit
 }) => {
+  const [animate, setAnimate] = useState(false);
+  const firstUpdate = useRef(true);
+  const enter = useKeyPress("Enter");
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+  useEffect(() => {
+    if (
+      firstUpdate.current ||
+      document.activeElement !== document.getElementById("Search")
+    ) {
+      firstUpdate.current = false;
+      return;
+    }
+    onSubmit(value);
+  }, [enter]);
+
   return (
     <Wrapper>
       {previousSearchValue && (
         <ActionItemWrapper onClick={onBack}>
-          <ActionItem svg={arrowBack} color="#111" noBorder />
+          <ActionItem svg={arrowBack} color="#111111" noBorder />
         </ActionItemWrapper>
       )}
       <Input
@@ -52,9 +73,10 @@ const Search = ({
         previousSearchValue={previousSearchValue}
         value={value}
         onChange={onChange}
+        animate={animate}
       />
       <ActionItemWrapper onClick={onClose}>
-        <ActionItem svg={close} color="#111" noBorder />
+        <ActionItem svg={close} color="#111111" noBorder />
       </ActionItemWrapper>
     </Wrapper>
   );
