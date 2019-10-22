@@ -28,6 +28,12 @@ const Title = styled.h1`
   }
 `;
 
+const TopBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 storiesOf("App bar top", module)
   .add("regular", () => (
     <div>
@@ -91,6 +97,38 @@ storiesOf("App bar top", module)
           />
         </AppBarTop>
         <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
+      </div>
+    );
+  })
+  .add("appbar and search", () => {
+    const [value, setValue] = useState("farm-to-table");
+    const [searchValue, setSearchValue] = useState("");
+
+    return (
+      <div>
+        <AppBarTop flex={false}>
+          <TopBar>
+            <InnerWrapper>
+              <ActionItem svg={menu} />
+              <Title>Page title</Title>
+            </InnerWrapper>
+            <InnerWrapper>
+              <ActionItem svg={favorite} />
+              <ActionItem svg={moreVertical} />
+            </InnerWrapper>
+          </TopBar>
+          <Search
+            value={value}
+            onChange={e => setValue(e.target.value)}
+            onBack={() => setValue("")}
+            onClose={() => setValue("")}
+            onSubmit={value => setSearchValue(value)}
+          />
+        </AppBarTop>
+        <MockParagraphs
+          paragraphs={MOCK_PARAGRAPHS}
+          searchValue={searchValue}
+        />
       </div>
     );
   })

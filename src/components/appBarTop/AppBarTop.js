@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
+  display: ${p => (p.flex ? "flex" : "block")};
   min-height: ${p => (p.large ? "6rem" : "auto")};
   justify-content: space-between;
   align-items: flex-start;
@@ -17,7 +17,7 @@ const Container = styled.div`
   top: 0;
 `;
 
-const AppBarTop = ({ children, type = "regular" }) => {
+const AppBarTop = ({ children, type = "regular", flex = true }) => {
   let [pos, setPos] = useState(window.pageYOffset);
   let [visible, setVisible] = useState(true);
 
@@ -39,7 +39,7 @@ const AppBarTop = ({ children, type = "regular" }) => {
   });
 
   return (
-    <Container large={type !== "regular"} show={visible}>
+    <Container large={type !== "regular"} show={visible} flex={flex}>
       {children}
     </Container>
   );
