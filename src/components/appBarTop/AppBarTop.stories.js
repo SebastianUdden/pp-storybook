@@ -10,6 +10,7 @@ import { search } from "../../svgs/actions/search";
 import MockParagraphs from "./MockParagraph";
 import ActionItem from "../actionItem/ActionItem";
 import Search from "../search/Search";
+import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -17,9 +18,12 @@ const InnerWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: large;
+  font-size: x-large;
   margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 1.5rem;
   padding: 0;
+  ${MEDIA_MAX_MEDIUM} {
+    margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 0.2rem;
+  }
 `;
 
 storiesOf("App bar top", module)
