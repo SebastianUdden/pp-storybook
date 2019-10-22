@@ -25,7 +25,11 @@ const AppBarTop = ({ children, type = "regular" }) => {
     const handleScroll = () => {
       let temp = window.pageYOffset;
 
-      setVisible(pos > temp);
+      if (pos > 100) {
+        setVisible(pos > temp);
+      } else {
+        setVisible(true);
+      }
       setPos(temp);
     };
     window.addEventListener("scroll", handleScroll);
