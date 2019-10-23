@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
-import ColoredBox from "../components/coloredBox/ColoredBox";
-import { DP_TYPES } from "./theme";
+import ColoredBox from "../coloredBox/ColoredBox";
+import { DP_TYPES } from "../../constants/theme";
 
 const Container = styled.div`
   display: flex;

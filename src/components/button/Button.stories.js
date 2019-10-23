@@ -8,13 +8,14 @@ import ToggleButton from "./ToggleButton";
 import FabButton from "./FabButton";
 import { plus } from "../../svgs/generic/plus";
 import SVG from "../svg/SVG";
+import { MAIN_THEME } from "../../constants/theme";
 
 storiesOf("Button", module)
   .add("text", () => (
     <TextButton
       onClick={action("clicked")}
-      color="#FF00AA"
-      backgroundColorHover="#222222"
+      color={MAIN_THEME.PRIMARY.color.foreground}
+      backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
     >
       Default Text-button
     </TextButton>
@@ -27,8 +28,8 @@ storiesOf("Button", module)
   .add("outline", () => (
     <OutlineButton
       onClick={action("clicked")}
-      color="#FF00AA"
-      backgroundColorHover="#666666"
+      color={MAIN_THEME.PRIMARY.color.foreground}
+      backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
     >
       Default Outline-button
     </OutlineButton>
@@ -41,9 +42,12 @@ storiesOf("Button", module)
   .add("contained", () => (
     <ContainedButton
       onClick={action("clicked")}
-      color="#FFFFFF"
-      backgroundColor="#FF00AA"
-      backgroundColorHover="#FF22BB"
+      color={MAIN_THEME.PRIMARY.color.foreground}
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
+      // color="#FFFFFF"
+      // backgroundColor="#FF00AA"
+      // backgroundColorHover="#FF22BB"
     >
       Default Contained-button
     </ContainedButton>
@@ -65,27 +69,27 @@ storiesOf("Button", module)
       <div>
         <ToggleButton
           onClick={() => setSelectedButton(1)}
-          color="#FFFFFF"
-          backgroundColor="#FF00AA"
-          backgroundColorHover="#FF22BB"
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
           selected={selectedButton === 1}
         >
           Toggle 1
         </ToggleButton>
         <ToggleButton
           onClick={() => setSelectedButton(2)}
-          color="#FFFFFF"
-          backgroundColor="#FF00AA"
-          backgroundColorHover="#FF22BB"
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
           selected={selectedButton === 2}
         >
           Toggle 2
         </ToggleButton>
         <ToggleButton
           onClick={() => setSelectedButton(3)}
-          color="#FFFFFF"
-          backgroundColor="#FF00AA"
-          backgroundColorHover="#FF22BB"
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
           selected={selectedButton === 3}
           disabled
         >
@@ -93,9 +97,9 @@ storiesOf("Button", module)
         </ToggleButton>
         <ToggleButton
           onClick={() => setSelectedButton(4)}
-          color="#FFFFFF"
-          backgroundColor="#FF00AA"
-          backgroundColorHover="#FF22BB"
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
           selected={selectedButton === 4}
         >
           Toggle 4
@@ -106,9 +110,9 @@ storiesOf("Button", module)
   .add("fab", () => (
     <FabButton
       onClick={action("clicked")}
-      color="#FFFFFF"
-      backgroundColor="#7700FF"
-      backgroundColorHover="#8632FF"
+      color={MAIN_THEME.PRIMARY.color.foreground}
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
     >
       <SVG color={"white"} {...plus} size={24} />
     </FabButton>

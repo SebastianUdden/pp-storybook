@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
-import SearchParagraphs from "../components/searchParagraphs/SearchParagraphs";
-import { MOCK_PARAGRAPHS } from "./mocks";
-import ColoredBox from "../components/coloredBox/ColoredBox";
-import { THEME_COLORS, ALTERNATE_THEME_COLORS, MAIN_THEME, DP6 } from "./theme";
+import SearchParagraphs from "../searchParagraphs/SearchParagraphs";
+import { MOCK_PARAGRAPHS } from "../../constants/mocks";
+import ColoredBox from "../coloredBox/ColoredBox";
+import {
+  THEME_COLORS,
+  ALTERNATE_THEME_COLORS,
+  MAIN_THEME,
+  DP6
+} from "../../constants/theme";
 
 const Container = styled.div`
   display: flex;
