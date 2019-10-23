@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
+  font-family: "Nunito", sans-serif;
   width: 100%;
   font-size: x-large;
   color: #555;

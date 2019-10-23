@@ -16,6 +16,7 @@ import SVG from "../svg/SVG";
 import { cross } from "../../svgs/generic/cross";
 
 const Overlay = styled.div`
+  font-family: "Nunito", sans-serif;
   top: 0;
   left: 0;
   background-color: rgba(0, 8, 28, 0.8);

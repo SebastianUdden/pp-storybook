@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+  font-family: "Nunito", sans-serif;
   cursor: ${p => (p.disabled ? "default" : "pointer")};
   text-transform: uppercase;
   color: ${p => p.color || "inherit"};
