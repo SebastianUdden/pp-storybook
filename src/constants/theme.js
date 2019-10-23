@@ -54,3 +54,65 @@ export const DP16 =
 export const DP24 =
   "0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.20)";
 export const DPraised = "0px 5px 12px rgba(0,0,0,0.8)";
+
+export const ALTERNATE_THEME_COLORS = {
+  HEADER_COLOR: "#222",
+  BASE_TEXT_COLOR: "#EEE",
+  BASE_INPUT_COLOR: "#3b3b3b",
+  FADED_TEXT_COLOR: "#777",
+  ERROR_TEXT_COLOR: "#cc2222",
+  SUCCESS_TEXT_COLOR: "#339933",
+  BASE_TEXT_HOVER_COLOR: "#AAA",
+  LINK_TEXT_COLOR: "#ff8c00",
+  LINK_TEXT_HOVER_COLOR: "#cc6a00"
+};
+
+export const THEME_COLORS = {
+  PRIMARY: "#82C6F6",
+  PRIMARY_VARIANT: "#FE5722",
+  SECONDARY: "#03DAC6",
+  PRIMARY_BACKGROUND: "#16242C",
+  ON_PRIMARY_BACKGROUND: "#566A70",
+  BACKGROUND: "#121212",
+  BACKGROUND_ACTIVE: "#1F1F1F",
+  SURFACE: "#292929",
+  SURFACE_ACTIVE: "#434343",
+  ERROR: "#AE5A69",
+  ERROR_BACKGROUND: "#660202",
+  ON_PRIMARY: "#000000",
+  ON_SECONDARY: "#000000",
+  ON_BACKGROUND: "#FFFFFF",
+  ON_SURFACE: "#FFFFFF",
+  ON_ERROR: "#FFFFFF"
+};
+
+export const DP_TYPES = {
+  DP0: "none",
+  DP1:
+    "0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20)",
+  DP2:
+    "0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20)",
+  DP3:
+    "0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20)",
+  DP4:
+    "0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20)",
+  DP6:
+    "0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20)",
+  DP8:
+    "0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20)",
+  DP9:
+    "0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12), 0 5px 6px -3px rgba(0,0,0,0.20)",
+  DP12:
+    "0 12px 17px 2px rgba(0,0,0,0.14), 0 5px 22px 4px rgba(0,0,0,0.12), 0 7px 8px -4px rgba(0,0,0,0.20)",
+  DP16:
+    "0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.20)",
+  DP24:
+    "0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.20)",
+  DPraised: "0px 5px 12px rgba(0,0,0,0.8)"
+};
+
+export const EMPHAZIS_TYPES = {
+  HIGH_EMPHASIS: 0.87,
+  MEDIUM_EMPHASIS: 0.6,
+  DISABLED: 0.38
+};
