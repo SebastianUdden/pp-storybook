@@ -67,6 +67,33 @@ export const ALTERNATE_THEME_COLORS = {
   LINK_TEXT_HOVER_COLOR: "#cc6a00"
 };
 
+export const MAIN_THEME_OPACITY = {
+  ON_PRIMARY: {
+    large: 0.61,
+    normal: 0.87
+  },
+  ON_PRIMARY_DARK: {
+    large: 0.43,
+    normal: 0.59
+  },
+  ON_PRIMARY_LIGHT: {
+    large: 0.52,
+    normal: 0.7
+  },
+  ON_SECONDARY: {
+    large: 0.44,
+    normal: 0.56
+  },
+  ON_SECONDARY_DARK: {
+    large: 0.48,
+    normal: 0.64
+  },
+  ON_SECONDARY_LIGHT: {
+    large: 0.42,
+    normal: 0.54
+  }
+};
+
 export const THEME_COLORS = {
   PRIMARY: "#82C6F6",
   PRIMARY_VARIANT: "#FE5722",
@@ -111,8 +138,71 @@ export const DP_TYPES = {
   DPraised: "0px 5px 12px rgba(0,0,0,0.8)"
 };
 
-export const EMPHAZIS_TYPES = {
+export const EMPHASIS_TYPES = {
   HIGH_EMPHASIS: 0.87,
   MEDIUM_EMPHASIS: 0.6,
   DISABLED: 0.38
+};
+
+export const MAIN_THEME = {
+  PRIMARY: {
+    color: {
+      background: "#7D47DF",
+      foreground: "#FFFFFF"
+    },
+    opacity: {
+      large: 0.61,
+      normal: 0.87
+    }
+  },
+  PRIMARY_DARK: {
+    color: {
+      background: "#4617AC",
+      foreground: "#FFFFFF"
+    },
+    opacity: {
+      large: 0.43,
+      normal: 0.59
+    }
+  },
+  PRIMARY_LIGHT: {
+    color: {
+      background: "#B276FF",
+      foreground: "#000000"
+    },
+    opacity: {
+      large: 0.52,
+      normal: 0.7
+    }
+  },
+  SECONDARY: {
+    color: {
+      background: "#C2E299",
+      foreground: "#000000"
+    },
+    opacity: {
+      large: 0.44,
+      normal: 0.56
+    }
+  },
+  SECONDARY_DARK: {
+    color: {
+      background: "#91B06A",
+      foreground: "#000000"
+    },
+    opacity: {
+      large: 0.48,
+      normal: 0.64
+    }
+  },
+  SECONDARY_LIGHT: {
+    color: {
+      background: "#F5FFCA",
+      foreground: "#000000"
+    },
+    opacity: {
+      large: 0.42,
+      normal: 0.54
+    }
+  }
 };

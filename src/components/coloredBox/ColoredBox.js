@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Box = styled.div`
+  font-family: "Nunito", sans-serif;
   display: flex;
   padding: 1rem;
-  font-size: x-large;
   justify-content: center;
   align-items: center;
   color: ${p => p.color};
@@ -12,6 +12,7 @@ const Box = styled.div`
   height: ${p => p.size};
   min-width: ${p => p.size};
   box-shadow: ${p => p.boxShadow};
+  opacity: ${p => p.opacity};
 `;
 
 const ColoredBox = ({
@@ -19,6 +20,7 @@ const ColoredBox = ({
   backgroundColor = "#ccccccc",
   boxShadow = "none",
   size = "10rem",
+  opacity = 1,
   children
 }) => (
   <Box
@@ -26,6 +28,7 @@ const ColoredBox = ({
     backgroundColor={backgroundColor}
     boxShadow={boxShadow}
     size={size}
+    opacity={opacity}
   >
     {children}
   </Box>

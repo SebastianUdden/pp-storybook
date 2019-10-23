@@ -8,6 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

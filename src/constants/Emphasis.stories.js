@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
-import SearchParagraphs from "../components/searchParagraphs/SearchParagraphs";
-import { MOCK_PARAGRAPHS } from "./mocks";
 import ColoredBox from "../components/coloredBox/ColoredBox";
-import { EMPHAZIS_TYPES } from "./theme";
+import { EMPHASIS_TYPES } from "./theme";
 
 const Container = styled.div`
   display: flex;
 `;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,22 +17,23 @@ const Wrapper = styled.div`
 const Label = styled.label`
   font-size: large;
   text-align: center;
+  opacity: ${p => p.opacity};
   color: ${p => p.color};
 `;
 
-storiesOf("Emphazis", module).add("all emphazis", () => (
+storiesOf("Emphasis", module).add("all emphasis", () => (
   <Container>
-    {Object.keys(EMPHAZIS_TYPES).map(emphazis => (
+    {Object.keys(EMPHASIS_TYPES).map(emphasis => (
       <Wrapper>
         <ColoredBox
-          emphazis={emphazis}
+          opacity={EMPHASIS_TYPES[emphasis]}
           color="#cccccc"
           backgroundColor="#222222"
         >
-          Sample text
+          Sample text {EMPHASIS_TYPES[emphasis]}
         </ColoredBox>
-        <Label color="#cccccc">
-          {emphazis.replace("_", " ").toLowerCase()}
+        <Label color="#cccccc" opacity={emphasis}>
+          {emphasis.replace("_", " ").toLowerCase()}
         </Label>
       </Wrapper>
     ))}
