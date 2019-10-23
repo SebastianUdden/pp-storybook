@@ -132,6 +132,50 @@ storiesOf("App bar top", module)
       </div>
     );
   })
+  .add("appbar and dissappearing search", () => {
+    const [value, setValue] = useState("farm-to-table");
+    const [showSearch, setShowSearch] = useState(true);
+    const [searchValue, setSearchValue] = useState("");
+
+    return (
+      <div>
+        <AppBarTop flex={false}>
+          <TopBar>
+            <InnerWrapper>
+              <ActionItem svg={menu} />
+              <Title>Page title</Title>
+            </InnerWrapper>
+            <InnerWrapper>
+              {!showSearch && (
+                <ActionItem svg={search} onClick={() => setShowSearch(true)} />
+              )}
+              <ActionItem svg={favorite} />
+              <ActionItem svg={moreVertical} />
+            </InnerWrapper>
+          </TopBar>
+          {showSearch && (
+            <Search
+              value={value}
+              onChange={e => setValue(e.target.value)}
+              onBack={() => setValue("")}
+              onClose={() => {
+                setValue("");
+                setShowSearch(false);
+              }}
+              onSubmit={value => {
+                setShowSearch(false);
+                setSearchValue(value);
+              }}
+            />
+          )}
+        </AppBarTop>
+        <MockParagraphs
+          paragraphs={MOCK_PARAGRAPHS}
+          searchValue={searchValue}
+        />
+      </div>
+    );
+  })
   .add("appbar <> search", () => {
     const [value, setValue] = useState("farm-to-table");
     const [showSearch, setShowSearch] = useState(true);
