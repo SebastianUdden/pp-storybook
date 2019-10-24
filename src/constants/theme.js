@@ -251,8 +251,18 @@ export const MAIN_THEME = {
   },
   WHITE: {
     color: {
-      background: "#FFFFFF",
-      foreground: "#000000"
+      background: "#EEEEEE",
+      foreground: "#121212"
+    },
+    opacity: {
+      large: 0.32,
+      normal: 0.44
+    }
+  },
+  BLACK: {
+    color: {
+      background: "#121212",
+      foreground: "#FFFFFF"
     },
     opacity: {
       large: 0.32,
