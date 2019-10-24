@@ -94,25 +94,6 @@ export const MAIN_THEME_OPACITY = {
   }
 };
 
-export const THEME_COLORS = {
-  PRIMARY: "#82C6F6",
-  PRIMARY_VARIANT: "#FE5722",
-  SECONDARY: "#03DAC6",
-  PRIMARY_BACKGROUND: "#16242C",
-  ON_PRIMARY_BACKGROUND: "#566A70",
-  BACKGROUND: "#121212",
-  BACKGROUND_ACTIVE: "#1F1F1F",
-  SURFACE: "#292929",
-  SURFACE_ACTIVE: "#434343",
-  ERROR: "#AE5A69",
-  ERROR_BACKGROUND: "#660202",
-  ON_PRIMARY: "#000000",
-  ON_SECONDARY: "#000000",
-  ON_BACKGROUND: "#FFFFFF",
-  ON_SURFACE: "#FFFFFF",
-  ON_ERROR: "#FFFFFF"
-};
-
 export const DP_TYPES = {
   DP0: "none",
   DP1:
@@ -142,6 +123,69 @@ export const EMPHASIS_TYPES = {
   HIGH_EMPHASIS: 0.87,
   MEDIUM_EMPHASIS: 0.6,
   DISABLED: 0.38
+};
+
+export const SECONDARY_THEME = {
+  PRIMARY: {
+    color: {
+      background: "#82C6F6",
+      foreground: "#000000"
+    }
+  },
+  PRIMARY_VARIANT: {
+    color: {
+      background: "#FE5722",
+      foreground: "#FFFFFF"
+    }
+  },
+  SECONDARY: {
+    color: {
+      background: "#03DAC6",
+      foreground: "#000000"
+    }
+  },
+  PRIMARY_BACKGROUND: {
+    color: {
+      background: "#16242C",
+      foreground: "#566A70"
+    }
+  },
+  BACKGROUND: {
+    color: {
+      background: "#121212",
+      foreground: "#FFFFFF"
+    }
+  },
+  BACKGROUND_ACTIVE: {
+    color: {
+      background: "#1F1F1F",
+      foreground: "#FFFFFF"
+    }
+  },
+  SURFACE: {
+    color: {
+      background: "#292929",
+      foreground: "#FFFFFF"
+    }
+  },
+  SURFACE_ACTIVE: {
+    color: {
+      background: "#434343",
+      foreground: "#FFFFFF"
+    }
+  },
+  ERROR: {
+    color: {
+      background: "#121212",
+      foreground: "#AE5A69"
+    }
+  },
+  ERROR_BACKGROUND: {
+    color: {
+      background: "#660202",
+      foreground: "#FFFFFF"
+    }
+  }
 };
 
 export const MAIN_THEME = {
@@ -203,6 +247,16 @@ export const MAIN_THEME = {
     opacity: {
       large: 0.42,
       normal: 0.54
+    }
+  },
+  WHITE: {
+    color: {
+      background: "#FFFFFF",
+      foreground: "#000000"
+    },
+    opacity: {
+      large: 0.32,
+      normal: 0.44
     }
   }
 };

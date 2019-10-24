@@ -2,15 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  border: 1px solid red;
+  position: absolute;
+  margin: 0 auto;
+
+  top: 0;
+  left: 0;
+  right: 20%;
+  bottom: 0;
+  padding: 1rem;
+  color: ${p => p.color};
+  background-color: ${p => p.backgroundColor};
+  box-shadow: ${p => p.boxShadow};
 `;
 
-const MenuDrawer = () => {
+const MenuDrawer = ({ boxShadow, color, backgroundColor, children }) => {
   return (
-    <Wrapper>
-      <h1>Title</h1>
-      <h2>Subtitle 1</h2>
-      <h2>Subtitle 2</h2>
+    <Wrapper
+      boxShadow={boxShadow}
+      color={color}
+      backgroundColor={backgroundColor}
+    >
+      {children}
     </Wrapper>
   );
 };
