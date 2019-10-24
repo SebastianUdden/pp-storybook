@@ -46,7 +46,8 @@ const ActionItem = ({
   color,
   svg,
   noBorder,
-  onClick
+  onClick,
+  id
 }) => {
   const [animate, setAnimate] = useState(false);
   useEffect(() => {
@@ -54,6 +55,7 @@ const ActionItem = ({
   }, []);
   return (
     <Item
+      id={id}
       backgroundColorHover={backgroundColorHover}
       noBorder={noBorder}
       onClick={onClick}
