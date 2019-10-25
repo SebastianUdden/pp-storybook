@@ -23,8 +23,8 @@ const Wrapper = styled.div`
   font-family: "Nunito", sans-serif;
   position: fixed;
   margin: 0 auto;
-  transform: ${p => (p.hide ? "translateX(-100%)" : "translate(0)")};
-  transition: transform 0.2s;
+  transform: ${p => (p.hide ? "translateX(-110%)" : "translate(0)")};
+  transition: transform 0.3s;
   z-index: 100;
 
   top: 0;
@@ -32,6 +32,7 @@ const Wrapper = styled.div`
   right: 20%;
   bottom: 0;
   padding: 1rem;
+  min-height: 100vh;
   color: ${p => p.color};
   background-color: ${p => p.backgroundColor};
   box-shadow: ${p => p.boxShadow};

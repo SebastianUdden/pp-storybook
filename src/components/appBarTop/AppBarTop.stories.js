@@ -7,12 +7,11 @@ import { menu } from "../../svgs/navigation/menu";
 import { moreVertical } from "../../svgs/navigation/more-vertical";
 import { favorite } from "../../svgs/actions/favorite";
 import { search } from "../../svgs/actions/search";
-import MockParagraphs from "../searchParagraphs/SearchParagraphs";
 import ActionItem from "../actionItem/ActionItem";
 import Search from "../search/Search";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
-import SearchParagraphs from "../searchParagraphs/SearchParagraphs";
-import { MOCK_PARAGRAPHS } from "../../constants/mocks";
+import SearchSections from "../searchSections/SearchSections";
+import { MOCK_SECTIONS } from "../../constants/mocks";
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -48,7 +47,7 @@ storiesOf("App bar top", module)
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
       </AppBarTop>
-      <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
+      <SearchSections sections={MOCK_SECTIONS} />
     </div>
   ))
   .add("prominent", () => (
@@ -64,7 +63,7 @@ storiesOf("App bar top", module)
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
       </AppBarTop>
-      <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
+      <SearchSections sections={MOCK_SECTIONS} />
     </div>
   ))
   .add("with dynamic action items", () => (
@@ -80,7 +79,7 @@ storiesOf("App bar top", module)
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
       </AppBarTop>
-      <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
+      <SearchSections sections={MOCK_SECTIONS} />
     </div>
   ))
   .add("search", () => {
@@ -96,7 +95,7 @@ storiesOf("App bar top", module)
             onClose={() => setValue("")}
           />
         </AppBarTop>
-        <MockParagraphs paragraphs={MOCK_PARAGRAPHS} />
+        <SearchSections sections={MOCK_SECTIONS} />
       </div>
     );
   })
@@ -125,10 +124,7 @@ storiesOf("App bar top", module)
             onSubmit={value => setSearchValue(value)}
           />
         </AppBarTop>
-        <MockParagraphs
-          paragraphs={MOCK_PARAGRAPHS}
-          searchValue={searchValue}
-        />
+        <SearchSections sections={MOCK_SECTIONS} searchValue={searchValue} />
       </div>
     );
   })
@@ -169,10 +165,7 @@ storiesOf("App bar top", module)
             />
           )}
         </AppBarTop>
-        <MockParagraphs
-          paragraphs={MOCK_PARAGRAPHS}
-          searchValue={searchValue}
-        />
+        <SearchSections sections={MOCK_SECTIONS} searchValue={searchValue} />
       </div>
     );
   })
@@ -219,10 +212,7 @@ storiesOf("App bar top", module)
             />
           )}
         </AppBarTop>
-        <SearchParagraphs
-          searchValue={searchValue}
-          paragraphs={MOCK_PARAGRAPHS}
-        />
+        <SearchSections searchValue={searchValue} sections={MOCK_SECTIONS} />
       </div>
     );
   });

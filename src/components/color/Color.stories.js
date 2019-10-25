@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
-import SearchParagraphs from "../searchParagraphs/SearchParagraphs";
-import { MOCK_PARAGRAPHS } from "../../constants/mocks";
+import SearchSections from "../searchSections/SearchSections";
+import { MOCK_SECTIONS } from "../../constants/mocks";
 import ColoredBox from "../coloredBox/ColoredBox";
 import {
   THEME_COLORS,
@@ -123,4 +123,4 @@ storiesOf("Color", module)
       ))}
     </Container>
   ))
-  .add("paragraph", () => <SearchParagraphs paragraphs={MOCK_PARAGRAPHS} />);
+  .add("paragraph", () => <SearchSections sections={MOCK_SECTIONS} />);
