@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
   BACKGROUND_ACTIVE,
@@ -12,13 +12,18 @@ import {
 import { Button } from "./Button";
 
 export const StyledButton = styled(Button)`
+  margin: ${p => (p.noMargin ? 0 : "0.3rem")};
+  padding: 1rem;
   background-color: ${p => p.backgroundColor || "inherit"};
   border-radius: 50%;
   min-width: 3.3rem;
   ${p => p.mini && `padding: 0.4rem; margin: 0; min-width: 2rem;`}
   border: none;
+  transform: ${p =>
+    p.animate ? `rotate(0), scale(1)` : `rotate(270deg) scale(0.4)`};
   box-shadow: ${p => (!p.disabled ? p.boxShadow : "inherit")};
-  transition: box-shadow 0.1s ease-in, background-color ease-in 0.1s;
+  transition: box-shadow 0.1s ease-in, background-color ease-in 0.1s,
+    transform 0.2s;
 
   :hover {
     background-color: ${p =>
@@ -53,23 +58,32 @@ const FabButton = ({
   backgroundColorHover,
   boxShadow = DP6,
   raisedBoxShadow = DPraised,
+  noMargin,
   mini,
   disabled
-}) => (
-  <StyledButton
-    onClick={onClick}
-    color={disabled ? `${ON_SURFACE}33` : color}
-    backgroundColor={disabled ? SURFACE : backgroundColor}
-    backgroundColorHover={
-      backgroundColorHover || backgroundColor || BACKGROUND_ACTIVE
-    }
-    boxShadow={boxShadow}
-    raisedBoxShadow={raisedBoxShadow}
-    mini={mini}
-    disabled={disabled}
-  >
-    {children}
-  </StyledButton>
-);
+}) => {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+  return (
+    <StyledButton
+      onClick={onClick}
+      color={disabled ? `${ON_SURFACE}33` : color}
+      backgroundColor={disabled ? SURFACE : backgroundColor}
+      backgroundColorHover={
+        backgroundColorHover || backgroundColor || BACKGROUND_ACTIVE
+      }
+      boxShadow={boxShadow}
+      raisedBoxShadow={raisedBoxShadow}
+      mini={mini}
+      disabled={disabled}
+      noMargin={noMargin}
+      animate={animate}
+    >
+      {children}
+    </StyledButton>
+  );
+};
 
 export default FabButton;
