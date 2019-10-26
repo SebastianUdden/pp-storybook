@@ -37,7 +37,7 @@ const SearchSections = ({
             )
             .map(section => {
               return (
-                <Section>
+                <Section key={section.id}>
                   <Title>{section.title}</Title>
                   <Paragraph>{section.paragraph}</Paragraph>
                 </Section>
@@ -52,7 +52,7 @@ const SearchSections = ({
                 section.title.toLowerCase().includes(searchValue.toLowerCase())
             )
             .map(section => (
-              <Section>
+              <Section key={section.id}>
                 <Title>
                   <HighlightedText
                     text={section.title}

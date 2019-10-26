@@ -1,5 +1,6 @@
 export const MOCK_SECTIONS = [
   {
+    id: "0001",
     title: "Summary",
     paragraph: `
     Lorem ipsum dolor amet yr wayfarers pok pok thundercats. Tacos la croix
@@ -10,6 +11,7 @@ export const MOCK_SECTIONS = [
   `
   },
   {
+    id: "0002",
     title: "All photos",
     paragraph: `
     Farm-to-table YOLO selvage deep v, palo santo kitsch dolore. Magna
@@ -18,6 +20,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0003",
     title: "Shared with me",
     paragraph: `
     Helvetica pop-up selfies, retro palo santo normcore dolor
@@ -27,6 +30,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0004",
     title: "Starred",
     paragraph: `
     DIY actually dolor pop-up fugiat quis, sustainable pour-over stumptown
@@ -35,6 +39,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0005",
     title: "Recent",
     paragraph: `
     DIY vexillologist lomo tumblr blog, wolf gastropub schlitz. Et synth
@@ -43,6 +48,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0006",
     title: "Chapter 1",
     paragraph: `
     Helvetica qui activated charcoal godard butcher eu consectetur
@@ -51,6 +57,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0007",
     title: "Chapter 2",
     paragraph: `
     Hella iPhone etsy dolore squid kogi shoreditch copper mug minim artisan. 
@@ -58,6 +65,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0008",
     title: "Chapter 3",
     paragraph: `
     Shabby chic adipisicing man bun coloring book. Small batch iPhone put a
@@ -66,6 +74,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0009",
     title: "Chapter 4",
     paragraph: `
     Helvetica cold-pressed pinterest, vice tumeric hot chicken pop-up 
@@ -74,6 +83,7 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0010",
     title: "Chapter 5",
     paragraph: `
     Aesthetic id ad labore, yuccie occupy
@@ -82,10 +92,15 @@ export const MOCK_SECTIONS = [
     `
   },
   {
+    id: "0011",
     title: "Chapter 6",
     paragraph: `
     Oh. You need a little dummy text for your mockup? How quaint.
     `
   },
-  { title: "Chapter 7", paragraph: `I bet you’re still using Bootstrap too…` }
+  {
+    id: "0012",
+    title: "Chapter 7",
+    paragraph: `I bet you’re still using Bootstrap too…`
+  }
 ];
