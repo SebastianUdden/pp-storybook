@@ -8,6 +8,14 @@ import { moreHorizontal } from "../../svgs/navigation/more-horizontal";
 
 const Overflow = styled.div`
   display: flex;
+  ${p =>
+    p.position &&
+    `
+    position: ${p.position.position};
+    top: ${p.position.top || "auto"};
+    bottom: ${p.position.bottom || "auto"};
+    right: ${p.position.right || "auto"};
+  `}
   flex-direction: ${p => p.direction};
   width: ${p => (p.direction.includes("column") ? "4rem" : "auto")};
 `;
@@ -17,10 +25,11 @@ const OverflowMenu = ({
   direction = "column",
   foregroundColor = "white",
   onClick,
+  position,
   children
 }) => {
   return (
-    <Overflow direction={direction}>
+    <Overflow direction={direction} position={position}>
       {isOpen ? (
         <>
           {onClick && (
