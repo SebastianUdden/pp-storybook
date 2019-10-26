@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+const Sections = styled.div`
+  margin: 0;
+`;
 const Section = styled.div``;
 const Title = styled.h2`
   font-family: "Nunito", sans-serif;
@@ -15,26 +18,56 @@ const Paragraph = styled.p`
   color: white;
 `;
 
-// TODO add highlight of the word that's matched
+const getHighlightedText = (
+  text,
+  higlight,
+  foregroundColor,
+  backgroundColor
+) => {
+  // Split on higlight term and include term into parts, ignore case
+  let parts = text.split(new RegExp(`(${higlight})`, "gi"));
+  return (
+    <span>
+      {" "}
+      {parts.map((part, i) => (
+        <span
+          key={i}
+          style={
+            part.toLowerCase() === higlight.toLowerCase()
+              ? { color: foregroundColor, backgroundColor }
+              : {}
+          }
+        >
+          {part}
+        </span>
+      ))}{" "}
+    </span>
+  );
+};
+
 const SearchSections = ({
   sections,
   searchValue = "",
-  selectedSection = ""
+  selectedSection = "",
+  foregroundColor = "orange",
+  backgroundColor = "transparent"
 }) => {
   return (
-    <>
+    <Sections>
       {selectedSection
         ? sections
             .filter(
               section =>
                 section.title.toLowerCase() === selectedSection.toLowerCase()
             )
-            .map(section => (
-              <Section>
-                <Title>{section.title}</Title>
-                <Paragraph>{section.paragraph}</Paragraph>
-              </Section>
-            ))
+            .map(section => {
+              return (
+                <Section>
+                  <Title>{section.title}</Title>
+                  <Paragraph>{section.paragraph}</Paragraph>
+                </Section>
+              );
+            })
         : sections
             .filter(
               section =>
@@ -46,10 +79,17 @@ const SearchSections = ({
             .map(section => (
               <Section>
                 <Title>{section.title}</Title>
-                <Paragraph>{section.paragraph}</Paragraph>
+                <Paragraph>
+                  {getHighlightedText(
+                    section.paragraph,
+                    searchValue,
+                    foregroundColor,
+                    backgroundColor
+                  )}
+                </Paragraph>
               </Section>
             ))}
-    </>
+    </Sections>
   );
 };
 

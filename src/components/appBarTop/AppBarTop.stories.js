@@ -12,6 +12,7 @@ import Search from "../search/Search";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 import SearchSections from "../searchSections/SearchSections";
 import { MOCK_SECTIONS } from "../../constants/mocks";
+import { MAIN_THEME } from "../../constants/theme";
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -124,7 +125,11 @@ storiesOf("App bar top", module)
             onSubmit={value => setSearchValue(value)}
           />
         </AppBarTop>
-        <SearchSections sections={MOCK_SECTIONS} searchValue={searchValue} />
+        <SearchSections
+          sections={MOCK_SECTIONS}
+          searchValue={searchValue}
+          foregroundColor={MAIN_THEME.PRIMARY_LIGHT.color.background}
+        />
       </div>
     );
   })
@@ -165,7 +170,11 @@ storiesOf("App bar top", module)
             />
           )}
         </AppBarTop>
-        <SearchSections sections={MOCK_SECTIONS} searchValue={searchValue} />
+        <SearchSections
+          sections={MOCK_SECTIONS}
+          searchValue={searchValue}
+          foregroundColor={MAIN_THEME.PRIMARY_LIGHT.color.background}
+        />
       </div>
     );
   })
@@ -212,7 +221,11 @@ storiesOf("App bar top", module)
             />
           )}
         </AppBarTop>
-        <SearchSections searchValue={searchValue} sections={MOCK_SECTIONS} />
+        <SearchSections
+          sections={MOCK_SECTIONS}
+          searchValue={searchValue}
+          foregroundColor={MAIN_THEME.PRIMARY_LIGHT.color.background}
+        />
       </div>
     );
   });
