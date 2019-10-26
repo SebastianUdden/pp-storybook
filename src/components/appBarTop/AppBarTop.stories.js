@@ -13,7 +13,7 @@ import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 import SearchSections from "../searchSections/SearchSections";
 import { MOCK_SECTIONS } from "../../constants/mocks";
 import { MAIN_THEME } from "../../constants/theme";
-import { DEFAULT_FONT_SIZE } from "../../constants/font";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -21,7 +21,8 @@ const InnerWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: ${DEFAULT_FONT_SIZE};
+  font-family: ${DEFAULT_FONT.family};
+  font-size: ${DEFAULT_FONT.largeSize};
   margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 0.2rem;
   padding: 0;
   ${MEDIA_MAX_MEDIUM} {
@@ -36,12 +37,63 @@ const TopBar = styled.div`
 `;
 
 storiesOf("App bar top", module)
+  .add("appbar <> search", () => {
+    const [value, setValue] = useState("farm-to-table");
+    const [showSearch, setShowSearch] = useState(true);
+    const [searchValue, setSearchValue] = useState("");
+
+    return (
+      <div>
+        <AppBarTop>
+          {!showSearch && (
+            <>
+              <InnerWrapper>
+                <ActionItem svg={menu} />
+                <Title>Regular Appbar</Title>
+              </InnerWrapper>
+              <InnerWrapper>
+                <ActionItem
+                  svg={search}
+                  onClick={() => {
+                    setShowSearch(true);
+                    setTimeout(
+                      () => document.getElementById("Search").focus(),
+                      200
+                    );
+                  }}
+                />
+              </InnerWrapper>
+            </>
+          )}
+          {showSearch && (
+            <Search
+              value={value}
+              previousSearchValue="farm-to-table"
+              onChange={e => setValue(e.target.value)}
+              onBack={() => {
+                setShowSearch(false);
+                setValue("");
+                setSearchValue("");
+              }}
+              onClose={() => setShowSearch(false)}
+              onSubmit={value => setSearchValue(value)}
+            />
+          )}
+        </AppBarTop>
+        <SearchSections
+          sections={MOCK_SECTIONS}
+          searchValue={searchValue}
+          foregroundColor={MAIN_THEME.PRIMARY_LIGHT.color.background}
+        />
+      </div>
+    );
+  })
   .add("regular", () => (
     <div>
       <AppBarTop>
         <InnerWrapper>
           <ActionItem svg={menu} />
-          <Title>Prominent Appbar</Title>
+          <Title>Regular Appbar</Title>
         </InnerWrapper>
         <InnerWrapper>
           <ActionItem svg={favorite} />
@@ -168,57 +220,6 @@ storiesOf("App bar top", module)
                 setShowSearch(false);
                 setSearchValue(value);
               }}
-            />
-          )}
-        </AppBarTop>
-        <SearchSections
-          sections={MOCK_SECTIONS}
-          searchValue={searchValue}
-          foregroundColor={MAIN_THEME.PRIMARY_LIGHT.color.background}
-        />
-      </div>
-    );
-  })
-  .add("appbar <> search", () => {
-    const [value, setValue] = useState("farm-to-table");
-    const [showSearch, setShowSearch] = useState(true);
-    const [searchValue, setSearchValue] = useState("");
-
-    return (
-      <div>
-        <AppBarTop>
-          {!showSearch && (
-            <>
-              <InnerWrapper>
-                <ActionItem svg={menu} />
-                <Title>Regular Appbar</Title>
-              </InnerWrapper>
-              <InnerWrapper>
-                <ActionItem
-                  svg={search}
-                  onClick={() => {
-                    setShowSearch(true);
-                    setTimeout(
-                      () => document.getElementById("Search").focus(),
-                      200
-                    );
-                  }}
-                />
-              </InnerWrapper>
-            </>
-          )}
-          {showSearch && (
-            <Search
-              value={value}
-              previousSearchValue="farm-to-table"
-              onChange={e => setValue(e.target.value)}
-              onBack={() => {
-                setShowSearch(false);
-                setValue("");
-                setSearchValue("");
-              }}
-              onClose={() => setShowSearch(false)}
-              onSubmit={value => setSearchValue(value)}
             />
           )}
         </AppBarTop>
