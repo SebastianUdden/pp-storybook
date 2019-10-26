@@ -1,23 +1,3 @@
-// export const MOCK_CHAPTERS = [
-//   `Summary
-//   This contains all photos, shared with me, starred and recent.`,
-//   `Chapter 1
-//   A start of the page, contains only one sentence.`,
-//   `Chapter 2
-//   Continues the page, still containing only one sentence.`,
-//   `Chapter 3
-//   Increasing the length, this is a slightly bigger chapter.
-//   It even contains two sentences.`,
-//   `Chapter 4
-//   A duplicate of 3, this is a slightly bigger chapter.
-//   It even contains two sentences.`,
-//   `Chapter 5
-//   Some random words to mix it up. Coffee ice breaker slow motion bicycles.`,
-//   `Chapter 6
-//   All photos could be in this chapter, making it possible to get to by two links.`,
-//   `Chapter 7
-//   The end of all things.`
-// ];
 export const MOCK_SECTIONS = [
   {
     title: "Summary",
