@@ -26,6 +26,9 @@ const Wrapper = styled.div`
       color: ${p => p.colorHover};
     }
   }
+  :last-child {
+    margin-bottom: 4rem;
+  }
 `;
 
 const NavigationLink = ({
