@@ -16,6 +16,7 @@ import ActionItem from "../actionItem/ActionItem";
 import { menu } from "../../svgs/navigation/menu";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 import { bookmark } from "../../svgs/actions/bookmark";
+import { bookmarks } from "../../svgs/actions/bookmarks";
 
 const Wrapper = styled.div`
   border: 1px solid transparent;
@@ -37,7 +38,7 @@ const H2 = styled.h2`
 `;
 
 storiesOf("Navigation drawer", module).add("default", () => {
-  const [selected, setSelected] = useState("All photos");
+  const [selected, setSelected] = useState("");
   const [hide, setHide] = useState(true);
   return (
     <Wrapper>
@@ -99,6 +100,18 @@ storiesOf("Navigation drawer", module).add("default", () => {
           selected={selected === "Recent"}
         />
         <hr />
+        <NavigationLink
+          backgroundColor={MAIN_THEME.PRIMARY.color.background}
+          colorHover={MAIN_THEME.PRIMARY.color.background}
+          color={MAIN_THEME.WHITE.color.foreground}
+          svg={bookmarks}
+          title="All chapters"
+          onClick={() => {
+            setHide(true);
+            setSelected("");
+          }}
+          selected={selected === ""}
+        />
         <NavigationLink
           backgroundColor={MAIN_THEME.PRIMARY.color.background}
           colorHover={MAIN_THEME.PRIMARY.color.background}
