@@ -4,6 +4,7 @@ import { arrowBack } from "../../svgs/navigation/arrow-back";
 import { close } from "../../svgs/navigation/close";
 import ActionItem from "../actionItem/ActionItem";
 import useKeyPress from "../../hooks/keyPress";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,9 +15,9 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
+  font-size: ${DEFAULT_FONT.size};
   width: 100%;
-  font-size: x-large;
   color: #555;
   padding: 0 0 0 ${p => (p.previousSearchValue ? "0.2rem" : "2rem")};
   border: none;

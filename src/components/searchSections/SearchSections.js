@@ -1,52 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import HighlightedText from "../highlightedText/HighlightedText";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Sections = styled.div`
   margin: 0;
 `;
 const Section = styled.div``;
 const Title = styled.h2`
-  font-family: "Nunito", sans-serif;
-  font-size: x-large;
+  font-family: ${DEFAULT_FONT.family};
+  font-size: ${DEFAULT_FONT.size};
   margin: 2rem;
   color: white;
 `;
 const Paragraph = styled.p`
-  font-family: "Nunito", sans-serif;
-  font-size: x-large;
+  font-family: ${DEFAULT_FONT.family};
+  font-size: ${DEFAULT_FONT.size};
   margin: 2rem;
   color: white;
 `;
 
-const getHighlightedText = (
-  text,
-  higlight,
-  foregroundColor,
-  backgroundColor
-) => {
-  // Split on higlight term and include term into parts, ignore case
-  let parts = text.split(new RegExp(`(${higlight})`, "gi"));
-  return (
-    <span>
-      {" "}
-      {parts.map((part, i) => (
-        <span
-          key={i}
-          style={
-            part.toLowerCase() === higlight.toLowerCase()
-              ? { color: foregroundColor, backgroundColor }
-              : {}
-          }
-        >
-          {part}
-        </span>
-      ))}{" "}
-    </span>
-  );
-};
-
 const SearchSections = ({
-  sections,
+  sections = [],
   searchValue = "",
   selectedSection = "",
   foregroundColor = "orange",
@@ -78,14 +53,21 @@ const SearchSections = ({
             )
             .map(section => (
               <Section>
-                <Title>{section.title}</Title>
+                <Title>
+                  <HighlightedText
+                    text={section.title}
+                    highlight={searchValue}
+                    foregroundColor={foregroundColor}
+                    backgroundColor={backgroundColor}
+                  />
+                </Title>
                 <Paragraph>
-                  {getHighlightedText(
-                    section.paragraph,
-                    searchValue,
-                    foregroundColor,
-                    backgroundColor
-                  )}
+                  <HighlightedText
+                    text={section.paragraph}
+                    highlight={searchValue}
+                    foregroundColor={foregroundColor}
+                    backgroundColor={backgroundColor}
+                  />
                 </Paragraph>
               </Section>
             ))}

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Container = styled.div`
   margin: 0;
@@ -20,7 +21,7 @@ const Scrim = styled.div`
 `;
 
 const Wrapper = styled.div`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
   position: fixed;
   margin: 0 auto;
   transform: ${p => (p.hide ? "translateX(-110%)" : "translate(0)")};

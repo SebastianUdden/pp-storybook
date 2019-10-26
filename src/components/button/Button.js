@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { DEFAULT_FONT } from "../../constants/font";
 
 export const Button = styled.button`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
   cursor: ${p => (p.disabled ? "default" : "pointer")};
   text-transform: uppercase;
   color: ${p => p.color || "inherit"};

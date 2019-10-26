@@ -13,6 +13,7 @@ import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 import SearchSections from "../searchSections/SearchSections";
 import { MOCK_SECTIONS } from "../../constants/mocks";
 import { MAIN_THEME } from "../../constants/theme";
+import { DEFAULT_FONT_SIZE } from "../../constants/font";
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const InnerWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: x-large;
+  font-size: ${DEFAULT_FONT_SIZE};
   margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 0.2rem;
   padding: 0;
   ${MEDIA_MAX_MEDIUM} {

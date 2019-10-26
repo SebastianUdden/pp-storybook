@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Title = styled.label`
   cursor: pointer;
@@ -10,7 +11,7 @@ const Title = styled.label`
 `;
 
 const Wrapper = styled.div`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
   box-sizing: border-box;
   display: flex;
   align-items: center;

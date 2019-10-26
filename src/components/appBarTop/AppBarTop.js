@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Container = styled.div`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
   display: ${p => (p.flex ? "flex" : "block")};
   min-height: ${p => (p.large ? "6rem" : "auto")};
   justify-content: space-between;

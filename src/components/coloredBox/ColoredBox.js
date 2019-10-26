@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Box = styled.div`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
   display: flex;
   padding: 1rem;
   justify-content: center;

@@ -14,9 +14,11 @@ import {
 } from "../../constants/theme";
 import SVG from "../svg/SVG";
 import { cross } from "../../svgs/generic/cross";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Overlay = styled.div`
-  font-family: "Nunito", sans-serif;
+  font-family: ${DEFAULT_FONT.family};
+  font-size: ${DEFAULT_FONT.size};
   top: 0;
   left: 0;
   background-color: rgba(0, 8, 28, 0.8);
