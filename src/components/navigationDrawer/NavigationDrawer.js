@@ -76,7 +76,11 @@ const NavigationDrawer = ({
       >
         {children}
       </Wrapper>
-      <Scrim hide={hide} backgroundColor={color} />
+      <Scrim
+        onClick={e => e.stopPropagation()}
+        hide={hide}
+        backgroundColor={color}
+      />
     </Container>
   );
 };
