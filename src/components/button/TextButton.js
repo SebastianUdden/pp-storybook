@@ -6,10 +6,11 @@ import { Button } from "./Button";
 export const StyledButton = styled(Button)`
   background-color: inherit;
   border: none;
+  padding: ${p => (p.small ? "0.3rem" : "inherit")};
 
   :hover {
     background-color: ${p =>
-      p.backgroundColorHover ? `${p.backgroundColorHover}33` : "inherit"};
+      p.backgroundColorHover ? `${p.backgroundColorHover}22` : "inherit"};
   }
   :focus {
     background-color: ${p =>
@@ -26,13 +27,19 @@ const TextButton = ({
   onClick,
   color = ON_BACKGROUND,
   backgroundColorHover = BACKGROUND_ACTIVE,
-  disabled
+  disabled,
+  small,
+  fontSize,
+  fontWeight
 }) => (
   <StyledButton
     onClick={onClick}
     color={disabled ? backgroundColorHover : color}
     backgroundColorHover={!disabled && backgroundColorHover}
     disabled={disabled}
+    small={small}
+    fontSize={fontSize}
+    fontWeight={fontWeight}
   >
     {children}
   </StyledButton>
