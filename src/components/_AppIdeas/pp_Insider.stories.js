@@ -10,11 +10,18 @@ import { favorite } from "../../svgs/actions/favorite";
 import { search } from "../../svgs/actions/search";
 import ActionItem from "../actionItem/ActionItem";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
-import { MAIN_THEME } from "../../constants/theme";
-import { Text } from "../text/Text";
+import { MAIN_THEME, DP6 } from "../../constants/theme";
+import Text from "../text/Text";
 import Search from "../search/Search";
 import OverflowMenu from "../overflowMenu/OverflowMenu";
 import FabButton from "../button/FabButton";
+import NavigationDrawer from "../navigationDrawer/NavigationDrawer";
+import NavigationLink from "../navigationLink/NavigationLink";
+import SVG from "../svg/SVG";
+import { supervisedUserCircle } from "../../svgs/actions/supervised-user-circle";
+import { monetizationOn } from "../../svgs/editor/monetization-on";
+import Table from "../table/Table";
+import { INSIDER } from "./pillow_mock";
 
 // Documentation:
 
@@ -55,8 +62,9 @@ const Graph = styled.div`
 
 const Section = styled.div`
   height: 50vh;
-  background-color: ${MAIN_THEME.SECONDARY.color.background};
-  color: ${MAIN_THEME.SECONDARY.color.foreground};
+  background-color: ${MAIN_THEME.WHITE.color.background};
+  color: ${MAIN_THEME.WHITE.color.foreground};
+  box-shadow: ${DP6};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,19 +72,7 @@ const Section = styled.div`
 
 const SectionInfo = styled(Section)`
   flex-direction: column;
-`;
-
-const Table = styled.table`
-  background-color: ${MAIN_THEME.WHITE.color.background};
-  color: ${MAIN_THEME.WHITE.color.foreground};
-`;
-
-const Th = styled.th`
-  padding: 0 1.5rem 0 1.5rem;
-`;
-
-const Td = styled.td`
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 5rem;
 `;
 
 const Fab = styled(FabButton)`
@@ -92,14 +88,70 @@ const TextCenter = styled.div`
   height: 100%;
 `;
 
+const H2 = styled.h2`
+  color: ${p => p.color};
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+`;
+
+const FlexWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const P = styled.p`
+  margin: 0.2rem 0.2rem 0;
+  padding: 0;
+`;
+
 storiesOf("_PP Insider", module).add("Home", () => {
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState("Insider");
+  const [hide, setHide] = useState(true);
+
   return (
     <Container>
-      {/* <AppBarTop>
+      <NavigationDrawer
+        boxShadow={DP6}
+        color={MAIN_THEME.WHITE.color.foreground}
+        backgroundColor={MAIN_THEME.WHITE.color.background}
+        onHide={() => setHide(true)}
+        hide={hide}
+        buttonElementId="hamburger-menu"
+      >
+        <H2 color={MAIN_THEME.BLACK.color.background}>
+          <FlexWrapper>
+            <SVG
+              {...monetizationOn}
+              size={34}
+              color={MAIN_THEME.BLACK.color.background}
+            />
+            <P>Pillow</P>
+          </FlexWrapper>
+        </H2>
+        <NavigationLink
+          backgroundColor={MAIN_THEME.PRIMARY.color.background}
+          colorHover={MAIN_THEME.PRIMARY.color.background}
+          color={MAIN_THEME.WHITE.color.foreground}
+          svg={supervisedUserCircle}
+          title="Insider"
+          onClick={() => {
+            setHide(true);
+            setSelected("Insider");
+          }}
+          selected={selected === "Insider"}
+        />
+      </NavigationDrawer>
+      <AppBarTop>
         <InnerWrapper>
-          <ActionItem svg={menu} />
+          <ActionItem
+            id="hamburger-menu"
+            svg={menu}
+            onClick={() => {
+              setHide(false);
+            }}
+          />
           <Title>Insider</Title>
         </InnerWrapper>
         <InnerWrapper>
@@ -107,16 +159,15 @@ storiesOf("_PP Insider", module).add("Home", () => {
           <ActionItem svg={search} />
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
-      </AppBarTop> */}
-
-      {/* <Search
+      </AppBarTop>
+      <Search
         value={value}
         previousSearchValue=""
         onChange={e => setValue(e.target.value)}
         onClose={() => setValue("")}
-      /> */}
+      />
 
-      {/* <Graph>
+      <Graph>
         <OverflowMenu isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <Fab
             id="Fab 1"
@@ -152,7 +203,7 @@ storiesOf("_PP Insider", module).add("Home", () => {
             timespan selected in Overflow menu)
           </Text>
         </TextCenter>
-      </Graph> */}
+      </Graph>
 
       {value === "" ? (
         <SectionInfo>
@@ -161,89 +212,23 @@ storiesOf("_PP Insider", module).add("Home", () => {
             tidsperioden (väljs i Overflow menu). Max 1 unikt förestagsnamn.
             Netto köpt/sälj ska vara summa av allt under vald tidsperiod.
           </Text>
-          <Table>
-            <tr>
-              <Th>
-                <Text>Företag</Text>
-              </Th>
-              <Th>
-                <Text>Antal transaktioner</Text>
-              </Th>
-              <Th>
-                <Text>Netto köp/sälj</Text>
-              </Th>
-            </tr>
-            <tr>
-              <Td>
-                <Text>
-                  <a href="Hej">P.I.L.L.O.W</a>
-                </Text>
-              </Td>
-              <Td>
-                <Text>Sebastian Uddén</Text>
-              </Td>
-              <Td>
-                <Text>10 000 000</Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>
-                  <a href="Hej">P.I.L.L.O.W</a>
-                </Text>
-              </Td>
-              <Td>
-                <Text>Sebastian Uddén</Text>
-              </Td>
-              <Td>
-                <Text>10 000 000</Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>
-                  <a href="Hej">P.I.L.L.O.W</a>
-                </Text>
-              </Td>
-              <Td>
-                <Text>Sebastian Uddén</Text>
-              </Td>
-              <Td>
-                <Text>10 000 000</Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>
-                  <a href="Hej">P.I.L.L.O.W</a>
-                </Text>
-              </Td>
-              <Td>
-                <Text>Sebastian Uddén</Text>
-              </Td>
-              <Td>
-                <Text>10 000 000</Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>
-                  <a href="Hej">P.I.L.L.O.W</a>
-                </Text>
-              </Td>
-              <Td>
-                <Text>Sebastian Uddén</Text>
-              </Td>
-              <Td>
-                <Text>10 000 000</Text>
-              </Td>
-            </tr>
-          </Table>
+          <Table
+            headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+            headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+            headings={INSIDER.tables.market.headings}
+            data={INSIDER.tables.market.data}
+          />
         </SectionInfo>
       ) : (
-        <Section>
-          {/* <Text>Tabell som visar top 10 personer som netto köpts/sålts</Text> */}
-          <Table>
+        <SectionInfo>
+          <Text>Tabell som visar top 10 personer som netto köpts/sålts</Text>
+          <Table
+            headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+            headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+            headings={INSIDER.tables.company.headings}
+            data={INSIDER.tables.company.data}
+          />
+          {/* <Table>
             <tr>
               <Th>
                 <Text>Publiceringsdatum</Text>
@@ -428,8 +413,8 @@ storiesOf("_PP Insider", module).add("Home", () => {
                 </Text>
               </Td>
             </tr>
-          </Table>
-        </Section>
+          </Table> */}
+        </SectionInfo>
       )}
     </Container>
   );

@@ -17,6 +17,7 @@ const Container = styled.div`
   position: sticky;
   overflow: hidden;
   top: 0;
+  z-index: 5;
 `;
 
 const AppBarTop = ({ children, type = "regular", flex = true }) => {
