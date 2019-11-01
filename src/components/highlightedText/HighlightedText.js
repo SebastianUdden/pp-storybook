@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Text from "../text/Text";
 
-const TextPart = styled.span`
+const TextPart = styled(Text)`
   color: ${p => (p.highlight ? p.foregroundColor : "inherit")};
   background-color: ${p => (p.highlight ? p.backgroundColor : "inherit")};
 `;
