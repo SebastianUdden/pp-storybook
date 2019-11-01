@@ -3,6 +3,8 @@ import { DEFAULT_FONT } from "../../constants/font";
 
 export const Button = styled.button`
   font-family: ${DEFAULT_FONT.family};
+  font-size: ${p => p.fontSize || "x-small"};
+  font-weight: ${p => p.fontWeight || "inherit"};
   cursor: ${p => (p.disabled ? "default" : "pointer")};
   text-transform: uppercase;
   color: ${p => p.color || "inherit"};
