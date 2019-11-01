@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Box = styled.label`
+  margin-left: 0.2rem;
   position: relative;
   display: inline-block;
   width: 60px;
