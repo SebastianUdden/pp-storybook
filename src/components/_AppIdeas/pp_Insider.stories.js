@@ -15,11 +15,6 @@ import { Text } from "../text/Text";
 import Search from "../search/Search";
 import OverflowMenu from "../overflowMenu/OverflowMenu";
 import FabButton from "../button/FabButton";
-import SVG from "../svg/SVG";
-import { accessibility } from "../../svgs/actions/accessibility";
-import { accountBox } from "../../svgs/actions/account-box";
-import { alarm } from "../../svgs/actions/alarm";
-import { room } from "../../svgs/actions/room";
 
 // Documentation:
 
@@ -32,10 +27,6 @@ import { room } from "../../svgs/actions/room";
 
 const Container = styled.div`
   background-color: white;
-`;
-
-const H1 = styled.h1`
-  color: #000;
 `;
 
 const InnerWrapper = styled.div`
@@ -106,7 +97,7 @@ storiesOf("_PP Insider", module).add("Home", () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Container>
-      <AppBarTop>
+      {/* <AppBarTop>
         <InnerWrapper>
           <ActionItem svg={menu} />
           <Title>Insider</Title>
@@ -116,16 +107,16 @@ storiesOf("_PP Insider", module).add("Home", () => {
           <ActionItem svg={search} />
           <ActionItem svg={moreVertical} />
         </InnerWrapper>
-      </AppBarTop>
+      </AppBarTop> */}
 
-      <Search
+      {/* <Search
         value={value}
         previousSearchValue=""
         onChange={e => setValue(e.target.value)}
         onClose={() => setValue("")}
-      />
+      /> */}
 
-      <Graph>
+      {/* <Graph>
         <OverflowMenu isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
           <Fab
             id="Fab 1"
@@ -161,7 +152,7 @@ storiesOf("_PP Insider", module).add("Home", () => {
             timespan selected in Overflow menu)
           </Text>
         </TextCenter>
-      </Graph>
+      </Graph> */}
 
       {value === "" ? (
         <SectionInfo>
