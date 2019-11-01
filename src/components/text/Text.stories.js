@@ -1,17 +1,17 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Text } from "./Text";
+import Text from "./Text";
 import { ON_BACKGROUND } from "../../constants/theme";
 
 storiesOf("Text", module)
   .add("default", () => (
-    <Text color={ON_BACKGROUND}>
+    <Text foregroundColor={ON_BACKGROUND}>
       This is a sentence that's not to long, but not to short.
     </Text>
   ))
   .add("short", () => <Text color={ON_BACKGROUND}>Word</Text>)
   .add("long", () => (
-    <Text color={ON_BACKGROUND}>
+    <Text foregroundColor={ON_BACKGROUND}>
       Lorem ipsum dolor amet in put a bird on it 90's unicorn kogi beard
       mumblecore cliche viral. Succulents quis raw denim pork belly kombucha.
       Vegan meh art party, nisi fixie chambray vice fingerstache forage
