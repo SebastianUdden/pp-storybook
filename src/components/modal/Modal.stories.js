@@ -3,8 +3,8 @@ import { storiesOf } from "@storybook/react";
 import Button from "../button/ContainedButton";
 import TextButton from "../button/TextButton";
 import Modal from "./Modal";
-import { ON_PRIMARY_BACKGROUND, HIGH_EMPHASIS } from "../../constants/theme";
-import { Text } from "../text/Text";
+import { ON_PRIMARY_BACKGROUND } from "../../constants/theme";
+import Text from "../text/Text";
 
 const TITLE = "A modal with title";
 const DESCRIPTION = "Would you like to do something?";
