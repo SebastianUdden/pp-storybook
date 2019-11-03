@@ -9,6 +9,7 @@ import { expandLess } from "../../svgs/navigation/expand-less";
 import { lock } from "../../svgs/actions/lock";
 import ActionItem from "../actionItem/ActionItem";
 import { lockOpen } from "../../svgs/actions/lock-open";
+import { MEDIA_MIN_MEDIUM } from "../../constants/sizes";
 
 const Container = styled.div`
   width: 100%;
@@ -24,16 +25,38 @@ const Wrapper = styled.table`
   border-collapse: collapse;
 `;
 const Title = styled.div`
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  ${MEDIA_MIN_MEDIUM} {
+    margin-bottom: 1rem;
+  }
+`;
+const Icons = styled.div`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+const Heading = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: ${p => p.foregroundColor};
+  resize: horizontal;
+  max-width: 100%;
+  overflow: auto;
+  height: 5rem;
+  margin: 1rem 0;
+  padding: 0;
 `;
 const ActionItemWrapper = styled.div`
   visibility: ${p => (p.invisible ? "hidden" : "visible")};
-  width: 3rem;
 `;
 const THead = styled.thead`
   border-bottom: 2px solid ${p => p.alternateColor};
   color: ${p => p.headingForegroundColor};
-  padding: 2rem;
+  padding: 1rem;
   tr th {
     background-color: ${p => p.headingBackgroundColor};
   }
@@ -81,7 +104,7 @@ const TBody = styled.tbody`
 `;
 const TH = styled.th`
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   background-color: ${p => p.backgroundColor};
   user-select: none;
   :hover {
@@ -102,14 +125,6 @@ const TH = styled.th`
       margin-top: -1px;
       box-shadow: ${DP_TYPES.DP6};
     `}
-`;
-const Heading = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: ${p => p.foregroundColor};
-  max-width: 100%;
 `;
 const TR = styled.tr``;
 const TD = styled.td`
@@ -233,53 +248,47 @@ const Table = ({
               >
                 <Heading foregroundColor={headingForegroundColor}>
                   <Title>{heading.title}</Title>
-                  {sortingMethod.column === index ? (
-                    <ActionItemWrapper>
-                      <ActionItem
-                        svg={
-                          index === 0 && lockedColumn !== undefined
-                            ? lock
-                            : lockOpen
-                        }
-                        onClick={() =>
-                          index === 0 && lockedColumn !== undefined
-                            ? setLockedColumn(undefined)
-                            : setLockedColumn(index)
-                        }
-                        color={headingForegroundColor}
-                        padding="0.5rem"
-                      />
-                    </ActionItemWrapper>
-                  ) : (
-                    <ActionItemWrapper invisible>
-                      <ActionItem
-                        svg={lock}
-                        color={headingForegroundColor}
-                        padding="0.5rem"
-                      />
-                    </ActionItemWrapper>
-                  )}
-                  {sortingMethod.ascending ? (
-                    <ActionItemWrapper>
-                      <ActionItem
-                        svg={expandMore}
-                        color={`${headingForegroundColor}${
-                          sortingMethod.column !== index ? "00" : "FF"
-                        }`}
-                        padding="0.5rem"
-                      />
-                    </ActionItemWrapper>
-                  ) : (
-                    <ActionItemWrapper>
-                      <ActionItem
-                        svg={expandLess}
-                        color={`${headingForegroundColor}${
-                          sortingMethod.column !== index ? "00" : "FF"
-                        }`}
-                        padding="0.5rem"
-                      />
-                    </ActionItemWrapper>
-                  )}
+                  <Icons>
+                    {sortingMethod.column === index && (
+                      <ActionItemWrapper>
+                        <ActionItem
+                          svg={
+                            index === 0 && lockedColumn !== undefined
+                              ? lock
+                              : lockOpen
+                          }
+                          onClick={() =>
+                            index === 0 && lockedColumn !== undefined
+                              ? setLockedColumn(undefined)
+                              : setLockedColumn(index)
+                          }
+                          color={headingForegroundColor}
+                          padding="0rem"
+                        />
+                      </ActionItemWrapper>
+                    )}
+                    {sortingMethod.ascending ? (
+                      <ActionItemWrapper>
+                        <ActionItem
+                          svg={expandMore}
+                          color={`${headingForegroundColor}${
+                            sortingMethod.column !== index ? "00" : "FF"
+                          }`}
+                          padding="0rem"
+                        />
+                      </ActionItemWrapper>
+                    ) : (
+                      <ActionItemWrapper>
+                        <ActionItem
+                          svg={expandLess}
+                          color={`${headingForegroundColor}${
+                            sortingMethod.column !== index ? "00" : "FF"
+                          }`}
+                          padding="0rem"
+                        />
+                      </ActionItemWrapper>
+                    )}
+                  </Icons>
                 </Heading>
               </TH>
             ))}
