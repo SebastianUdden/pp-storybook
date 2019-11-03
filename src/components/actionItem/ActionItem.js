@@ -7,7 +7,7 @@ import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 const Item = styled(Button)`
   background-color: inherit;
   border: none;
-  padding: 2rem;
+  padding: ${p => p.padding};
   margin: 0;
   min-width: 3rem;
   transform: ${p =>
@@ -47,7 +47,8 @@ const ActionItem = ({
   svg,
   noBorder,
   onClick,
-  id
+  id,
+  padding = "2rem"
 }) => {
   const [animate, setAnimate] = useState(false);
   useEffect(() => {
@@ -61,6 +62,7 @@ const ActionItem = ({
       onClick={onClick}
       rotate={rotate}
       animate={animate}
+      padding={padding}
     >
       <SVGWrapper backgroundColorHover={color}>
         <SVG {...svg} color={color} />
