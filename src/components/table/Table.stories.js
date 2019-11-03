@@ -2,114 +2,31 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import Table from "./Table";
+import { MAIN_THEME } from "../../constants/theme";
+import { MOCK_INSIDER } from "../../constants/mocks";
 
-const MOCK_HEADINGS = [
-  "Publiceringsdatum",
-  "Person i ledande ställning",
-  "Befattning",
-  "Typ",
-  "Instrumentnamn",
-  "Volym",
-  "Pris",
-  "MV",
-  "URL till 'Detaljer'"
-];
-
-const MOCK_DATA = {
-  rows: [
-    {
-      cells: [
-        "Some",
-        "Value",
-        "Value",
-        "Value",
-        "Temp",
-        "Temp",
-        "Temp",
-        "Temp",
-        <a href="https://lmgtfy.com/?q=tables&s=g" target="_blank">
-          Tables
-        </a>
-      ]
-    },
-    {
-      cells: [
-        "Some",
-        "Value",
-        "Value",
-        "Value",
-        "Temp",
-        "Temp",
-        "Temp",
-        "Temp",
-        <a href="https://lmgtfy.com/?q=tables&s=g" target="_blank">
-          Tables
-        </a>
-      ]
-    },
-    {
-      cells: [
-        "Some",
-        "Value",
-        "Value",
-        "Value",
-        "Temp",
-        "Temp",
-        "Temp",
-        "Temp",
-        <a href="https://lmgtfy.com/?q=tables&s=g" target="_blank">
-          Tables
-        </a>
-      ]
-    },
-    {
-      cells: [
-        "Some",
-        "Value",
-        "Value",
-        "Value",
-        "Temp",
-        "Temp",
-        "Temp",
-        "Temp",
-        <a href="https://lmgtfy.com/?q=tables&s=g" target="_blank">
-          Tables
-        </a>
-      ]
-    },
-    {
-      cells: [
-        "Some",
-        "Value",
-        "Value",
-        "Value",
-        "Temp",
-        "Temp",
-        "Temp",
-        "Temp",
-        <a href="https://lmgtfy.com/?q=tables&s=g" target="_blank">
-          Tables
-        </a>
-      ]
-    },
-    {
-      cells: [
-        "Some",
-        "Value",
-        "Value",
-        "Value",
-        "Temp",
-        "Temp",
-        "Temp",
-        "Temp",
-        <a href="https://lmgtfy.com/?q=tables&s=g" target="_blank">
-          Tables
-        </a>
-      ]
-    }
-  ]
-};
-
-storiesOf("Table", module).add("default", () => (
-  <Table headings={MOCK_HEADINGS} data={MOCK_DATA} />
-));
+storiesOf("Table", module)
+  .add("default - 3 columns", () => (
+    <Table
+      headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+      headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+      headings={MOCK_INSIDER.tables.market.headings}
+      data={MOCK_INSIDER.tables.market.data}
+    />
+  ))
+  .add("company - 8 columns", () => (
+    <Table
+      headingBackgroundColor="#587899"
+      headingForegroundColor="#FFFFFF"
+      headings={MOCK_INSIDER.tables.company.headings}
+      data={MOCK_INSIDER.tables.company.data}
+    />
+  ))
+  .add("financial statement - 16 columns", () => (
+    <Table
+      headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+      headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+      headings={MOCK_INSIDER.tables.financialStatement.headings}
+      data={MOCK_INSIDER.tables.financialStatement.data}
+    />
+  ));

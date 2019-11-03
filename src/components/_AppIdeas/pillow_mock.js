@@ -33,13 +33,12 @@ export const INSIDER = {
           {
             cells: [
               "[Amazon](https://lmgtfy.com/?q=Amazon&s=g)",
-              ,
               3762,
               24020000
             ]
           },
           {
-            cells: ["[HBO](https://lmgtfy.com/?q=HBO&s=g)", , 635, 986012]
+            cells: ["[HBO](https://lmgtfy.com/?q=HBO&s=g)", 635, 986012]
           }
         ]
       }

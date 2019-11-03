@@ -21,7 +21,7 @@ import SVG from "../svg/SVG";
 import { supervisedUserCircle } from "../../svgs/actions/supervised-user-circle";
 import { monetizationOn } from "../../svgs/editor/monetization-on";
 import Table from "../table/Table";
-import { INSIDER } from "./pillow_mock";
+import { MOCK_INSIDER } from "../../constants/mocks";
 
 // Documentation:
 
@@ -61,7 +61,6 @@ const Graph = styled.div`
 `;
 
 const Section = styled.div`
-  height: 50vh;
   background-color: ${MAIN_THEME.WHITE.color.background};
   color: ${MAIN_THEME.WHITE.color.foreground};
   box-shadow: ${DP6};
@@ -215,8 +214,8 @@ storiesOf("_PP Insider", module).add("Home", () => {
           <Table
             headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
             headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
-            headings={INSIDER.tables.market.headings}
-            data={INSIDER.tables.market.data}
+            headings={MOCK_INSIDER.tables.market.headings}
+            data={MOCK_INSIDER.tables.market.data}
           />
         </SectionInfo>
       ) : (
@@ -225,195 +224,9 @@ storiesOf("_PP Insider", module).add("Home", () => {
           <Table
             headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
             headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
-            headings={INSIDER.tables.company.headings}
-            data={INSIDER.tables.company.data}
+            headings={MOCK_INSIDER.tables.company.headings}
+            data={MOCK_INSIDER.tables.company.data}
           />
-          {/* <Table>
-            <tr>
-              <Th>
-                <Text>Publiceringsdatum</Text>
-              </Th>
-              <Th>
-                <Text>Person i ledande ställning</Text>
-              </Th>
-              <Th>
-                <Text>Befattning</Text>
-              </Th>
-              <Th>
-                <Text>Typ</Text>
-              </Th>
-              <Th>
-                <Text>Instrumentnamn</Text>
-              </Th>
-              <Th>
-                <Text>Volym</Text>
-              </Th>
-              <Th>
-                <Text>Pris</Text>
-              </Th>
-              <Th>
-                <Text>MV</Text>
-              </Th>
-              <Th>
-                <Text>URL till "Detaljer"</Text>
-              </Th>
-            </tr>
-            <tr>
-              <Td>
-                <Text>2019-09-31</Text>
-              </Td>
-              <Td>
-                <Text>Mattias Labraaten</Text>
-              </Td>
-              <Td>
-                <Text>CIO</Text>
-              </Td>
-              <Td>
-                <Text>Köp</Text>
-              </Td>
-              <Td>
-                <Text>Aktier</Text>
-              </Td>
-              <Td>
-                <Text>10 000</Text>
-              </Td>
-              <Td>
-                <Text>200</Text>
-              </Td>
-              <Td>
-                <Text>2 000 000</Text>
-              </Td>
-              <Td>
-                <Text>
-                  <a href="Hej">Länk</a>
-                </Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>2019-09-31</Text>
-              </Td>
-              <Td>
-                <Text>Mattias Labraaten</Text>
-              </Td>
-              <Td>
-                <Text>CIO</Text>
-              </Td>
-              <Td>
-                <Text>Köp</Text>
-              </Td>
-              <Td>
-                <Text>Aktier</Text>
-              </Td>
-              <Td>
-                <Text>10 000</Text>
-              </Td>
-              <Td>
-                <Text>200</Text>
-              </Td>
-              <Td>
-                <Text>2 000 000</Text>
-              </Td>
-              <Td>
-                <Text>
-                  <a href="Hej">Länk</a>
-                </Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>2019-09-31</Text>
-              </Td>
-              <Td>
-                <Text>Mattias Labraaten</Text>
-              </Td>
-              <Td>
-                <Text>CIO</Text>
-              </Td>
-              <Td>
-                <Text>Köp</Text>
-              </Td>
-              <Td>
-                <Text>Aktier</Text>
-              </Td>
-              <Td>
-                <Text>10 000</Text>
-              </Td>
-              <Td>
-                <Text>200</Text>
-              </Td>
-              <Td>
-                <Text>2 000 000</Text>
-              </Td>
-              <Td>
-                <Text>
-                  <a href="Hej">Länk</a>
-                </Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>2019-09-31</Text>
-              </Td>
-              <Td>
-                <Text>Mattias Labraaten</Text>
-              </Td>
-              <Td>
-                <Text>CIO</Text>
-              </Td>
-              <Td>
-                <Text>Köp</Text>
-              </Td>
-              <Td>
-                <Text>Aktier</Text>
-              </Td>
-              <Td>
-                <Text>10 000</Text>
-              </Td>
-              <Td>
-                <Text>200</Text>
-              </Td>
-              <Td>
-                <Text>2 000 000</Text>
-              </Td>
-              <Td>
-                <Text>
-                  <a href="Hej">Länk</a>
-                </Text>
-              </Td>
-            </tr>
-            <tr>
-              <Td>
-                <Text>2019-09-31</Text>
-              </Td>
-              <Td>
-                <Text>Mattias Labraaten</Text>
-              </Td>
-              <Td>
-                <Text>CIO</Text>
-              </Td>
-              <Td>
-                <Text>Köp</Text>
-              </Td>
-              <Td>
-                <Text>Aktier</Text>
-              </Td>
-              <Td>
-                <Text>10 000</Text>
-              </Td>
-              <Td>
-                <Text>200</Text>
-              </Td>
-              <Td>
-                <Text>2 000 000</Text>
-              </Td>
-              <Td>
-                <Text>
-                  <a href="Hej">Länk</a>
-                </Text>
-              </Td>
-            </tr>
-          </Table> */}
         </SectionInfo>
       )}
     </Container>
