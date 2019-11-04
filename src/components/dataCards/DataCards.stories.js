@@ -42,9 +42,9 @@ storiesOf("Data cards", module)
     return (
       <>
         <Chips
-          chips={MOCK_INSIDER.tables.company.headings.map(
-            heading => heading.title
-          )}
+          chips={MOCK_INSIDER.tables.company.headings.map(heading => ({
+            title: heading.title
+          }))}
           onChange={chips => setChips(chips)}
           allowMultiple
         />
