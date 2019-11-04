@@ -10,6 +10,9 @@ import { lock } from "../../svgs/actions/lock";
 import ActionItem from "../actionItem/ActionItem";
 import { lockOpen } from "../../svgs/actions/lock-open";
 import { MEDIA_MIN_MEDIUM } from "../../constants/sizes";
+import Search from "../search/Search";
+import { isEquivalent } from "../../utils/object";
+import SVG from "../svg/SVG";
 
 const Container = styled.div`
   width: 100%;
@@ -27,9 +30,6 @@ const Wrapper = styled.table`
 const Title = styled.div`
   padding: 0;
   margin: 0;
-  ${MEDIA_MIN_MEDIUM} {
-    margin-bottom: 1rem;
-  }
 `;
 const Icons = styled.div`
   margin: 0;
@@ -40,18 +40,26 @@ const Icons = styled.div`
 `;
 const Heading = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${p => (p.enableLock ? "column" : "row")};
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   color: ${p => p.foregroundColor};
-  resize: horizontal;
   max-width: 100%;
   overflow: auto;
-  height: 5rem;
-  margin: 1rem 0;
+  margin: 0;
   padding: 0;
+  ${p =>
+    p.resize &&
+    css`
+      resize: horizontal;
+      padding: 0.5rem;
+    `};
 `;
 const ActionItemWrapper = styled.div`
   visibility: ${p => (p.invisible ? "hidden" : "visible")};
+  margin-bottom: -0.4rem;
+  margin-left: 0.5rem;
 `;
 const THead = styled.thead`
   border-bottom: 2px solid ${p => p.alternateColor};
@@ -64,7 +72,11 @@ const THead = styled.thead`
     border-right: 1px solid ${p => p.headingForegroundColor}66;
   }
   tr th:nth-child(2) {
-    padding-left: ${p => (p.lockedColumn ? "25rem" : "1rem")};
+    padding-left: ${p => (p.lockedColumn ? "13rem" : "1rem")};
+
+    ${MEDIA_MIN_MEDIUM} {
+      padding-left: ${p => (p.lockedColumn ? "23rem" : "1rem")};
+    }
   }
 `;
 const TBody = styled.tbody`
@@ -88,7 +100,7 @@ const TBody = styled.tbody`
     css`
       tr td:first-child {
         position: absolute;
-        width: 20rem;
+        width: 10rem;
         left: auto;
         top: auto;
         border-top-width: 1px;
@@ -96,15 +108,23 @@ const TBody = styled.tbody`
         margin-top: -1px;
         /*compensate for top border*/
         box-shadow: ${DP_TYPES.DP6};
+
+        ${MEDIA_MIN_MEDIUM} {
+          width: 20rem;
+        }
       }
       tr td:nth-child(2) {
-        padding-left: 25rem;
+        padding-left: 13rem;
+
+        ${MEDIA_MIN_MEDIUM} {
+          padding-left: 23rem;
+        }
       }
     `};
 `;
 const TH = styled.th`
   text-align: left;
-  padding: 0rem 1rem;
+  padding: 0.5rem;
   background-color: ${p => p.backgroundColor};
   user-select: none;
   :hover {
@@ -118,19 +138,53 @@ const TH = styled.th`
     css`
       z-index: 5;
       position: absolute;
-      width: 20rem;
       left: auto;
       top: auto;
       border-top-width: 1px;
       margin-top: -1px;
       box-shadow: ${DP_TYPES.DP6};
+      width: 10rem;
+
+      ${MEDIA_MIN_MEDIUM} {
+        width: 20rem;
+      }
     `}
+  font-size: x-small;
 `;
-const TR = styled.tr``;
+const TR = styled.tr`
+  ${p =>
+    p.selected &&
+    css`
+      td {
+        border-top: 2px solid ${p.headingBackgroundColor};
+        border-bottom: 2px solid ${p.headingBackgroundColor};
+        box-sizing: border-box;
+      }
+      td:first-child {
+        border-left: 1rem solid ${p.headingBackgroundColor};
+      }
+      td:last-child {
+        border-right: 1rem solid ${p.headingBackgroundColor};
+      }
+      :hover {
+        td {
+          border-top: 2px solid ${p.headingForegroundColor};
+          border-bottom: 2px solid ${p.headingForegroundColor};
+        }
+        td:first-child {
+          border-left: 1rem solid ${p.headingForegroundColor};
+        }
+        td:last-child {
+          border-right: 1rem solid ${p.headingForegroundColor};
+        }
+      }
+    `};
+`;
 const TD = styled.td`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   text-align: ${p => (p.alignRight ? "right" : "left")};
   white-space: nowrap;
+  font-size: x-small;
 `;
 
 const Link = styled.a`
@@ -138,6 +192,17 @@ const Link = styled.a`
   color: ${p => p.foregroundColor};
   text-decoration: none;
   font-weight: 800;
+`;
+
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+`;
+const LeftBox = styled.div`
+  margin: 0;
+  padding: 1rem 0;
 `;
 
 const formatCell = cell => {
@@ -191,13 +256,19 @@ const Table = ({
   headingForegroundColor = "#000000",
   headingBackgroundColor = "#DDDDDD",
   backgroundColor = "#FFFFFF",
-  alternateColor = "#EEEEEE"
+  alternateColor = "#EEEEEE",
+  enableResize,
+  enableSearch,
+  enableLock,
+  onClick = () => {}
 }) => {
+  const [selectedRow, setSelectedRow] = useState({});
   const [sortingMethod, setSortingMethod] = useState({
     column: 0,
     ascending: true
   });
   const [lockedColumn, setLockedColumn] = useState(undefined);
+  const [value, setValue] = useState("");
   const [headings, setHeadings] = useState(inputHeadings);
   const [data, setData] = useState(inputData);
 
@@ -220,8 +291,22 @@ const Table = ({
     });
   }, [lockedColumn]);
 
-  sortData(data, sortingMethod);
+  const onSubmit = value => {
+    const rows = inputData.rows.filter(row =>
+      row.cells.some(cell => {
+        return cell
+          .toString()
+          .toLowerCase()
+          .includes(value);
+      })
+    );
+    setData({
+      ...data,
+      rows: rows.length ? rows : [{ cells: [] }]
+    });
+  };
 
+  sortData(data, sortingMethod);
   return (
     <Container>
       <Wrapper backgroundColor={backgroundColor}>
@@ -235,6 +320,7 @@ const Table = ({
             {headings.map((heading, index) => (
               <TH
                 id={heading.id}
+                key={heading.id}
                 backgroundColor={headingBackgroundColor + "EE"}
                 selected={sortingMethod.column === index}
                 alignRight={heading.alignRight}
@@ -246,53 +332,121 @@ const Table = ({
                 }}
                 lockedColumn={index === 0 && lockedColumn !== undefined}
               >
-                <Heading foregroundColor={headingForegroundColor}>
+                <Heading
+                  foregroundColor={headingForegroundColor}
+                  resize={enableResize}
+                  // && index === 0 && lockedColumn !== undefined
+                >
                   <Title>{heading.title}</Title>
                   <Icons>
-                    {sortingMethod.column === index && (
-                      <ActionItemWrapper>
+                    <ActionItemWrapper>
+                      {enableLock && sortingMethod.column === index ? (
                         <ActionItem
                           svg={
                             index === 0 && lockedColumn !== undefined
                               ? lock
                               : lockOpen
                           }
-                          onClick={() =>
+                          onClick={e => {
+                            e.stopPropagation();
                             index === 0 && lockedColumn !== undefined
                               ? setLockedColumn(undefined)
-                              : setLockedColumn(index)
-                          }
+                              : setLockedColumn(index);
+                          }}
                           color={headingForegroundColor}
-                          padding="0rem"
+                          minimal
                         />
-                      </ActionItemWrapper>
-                    )}
+                      ) : (
+                        <ActionItem
+                          svg={lockOpen}
+                          color="transparent"
+                          disabled
+                          minimal
+                        />
+                      )}
+                    </ActionItemWrapper>
+                    {/* // <>
+                      //   {index === 0 && lockedColumn !== undefined ? (
+                      //     <SVG
+                      //       {...lock}
+                      //       color={headingForegroundColor}
+                      //       size={10}
+                      //     />
+                      //   ) : (
+                      //     <SVG
+                      //       {...lockOpen}
+                      //       color={headingForegroundColor}
+                      //       size={10}
+                      //     />
+                      //   )}
+                      // </> */}
                     {sortingMethod.ascending ? (
-                      <ActionItemWrapper>
-                        <ActionItem
-                          svg={expandMore}
-                          color={`${headingForegroundColor}${
-                            sortingMethod.column !== index ? "00" : "FF"
-                          }`}
-                          padding="0rem"
-                        />
-                      </ActionItemWrapper>
+                      // <ActionItemWrapper>
+                      //   <ActionItem
+                      //     svg={expandMore}
+                      //     color={`${headingForegroundColor}${
+                      //       sortingMethod.column !== index ? "00" : "FF"
+                      //     }`}
+                      //     padding="0rem"
+                      //     minWidth="0rem"
+                      //     size={10}
+                      //   />
+                      // </ActionItemWrapper>
+                      <SVG
+                        {...expandMore}
+                        color={headingForegroundColor}
+                        size={14}
+                      />
                     ) : (
-                      <ActionItemWrapper>
-                        <ActionItem
-                          svg={expandLess}
-                          color={`${headingForegroundColor}${
-                            sortingMethod.column !== index ? "00" : "FF"
-                          }`}
-                          padding="0rem"
-                        />
-                      </ActionItemWrapper>
+                      // <ActionItemWrapper>
+                      //   <ActionItem
+                      //     svg={expandLess}
+                      //     color={`${headingForegroundColor}${
+                      //       sortingMethod.column !== index ? "00" : "FF"
+                      //     }`}
+                      //     padding="0rem"
+                      //     minWidth="0rem"
+                      //     size={10}
+                      //   />
+                      // </ActionItemWrapper>
+                      <SVG
+                        {...expandLess}
+                        color={headingForegroundColor}
+                        size={14}
+                      />
                     )}
                   </Icons>
                 </Heading>
               </TH>
             ))}
           </TR>
+          {enableSearch && (
+            <TR>
+              {lockedColumn !== undefined ? (
+                <TH lockedColumn={lockedColumn !== undefined}>
+                  <LeftBox>Search table</LeftBox>
+                </TH>
+              ) : null}
+              <TH
+                colSpan={
+                  lockedColumn !== undefined
+                    ? headings.length - 1
+                    : headings.length
+                }
+              >
+                <SearchWrapper>
+                  <Search
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                    onClose={() => setValue("")}
+                    onSubmit={() => onSubmit(value.toString().toLowerCase())}
+                    padding={1}
+                    minimal
+                  />
+                </SearchWrapper>
+              </TH>
+            </TR>
+          )}
         </THead>
         <TBody
           alternateColor={alternateColor}
@@ -301,8 +455,18 @@ const Table = ({
           headingBackgroundColor={headingBackgroundColor}
           lockedColumn={lockedColumn !== undefined}
         >
-          {data.rows.map(row => (
-            <TR>{row.cells.map(cell => formatCell(cell))}</TR>
+          {data.rows.map((row, index) => (
+            <TR
+              headingBackgroundColor={headingBackgroundColor}
+              headingForegroundColor={headingForegroundColor}
+              selected={isEquivalent(row, selectedRow)}
+              onClick={() => {
+                setSelectedRow(row);
+                onClick(row);
+              }}
+            >
+              {row.cells.map(cell => formatCell(cell))}
+            </TR>
           ))}
         </TBody>
       </Wrapper>

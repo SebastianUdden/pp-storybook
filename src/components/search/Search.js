@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { arrowBack } from "../../svgs/navigation/arrow-back";
 import { close } from "../../svgs/navigation/close";
 import ActionItem from "../actionItem/ActionItem";
@@ -31,6 +31,14 @@ const Input = styled.input`
   ::-webkit-search-results-decoration {
     -webkit-appearance: none;
   }
+
+  ${p =>
+    p.minimal &&
+    css`
+      font-size: x-small;
+      padding: 0 0.5rem;
+      margin: 0;
+    `};
 `;
 
 const ActionItemWrapper = styled.div``;
@@ -41,7 +49,9 @@ const Search = ({
   onChange,
   onBack,
   onClose,
-  onSubmit
+  onSubmit,
+  padding,
+  minimal
 }) => {
   const [animate, setAnimate] = useState(false);
   const firstUpdate = useRef(true);
@@ -65,7 +75,13 @@ const Search = ({
     <Wrapper>
       {previousSearchValue && (
         <ActionItemWrapper onClick={onBack}>
-          <ActionItem svg={arrowBack} color="#111111" noBorder />
+          <ActionItem
+            svg={arrowBack}
+            color="#111111"
+            padding={padding}
+            noBorder
+            minimal={minimal}
+          />
         </ActionItemWrapper>
       )}
       <Input
@@ -76,9 +92,16 @@ const Search = ({
         value={value}
         onChange={onChange}
         animate={animate}
+        minimal={minimal}
       />
       <ActionItemWrapper onClick={onClose}>
-        <ActionItem svg={close} color="#111111" noBorder />
+        <ActionItem
+          svg={close}
+          color="#111111"
+          padding={padding}
+          minimal={minimal}
+          noBorder
+        />
       </ActionItemWrapper>
     </Wrapper>
   );

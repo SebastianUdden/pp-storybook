@@ -11,6 +11,7 @@ storiesOf("Search", module)
         previousSearchValue=""
         onChange={e => setValue(e.target.value)}
         onClose={() => setValue("")}
+        onSubmit={() => alert(`Search for ${value}`)}
       />
     );
   })
@@ -23,6 +24,7 @@ storiesOf("Search", module)
         onChange={e => setValue(e.target.value)}
         onBack={() => setValue("")}
         onClose={() => setValue("")}
+        onSubmit={() => alert(`Search for ${value}`)}
       />
     );
   });

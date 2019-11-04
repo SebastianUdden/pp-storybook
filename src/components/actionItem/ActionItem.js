@@ -9,14 +9,10 @@ const Item = styled(Button)`
   border: none;
   padding: ${p => p.padding};
   margin: 0;
-  min-width: 3rem;
+  min-width: ${p => p.minWidth};
   transform: ${p =>
     p.animate ? `rotate(0), scale(1)` : `rotate(270deg) scale(0.4)`};
   transition: transform 0.2s;
-
-  ${MEDIA_MAX_MEDIUM} {
-    padding: 1.5rem 1rem;
-  }
 
   :hover {
     background-color: ${p =>
@@ -48,7 +44,11 @@ const ActionItem = ({
   noBorder,
   onClick,
   id,
-  padding = "2rem"
+  minimal,
+  padding = "2rem",
+  minWidth = "3rem",
+  size = 24,
+  disabled
 }) => {
   const [animate, setAnimate] = useState(false);
   useEffect(() => {
@@ -62,10 +62,12 @@ const ActionItem = ({
       onClick={onClick}
       rotate={rotate}
       animate={animate}
-      padding={padding}
+      padding={minimal ? "1rem" : padding}
+      minWidth={minimal ? "0rem" : minWidth}
+      disabled={disabled}
     >
       <SVGWrapper backgroundColorHover={color}>
-        <SVG {...svg} color={color} />
+        <SVG {...svg} color={color} size={minimal ? 10 : size} />
       </SVGWrapper>
     </Item>
   );
