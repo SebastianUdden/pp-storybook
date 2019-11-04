@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 storiesOf("Chips", module)
-  .add("default", () => {
+  .add("multiple select", () => {
     const [chips, setChips] = useState([]);
     return (
       <Wrapper>
@@ -60,7 +60,7 @@ storiesOf("Chips", module)
       </Wrapper>
     );
   })
-  .add("with custom icon", () => {
+  .add("single select - custom icon", () => {
     const [chips, setChips] = useState([]);
     return (
       <Wrapper>

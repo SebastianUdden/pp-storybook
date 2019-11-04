@@ -796,3 +796,60 @@ export const MOCK_INSIDER = {
     }
   }
 };
+
+export const MOCK_BAR_CHART = [
+  {
+    id: "0001",
+    tooltip: {
+      title: "Pillow",
+      description: "Purchase through investment firm Soft Landing Inc"
+    },
+    x: "2019-11-01",
+    y: 20
+  },
+  {
+    id: "0002",
+    tooltip: {
+      title: "Pillow",
+      description: "Purchase through investment firm Soft Landing Inc"
+    },
+    x: "2019-11-02",
+    y: 30
+  },
+  {
+    id: "0003",
+    tooltip: {
+      title: "Pillow",
+      description: "Purchase through investment firm Soft Landing Inc"
+    },
+    x: "2019-11-03",
+    y: 60
+  },
+  {
+    id: "0004",
+    tooltip: {
+      title: "Pillow",
+      description: "Purchase through investment firm Soft Landing Inc"
+    },
+    x: "2019-11-04",
+    y: 99
+  },
+  {
+    id: "0005",
+    tooltip: {
+      title: "Pillow",
+      description: "Purchase through investment firm Soft Landing Inc"
+    },
+    x: "2019-11-05",
+    y: 2
+  }
+];
+
+export const MOCK_PIE_CHART = {
+  asia: 58,
+  northAmerica: 5,
+  southAmerica: 9,
+  oceania: 1,
+  africa: 15,
+  europe: 12
+};
