@@ -152,7 +152,7 @@ const TH = styled.th`
         width: 20rem;
       }
     `}
-  font-size: x-small;
+  font-size: medium;
 `;
 const TR = styled.tr`
   ${p =>
@@ -187,7 +187,7 @@ const TD = styled.td`
   padding: 0.5rem;
   text-align: ${p => (p.alignRight ? "right" : "left")};
   white-space: nowrap;
-  font-size: x-small;
+  font-size: medium;
 `;
 
 const Link = styled.a`
