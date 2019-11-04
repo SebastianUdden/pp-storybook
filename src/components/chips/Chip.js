@@ -11,6 +11,9 @@ const Wrapper = styled.div`
   border-radius: 10rem;
   margin: 0.3rem;
   position: relative;
+  :hover {
+    background-color: ${p => p.backgroundColor}88;
+  }
 `;
 const Label = styled.label`
   display: flex;
@@ -38,6 +41,8 @@ const Chip = ({
   foregroundColor = "#999999",
   onClick,
   selected,
+  allowMultiple,
+  customIcon,
   chip
 }) => (
   <Wrapper
@@ -45,7 +50,10 @@ const Chip = ({
     foregroundColor={foregroundColor}
   >
     <Label>
-      {selected && <SVG {...check} size={18} color={foregroundColor} />}
+      {selected && allowMultiple && (
+        <SVG {...check} size={18} color={foregroundColor} />
+      )}
+      {customIcon}
       <ChipText>{chip}</ChipText>
     </Label>
     <Input type="checkbox" value={chip} onClick={onClick} />

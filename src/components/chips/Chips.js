@@ -7,10 +7,14 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const Chips = ({ chips = [], onChange }) => {
+const Chips = ({ chips = [], allowMultiple, onChange }) => {
   const [selectedChips, setSelectedChips] = useState([]);
 
   const onClick = e => {
+    if (!allowMultiple) {
+      setSelectedChips([e.target.value]);
+      return;
+    }
     if (selectedChips.find(chip => chip === e.target.value)) {
       setSelectedChips(selectedChips.filter(chip => chip !== e.target.value));
     } else {
@@ -25,8 +29,10 @@ const Chips = ({ chips = [], onChange }) => {
       {chips.map(chip => (
         <Chip
           onClick={onClick}
-          selected={selectedChips.find(c => chip === c)}
-          chip={chip}
+          selected={selectedChips.find(c => chip.title === c)}
+          chip={chip.title}
+          allowMultiple={allowMultiple}
+          customIcon={chip.icon}
         />
       ))}
     </Wrapper>

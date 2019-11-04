@@ -93,6 +93,7 @@ const TBody = styled.tbody`
     td {
       color: ${p => p.headingForegroundColor};
       background-color: ${p => p.headingBackgroundColor};
+      text-size-adjust: none;
     }
   }
   ${p =>
@@ -100,7 +101,6 @@ const TBody = styled.tbody`
     css`
       tr td:first-child {
         position: absolute;
-        width: 10rem;
         left: auto;
         top: auto;
         border-top-width: 1px;
@@ -108,6 +108,7 @@ const TBody = styled.tbody`
         margin-top: -1px;
         /*compensate for top border*/
         box-shadow: ${DP_TYPES.DP6};
+        width: 10rem;
 
         ${MEDIA_MIN_MEDIUM} {
           width: 20rem;
@@ -119,6 +120,7 @@ const TBody = styled.tbody`
         ${MEDIA_MIN_MEDIUM} {
           padding-left: 23rem;
         }
+        text-size-adjust: none;
       }
     `};
 `;
@@ -144,6 +146,7 @@ const TH = styled.th`
       margin-top: -1px;
       box-shadow: ${DP_TYPES.DP6};
       width: 10rem;
+      max-width: 40vw;
 
       ${MEDIA_MIN_MEDIUM} {
         width: 20rem;
@@ -360,7 +363,6 @@ const Table = ({
                         <ActionItem
                           svg={lockOpen}
                           color="transparent"
-                          disabled
                           minimal
                         />
                       )}

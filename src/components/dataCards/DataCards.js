@@ -73,7 +73,7 @@ const DataCards = ({
             borderColor={headerBackgroundColor}
           >
             {row.cells.map((cell, index) =>
-              filters.length ? (
+              filters && filters.length ? (
                 filters.find(filter => filter === headings[index].title) && (
                   <Row foregroundColor={foregroundColor}>
                     <DataTitle color={labelColor}>

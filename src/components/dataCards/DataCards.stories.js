@@ -46,6 +46,7 @@ storiesOf("Data cards", module)
             heading => heading.title
           )}
           onChange={chips => setChips(chips)}
+          allowMultiple
         />
         <h1>
           <Text foregroundColor="#ffffff">
