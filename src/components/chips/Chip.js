@@ -29,6 +29,7 @@ const Input = styled.input`
   height: 101%;
   cursor: pointer;
   outline: none;
+  border: none;
 `;
 
 const ChipText = styled(Text)`
