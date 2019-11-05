@@ -15,7 +15,7 @@ const PieFill = styled.circle`
   stroke: ${p => p.color};
   stroke-width: 50;
   stroke-dasharray: 157.07;
-  stroke-dashoffset: ${p => `calc(157.07 * (1 - ${p.fillPercentage / 100}))`};
+  stroke-dashoffset: ${p => p.fillOffset}px;
   transition: stroke-dashoffset 0.3s ease;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
@@ -32,7 +32,7 @@ const PieChart = ({
       cx="50"
       cy="50"
       r="25"
-      fillPercentage={fillPercentage}
+      fillOffset={157.07 * (1 - fillPercentage / 100)}
       color={alternateColor}
     />
   </>

@@ -15,7 +15,7 @@ const DonutFill = styled.circle`
   stroke: ${p => p.color};
   stroke-width: 12;
   stroke-dasharray: 276.46;
-  stroke-dashoffset: ${p => `calc(276.46 * (1 - ${p.fillPercentage / 100}))`};
+  stroke-dashoffset: ${p => p.fillOffset}px;
   transition: stroke-dashoffset 0.3s ease;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
@@ -28,8 +28,8 @@ const DonutChart = ({ fillPercentage = 50, color, alternateColor }) => (
       cx="50"
       cy="50"
       r="44"
-      fillPercentage={fillPercentage}
       color={alternateColor}
+      fillOffset={276.46 * (1 - fillPercentage / 100)}
     />
   </>
 );
