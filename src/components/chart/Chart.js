@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import BarChart from "./BarChart";
 import PieChart from "./PieChart";
 import DonutChart from "./DonutChart";
 import Text from "../text/Text";
+import DotChart from "./DotChart";
 
 const Wrapper = styled.div`
   padding: 0%;
@@ -20,6 +21,11 @@ const H3 = styled.h3`
   margin: 0 0 1rem;
   padding: 0;
 `;
+
+export const formatValues = values =>
+  values.length
+    ? values
+    : Object.keys(values).map(key => ({ x: key, y: values[key] }));
 
 const ChartContainer = ({ id, color, children }) => {
   return (
@@ -67,6 +73,16 @@ const Chart = ({
       )}
       {type === "vertical-bar" && (
         <BarChart
+          values={values}
+          hoverColor={hoverColor}
+          alternateColor={alternateColor}
+          maxBarWidth={maxBarWidth}
+          minBarWidth={minBarWidth}
+          onClick={onClick}
+        />
+      )}
+      {type === "vertical-dot" && (
+        <DotChart
           values={values}
           hoverColor={hoverColor}
           alternateColor={alternateColor}

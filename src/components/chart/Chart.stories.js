@@ -12,7 +12,9 @@ import { MAIN_THEME } from "../../constants/theme";
 import Text from "../text/Text";
 import Chips from "../chips/Chips";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  height: 10vh;
+`;
 const FlexWrapper = styled.div`
   display: flex;
   justify-content: space-around;
@@ -25,10 +27,12 @@ const Span = styled.span`
 
 storiesOf("Chart", module)
   .add("default - icon", () => (
-    <Chart values={MOCK_BAR_CHART} type="default-icon" />
+    <Chart values={MOCK_BAR_CHART} type="default-icon" width="40vw" />
   ))
   .add("bar chart - horizontal", () => (
-    <Chart values={MOCK_BAR_CHART} type="horizontal-bar" />
+    <Wrapper>
+      <Chart values={MOCK_BAR_CHART} type="horizontal-bar" width="40vw" />
+    </Wrapper>
   ))
   .add("bar chart - vertical", () => {
     const [selected, setSelected] = useState(undefined);
@@ -45,10 +49,32 @@ storiesOf("Chart", module)
           hoverColor={MAIN_THEME.SECONDARY_LIGHT.color.background}
           onClick={value => setSelected(value)}
           type="vertical-bar"
+          width="40vw"
         />
       </>
     );
   })
+  .add("dot chart - vertical", () => {
+    const [selected, setSelected] = useState(undefined);
+    return (
+      <>
+        {selected && (
+          <h1>
+            <Text color="#ffffff">Selected: {selected.x}</Text>
+          </h1>
+        )}
+        <Chart
+          values={MOCK_BAR_CHART}
+          color={MAIN_THEME.SECONDARY_DARK.color.background}
+          hoverColor={MAIN_THEME.SECONDARY_LIGHT.color.background}
+          onClick={value => setSelected(value)}
+          type="vertical-dot"
+          width="40vw"
+        />
+      </>
+    );
+  })
+
   .add("pie chart", () => {
     const [selected, setSelected] = useState(undefined);
     return (

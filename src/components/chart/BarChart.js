@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { getRelativePosition } from "../../utils/math";
+import { formatValues } from "./Chart";
 
 const G = styled.g`
   fill: ${p => (p.selected ? p.alternateColor : "inherit")};
@@ -21,10 +22,6 @@ const Text = styled.text`
   font-size: ${p => p.fontSize}px;
   overflow: scroll;
 `;
-const formatValues = values =>
-  values.length
-    ? values
-    : Object.keys(values).map(key => ({ x: key, y: values[key] }));
 
 const getBarWidth = (max, min, count, total) => {
   const width = (total - 2) / count;
