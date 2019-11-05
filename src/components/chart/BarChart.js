@@ -10,30 +10,61 @@ const G = styled.g`
   }
   :focus,
   :active {
-    fill: inherit;
+    fill: ${p => (p.selected ? `${p.alternateColor}44` : "inherit")};
   }
+`;
+const Rect = styled.rect`
+  transition: width 0.3s ease;
 `;
 const Text = styled.text`
   user-select: none;
+  font-size: ${p => p.fontSize}px;
+  overflow: scroll;
 `;
+const formatValues = values =>
+  values.length
+    ? values
+    : Object.keys(values).map(key => ({ x: key, y: values[key] }));
+
+const getBarWidth = (max, min, count, total) => {
+  const width = (total - 2) / count;
+  if (max && width > max) {
+    return max;
+  } else if (min && width < min) {
+    return min;
+  }
+  return width;
+};
 
 const BarChart = ({
-  chartSize,
-  values,
+  chartSize = { width: 100, height: 100 },
+  values = {},
   horizontal,
   textRight = true,
   hoverColor,
   alternateColor,
+  fontSize = 2,
+  maxValue,
+  minValue = 0,
+  maxBarWidth,
+  minBarWidth,
   onClick = () => {}
 }) => {
   const [selected, setSelected] = useState(undefined);
-  const maxWidth = 0.6;
-  const minValue = 0;
-  const maxValue = 100;
-  return values.map((value, index) => {
+  const formattedValues = formatValues(values);
+  const relMaxValue = maxValue
+    ? maxValue
+    : Math.max(...formattedValues.map(value => value.y));
+  return formattedValues.map((value, index) => {
     if (horizontal) {
-      const barWidth = chartSize.height / values.length;
-      const barHeight = getRelativePosition(value.y, minValue, maxValue);
+      const maxHorizontalWidth = 0.8;
+      const barWidth = getBarWidth(
+        maxBarWidth,
+        minBarWidth,
+        formattedValues.length,
+        chartSize.height
+      );
+      const barHeight = getRelativePosition(value.y, minValue, relMaxValue);
       return barWidth ? (
         <G
           key={value.id}
@@ -45,24 +76,28 @@ const BarChart = ({
             onClick(value);
           }}
         >
-          <rect
-            width={chartSize.width * barHeight * maxWidth}
-            height={barWidth - 5}
-            y={barWidth * index}
+          <Rect
+            width={chartSize.width * barHeight * maxHorizontalWidth}
+            height={barWidth - 1}
+            y={barWidth * index + 1}
             x={textRight ? 0 : 100}
-          ></rect>
+          ></Rect>
           <Text
-            x={textRight ? chartSize.width * barHeight * maxWidth + 6 : 0}
-            y={barWidth * index + 12}
-            dy=".35em"
+            x={
+              textRight
+                ? chartSize.width * barHeight * maxHorizontalWidth + 3
+                : 0
+            }
+            y={barWidth * index + barWidth * 0.5 + 1}
+            fontSize={fontSize}
           >
-            {value.y} - {value.x}
+            {value.x}
           </Text>
         </G>
       ) : null;
     } else {
-      const barWidth = chartSize.width / values.length;
-      const barHeight = getRelativePosition(value.y, minValue, maxValue);
+      const barWidth = chartSize.width / formattedValues.length;
+      const barHeight = getRelativePosition(value.y, minValue, relMaxValue);
       return barWidth ? (
         <G
           key={value.id}
@@ -75,13 +110,17 @@ const BarChart = ({
           }}
         >
           <rect
-            width={barWidth - 5}
+            width={barWidth - 1}
             height={chartSize.height * barHeight}
             x={barWidth * index}
-            y={chartSize.height - chartSize.height * barHeight - 22}
+            y={chartSize.height - chartSize.height * barHeight - 10}
           ></rect>
-          <Text x={barWidth * index} y={chartSize.height - 12} dy=".35em">
-            {value.y} - {value.x}
+          <Text
+            x={barWidth * index}
+            y={chartSize.height - 5}
+            fontSize={fontSize}
+          >
+            {value.x}
           </Text>
         </G>
       ) : null;

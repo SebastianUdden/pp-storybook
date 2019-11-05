@@ -2,17 +2,19 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import BarChart from "./BarChart";
 import PieChart from "./PieChart";
+import DonutChart from "./DonutChart";
 import Text from "../text/Text";
 
 const Wrapper = styled.div`
   padding: 0%;
   margin: 0;
   color: ${p => p.color};
-  height: 100%;
+  width: ${p => p.width};
 `;
 const SVG = styled.svg`
-  height: 100%;
   width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
 `;
 const H1 = styled.h1`
   margin: 0 0 1rem;
@@ -21,62 +23,74 @@ const H1 = styled.h1`
 
 const ChartContainer = ({ id, color, children }) => {
   return (
-    <SVG id={id} fill={color}>
+    <SVG id={id} fill={color} viewBox="0 0 100 100">
       {children}
     </SVG>
   );
 };
 
+const DefaultIcon = ({}) => (
+  <polygon fill="red" strokeWidth="0" points="0,50 100,50 50,0" />
+);
+
 const Chart = ({
   type,
-  horizontal,
   title,
   values,
   color = "#ffffff",
   hoverColor = "#cccccc",
   alternateColor = "#000000",
-  size,
+  width = "100%",
+  maxBarWidth,
+  minBarWidth,
   fillPercentage,
   onClick
-}) => {
-  const [chartSize, setChartSize] = useState({ width: 0, height: 0 });
-  useEffect(() => {
-    const container = document.getElementById("ChartContainer");
-    setChartSize({
-      width: container.getBoundingClientRect().width,
-      height: container.getBoundingClientRect().height
-    });
-  }, []);
-
-  return (
-    <Wrapper color={color} size={size}>
-      {title && (
-        <H1>
-          <Text>{title}</Text>
-        </H1>
+}) => (
+  <Wrapper color={color} width={width}>
+    {title && (
+      <H1>
+        <Text>{title}</Text>
+      </H1>
+    )}
+    <ChartContainer id="ChartContainer" color={color}>
+      {type === "default-icon" && <DefaultIcon />}
+      {type === "horizontal-bar" && (
+        <BarChart
+          values={values}
+          hoverColor={hoverColor}
+          alternateColor={alternateColor}
+          maxBarWidth={maxBarWidth}
+          minBarWidth={minBarWidth}
+          onClick={onClick}
+          horizontal
+        />
       )}
-      <ChartContainer id="ChartContainer" color={color}>
-        {type === "bar" && (
-          <BarChart
-            chartSize={chartSize}
-            values={values}
-            hoverColor={hoverColor}
-            alternateColor={alternateColor}
-            horizontal={horizontal}
-            onClick={onClick}
-          />
-        )}
-        {type === "pie" && (
-          <PieChart
-            color={color}
-            size={size}
-            fillPercentage={fillPercentage}
-            alternateColor={alternateColor}
-          />
-        )}
-      </ChartContainer>
-    </Wrapper>
-  );
-};
+      {type === "vertical-bar" && (
+        <BarChart
+          values={values}
+          hoverColor={hoverColor}
+          alternateColor={alternateColor}
+          maxBarWidth={maxBarWidth}
+          minBarWidth={minBarWidth}
+          onClick={onClick}
+        />
+      )}
+      {type === "pie" && (
+        <PieChart
+          color={color}
+          fillPercentage={fillPercentage}
+          alternateColor={alternateColor}
+        />
+      )}
+      {type === "donut" && (
+        <DonutChart
+          color={color}
+          fillPercentage={fillPercentage}
+          alternateColor={alternateColor}
+        />
+      )}
+    </ChartContainer>
+  </Wrapper>
+);
 
 export default Chart;
