@@ -117,7 +117,7 @@ storiesOf("Chart", module)
           chips={Object.keys(MOCK_CONTINENT_POPULATION).map(key => ({
             title: key
           }))}
-          onChange={chips => setSelectedContinent(chips[0])}
+          onChange={chips => setSelectedContinent(chips[0] || "africa")}
         />
         <FlexWrapper>
           {selectedContinent && (
@@ -142,7 +142,6 @@ storiesOf("Chart", module)
             color={MAIN_THEME.BLACK.color.background}
             alternateColor={MAIN_THEME.SECONDARY_DARK.color.background}
             hoverColor={MAIN_THEME.SECONDARY_LIGHT.color.background}
-            onClick={value => setSelectedContinent(value)}
             width="20vw"
             fillPercentage={MOCK_CONTINENT_POPULATION[selectedContinent]}
             type="donut"
