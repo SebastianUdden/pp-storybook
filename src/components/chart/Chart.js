@@ -16,7 +16,7 @@ const SVG = styled.svg`
   max-height: 100%;
   overflow-y: scroll;
 `;
-const H1 = styled.h1`
+const H3 = styled.h3`
   margin: 0 0 1rem;
   padding: 0;
 `;
@@ -48,9 +48,9 @@ const Chart = ({
 }) => (
   <Wrapper color={color} width={width}>
     {title && (
-      <H1>
+      <H3>
         <Text>{title}</Text>
-      </H1>
+      </H3>
     )}
     <ChartContainer id="ChartContainer" color={color}>
       {type === "default-icon" && <DefaultIcon />}

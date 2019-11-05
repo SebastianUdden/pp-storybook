@@ -846,12 +846,12 @@ export const MOCK_BAR_CHART = [
 ];
 
 export const MOCK_CONTINENT_POPULATION = {
-  asia: 58,
-  northAmerica: 5,
-  southAmerica: 9,
+  asia: 60,
+  northAmerica: 7,
+  southAmerica: 6,
   oceania: 1,
   africa: 15,
-  europe: 12
+  europe: 11
 };
 
 export const MOCK_WORLD_DATA = {

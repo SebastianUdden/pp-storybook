@@ -20,7 +20,7 @@ const FlexWrapper = styled.div`
 `;
 const Span = styled.span`
   font-weight: 800;
-  text-transform: capitalize;
+  text-transform: uppercase;
 `;
 
 storiesOf("Chart", module)
@@ -106,12 +106,12 @@ storiesOf("Chart", module)
     return (
       <>
         {selectedCountry.x && (
-          <h1>
+          <h2>
             <Text foregroundColor={MAIN_THEME.SECONDARY_DARK.color.background}>
               <Span>{selectedCountry.x}:</Span> {selectedCountry.y} million
               people
             </Text>
-          </h1>
+          </h2>
         )}
         <Chips
           chips={Object.keys(MOCK_CONTINENT_POPULATION).map(key => ({
@@ -122,7 +122,11 @@ storiesOf("Chart", module)
         <FlexWrapper>
           {selectedContinent && (
             <Chart
-              title="Countries by population (mppl)"
+              title={`Population: ${(MOCK_CONTINENT_POPULATION[
+                selectedContinent
+              ] /
+                100) *
+                7500} million, countries shown by relative population`}
               color={MAIN_THEME.SECONDARY_DARK.color.background}
               hoverColor={MAIN_THEME.BLACK.color.background}
               alternateColor={MAIN_THEME.BLACK.color.background}
