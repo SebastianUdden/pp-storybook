@@ -10,13 +10,13 @@ import {
   BACKGROUND
 } from "../../constants/theme";
 import { Button } from "./Button";
+import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`
-  margin: ${p => (p.noMargin ? 0 : "0.3rem")};
   padding: 1rem;
-  background-color: ${p => p.backgroundColor || "inherit"};
   border-radius: 50%;
   min-width: 3.3rem;
+  background-color: ${p => p.backgroundColor || "inherit"};
   ${p => p.mini && `padding: 0.4rem; margin: 0; min-width: 2rem;`}
   border: none;
   transform: ${p =>
@@ -67,22 +67,23 @@ const FabButton = ({
     setAnimate(true);
   }, []);
   return (
-    <StyledButton
-      onClick={onClick}
-      color={disabled ? `${ON_SURFACE}33` : color}
-      backgroundColor={disabled ? SURFACE : backgroundColor}
-      backgroundColorHover={
-        backgroundColorHover || backgroundColor || BACKGROUND_ACTIVE
-      }
-      boxShadow={boxShadow}
-      raisedBoxShadow={raisedBoxShadow}
-      mini={mini}
-      disabled={disabled}
-      noMargin={noMargin}
-      animate={animate}
-    >
-      {children}
-    </StyledButton>
+    <Ripple onClick={onClick} color={color} fab>
+      <StyledButton
+        color={disabled ? `${ON_SURFACE}33` : color}
+        backgroundColor={disabled ? SURFACE : backgroundColor}
+        backgroundColorHover={
+          backgroundColorHover || backgroundColor || BACKGROUND_ACTIVE
+        }
+        boxShadow={boxShadow}
+        raisedBoxShadow={raisedBoxShadow}
+        mini={mini}
+        disabled={disabled}
+        noMargin={noMargin}
+        animate={animate}
+      >
+        {children}
+      </StyledButton>
+    </Ripple>
   );
 };
 

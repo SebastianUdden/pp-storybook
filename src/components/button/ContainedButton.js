@@ -10,6 +10,7 @@ import {
   BACKGROUND
 } from "../../constants/theme";
 import { Button } from "./Button";
+import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`
   background-color: ${p => p.backgroundColor || "inherit"};
@@ -52,19 +53,20 @@ const ContainedButton = ({
   raisedBoxShadow = DP8,
   disabled
 }) => (
-  <StyledButton
-    onClick={onClick}
-    color={disabled ? `${ON_SURFACE}33` : color}
-    backgroundColor={disabled ? SURFACE : backgroundColor}
-    backgroundColorHover={
-      backgroundColorHover || backgroundColor || BACKGROUND_ACTIVE
-    }
-    boxShadow={boxShadow}
-    raisedBoxShadow={raisedBoxShadow}
-    disabled={disabled}
-  >
-    {children}
-  </StyledButton>
+  <Ripple onClick={onClick} color={color}>
+    <StyledButton
+      color={disabled ? `${ON_SURFACE}33` : color}
+      backgroundColor={disabled ? SURFACE : backgroundColor}
+      backgroundColorHover={
+        backgroundColorHover || backgroundColor || BACKGROUND_ACTIVE
+      }
+      boxShadow={boxShadow}
+      raisedBoxShadow={raisedBoxShadow}
+      disabled={disabled}
+    >
+      {children}
+    </StyledButton>
+  </Ripple>
 );
 
 export default ContainedButton;

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BACKGROUND_ACTIVE, ON_BACKGROUND } from "../../constants/theme";
 import { Button } from "./Button";
+import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`
   background-color: inherit;
@@ -34,14 +35,15 @@ const OutlineButton = ({
   backgroundColorHover = BACKGROUND_ACTIVE,
   disabled
 }) => (
-  <StyledButton
-    onClick={onClick}
-    color={disabled ? backgroundColorHover : color}
-    backgroundColorHover={backgroundColorHover}
-    disabled={disabled}
-  >
-    {children}
-  </StyledButton>
+  <Ripple onClick={onClick} color={color}>
+    <StyledButton
+      color={disabled ? backgroundColorHover : color}
+      backgroundColorHover={backgroundColorHover}
+      disabled={disabled}
+    >
+      {children}
+    </StyledButton>
+  </Ripple>
 );
 
 export default OutlineButton;

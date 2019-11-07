@@ -6,9 +6,9 @@ export const Button = styled.button`
   font-size: ${p => p.fontSize || "x-small"};
   font-weight: ${p => p.fontWeight || "inherit"};
   cursor: ${p => (p.disabled ? "default" : "pointer")};
-  text-transform: uppercase;
   color: ${p => p.color || "inherit"};
+  text-transform: uppercase;
+  user-select: none;
   min-width: 4rem;
   padding: 0.8rem;
-  margin: 0rem 0.2rem;
 `;

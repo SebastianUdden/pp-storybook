@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BACKGROUND_ACTIVE, ON_BACKGROUND } from "../../constants/theme";
 import { Button } from "./Button";
+import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`
   background-color: inherit;
@@ -32,17 +33,18 @@ const TextButton = ({
   fontSize,
   fontWeight
 }) => (
-  <StyledButton
-    onClick={onClick}
-    color={disabled ? backgroundColorHover : color}
-    backgroundColorHover={!disabled && backgroundColorHover}
-    disabled={disabled}
-    small={small}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-  >
-    {children}
-  </StyledButton>
+  <Ripple onClick={onClick} color={color}>
+    <StyledButton
+      color={disabled ? backgroundColorHover : color}
+      backgroundColorHover={!disabled && backgroundColorHover}
+      disabled={disabled}
+      small={small}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+    >
+      {children}
+    </StyledButton>
+  </Ripple>
 );
 
 export default TextButton;

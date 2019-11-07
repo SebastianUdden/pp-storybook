@@ -7,6 +7,7 @@ import {
   ON_SURFACE
 } from "../../constants/theme";
 import { Button } from "./Button";
+import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`
   margin: 0;
@@ -48,16 +49,17 @@ const ToggleButton = ({
   disabled,
   selected
 }) => (
-  <StyledButton
-    onClick={onClick}
-    color={disabled ? `${ON_SURFACE}33` : color}
-    backgroundColor={backgroundColor}
-    backgroundColorHover={backgroundColorHover}
-    selected={selected}
-    disabled={disabled}
-  >
-    {children}
-  </StyledButton>
+  <Ripple onClick={onClick} color={color}>
+    <StyledButton
+      color={disabled ? `${ON_SURFACE}33` : color}
+      backgroundColor={backgroundColor}
+      backgroundColorHover={backgroundColorHover}
+      selected={selected}
+      disabled={disabled}
+    >
+      {children}
+    </StyledButton>
+  </Ripple>
 );
 
 export default ToggleButton;
