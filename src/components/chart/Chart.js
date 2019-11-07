@@ -5,6 +5,9 @@ import PieChart from "./PieChart";
 import DonutChart from "./DonutChart";
 import Text from "../text/Text";
 import DotChart from "./DotChart";
+import LineChart from "./LineChart";
+import ChartAxis from "./ChartAxis";
+import TextValues from "./TextValues";
 
 const Wrapper = styled.div`
   padding: 0%;
@@ -15,7 +18,6 @@ const Wrapper = styled.div`
 const SVG = styled.svg`
   width: 100%;
   max-height: 100%;
-  overflow-y: scroll;
 `;
 const H3 = styled.h3`
   margin: 0 0 1rem;
@@ -25,7 +27,15 @@ const H3 = styled.h3`
 export const formatValues = values =>
   values.length
     ? values
-    : Object.keys(values).map(key => ({ x: key, y: values[key] }));
+    : Object.keys(values).map((key, index) => ({
+        title: key,
+        x: index,
+        y: values[key]
+      }));
+
+const FlexWrapper = styled.div`
+  display: flex;
+`;
 
 const ChartContainer = ({ id, color, children }) => {
   return (
@@ -35,78 +45,113 @@ const ChartContainer = ({ id, color, children }) => {
   );
 };
 
-const DefaultIcon = ({}) => (
-  <polygon fill="red" strokeWidth="0" points="0,50 100,50 50,0" />
-);
-
 const Chart = ({
   type,
   title,
-  values,
+  values = {},
+  size,
+  axisSize,
   color = "#ffffff",
   hoverColor = "#cccccc",
   alternateColor = "#000000",
+  axisColor,
   width = "100%",
   maxBarWidth,
   minBarWidth,
   fillPercentage,
+  hideAxis,
+  dynamicChart,
+  dotRadius,
+  showTextValues,
   onClick
-}) => (
-  <Wrapper color={color} width={width}>
-    {title && (
-      <H3>
-        <Text>{title}</Text>
-      </H3>
-    )}
-    <ChartContainer id="ChartContainer" color={color}>
-      {type === "default-icon" && <DefaultIcon />}
-      {type === "horizontal-bar" && (
-        <BarChart
-          values={values}
-          hoverColor={hoverColor}
-          alternateColor={alternateColor}
-          maxBarWidth={maxBarWidth}
-          minBarWidth={minBarWidth}
-          onClick={onClick}
-          horizontal
-        />
+}) => {
+  const formattedValues = formatValues(values);
+  return (
+    <Wrapper color={color} width={width}>
+      {title && (
+        <H3>
+          <Text>{title}</Text>
+        </H3>
       )}
-      {type === "vertical-bar" && (
-        <BarChart
-          values={values}
-          hoverColor={hoverColor}
-          alternateColor={alternateColor}
-          maxBarWidth={maxBarWidth}
-          minBarWidth={minBarWidth}
-          onClick={onClick}
-        />
-      )}
-      {type === "vertical-dot" && (
-        <DotChart
-          values={values}
-          hoverColor={hoverColor}
-          alternateColor={alternateColor}
-          maxBarWidth={maxBarWidth}
-          minBarWidth={minBarWidth}
-          onClick={onClick}
-        />
-      )}
-      {type === "pie" && (
-        <PieChart
-          color={color}
-          fillPercentage={fillPercentage}
-          alternateColor={alternateColor}
-        />
-      )}
-      {type === "donut" && (
-        <DonutChart
-          color={color}
-          fillPercentage={fillPercentage}
-          alternateColor={alternateColor}
-        />
-      )}
-    </ChartContainer>
-  </Wrapper>
-);
+      <FlexWrapper>
+        {showTextValues && (
+          <TextValues values={formattedValues} axisSize={axisSize || size} />
+        )}
+        <ChartContainer id="ChartContainer" color={color}>
+          {!hideAxis && (
+            <ChartAxis
+              values={formattedValues}
+              axisSize={axisSize || size}
+              color={axisColor || color}
+              dynamicChart={dynamicChart}
+            />
+          )}
+          {type === "horizontal-bar" && (
+            <BarChart
+              size={size}
+              values={formattedValues}
+              hoverColor={hoverColor}
+              alternateColor={alternateColor}
+              maxBarWidth={maxBarWidth}
+              minBarWidth={minBarWidth}
+              onClick={onClick}
+              horizontal
+            />
+          )}
+          {type === "vertical-bar" && (
+            <BarChart
+              size={size}
+              values={formattedValues}
+              hoverColor={hoverColor}
+              alternateColor={alternateColor}
+              maxBarWidth={maxBarWidth}
+              minBarWidth={minBarWidth}
+              onClick={onClick}
+            />
+          )}
+          {type === "vertical-dot" && (
+            <DotChart
+              size={size}
+              values={formattedValues}
+              hoverColor={hoverColor}
+              alternateColor={alternateColor}
+              maxBarWidth={maxBarWidth}
+              minBarWidth={minBarWidth}
+              dotRadius={dotRadius}
+              onClick={onClick}
+            />
+          )}
+          {type === "vertical-line" && (
+            <LineChart
+              size={size}
+              values={formattedValues}
+              color={color}
+              hoverColor={hoverColor}
+              alternateColor={alternateColor}
+              maxBarWidth={maxBarWidth}
+              minBarWidth={minBarWidth}
+              dotRadius={dotRadius}
+              onClick={onClick}
+            />
+          )}
+          {type === "pie" && (
+            <PieChart
+              color={color}
+              fillPercentage={fillPercentage}
+              alternateColor={alternateColor}
+            />
+          )}
+          {type === "donut" && (
+            <DonutChart
+              color={color}
+              fillPercentage={fillPercentage}
+              alternateColor={alternateColor}
+            />
+          )}
+        </ChartContainer>
+      </FlexWrapper>
+    </Wrapper>
+  );
+};
 
 export default Chart;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { getRelativePosition } from "../../utils/math";
-import { formatValues } from "./Chart";
+import { getSvgX, getSvgY } from "./utils";
 
 const G = styled.g`
   fill: ${p => (p.selected ? p.alternateColor : "inherit")};
@@ -23,8 +23,8 @@ const Text = styled.text`
   overflow: scroll;
 `;
 
-const getBarWidth = (max, min, count, total) => {
-  const width = (total - 2) / count;
+const getBarWidth = (max, min, count, total, offset) => {
+  const width = (total - offset) / count;
   if (max && width > max) {
     return max;
   } else if (min && width < min) {
@@ -34,8 +34,8 @@ const getBarWidth = (max, min, count, total) => {
 };
 
 const BarChart = ({
-  chartSize = { width: 100, height: 100 },
-  values = {},
+  size = { width: 100, height: 100, offsetWidth: 10, offsetHeight: 10 },
+  values,
   horizontal,
   textRight = true,
   hoverColor,
@@ -47,24 +47,20 @@ const BarChart = ({
   minBarWidth,
   onClick = () => {}
 }) => {
+  const { width, height, offsetWidth, offsetHeight } = size;
   const [selected, setSelected] = useState(undefined);
-  const formattedValues = formatValues(values);
   const relMaxValue = maxValue
     ? maxValue
-    : Math.max(...formattedValues.map(value => value.y));
-  return formattedValues.map((value, index) => {
+    : Math.max(...values.map(value => value.y));
+  return values.map((value, index) => {
     if (horizontal) {
-      const maxHorizontalWidth = 0.8;
-      const barWidth = getBarWidth(
-        maxBarWidth,
-        minBarWidth,
-        formattedValues.length,
-        chartSize.height
-      );
+      const maxHorizontalWidth = 0.7;
+      // const barWidth = getBarWidth(maxBarWidth, minBarWidth, values.length, width, offsetWidth)
+      const barWidth = (width - offsetWidth) / values.length;
       const barHeight = getRelativePosition(value.y, minValue, relMaxValue);
       return barWidth ? (
         <G
-          key={value.id}
+          key={`${value.x}-${value.y}`}
           hoverColor={hoverColor}
           alternateColor={alternateColor}
           selected={value.x === selected}
@@ -74,26 +70,26 @@ const BarChart = ({
           }}
         >
           <Rect
-            width={chartSize.width * barHeight * maxHorizontalWidth}
+            width={width * barHeight * maxHorizontalWidth}
             height={barWidth - 1}
-            y={barWidth * index + 1}
-            x={textRight ? 0 : 100}
+            y={barWidth * index + 1 + offsetHeight * 0.5}
+            x={textRight ? 0 + offsetWidth * 0.5 : 100}
           ></Rect>
           <Text
             x={
               textRight
-                ? chartSize.width * barHeight * maxHorizontalWidth + 3
+                ? width * barHeight * maxHorizontalWidth + 3 + offsetWidth * 0.5
                 : 0
             }
-            y={barWidth * index + barWidth * 0.5 + 1}
+            y={barWidth * index + barWidth * 0.5 + 1 + offsetHeight * 0.5}
             fontSize={fontSize}
           >
-            {value.x}
+            {value.title}
           </Text>
         </G>
       ) : null;
     } else {
-      const barWidth = chartSize.width / formattedValues.length;
+      const barWidth = (width - offsetWidth * 5) / values.length;
       const barHeight = getRelativePosition(value.y, minValue, relMaxValue);
       return barWidth ? (
         <G
@@ -108,16 +104,22 @@ const BarChart = ({
         >
           <rect
             width={barWidth - 1}
-            height={chartSize.height * barHeight}
-            x={barWidth * index}
-            y={chartSize.height - chartSize.height * barHeight - 10}
+            height={height * barHeight - offsetHeight * 1.55}
+            x={
+              getSvgX(values, value.x, width, offsetWidth * 1.5) -
+              offsetWidth * 0.5
+            }
+            y={height - height * barHeight + offsetHeight}
           ></rect>
           <Text
-            x={barWidth * index}
-            y={chartSize.height - 5}
+            x={
+              getSvgX(values, value.x, width, offsetWidth * 1.5) -
+              offsetWidth * 0.5
+            }
+            y={height - offsetHeight * 0.2}
             fontSize={fontSize}
           >
-            {value.x}
+            {value.title}
           </Text>
         </G>
       ) : null;

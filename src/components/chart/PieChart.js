@@ -21,11 +21,7 @@ const PieFill = styled.circle`
   transform-origin: 50% 50%;
 `;
 
-const PieChart = ({
-  fillPercentage = 50,
-  color = "#000000",
-  alternateColor = "#ffffff"
-}) => (
+const PieChart = ({ fillPercentage = 50, color, alternateColor }) => (
   <>
     <Pie cx="50" cy="50" r="50" color={color} />
     <PieFill

@@ -28,6 +28,7 @@ const Chips = ({ chips = [], allowMultiple, onChange }) => {
     <Wrapper>
       {chips.map(chip => (
         <Chip
+          key={chip.title}
           onClick={onClick}
           selected={selectedChips.find(c => chip.title === c)}
           chip={chip.title}

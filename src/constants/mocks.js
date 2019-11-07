@@ -804,7 +804,8 @@ export const MOCK_BAR_CHART = [
       title: "Pillow",
       description: "Purchase through investment firm Soft Landing Inc"
     },
-    x: "2019-11-01",
+    title: "2019-11-01",
+    x: 0,
     y: 20
   },
   {
@@ -813,7 +814,8 @@ export const MOCK_BAR_CHART = [
       title: "Pillow",
       description: "Purchase through investment firm Soft Landing Inc"
     },
-    x: "2019-11-02",
+    title: "2019-11-02",
+    x: 1,
     y: 30
   },
   {
@@ -822,7 +824,8 @@ export const MOCK_BAR_CHART = [
       title: "Pillow",
       description: "Purchase through investment firm Soft Landing Inc"
     },
-    x: "2019-11-03",
+    title: "2019-11-03",
+    x: 2,
     y: 60
   },
   {
@@ -831,7 +834,8 @@ export const MOCK_BAR_CHART = [
       title: "Pillow",
       description: "Purchase through investment firm Soft Landing Inc"
     },
-    x: "2019-11-04",
+    title: "2019-11-04",
+    x: 3,
     y: 99
   },
   {
@@ -840,8 +844,9 @@ export const MOCK_BAR_CHART = [
       title: "Pillow",
       description: "Purchase through investment firm Soft Landing Inc"
     },
-    x: "2019-11-05",
-    y: 2
+    title: "2019-11-05",
+    x: 4,
+    y: 30
   }
 ];
 
@@ -1020,4 +1025,139 @@ export const MOCK_WORLD_DATA = {
     switzerland: 8,
     ukraine: 41
   }
+};
+
+export const MOCK_POPULATION_OVER_TIME = {
+  albania: [
+    {
+      title: "1900",
+      x: 0,
+      y: 1000000
+    },
+    {
+      title: "1950",
+      x: 1,
+      y: 2500000
+    },
+    {
+      title: "2000",
+      x: 2,
+      y: 4500000
+    },
+    {
+      title: "2050",
+      x: 3,
+      y: 4200000
+    }
+  ],
+  afghanistan: [
+    {
+      title: "1900",
+      x: 0,
+      y: 1000000
+    },
+    {
+      title: "1950",
+      x: 1,
+      y: 2500000
+    },
+    {
+      title: "2000",
+      x: 2,
+      y: 4500000
+    },
+    {
+      title: "2050",
+      x: 3,
+      y: 4200000
+    }
+  ],
+  argentina: [
+    {
+      title: "1900",
+      x: 0,
+      y: 1000000
+    },
+    {
+      title: "1950",
+      x: 1,
+      y: 2500000
+    },
+    {
+      title: "2000",
+      x: 2,
+      y: 4500000
+    },
+    {
+      title: "2050",
+      x: 3,
+      y: 4200000
+    }
+  ],
+  angola: [
+    {
+      title: "1900",
+      x: 0,
+      y: 1000000
+    },
+    {
+      title: "1950",
+      x: 1,
+      y: 2500000
+    },
+    {
+      title: "2000",
+      x: 2,
+      y: 4500000
+    },
+    {
+      title: "2050",
+      x: 3,
+      y: 4200000
+    }
+  ],
+  australia: [
+    {
+      title: "1900",
+      x: 0,
+      y: 1000000
+    },
+    {
+      title: "1950",
+      x: 1,
+      y: 2500000
+    },
+    {
+      title: "2000",
+      x: 2,
+      y: 4500000
+    },
+    {
+      title: "2050",
+      x: 3,
+      y: 4200000
+    }
+  ],
+  canada: [
+    {
+      title: "1900",
+      x: 0,
+      y: 1000000
+    },
+    {
+      title: "1950",
+      x: 1,
+      y: 2500000
+    },
+    {
+      title: "2000",
+      x: 2,
+      y: 4500000
+    },
+    {
+      title: "2050",
+      x: 3,
+      y: 4200000
+    }
+  ]
 };

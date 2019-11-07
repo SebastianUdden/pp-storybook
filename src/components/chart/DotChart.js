@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { formatValues } from "./Chart";
-import { getRelativePosition } from "../../utils/math";
+import { getSvgX, getSvgY } from "./utils";
 
 const G = styled.g``;
 const Circle = styled.circle`
@@ -17,15 +17,16 @@ const Circle = styled.circle`
 `;
 
 const DotChart = ({
-  chartSize = { width: 100, height: 100 },
+  size = { width: 100, height: 100, offsetWidth: 10, offsetHeight: 10 },
   values,
   maxValue,
   minValue = 0,
-  size = 3,
+  dotRadius = 1,
   alternateColor,
   hoverColor,
   onClick = () => {}
 }) => {
+  const { width, height, offsetWidth, offsetHeight } = size;
   const [selected, setSelected] = useState(undefined);
   const formattedValues = formatValues(values);
   const relMaxValue = maxValue
@@ -34,28 +35,22 @@ const DotChart = ({
   return (
     <>
       <G data-setname="Our first data set">
-        {formattedValues.map((value, index) => {
-          const dotPosition = getRelativePosition(
-            value.y,
-            minValue,
-            relMaxValue
-          );
-          return (
-            <Circle
-              cx={100 * ((index + 1) / formattedValues.length) - 10}
-              cy={100 - 100 * dotPosition * 0.9 - 5}
-              data-value={value.y}
-              r={size}
-              alternateColor={alternateColor}
-              hoverColor={hoverColor}
-              selected={value.x === selected}
-              onClick={() => {
-                setSelected(value.x);
-                onClick(value);
-              }}
-            ></Circle>
-          );
-        })}
+        {formattedValues.map(value => (
+          <Circle
+            key={`${value.x}-${value.y}`}
+            cx={getSvgX(formattedValues, value.x, width, offsetWidth)}
+            cy={getSvgY(values, value.y, height, offsetHeight)}
+            data-value={value.y}
+            r={dotRadius}
+            alternateColor={alternateColor}
+            hoverColor={hoverColor}
+            selected={value.x === selected}
+            onClick={() => {
+              setSelected(value.x);
+              onClick(value);
+            }}
+          ></Circle>
+        ))}
       </G>
     </>
   );
