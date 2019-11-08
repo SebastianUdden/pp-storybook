@@ -1,8 +1,8 @@
-export { countLines } from "./utils/textParsers";
-export { isEquivalent } from "./utils/object";
-export { getNumberWithSpaces, round, roundTwoDec } from "./utils/numberParsers";
-export { getPercentageOfTotal, getRelativePosition, sum } from "./utils/math";
-export { getLinkValues } from "./utils/markdownParsers";
+// export { countLines } from "./utils/textParsers";
+// export { isEquivalent } from "./utils/object";
+// export { getNumberWithSpaces, round, roundTwoDec } from "./utils/numberParsers";
+// export { getPercentageOfTotal, getRelativePosition, sum } from "./utils/math";
+// export { getLinkValues } from "./utils/markdownParsers";
 export { Button } from "./components/button/Button";
 export { default as ActionItem } from "./components/actionItem/ActionItem";
 export { default as AppBarTop } from "./components/appBarTop/AppBarTop";
