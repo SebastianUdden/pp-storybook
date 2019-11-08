@@ -21,6 +21,7 @@ const Container = styled.div`
 `;
 
 const AppBarTop = ({ children, type = "regular", flex = true }) => {
+  if (typeof window === "undefined") return;
   let [pos, setPos] = useState(window.pageYOffset);
   let [visible, setVisible] = useState(true);
 
