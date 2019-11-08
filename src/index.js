@@ -39,15 +39,14 @@ export { default as Search } from "./components/search/Search";
 export {
   default as SearchSections
 } from "./components/searchSections/SearchSections";
-export {
-  default as ToggleSwitch
-} from "./components/toggleSwitch/ToggleSwitch";
 export { default as Star } from "./components/star/Star";
 export { default as Stars } from "./components/stars/Stars";
 export { default as SVG } from "./components/svg/SVG";
 export { default as Table } from "./components/table/Table";
 export { default as Text } from "./components/text/Text";
-export { default as ToggleSwitch } from "./components/toggleSwitch/ToggleSwitch";
+export {
+  default as ToggleSwitch
+} from "./components/toggleSwitch/ToggleSwitch";
 
 export * from "./svgs/actions";
 export * from "./svgs/alert";
