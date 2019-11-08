@@ -63,7 +63,7 @@ const Search = ({
   useEffect(() => {
     if (
       firstUpdate.current ||
-      document.activeElement !== document.getElementById("Search")
+      (document && document.activeElement !== document.getElementById("Search"))
     ) {
       firstUpdate.current = false;
       return;

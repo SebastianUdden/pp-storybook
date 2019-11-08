@@ -157,7 +157,7 @@ const Modal = ({ children, title, onClose, open }) => {
             </InnerModal>
           </Wrapper>
         </Overlay>,
-        document.body
+        document && document.body
       )
     : null;
 };

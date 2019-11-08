@@ -57,7 +57,8 @@ storiesOf("App bar top", module)
                   onClick={() => {
                     setShowSearch(true);
                     setTimeout(
-                      () => document.getElementById("Search").focus(),
+                      () =>
+                        document && document.getElementById("Search").focus(),
                       200
                     );
                   }}

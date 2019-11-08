@@ -245,7 +245,7 @@ storiesOf("_App example", module).add("App example", () => {
                 onClick={() => {
                   setShowSearch(true);
                   setTimeout(
-                    () => document.getElementById("Search").focus(),
+                    () => document && document.getElementById("Search").focus(),
                     200
                   );
                 }}
