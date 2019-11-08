@@ -61,9 +61,10 @@ const Search = ({
     setAnimate(true);
   }, []);
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (
       firstUpdate.current ||
-      (document && document.activeElement !== document.getElementById("Search"))
+      document.activeElement !== document.getElementById("Search")
     ) {
       firstUpdate.current = false;
       return;

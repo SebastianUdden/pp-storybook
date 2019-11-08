@@ -1,5 +1,6 @@
 export const countLines = id => {
-  const el = document && document.getElementById(id);
+  if (typeof window === "undefined") return;
+  const el = document.getElementById(id);
   if (!el) return 4;
   const divHeight = el.offsetHeight;
   const lineHeight = parseInt(el.style.lineHeight) || 22;

@@ -107,8 +107,9 @@ const Card = ({
 
   useEffect(() => {
     if (!showEdit) return;
+    if (typeof window === "undefined") return;
     setTimeout(() => {
-      document && document.getElementById(showEdit).select();
+      document.getElementById(showEdit).select();
     }, 100);
   }, [showEdit]);
 

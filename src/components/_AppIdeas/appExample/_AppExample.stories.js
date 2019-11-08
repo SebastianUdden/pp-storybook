@@ -243,9 +243,11 @@ storiesOf("_App example", module).add("App example", () => {
               <ActionItem
                 svg={search}
                 onClick={() => {
+                  if (typeof window === "undefined") return;
+
                   setShowSearch(true);
                   setTimeout(
-                    () => document && document.getElementById("Search").focus(),
+                    () => document.getElementById("Search").focus(),
                     200
                   );
                 }}

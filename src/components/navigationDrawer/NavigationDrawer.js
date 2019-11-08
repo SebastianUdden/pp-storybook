@@ -49,23 +49,23 @@ const NavigationDrawer = ({
   onHide,
   hide
 }) => {
-  document &&
-    document.addEventListener("click", evt => {
-      const flyoutElement = document.getElementById("navigation-drawer");
-      const buttonElement = document.getElementById(buttonElementId);
-      let targetElement = evt.target; // clicked element
-      do {
-        if (targetElement == flyoutElement || targetElement == buttonElement) {
-          // This is a click inside. Do nothing, just return.
-          return;
-        }
-        // Go up the DOM
-        targetElement = targetElement.parentNode;
-      } while (targetElement);
+  if (typeof window === "undefined") return;
+  document.addEventListener("click", evt => {
+    const flyoutElement = document.getElementById("navigation-drawer");
+    const buttonElement = document.getElementById(buttonElementId);
+    let targetElement = evt.target; // clicked element
+    do {
+      if (targetElement == flyoutElement || targetElement == buttonElement) {
+        // This is a click inside. Do nothing, just return.
+        return;
+      }
+      // Go up the DOM
+      targetElement = targetElement.parentNode;
+    } while (targetElement);
 
-      // This is a click outside.
-      onHide();
-    });
+    // This is a click outside.
+    onHide();
+  });
 
   return (
     <Container>

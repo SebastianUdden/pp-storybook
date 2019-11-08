@@ -231,6 +231,7 @@ const formatCell = cell => {
   } else {
     displayCell = cell;
   }
+  // if (typeof window === "undefined") return;
   // const offsetWidth =
   //   index === 0 &&
   //   document.getElementById(headings[0].id) &&
