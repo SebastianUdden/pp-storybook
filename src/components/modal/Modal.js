@@ -132,7 +132,7 @@ const onOverlayClick = (e, onClose) => {
 };
 
 const Modal = ({ children, title, onClose, open }) => {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined") return null;
   const [isAnimating, setIsAnimating] = useState(true);
   useEffect(() => {
     setTimeout(() => {

@@ -55,7 +55,7 @@ storiesOf("App bar top", module)
                 <ActionItem
                   svg={search}
                   onClick={() => {
-                    if (typeof window === "undefined") return;
+                    if (typeof window === "undefined") return null;
                     setShowSearch(true);
                     setTimeout(
                       () => document.getElementById("Search").focus(),

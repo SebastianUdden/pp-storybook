@@ -49,7 +49,7 @@ const NavigationDrawer = ({
   onHide,
   hide
 }) => {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined") return null;
   document.addEventListener("click", evt => {
     const flyoutElement = document.getElementById("navigation-drawer");
     const buttonElement = document.getElementById(buttonElementId);
