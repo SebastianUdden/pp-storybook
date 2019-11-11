@@ -18,6 +18,7 @@ const Item = styled.div`
 
 const Carousel = ({ slides, interval = 3000 }) => {
   const length = slides.length;
+  if (!length) return null;
   const ELEMENT_PX_WIDTH =
     document.getElementById("firstItem") &&
     document.getElementById("firstItem").getBoundingClientRect().width;
@@ -28,22 +29,22 @@ const Carousel = ({ slides, interval = 3000 }) => {
   );
   const ITEM_WIDTH = length * (100 / (length + 2));
 
-  return (
-    length > 0 && (
-      <Wrapper>
-        <Content {...handlers} {...style} active={active}>
-          <Item id="firstItem" width={ITEM_WIDTH / length}>
-            {length > 1 ? slides[length - 1] : slides[0]}
+  return length > 1 ? (
+    <Wrapper>
+      <Content {...handlers} {...style} active={active}>
+        <Item id="firstItem" width={ITEM_WIDTH / length}>
+          {length > 1 ? slides[length - 1] : slides[0]}
+        </Item>
+        {slides.map((slide, index) => (
+          <Item key={index} width={ITEM_WIDTH / length}>
+            {slide}
           </Item>
-          {slides.map((slide, index) => (
-            <Item key={index} width={ITEM_WIDTH / length}>
-              {slide}
-            </Item>
-          ))}
-          <Item width={ITEM_WIDTH / length}>{slides[0]}</Item>
-        </Content>
-      </Wrapper>
-    )
+        ))}
+        <Item width={ITEM_WIDTH / length}>{slides[0]}</Item>
+      </Content>
+    </Wrapper>
+  ) : (
+    <Item width="100%">{slides[0]}</Item>
   );
 };
 
