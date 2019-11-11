@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     box-shadow: ${p => p.boxShadowRaised};
   }
-  margin: 0.5rem;
+  margin: ${p => p.margin};
 `;
 
 const LowerContainer = styled.div`
@@ -50,7 +50,9 @@ const SupportingText = styled.p`
   margin: 1rem 0 0 0;
 `;
 
-const Img = styled.img``;
+const Img = styled.img`
+  pointer-events: none;
+`;
 
 const Input = styled.input`
   background-color: transparent;
@@ -92,11 +94,13 @@ const Card = ({
   boxShadow = DP_TYPES.DP6,
   boxShadowRaised = DP_TYPES.DPraised,
   size = {
-    width: "320px"
+    width: "100%"
   },
   buttons,
   icons,
-  onUpdate
+  onUpdate,
+  margin = "0.5rem",
+  draggable = false
 }) => {
   const [title, setTitle] = useState(initialTitle);
   const [secondaryText, setSecondaryText] = useState(initialSecondaryText);
@@ -136,13 +140,14 @@ const Card = ({
       boxShadow={boxShadow}
       boxShadowRaised={boxShadowRaised}
       size={size}
-      draggable={true}
+      margin={margin}
+      draggable={draggable}
       onClick={() => setShowEdit(undefined)}
     >
       {image && (
         <Img
           {...image}
-          width={image.width || 320}
+          width={image.width || "100%"}
           height={image.height || 220}
         />
       )}
@@ -150,6 +155,7 @@ const Card = ({
         <TitleContainer>
           <Title
             onClick={e => {
+              if (!onUpdate) return;
               e.stopPropagation();
               setShowEdit("title");
             }}
@@ -169,6 +175,7 @@ const Card = ({
           {secondaryText && (
             <SecondaryText
               onClick={e => {
+                if (!onUpdate) return;
                 e.stopPropagation();
                 setShowEdit("secondaryText");
               }}
@@ -189,6 +196,7 @@ const Card = ({
           {supportingText && (
             <SupportingText
               onClick={e => {
+                if (!onUpdate) return;
                 e.stopPropagation();
                 setShowEdit("supportingText");
               }}

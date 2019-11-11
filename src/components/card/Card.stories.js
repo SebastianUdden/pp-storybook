@@ -23,8 +23,13 @@ storiesOf("Card", module)
       image: {
         src:
           "https://en.es-static.us/upl/2013/09/sunrise-red-sea-Graham-Telford-e1489764712368.jpg",
-        alt: "test"
-      }
+        alt: "test",
+        width: 320
+      },
+      size: {
+        width: "320px"
+      },
+      draggable: true
     };
     const [submitCard, setSubmitCard] = useState(undefined);
     const [card, setCard] = useState(initialCard);
