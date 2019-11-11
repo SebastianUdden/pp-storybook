@@ -5,9 +5,13 @@ import Carousel from "./Carousel";
 import Card from "../card/Card";
 import ContainedButton from "../button/ContainedButton";
 import Text from "../text/Text";
+import { MEDIA_MIN_MEDIUM } from "../../constants/sizes";
 
 const Wrapper = styled.div`
-  width: 50vw;
+  width: 100%;
+  ${MEDIA_MIN_MEDIUM} {
+    width: 20rem;
+  }
 `;
 const InnerWrapper = styled.div`
   display: flex;
@@ -30,6 +34,7 @@ storiesOf("Carousel", module)
   .add("default", () => (
     <Wrapper>
       <Carousel
+        interval={null}
         slides={[
           <Item>First slide</Item>,
           <Item>Second slide</Item>,

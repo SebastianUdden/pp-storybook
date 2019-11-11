@@ -102,6 +102,7 @@ export function useCarousel(length, interval, itemWidth) {
   });
 
   useEffect(() => {
+    if (!interval) return;
     const id = setTimeout(() => dispatch({ type: "next", length }), interval);
     return () => clearTimeout(id);
   }, [state.offset, state.active]);
