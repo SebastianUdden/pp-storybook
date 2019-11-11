@@ -126,7 +126,7 @@ const TBody = styled.tbody`
 `;
 const TH = styled.th`
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   background-color: ${p => p.backgroundColor};
   user-select: none;
   :hover {
@@ -184,7 +184,7 @@ const TR = styled.tr`
     `};
 `;
 const TD = styled.td`
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   text-align: ${p => (p.alignRight ? "right" : "left")};
   white-space: nowrap;
   font-size: medium;
