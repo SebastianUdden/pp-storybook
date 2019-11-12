@@ -3,20 +3,8 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   color: ${p => p.color};
-  padding: 2rem;
-
-  strong {
-    font-weight: 800;
-    color: orange;
-  }
-
-  em {
-    color: #999999;
-  }
-
-  li {
-    color: orange;
-  }
+  margin: 0;
+  padding: 0;
 `;
 
 const STRONG_REGEX = /\*\*(\S(.*?\S)?)\*\*/gm;

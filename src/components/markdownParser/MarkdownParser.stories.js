@@ -1,9 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 
 import MarkdownParser from "./MarkdownParser";
 
-const MARKDOWN_1 = `
+const MARKDOWN_TEST = `
   # Header 1
   ## Header 2
   ### Header 3
@@ -26,6 +27,33 @@ const MARKDOWN_1 = `
   There is also additional markdown like [links](https://www.google.com) 
   ----------
 `;
+
+const StyleMarkdown = styled.div`
+  div {
+    strong {
+      font-weight: 800;
+      color: #555555;
+    }
+
+    em {
+      color: #999999;
+    }
+
+    li {
+      padding: 0.1rem;
+      list-style: square;
+    }
+
+    a {
+      text-decoration: none;
+      color: orange;
+      font-weight: 600;
+    }
+  }
+`;
+
 storiesOf("Markdown parser", module).add("default", () => (
-  <MarkdownParser color="white" markdown={MARKDOWN_1} />
+  <StyleMarkdown>
+    <MarkdownParser color="white" markdown={MARKDOWN_TEST} />
+  </StyleMarkdown>
 ));
