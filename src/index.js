@@ -23,6 +23,7 @@ export { default as Grid } from "./components/grid/Grid";
 export { default as Heading } from "./components/heading/Heading";
 export { default as HighlightedText } from "./components/highlightedText/HighlightedText";
 export { default as Modal } from "./components/modal/Modal";
+export { default as MarkdownEditor } from "./components/markdownParser/MarkdownEditor";
 export { default as MarkdownParser } from "./components/markdownParser/MarkdownParser";
 export { default as NavigationDrawer } from "./components/navigationDrawer/NavigationDrawer";
 export { default as NavigationLink } from "./components/navigationLink/NavigationLink";
