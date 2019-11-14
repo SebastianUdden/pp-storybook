@@ -17,7 +17,7 @@ import { menu } from "../../svgs/navigation/menu";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 import { bookmark } from "../../svgs/actions/bookmark";
 import { bookmarks } from "../../svgs/actions/bookmarks";
-import { DEFAULT_FONT_SIZE } from "../../constants/font";
+import { DEFAULT_FONT } from "../../constants/font";
 
 const Wrapper = styled.div`
   border: 1px solid transparent;
@@ -27,7 +27,7 @@ const InnerWrapper = styled.div`
   align-items: center;
 `;
 const Title = styled.h1`
-  font-size: ${DEFAULT_FONT_SIZE};
+  font-size: ${DEFAULT_FONT.size};
   margin: ${p => (p.large ? "2.5rem" : 0)} 0 0 0.2rem;
   padding: 0;
   ${MEDIA_MAX_MEDIUM} {
