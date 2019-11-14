@@ -4,12 +4,7 @@ import { storiesOf } from "@storybook/react";
 import SearchSections from "../searchSections/SearchSections";
 import { MOCK_SECTIONS } from "../../constants/mocks";
 import ColoredBox from "../coloredBox/ColoredBox";
-import {
-  THEME_COLORS,
-  ALTERNATE_THEME_COLORS,
-  MAIN_THEME,
-  DP6
-} from "../../constants/theme";
+import { ALTERNATE_THEME_COLORS, MAIN_THEME, DP6 } from "../../constants/theme";
 
 const Container = styled.div`
   display: flex;
@@ -99,16 +94,6 @@ storiesOf("Color", module)
           ))}
       </Container>
     </>
-  ))
-  .add("all default colors", () => (
-    <Container>
-      {Object.keys(THEME_COLORS).map(color => (
-        <Wrapper>
-          <ColoredBox backgroundColor={THEME_COLORS[color]} boxShadow={DP6} />
-          <Label color="#cccccc">{color.replace("_", " ").toLowerCase()}</Label>
-        </Wrapper>
-      ))}
-    </Container>
   ))
   .add("all alternate colors", () => (
     <Container>
