@@ -5,6 +5,11 @@ const DefaultMarkdownWrapper = styled.div`
   color: ${p => p.color};
   margin: 0;
   padding: 0;
+
+  div {
+    margin: 0.5rem 0;
+  }
+
   strong {
     font-weight: 800;
     color: #555555;
