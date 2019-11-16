@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { DP6 } from "../../../../../src/constants/theme";
 
 const TextArea = styled.textarea`
   width: 100%;
@@ -7,10 +8,14 @@ const TextArea = styled.textarea`
   background-color: ${p => p.backgroundColor};
   color: ${p => p.color};
   outline: none;
-  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: ${DP6};
+  padding: 0.5rem;
+  resize: vertical;
 `;
 
 const MarkdownEditor = ({
+  id = "MarkdownEditor" + Math.random() * Math.random() * 100,
   markdown,
   setMarkdown,
   color = "#ffffff",
@@ -18,11 +23,11 @@ const MarkdownEditor = ({
 }) => {
   const [height, setHeight] = useState("auto");
   useEffect(() => {
-    setHeight(document.getElementById("MarkdownEditor").scrollHeight + "px");
+    setHeight(document.getElementById(id).scrollHeight + "px");
   }, []);
   return (
     <TextArea
-      id="MarkdownEditor"
+      id={id}
       height={height}
       value={markdown}
       onChange={e => {
