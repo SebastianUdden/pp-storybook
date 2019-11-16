@@ -41,6 +41,7 @@ export { default as ToggleSwitch } from "./components/toggleSwitch/ToggleSwitch"
 export * from "./svgs/actions";
 export * from "./svgs/alert";
 export * from "./svgs/av";
+export * from "./svgs/content";
 // export * from "./svgs/communication";
 // export * from "./svgs/device";
 export * from "./svgs/editor";
