@@ -1,5 +1,6 @@
 export { addBox } from "./add-box";
 export { addCircleOutline } from "./add-circle-outline";
+export { addCircle } from "./add-circle";
 export { add } from "./add";
 export { ampStories } from "./amp-stories";
 export { archive } from "./archive";
