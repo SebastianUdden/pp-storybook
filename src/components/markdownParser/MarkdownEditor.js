@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { DP6 } from "../../../../../src/constants/theme";
+import { DP6 } from "../../constants/theme";
 
 const TextArea = styled.textarea`
   width: 100%;
@@ -16,6 +16,7 @@ const TextArea = styled.textarea`
 
 const MarkdownEditor = ({
   id = "MarkdownEditor" + Math.random() * Math.random() * 100,
+  placeholder = "Description",
   markdown,
   setMarkdown,
   color = "#ffffff",
@@ -28,6 +29,7 @@ const MarkdownEditor = ({
   return (
     <TextArea
       id={id}
+      placeholder={placeholder}
       height={height}
       value={markdown}
       onChange={e => {
