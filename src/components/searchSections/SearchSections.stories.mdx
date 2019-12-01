@@ -1,0 +1,30 @@
+import { useState } from "react";
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+
+import SearchSections from "./SearchSections";
+import { MOCK_SECTIONS } from "../../constants/mocks";
+import { MAIN_THEME } from "../../constants/theme";
+
+<Meta title="Design system|Search sections" component={SearchSections} />
+
+# Search sections
+
+With `MDX` we can define a story for `Search sections` right in the middle of our markdown documentation.
+
+## Default - no search
+
+<Story name="default - no search">
+  <SearchSections sections={MOCK_SECTIONS} />
+</Story>
+
+## Search value - farm-to-TABLE
+
+<Story name="search value - farm-to-TABLE">
+  <SearchSections sections={MOCK_SECTIONS} searchValue="farm-to-TABLE" />
+</Story>
+
+## Search value - shabby chic
+
+<Story name="search value - Shabby chic">
+  <SearchSections sections={MOCK_SECTIONS} searchValue="Shabby chic" />
+</Story>

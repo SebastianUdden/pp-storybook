@@ -1,0 +1,17 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+
+import NavigationLink from "./NavigationLink";
+
+<Meta title="Design system|NavigationLink" component={NavigationLink} />;
+
+# NavigationLink
+
+With `MDX` we can define a story for `NavigationLink` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <Wrapper>
+    <NavigationLink svg={search} title="Search" />
+  </Wrapper>
+</Story>

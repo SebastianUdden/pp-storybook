@@ -57,6 +57,7 @@ const DataCards = ({
   return (
     <>
       {data &&
+        data.rows &&
         headings &&
         data.rows.map(row => (
           <Wrapper

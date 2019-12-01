@@ -1,0 +1,66 @@
+import { useState } from "react";
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { MAIN_THEME } from "../../constants/theme";
+import { ON_PRIMARY_BACKGROUND } from "../../constants/theme";
+import Button from "../button/ContainedButton";
+import TextButton from "../button/TextButton";
+import Text from "../text/Text";
+import Modal from "./Modal";
+
+<Meta title="Design system|Modal" component={Modal} />
+
+# Modal
+
+With `MDX` we can define a story for `Modal` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  {() => {
+    const TITLE = "A modal with title";
+    const DESCRIPTION = "Would you like to do something?";
+    const [modalOpen, setModalOpen] = useState(true);
+    return (
+      <>
+        <Button onClick={() => setModalOpen(true)}>Open Modal</Button>
+        {modalOpen && (
+          <Modal
+            title={TITLE}
+            onClose={() => {
+              setModalOpen(false);
+            }}
+            open={modalOpen}
+          >
+            <Text>{DESCRIPTION}</Text>
+            <div
+              style={{
+                display: "flex",
+                marginTop: "32px",
+                justifyContent: "flex-end"
+              }}
+            >
+              <TextButton
+                backgroundColorHover={ON_PRIMARY_BACKGROUND}
+                onClick={() => {
+                  setModalOpen(false);
+                  onConfirm();
+                }}
+              >
+                Yes
+              </TextButton>
+              <TextButton
+                backgroundColorHover={ON_PRIMARY_BACKGROUND}
+                onClick={() => {
+                  setModalOpen(false);
+                  onDeny();
+                }}
+              >
+                No
+              </TextButton>
+            </div>
+          </Modal>
+        )}
+      </>
+    );
+  }}
+</Story>

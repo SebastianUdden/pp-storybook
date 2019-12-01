@@ -1,0 +1,34 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import HighlightedText from "./HighlightedText";
+import { MAIN_THEME } from "../../constants/theme";
+import { Paragraph } from "./utils";
+
+<Meta title="Design system|Highlighted text" component={HighlightedText} />
+
+# Highlighted text
+
+With `MDX` we can define a story for `Highlighted text` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default - input: highlight">
+  <Paragraph>
+    <HighlightedText
+      text="Some text that's partly highlighted"
+      highlight="Highlight"
+    />
+  </Paragraph>
+</Story>
+
+## Theme color
+
+<Story name="theme color - input: highlight">
+  <Paragraph>
+    <HighlightedText
+      text="This is some funky text about the groovy-TEQUILA! By the way, highlighting is not case sensitive. Awesome right?"
+      highlight="GROOVY-tequila"
+      foregroundColor={MAIN_THEME.PRIMARY_LIGHT.color.background}
+      backgroundColor={`${MAIN_THEME.PRIMARY_LIGHT.color.foreground}33`}
+    />
+  </Paragraph>
+</Story>

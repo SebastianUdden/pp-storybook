@@ -1,0 +1,37 @@
+import { useState } from "react";
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import ToggleSwitch from "./ToggleSwitch";
+import { MAIN_THEME } from "../../constants/theme";
+
+<Meta title="Design system|Toggle switch" component={ToggleSwitch} />
+
+# Toggle switch
+
+With `MDX` we can define a story for `ToggleSwitch` right in the middle of our markdown documentation.
+
+## Rounded
+
+<Story name="rounded">
+  {() => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <ToggleSwitch checked={checked} onClick={() => setChecked(!checked)} />
+    );
+  }}
+</Story>
+
+## Squared
+
+<Story name="squared">
+  {() => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <ToggleSwitch
+        backgroundColor={MAIN_THEME.PRIMARY.color.background}
+        rounded={false}
+        checked={checked}
+        onClick={() => setChecked(!checked)}
+      />
+    );
+  }}
+</Story>

@@ -1,0 +1,21 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Dropdown from "./Dropdown";
+import DropdownWrapper from "./utils";
+
+<Meta title="Design system|Dropdown" component={Dropdown} />
+
+# Dropdown
+
+With `MDX` we can define a story for `Dropdown` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <DropdownWrapper />
+</Story>
+
+## Multiple
+
+<Story name="multiple">
+  <DropdownWrapper multiple />
+</Story>

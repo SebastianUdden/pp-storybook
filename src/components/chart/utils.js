@@ -1,7 +1,43 @@
-export const getMinX = values => Math.min.apply(null, values.map(obj => obj.x));
-export const getMaxX = values => Math.max.apply(null, values.map(obj => obj.x));
-export const getMinY = values => Math.min.apply(null, values.map(obj => obj.y));
-export const getMaxY = values => Math.max.apply(null, values.map(obj => obj.y));
+import styled from "styled-components";
+
+export const Wrapper = styled.div`
+  height: 10vh;
+`;
+export const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding-right: 2rem;
+`;
+export const FlexColumn = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+`;
+export const Span = styled.span`
+  font-weight: 800;
+  text-transform: uppercase;
+`;
+
+export const getMinX = values =>
+  Math.min.apply(
+    null,
+    values.map(obj => obj.x)
+  );
+export const getMaxX = values =>
+  Math.max.apply(
+    null,
+    values.map(obj => obj.x)
+  );
+export const getMinY = values =>
+  Math.min.apply(
+    null,
+    values.map(obj => obj.y)
+  );
+export const getMaxY = values =>
+  Math.max.apply(
+    null,
+    values.map(obj => obj.y)
+  );
 
 export const getSvgX = (values, x, width, offset = 0) => {
   const baseWidth = width - offset * 2;

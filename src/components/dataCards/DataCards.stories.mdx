@@ -1,0 +1,34 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import DataCards from "./DataCards";
+import DataCardsWrapper from "./utils";
+import { MOCK_INSIDER } from "../../constants/mocks";
+
+<Meta title="Design system|Data cards" component={DataCards} />
+
+# Data cards
+
+With `MDX` we can define a story for `Data cards` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default - with select">
+  <DataCardsWrapper
+    inputChips={MOCK_INSIDER.tables.company.headings.map(heading => ({
+      title: heading.title
+    }))}
+    inputHeadings={MOCK_INSIDER.tables.financialStatement.headings}
+    inputData={MOCK_INSIDER.tables.financialStatement.data}
+  />
+</Story>
+
+## With filters
+
+<Story name="with filters - with select">
+  <DataCardsWrapper
+    inputChips={MOCK_INSIDER.tables.company.headings.map(heading => ({
+      title: heading.title
+    }))}
+    inputHeadings={MOCK_INSIDER.tables.financialStatement.headings}
+    inputData={MOCK_INSIDER.tables.financialStatement.data}
+  />
+</Story>

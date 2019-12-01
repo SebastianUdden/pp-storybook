@@ -1,0 +1,95 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks'
+import ColoredBox from "../coloredBox/ColoredBox";
+import { Container, Wrapper, Label } from "./utils";
+import { ALTERNATE_THEME_COLORS, MAIN_THEME, DP6 } from "../../constants/theme";
+
+<Meta title="Design system|Colors" component={ColoredBox} />
+
+# Colors
+
+With `MDX` we can define a story for `Colors` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <>
+    <Container>
+      {Object.keys(MAIN_THEME).map(theme => (
+        <Wrapper>
+          <ColoredBox
+            backgroundColor={MAIN_THEME[theme].color.background}
+            boxShadow={DP6}
+          />
+          <Label color="#cccccc">{theme.replace("_", " ").toLowerCase()}</Label>
+        </Wrapper>
+      ))}
+    </Container>
+  </>
+</Story>
+
+## With foreground text
+
+<Story name="with foreground text">
+    <>
+      <Container>
+        {Object.keys(MAIN_THEME)
+          .filter((a, index) => index < 6)
+          .map((theme, index) => (
+            <Wrapper>
+              <ColoredBox
+                backgroundColor={MAIN_THEME[theme].color.background}
+                boxShadow={DP6}
+              >
+                <BigLabel
+                  color={MAIN_THEME[theme].color.foreground}
+                  opacity={MAIN_THEME[theme].opacity.large}
+                >
+                  Big Label
+                </BigLabel>
+              </ColoredBox>
+              <Label color="#cccccc">
+                {theme.replace("_", " ").toLowerCase()}
+              </Label>
+            </Wrapper>
+          ))}
+      </Container>
+      <Container>
+        {Object.keys(MAIN_THEME)
+          .filter((a, index) => index < 6)
+          .map((theme, index) => (
+            <Wrapper>
+              <ColoredBox
+                backgroundColor={MAIN_THEME[theme].color.background}
+                boxShadow={DP6}
+              >
+                <SmallLabel
+                  color={MAIN_THEME[theme].color.foreground}
+                  opacity={MAIN_THEME[theme].opacity.normal}
+                >
+                  This is a label and description
+                </SmallLabel>
+              </ColoredBox>
+              <Label color="#cccccc">
+                {theme.replace("_", " ").toLowerCase()}
+              </Label>
+            </Wrapper>
+          ))}
+      </Container>
+    </>
+</Story>
+
+## Alternate
+
+<Story name="alternate">
+    <Container>
+        {Object.keys(ALTERNATE_THEME_COLORS).map(color => (
+        <Wrapper>
+            <ColoredBox
+            backgroundColor={ALTERNATE_THEME_COLORS[color]}
+            boxShadow={DP6}
+            />
+            <Label color="#cccccc">{color.replace("_", " ").toLowerCase()}</Label>
+        </Wrapper>
+        ))}
+    </Container>
+</Story>

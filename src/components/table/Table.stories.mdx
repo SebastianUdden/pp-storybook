@@ -1,0 +1,123 @@
+import { useState } from "react";
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+
+import { MAIN_THEME } from "../../constants/theme";
+import { MOCK_INSIDER } from "../../constants/mocks";
+import { getLinkValues } from "../../utils/markdownParsers";
+import Text from "../text/Text";
+import Table from "./Table";
+
+<Meta title="Design system|Table" component={Table} />
+
+# Table
+
+With `MDX` we can define a story for `Table` right in the middle of our markdown documentation.
+
+## Default - 3 columns
+
+<Story name="default">
+  {() => {
+    const [selected, setSelected] = useState([]);
+    return (
+      <>
+        <h1>
+          <Text foregroundColor="#ffffff">
+            Selected row:{" "}
+            {selected.length ? getLinkValues(selected[0])[0] : "None"}
+          </Text>
+        </h1>
+        {selected.length ? (
+          <>
+            <h2>
+              <Text foregroundColor="#ffffff">Transactions: {selected[1]}</Text>
+            </h2>
+            <h2>
+              <Text foregroundColor="#ffffff">Bought/Sold: {selected[2]}</Text>
+            </h2>
+          </>
+        ) : null}
+        <Table
+          headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+          headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+          headings={MOCK_INSIDER.tables.market.headings}
+          data={MOCK_INSIDER.tables.market.data}
+          onClick={row => setSelected(row.cells)}
+        />
+      </>
+    );
+  }}
+</Story>
+
+## company - 8 columns
+
+<Story name="company - 8 columns">
+  <Table
+    headingBackgroundColor="#587899"
+    headingForegroundColor="#FFFFFF"
+    headings={MOCK_INSIDER.tables.company.headings}
+    data={MOCK_INSIDER.tables.company.data}
+  />
+</Story>
+
+## company - 8 columns with resize
+
+<Story name="company - 8 columns with resize">
+  <Table
+    headingBackgroundColor="#587899"
+    headingForegroundColor="#FFFFFF"
+    headings={MOCK_INSIDER.tables.company.headings}
+    data={MOCK_INSIDER.tables.company.data}
+    enableResize
+  />
+</Story>
+
+## company - 8 columns with lock
+
+<Story name="company - 8 columns with lock">
+  <Table
+    headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+    headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+    headings={MOCK_INSIDER.tables.financialStatement.headings}
+    data={MOCK_INSIDER.tables.financialStatement.data}
+    enableLock
+  />
+</Story>
+
+## company - 8 columns with search
+
+<Story name="company - 8 columns with search">
+  <Table
+    headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+    headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+    headings={MOCK_INSIDER.tables.financialStatement.headings}
+    data={MOCK_INSIDER.tables.financialStatement.data}
+    enableSearch
+  />
+</Story>
+
+## company - 8 columns with lock and search
+
+<Story name="company - 8 columns with lock and search">
+  <Table
+    headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+    headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+    headings={MOCK_INSIDER.tables.financialStatement.headings}
+    data={MOCK_INSIDER.tables.financialStatement.data}
+    enableLock
+    enableSearch
+  />
+</Story>
+
+## company - 8 columns with resize, lock and search
+
+<Story name="company - 8 columns with resize, lock and search">
+  <Table
+    headingBackgroundColor={MAIN_THEME.SECONDARY_DARK.color.background}
+    headingForegroundColor={MAIN_THEME.SECONDARY_DARK.color.foreground}
+    headings={MOCK_INSIDER.tables.financialStatement.headings}
+    data={MOCK_INSIDER.tables.financialStatement.data}
+    enableResize
+    enableLock
+    enableSearch
+  />
+</Story>

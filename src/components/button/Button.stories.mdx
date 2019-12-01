@@ -1,0 +1,173 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import { useState } from "react";
+import { action } from "@storybook/addon-actions";
+import Button from "./Button";
+import TextButton from "./TextButton";
+import OutlineButton from "./OutlineButton";
+import ContainedButton from "./ContainedButton";
+import ToggleButton from "./ToggleButton";
+import FabButton from "./FabButton";
+import SVG from "../svg/SVG";
+import { plus } from "../../svgs/generic/plus";
+import { MAIN_THEME } from "../../constants/theme";
+
+<Meta title="Design system|Button" component={Button} />
+
+# Button
+
+With `MDX` we can define a story for `Button` right in the middle of our markdown documentation.
+
+## Text
+
+<Story name='text'>
+  <TextButton
+      onClick={action("clicked")}
+      color={MAIN_THEME.PRIMARY.color.background}
+      backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
+    >
+    Default Text-button
+  </TextButton>
+</Story>
+
+## Disabled
+
+<Story name='disabled'>
+  <TextButton onClick={action("clicked")} color="#FF00AA" disabled>
+    Disabled Text-button
+  </TextButton>
+</Story>
+
+## Outline
+
+<Story name='outline'>
+  <OutlineButton
+    onClick={action("clicked")}
+    color={MAIN_THEME.PRIMARY.color.foreground}
+    backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
+  >
+    Default Outline-button
+  </OutlineButton>
+</Story>
+
+## Outline disabled
+
+<Story name='outline disabled'>
+  <OutlineButton onClick={action("clicked")} color="#FF00AA" disabled>
+    Disabled Outline-button
+  </OutlineButton>
+</Story>
+
+## Contained
+
+<Story name='contained'>
+    <ContainedButton
+      onClick={action("clicked")}
+      color={MAIN_THEME.PRIMARY.color.foreground}
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
+    >
+      Default Contained-button
+    </ContainedButton>
+</Story>
+
+## Contained disabled
+
+<Story name='contained disabled'>
+  <ContainedButton
+    onClick={action("clicked")}
+    color="#FFFFFF"
+    backgroundColor="#FF00AA"
+    disabled
+  >
+    Disabled Contained-button
+  </ContainedButton>
+</Story>
+
+## Toggle
+
+<Story name='toggle'>
+  {() => {
+    const [selectedButton, setSelectedButton] = useState(2);
+    return (
+      <div>
+        <ToggleButton
+          onClick={() => setSelectedButton(1)}
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
+          selected={selectedButton === 1}
+        >
+          Toggle 1
+        </ToggleButton>
+        <ToggleButton
+          onClick={() => setSelectedButton(2)}
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
+          selected={selectedButton === 2}
+        >
+          Toggle 2
+        </ToggleButton>
+        <ToggleButton
+          onClick={() => {}}
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
+          selected={selectedButton === 3}
+          disabled
+        >
+          Toggle 3
+        </ToggleButton>
+        <ToggleButton
+          onClick={() => setSelectedButton(4)}
+          color={MAIN_THEME.SECONDARY.color.foreground}
+          backgroundColor={MAIN_THEME.SECONDARY.color.background}
+          backgroundColorHover={MAIN_THEME.SECONDARY.color.background}
+          selected={selectedButton === 4}
+        >
+          Toggle 4
+        </ToggleButton>
+      </div>
+    );
+  }}
+</Story>
+
+## Fab
+
+<Story name='fab'>
+  <FabButton
+    onClick={action("clicked")}
+    color={MAIN_THEME.PRIMARY.color.foreground}
+    backgroundColor={MAIN_THEME.PRIMARY.color.background}
+    backgroundColorHover={MAIN_THEME.PRIMARY.color.background}
+  >
+    <SVG color={"white"} {...plus} size={24} />
+  </FabButton>
+</Story>
+
+## Fab black
+
+<Story name='fab black'>
+  <FabButton
+    onClick={action("clicked")}
+    color="#FFFFFF"
+    backgroundColor="#000000"
+    backgroundColorHover="#111111"
+  >
+    <SVG color={"white"} {...plus} size={24} />
+  </FabButton>
+</Story>
+
+## Fab mini black
+
+<Story name='fab mini black'>
+  <FabButton
+    onClick={action("clicked")}
+    color="#FFFFFF"
+    backgroundColor="#000000"
+    backgroundColorHover="#111111"
+    mini
+  >
+    <SVG color={"white"} {...plus} size={24} />
+  </FabButton>
+</Story>

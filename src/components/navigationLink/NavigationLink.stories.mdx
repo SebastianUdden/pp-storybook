@@ -1,0 +1,55 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Heading from "../heading/Heading";
+import NavigationLink from "./NavigationLink";
+import { search } from "../../svgs/actions/search";
+import { insertPhoto } from "../../svgs/editor/insert-photo";
+import { star } from "../../svgs/toggle/star";
+import { schedule } from "../../svgs/actions/schedule";
+import { MAIN_THEME } from "../../constants/theme";
+
+<Meta title="Design system|NavigationLink" component={NavigationLink} />
+
+# NavigationLink
+
+With `MDX` we can define a story for `NavigationLink` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="single">
+  <NavigationLink svg={search} title="Search" />
+</Story>
+
+## Multiple
+
+<Story name="multiple">
+  <Wrapper>
+    <NavigationLink
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      colorHover={MAIN_THEME.PRIMARY.color.background}
+      color={MAIN_THEME.BLACK.color.foreground}
+      svg={search}
+      title="Search"
+    />
+    <NavigationLink
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      colorHover={MAIN_THEME.PRIMARY.color.background}
+      color={MAIN_THEME.BLACK.color.foreground}
+      svg={insertPhoto}
+      title="Insert photo"
+    />
+    <NavigationLink
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      colorHover={MAIN_THEME.PRIMARY.color.background}
+      color={MAIN_THEME.BLACK.color.foreground}
+      svg={star}
+      title="Star"
+    />
+    <NavigationLink
+      backgroundColor={MAIN_THEME.PRIMARY.color.background}
+      colorHover={MAIN_THEME.PRIMARY.color.background}
+      color={MAIN_THEME.BLACK.color.foreground}
+      svg={schedule}
+      title="Schedule"
+    />
+  </Wrapper>
+</Story>

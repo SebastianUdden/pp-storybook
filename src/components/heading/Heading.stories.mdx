@@ -1,0 +1,17 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Heading from "./Heading";
+import { MAIN_THEME } from "../../constants/theme";
+
+<Meta title="Design system|Heading" component={Heading} />
+
+# Heading
+
+With `MDX` we can define a story for `Heading` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <Heading level={1} primaryColor={MAIN_THEME.PRIMARY.color.background}>
+    A title
+  </Heading>
+</Story>

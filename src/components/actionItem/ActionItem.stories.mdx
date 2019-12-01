@@ -1,0 +1,21 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import ActionItem from "./ActionItem";
+import { search } from "../../svgs/actions/search";
+
+<Meta title="Design system|Action item" component={ActionItem} />
+
+# Action item
+
+With `MDX` we can define a story for `Action item` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <ActionItem svg={search} color="#222222" />
+</Story>
+
+## With hover
+
+<Story name="with hover">
+  <ActionItem svg={search} color="#222222" backgroundColorHover="#666666" />
+</Story>

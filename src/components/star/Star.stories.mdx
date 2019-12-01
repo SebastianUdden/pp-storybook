@@ -1,0 +1,68 @@
+import { useState } from "react";
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+
+import Heading from "../heading/Heading";
+import Star from "./Star";
+import { MAIN_THEME } from "../../constants/theme";
+import { attributes, actions } from "./utils";
+
+<Meta title="Design system|Star" component={Star} />
+
+# Star
+
+With `MDX` we can define a story for `Star` right in the middle of our markdown documentation.
+
+## Default - not visible
+
+<Story name="default">
+  <Star
+    id="Default"
+    color={"orange"}
+    remainderRatio={0}
+    {...attributes}
+    {...actions}
+    onClick={() => {}}
+  />
+</Story>
+
+## Semi-filled
+
+<Story name="semi-filled">
+  <Star
+    id="Semi-filled"
+    color={"orange"}
+    remainderRatio={0.5}
+    {...attributes}
+    {...actions}
+  />
+</Story>
+
+## Filled
+
+<Story name="filled">
+  <Star
+    id="Filled"
+    color={"orange"}
+    remainderRatio={1}
+    {...attributes}
+    {...actions}
+  />
+</Story>
+
+## Dynamic
+
+<Story name="dynamic">
+  {() => {
+    const [color, setColor] = useState("grey");
+    return (
+      <Star
+        id="Dynamic"
+        color={color}
+        remainderRatio={1}
+        {...attributes}
+        {...actions}
+        onClick={() => setColor(color === "grey" ? "orange" : "grey")}
+      />
+    );
+  }}
+</Story>

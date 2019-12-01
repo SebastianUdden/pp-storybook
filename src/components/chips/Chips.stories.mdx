@@ -1,0 +1,45 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Chips from "./Chips";
+import ChipsWrapper from "./utils";
+import SVG from "../svg/SVG";
+import { donutSmall } from "../../svgs/actions/donut-small";
+import { MOCK_INSIDER } from "../../constants/mocks";
+
+<Meta title="Design system|Chips" component={Chips} />
+
+# Chips
+
+With `MDX` we can define a story for `Chips` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <ChipsWrapper
+    inputChips={MOCK_INSIDER.tables.company.headings.map(heading => ({
+      title: heading.title
+    }))}
+    allowMultiple
+  />
+</Story>
+
+## Single select
+
+<Story name="single select">
+  <ChipsWrapper
+    inputChips={MOCK_INSIDER.tables.company.headings.map(heading => ({
+      title: heading.title
+    }))}
+  />
+</Story>
+
+## Single select - custom icon
+
+<Story name="single select - custom icon">
+  <ChipsWrapper
+    inputChips={MOCK_INSIDER.tables.company.headings.map(heading => ({
+      title: heading.title,
+      icon: <SVG {...donutSmall} />
+    }))}
+    allowMultiple
+  />
+</Story>

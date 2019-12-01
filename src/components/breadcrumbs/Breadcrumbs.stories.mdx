@@ -1,0 +1,21 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Breadcrumbs from "./Breadcrumbs";
+import BreadcrumbsWrapper from "./utils";
+
+<Meta title="Design system|Breadcrumbs" component={Breadcrumbs} />
+
+# Breadcrumbs
+
+With `MDX` we can define a story for `Breadcrumbs` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <BreadcrumbsWrapper color="#222222" size="x-small" />
+</Story>
+
+## Children
+
+<Story name="children">
+  <BreadcrumbsWrapper icon={null} color="#222222" size="medium" />
+</Story>

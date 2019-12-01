@@ -16,7 +16,7 @@ const Item = styled.div`
   width: ${p => p.width}%;
 `;
 
-const Carousel = ({ slides, interval = 3000 }) => {
+const Carousel = ({ slides = [], interval = 3000 }) => {
   const length = slides.length;
   if (!length) return null;
   const ELEMENT_PX_WIDTH =

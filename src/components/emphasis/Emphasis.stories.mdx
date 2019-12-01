@@ -1,0 +1,49 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import ColoredBox from "../coloredBox/ColoredBox";
+import { EMPHASIS_TYPES } from "../../constants/theme";
+import { Container, Wrapper, H2, Label } from "./utils";
+
+<Meta title="Design system|Emphasis" component={ColoredBox} />
+
+# Emphasis
+
+With `MDX` we can define a story for `Emphasis` right in the middle of our markdown documentation.
+
+## Default
+
+<Story name="default">
+  <>
+    <H2>Box emphasis/opacity</H2>
+    <Container>
+      {Object.keys(EMPHASIS_TYPES).map(emphasis => (
+        <Wrapper>
+          <ColoredBox
+            opacity={EMPHASIS_TYPES[emphasis]}
+            color="#ffffff"
+            backgroundColor="#222222"
+          >
+            Sample text {EMPHASIS_TYPES[emphasis]}
+          </ColoredBox>
+          <Label color="#cccccc" opacity={emphasis}>
+            {emphasis.replace("_", " ").toLowerCase()}
+          </Label>
+        </Wrapper>
+      ))}
+    </Container>
+    <H2>Text emphasis/opacity</H2>
+    <Container>
+      {Object.keys(EMPHASIS_TYPES).map(emphasis => (
+        <Wrapper>
+          <ColoredBox color="#ffffff" backgroundColor="#222222">
+            <Label opacity={EMPHASIS_TYPES[emphasis]}>
+              Sample text {EMPHASIS_TYPES[emphasis]}
+            </Label>
+          </ColoredBox>
+          <Label color="#cccccc" opacity={emphasis}>
+            {emphasis.replace("_", " ").toLowerCase()}
+          </Label>
+        </Wrapper>
+      ))}
+    </Container>
+  </>
+</Story>
