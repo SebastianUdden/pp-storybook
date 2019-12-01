@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { DEFAULT_FONT } from "../../constants/font";
-import { MEDIA_MAX_MEDIUM } from "../../constants/theme";
+import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 
 export const InnerWrapper = styled.div`
   display: flex;

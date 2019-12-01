@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import { action } from "@storybook/addon-actions";
-import { Button } from "./Button";
+import Button from "./Button";
 import TextButton from "./TextButton";
 import OutlineButton from "./OutlineButton";
 import ToggleButton from "./ToggleButton";

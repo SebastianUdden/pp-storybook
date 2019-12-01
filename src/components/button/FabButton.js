@@ -9,7 +9,7 @@ import {
   ON_SURFACE,
   BACKGROUND
 } from "../../constants/theme";
-import { Button } from "./Button";
+import Button from "./Button";
 import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`

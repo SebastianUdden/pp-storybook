@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { DEFAULT_FONT } from "../../constants/font";
 
-export const Button = styled.button`
+const Button = styled.button`
   font-family: ${DEFAULT_FONT.family};
   font-size: ${p => p.fontSize || "x-small"};
   font-weight: ${p => p.fontWeight || "inherit"};
@@ -12,3 +12,5 @@ export const Button = styled.button`
   min-width: 4rem;
   padding: 0.8rem;
 `;
+
+export default Button;

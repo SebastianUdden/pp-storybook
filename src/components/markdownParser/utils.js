@@ -51,7 +51,7 @@ const FlexWrapper = styled.div`
   }
 `;
 
-const MarkdownWrapper = styled.div`
+export const MarkdownWrapper = styled.div`
   color: ${p => p.color};
   margin: 1rem;
   padding: 1rem 0;

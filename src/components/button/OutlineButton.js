@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { BACKGROUND_ACTIVE, ON_BACKGROUND } from "../../constants/theme";
-import { Button } from "./Button";
+import Button from "./Button";
 import Ripple from "../ripple/Ripple";
 
 export const StyledButton = styled(Button)`

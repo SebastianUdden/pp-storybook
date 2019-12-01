@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
-import { Button } from "../button/Button";
+import Button from "../button/Button";
 import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 
 const Item = styled(Button)`
