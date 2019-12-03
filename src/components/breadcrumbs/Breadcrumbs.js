@@ -27,19 +27,19 @@ const Crumb = styled.button`
 const Breadcrumbs = ({
   crumbs = [],
   color = "#ffffff55",
-  setSelected,
+  onChange,
   size = "small",
   icon = arrowRight
 }) => {
   return (
     <Wrapper>
       {crumbs.map((crumb, index) => (
-        <Breadcrumb onClick={() => setSelected(crumb)}>
+        <Breadcrumb key={crumb._id} onClick={() => onChange(crumb)}>
           {index !== 0 && (
             <SVG color={color} {...icon} size={size === "x-small" ? 12 : 24} />
           )}
           <Crumb color={color} size={size}>
-            {crumb}
+            {crumb.title}
           </Crumb>
         </Breadcrumb>
       ))}

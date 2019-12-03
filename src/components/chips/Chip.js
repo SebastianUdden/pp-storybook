@@ -7,9 +7,10 @@ import Text from "../text/Text";
 const Wrapper = styled.div`
   background-color: ${p => p.backgroundColor};
   color: ${p => p.foregroundColor};
-  padding: 0.5rem 0.5rem;
-  border-radius: 10rem;
-  margin: 0.3rem;
+  padding: 0.2rem;
+  border-radius: 0;
+  border: 1px solid ${p => p.foregroundColor}33;
+  margin: 0.3rem 0.3rem 0.3rem 0;
   position: relative;
   :hover {
     background-color: ${p => p.backgroundColor}88;
@@ -37,9 +38,9 @@ const ChipText = styled(Text)`
 `;
 
 const Chip = ({
-  backgroundColor = "#444444",
+  backgroundColor = "inherit",
   alternateBackgroundColor = "#111111",
-  foregroundColor = "#999999",
+  foregroundColor = "inherit",
   onClick,
   selected,
   allowMultiple,

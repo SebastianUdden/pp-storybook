@@ -160,7 +160,13 @@ const MarkdownParser = ({
   return (
     <StyledWrapper color={color}>
       {parse && showHtml && text && text.map(l => <div>{l}</div>)}
-      {text && text.map(l => <div dangerouslySetInnerHTML={{ __html: l }} />)}
+      {text &&
+        text.map(l => (
+          <div
+            key={l + Math.random()}
+            dangerouslySetInnerHTML={{ __html: l }}
+          />
+        ))}
     </StyledWrapper>
   );
 };

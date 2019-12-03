@@ -126,6 +126,13 @@ const Option = styled.li`
   }
 `;
 
+const SelectWrapper = styled.select`
+  border: 1px solid white;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+`;
+
 // const toggleListVisibility = (e) => {
 //   let openDropDown =
 //     SPACEBAR_KEY_CODE.includes(e.keyCode) || e.keyCode === ENTER_KEY_CODE;
@@ -153,6 +160,22 @@ const Option = styled.li`
 //   }
 // };
 
+const Select = ({ options, onChange }) => (
+  <SelectWrapper>
+    {options &&
+      options.map((option, index) => (
+        <option
+          id={`option-${index + 1}`}
+          key={`option-${option + Math.random()}`}
+          value={option}
+          onChange={() => onChange(option)}
+        >
+          {option}
+        </option>
+      ))}
+  </SelectWrapper>
+);
+
 const Dropdown = ({
   id = "dropdown",
   backgroundColor = "#ffffff",
@@ -161,8 +184,12 @@ const Dropdown = ({
   label,
   options,
   selected,
-  onChange
+  onChange,
+  native = true
 }) => {
+  if (native) {
+    return <Select options={options} onChange={onChange} />;
+  }
   const [showList, setShowList] = useState(true);
   return (
     <Container
@@ -188,6 +215,7 @@ const Dropdown = ({
           {options.map((option, index) => (
             <Option
               id={`option-${index + 1}`}
+              key={`option-${option + Math.random()}`}
               backgroundColor={backgroundColor}
               backgroundColorHover={backgroundColorHover}
               foregroundColor={foregroundColor}

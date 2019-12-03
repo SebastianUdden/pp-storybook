@@ -23,9 +23,6 @@ const Wrapper = styled.div`
     ${Title} {
       color: ${p => p.colorHover};
     }
-    ${SVG} {
-      color: ${p => p.colorHover};
-    }
   }
 `;
 
