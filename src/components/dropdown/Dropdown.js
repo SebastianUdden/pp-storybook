@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DEFAULT_FONT } from "../../constants/font";
 import SVG from "../svg/SVG";
-import { check } from "../../svgs/navigation/check";
+import { DP6 } from "../../constants/theme";
 
 // const Select = styled.select`
 //   display: block;
@@ -32,11 +31,11 @@ import { check } from "../../svgs/navigation/check";
 // `;
 // const Option = styled.option``;
 
-const SPACEBAR_KEY_CODE = [0, 32];
-const ENTER_KEY_CODE = 13;
-const DOWN_ARROW_KEY_CODE = 40;
-const UP_ARROW_KEY_CODE = 38;
-const ESCAPE_KEY_CODE = 27;
+// const SPACEBAR_KEY_CODE = [0, 32];
+// const ENTER_KEY_CODE = 13;
+// const DOWN_ARROW_KEY_CODE = 40;
+// const UP_ARROW_KEY_CODE = 38;
+// const ESCAPE_KEY_CODE = 27;
 
 const Container = styled.ul`
   border: 1px solid red;
@@ -127,10 +126,14 @@ const Option = styled.li`
 `;
 
 const SelectWrapper = styled.select`
-  border: 1px solid white;
   padding: 0.5rem;
   margin: 0.5rem 0;
   width: 100%;
+  background-color: ${p => p.backgroundColor};
+  color: ${p => p.foregroundColor};
+  border: none;
+  outline: none;
+  box-shadow: ${DP6};
 `;
 
 // const toggleListVisibility = (e) => {
@@ -160,17 +163,21 @@ const SelectWrapper = styled.select`
 //   }
 // };
 
-const Select = ({ options, onChange }) => (
-  <SelectWrapper>
+const Select = ({ backgroundColor, foregroundColor, options, onChange }) => (
+  <SelectWrapper
+    backgroundColor={backgroundColor}
+    foregroundColor={foregroundColor}
+    onChange={e => {
+      onChange(e.target.value);
+    }}
+  >
+    <option value="" selected disabled hidden>
+      Add child
+    </option>
     {options &&
-      options.map((option, index) => (
-        <option
-          id={`option-${index + 1}`}
-          key={`option-${option + Math.random()}`}
-          value={option}
-          onChange={() => onChange(option)}
-        >
-          {option}
+      options.map(option => (
+        <option id={option._id} key={option._id} value={option.title}>
+          {option.title}
         </option>
       ))}
   </SelectWrapper>
@@ -178,17 +185,24 @@ const Select = ({ options, onChange }) => (
 
 const Dropdown = ({
   id = "dropdown",
-  backgroundColor = "#ffffff",
+  backgroundColor = "inherit",
   backgroundColorHover = "#00c2ff",
-  foregroundColor = "#000000",
+  foregroundColor = "inherit",
   label,
-  options,
+  options = [],
   selected,
   onChange,
   native = true
 }) => {
   if (native) {
-    return <Select options={options} onChange={onChange} />;
+    return (
+      <Select
+        backgroundColor={backgroundColor}
+        foregroundColor={foregroundColor}
+        options={options}
+        onChange={onChange}
+      />
+    );
   }
   const [showList, setShowList] = useState(true);
   return (
@@ -212,19 +226,19 @@ const Dropdown = ({
 
       <ListContainer>
         <List showList={showList}>
-          {options.map((option, index) => (
+          {options.map(option => (
             <Option
-              id={`option-${index + 1}`}
-              key={`option-${option + Math.random()}`}
+              id={option._id}
+              key={option._id}
               backgroundColor={backgroundColor}
               backgroundColorHover={backgroundColorHover}
               foregroundColor={foregroundColor}
               onClick={() => {
                 setShowList(false);
-                onChange(option);
+                onChange(option.title);
               }}
             >
-              {option}
+              {option.title}
               <SVG svg={check} color="red" />
             </Option>
           ))}
