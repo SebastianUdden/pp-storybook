@@ -32,6 +32,7 @@ const Chips = ({ chips = [], allowMultiple, onChange }) => {
           onClick={onClick}
           selected={selectedChips.find(c => chip.title === c)}
           chip={chip.title}
+          showRemove={chip.showRemove}
           allowMultiple={allowMultiple}
           customIcon={chip.icon}
         />

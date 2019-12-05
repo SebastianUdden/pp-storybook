@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   left: 0;
   right: 20%;
   bottom: 0;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
   min-height: 100vh;
   color: ${p => p.color};
   background-color: ${p => p.backgroundColor};

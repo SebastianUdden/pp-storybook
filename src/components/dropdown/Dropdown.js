@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
 import { DP6 } from "../../constants/theme";
+import { check } from "../../svgs/navigation/check";
 
 // const Select = styled.select`
 //   display: block;

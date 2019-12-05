@@ -7,6 +7,6 @@ configure(require.context("../src", true, /\.stories\.(js|mdx)$/), module);
 // Option defaults.
 addParameters({
   options: {
-    theme: themes.light
+    theme: themes.dark
   }
 });

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Meta, Story } from "@storybook/addon-docs/blocks";
 import Chips from "./Chips";
 import ChipsWrapper from "./utils";
@@ -20,6 +21,26 @@ With `MDX` we can define a story for `Chips` right in the middle of our markdown
     }))}
     allowMultiple
   />
+</Story>
+
+## Remove
+
+<Story name="remove">
+  {() => {
+    const [chips, setChips] = useState(
+      MOCK_INSIDER.tables.company.headings.map(heading => ({
+        title: heading.title,
+        showRemove: true
+      }))
+    );
+    return (
+      <Chips
+        chips={chips}
+        onChange={chip => setChips(chips.filter(c => c.title !== chip[0]))}
+        allowMultiple={allowMultiple}
+      />
+    );
+  }}
 </Story>
 
 ## Single select

@@ -45,7 +45,8 @@ const Chip = ({
   selected,
   allowMultiple,
   customIcon,
-  chip
+  chip,
+  showRemove
 }) => (
   <Wrapper
     backgroundColor={selected ? alternateBackgroundColor : backgroundColor}
@@ -56,7 +57,10 @@ const Chip = ({
         <SVG {...check} size={18} color={foregroundColor} />
       )}
       {customIcon}
-      <ChipText>{chip}</ChipText>
+      <ChipText>
+        {chip}
+        {showRemove ? " x" : ""}
+      </ChipText>
     </Label>
     <Input type="checkbox" value={chip} onClick={onClick} />
   </Wrapper>

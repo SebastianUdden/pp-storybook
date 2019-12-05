@@ -6,37 +6,45 @@ import MarkdownEditor from "./MarkdownEditor";
 import { MEDIA_MIN_MEDIUM } from "../../constants/sizes";
 
 const MARKDOWN_TEST = `
-  # Header 1
-  ## Header 2
-  ### Header 3
-  #### Header 4
-  ##### Header 5
-  ###### Header 6
-  This is some markdown that I'm https://www.google.com displaying, it contains both **bold**, *italic*, ~~scratched~~, \`code\` 
-  ___
-  ## Quotes
-  > This is a quote
-  > It's a pretty neat way to display information
-  ## Lists
-  #### Unordered
-  * first
-  * second [google link](https://www.google.com)
-  * third
-  #### Ordered
-  1. First
-  1. Second
-  1. Third
-  1. Second
-  1. Third
-  ## The other markdown\n
-  ---
-  There is also additional markdown like 
-  * links 
-  [google link](https://www.google.com)
-  https://www.google.com
-  * images
-  ![images](https://cdn.getyourguide.com/img/tour_img-1139999-148.jpg "Alternate text")
-  ----------
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6
+<p>This is some markdown that I'm https://www.google.com displaying, it contains both **bold**, *italic*, ~~scratched~~, \`code\`</p> 
+<p>A link to https://www.google.com here</p> 
+<p>Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing...</p> 
+
+## P/E
+<p>P/E</p>
+* P/E
+1. P/E
+___
+## Quotes
+> This is a quote
+> It's a pretty neat way to display information
+## Lists
+#### Unordered
+* first
+* second [google link](https://www.google.com)
+* third
+#### Ordered
+1. First
+1. Second
+1. Third
+1. Second
+1. Third
+
+## The other markdown
+---
+There is also additional markdown like 
+* links 
+* [google link](https://www.google.com)
+*  https://www.google.com
+* images
+![images](https://cdn.getyourguide.com/img/tour_img-1139999-148.jpg "Alternate text"){100%}
+----------
 `;
 
 const FlexWrapper = styled.div`
@@ -83,9 +91,9 @@ export const MarkdownWrapper = styled.div`
 `;
 
 const MarkdownParserWrapper = ({ MarkdownWrapper }) => {
-  const [parse, setParse] = useState(false);
+  const [parse, setParse] = useState(true);
   const [showHtml, setShowHtml] = useState(false);
-  const [markdown, setMarkdown] = useState(MARKDOWN_TEST);
+  const [markdown, setMarkdown] = useState({ meta: {}, body: MARKDOWN_TEST });
 
   return (
     <div>

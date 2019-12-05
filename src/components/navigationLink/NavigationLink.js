@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
 import { DEFAULT_FONT } from "../../constants/font";
+import { DP1 } from "../../constants/theme";
 
 const Title = styled.label`
   cursor: pointer;
   font-weight: ${p => (p.selected ? 900 : 400)};
-  margin-left: 1.5rem;
+  margin-left: 0.3rem;
   color: ${p => (p.selected ? p.colorHover : p.color)};
 `;
 
@@ -14,8 +15,9 @@ const Wrapper = styled.div`
   font-family: ${DEFAULT_FONT.family};
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-  padding: 1rem;
+  align-items: flex-start;
+  padding: 0.3rem;
+  box-shadow: ${DP1};
   cursor: pointer;
 
   :hover {
