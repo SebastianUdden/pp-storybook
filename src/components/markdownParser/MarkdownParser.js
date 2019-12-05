@@ -21,7 +21,7 @@ const DefaultMarkdownWrapper = styled.div`
 
   p {
     text-align: ${p => alignText(p.justifyContent)};
-    margin: 0.6rem 0;
+    margin: 0 0 0.6rem 0;
   }
 
   hr {
@@ -44,12 +44,15 @@ const DefaultMarkdownWrapper = styled.div`
   h4,
   h5,
   h6,
-  ul,
-  ol,
   hr,
   ol li,
   ul li {
     margin: 0.3rem 0;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 0 1rem;
   }
 
   ul li {
