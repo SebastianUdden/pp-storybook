@@ -38,6 +38,11 @@ const DefaultMarkdownWrapper = styled.div`
     color: #999999;
   }
 
+  strong em {
+    font-style: normal;
+    color: orange;
+  }
+
   h1,
   h2,
   h3,
@@ -136,7 +141,8 @@ const MarkdownParser = ({
   markdown = { meta: {}, body: "" },
   parse = true,
   StyledWrapper = DefaultMarkdownWrapper,
-  showHtml = false
+  showHtml = false,
+  highlight
 }) => {
   if (!markdown.body) return null;
   const [text, setText] = useState(
@@ -223,14 +229,28 @@ const MarkdownParser = ({
         ))}
       {text &&
         text.map((l, index) => {
-          if (!text[index - 1] && l !== null) console.log(l);
+          let newLine = l;
+          if (highlight) {
+            const parts = l ? l.split(new RegExp(`(${highlight})`, "gi")) : [];
+            newLine = parts
+              .map(p => {
+                if (p.toLowerCase() !== highlight.toLowerCase()) {
+                  return p;
+                } else {
+                  return `<strong><em>${p}</em></strong>`;
+                }
+              })
+              .join("");
+          }
           return (
             <>
               {!text[index - 1] && l !== null && <br></br>}
-              <div
-                key={l + Math.random()}
-                dangerouslySetInnerHTML={{ __html: l }}
-              />
+              {l && (
+                <div
+                  key={l + Math.random()}
+                  dangerouslySetInnerHTML={{ __html: newLine }}
+                />
+              )}
             </>
           );
         })}
