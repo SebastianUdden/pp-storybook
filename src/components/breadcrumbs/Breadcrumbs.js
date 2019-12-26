@@ -33,16 +33,23 @@ const Breadcrumbs = ({
 }) => {
   return (
     <Wrapper>
-      {crumbs.map((crumb, index) => (
-        <Breadcrumb key={crumb._id} onClick={() => onChange(crumb)}>
-          {index !== 0 && (
-            <SVG color={color} {...icon} size={size === "x-small" ? 12 : 24} />
-          )}
-          <Crumb color={color} size={size}>
-            {crumb.title}
-          </Crumb>
-        </Breadcrumb>
-      ))}
+      {crumbs.map((crumb, index) => {
+        if (!crumb || crumb.title === "undefined") return;
+        return (
+          <Breadcrumb key={crumb._id} onClick={() => onChange(crumb)}>
+            {index !== 0 && (
+              <SVG
+                color={color}
+                {...icon}
+                size={size === "x-small" ? 12 : 24}
+              />
+            )}
+            <Crumb color={color} size={size}>
+              {crumb.title}
+            </Crumb>
+          </Breadcrumb>
+        );
+      })}
     </Wrapper>
   );
 };

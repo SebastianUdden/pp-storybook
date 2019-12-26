@@ -105,11 +105,11 @@ const HEADER2_REGEX = /##.(.*)/g;
 const HEADER1_REGEX = /#.(.*)/g;
 const NEWLINE_REGEX = /[\n|\r]/g;
 const QUOTE_REGEX = /(?:^|\n)[ \t]*>([ \t]*\S(?:(?!\n(\s*\n)+[^>\s])[\s\S])*)/gm;
-const UNORDERED_LIST_REGEX = /\*.([\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
-const ORDERED_LIST_REGEX = /\d\.\s([\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
+const UNORDERED_LIST_REGEX = /\*.([å|ä|ö|\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
+const ORDERED_LIST_REGEX = /\d\.\s([å|ä|ö|\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
 const HORIZONTAL_LINE_REGEX = /([-|_]{3,})/g;
-const IMAGE_REGEX = /!\[([\w|\s]*)\]\((https:\/\/[^\s]*)(\s"(.*)"\))?{(\d*(px|rem|vw|%)?)}?/g;
-const LINK_REGEX = /\[([\w|\s]*)\]\((https:\/\/.*)\)/g;
+const IMAGE_REGEX = /!\[(.*)\]\((https:\/\/[^\s]*)(\s"(.*)"\))?{(\d*(px|rem|vw|%)?)}?/g;
+const LINK_REGEX = /\[(.*)\]\((https:\/\/.*)\)/g;
 const SIMPLE_LINK_REGEX = /\s(https:\/\/[^\s]*)/g;
 
 const getL = (list, l, i, regexp) => {
