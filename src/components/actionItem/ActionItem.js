@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import SVG from "../svg/SVG";
 import Button from "../button/Button";
-import { MEDIA_MAX_MEDIUM } from "../../constants/sizes";
 
 const Item = styled(Button)`
   background-color: inherit;
   border: none;
-  padding: ${p => p.padding};
+  padding: ${p => p.padding}rem ${p => p.padding}rem ${p => p.padding - 0.3}rem
+    ${p => p.padding}rem;
   margin: 0;
   min-width: ${p => p.minWidth};
   transform: ${p =>
@@ -45,7 +45,7 @@ const ActionItem = ({
   onClick,
   id,
   minimal,
-  padding = "2rem",
+  padding = 2,
   minWidth = "3rem",
   size = 24,
   disabled
@@ -62,7 +62,7 @@ const ActionItem = ({
       onClick={onClick}
       rotate={rotate}
       animate={animate}
-      padding={minimal ? "1rem" : padding}
+      padding={minimal ? 1 : padding}
       minWidth={minimal ? "0rem" : minWidth}
       disabled={disabled}
     >
