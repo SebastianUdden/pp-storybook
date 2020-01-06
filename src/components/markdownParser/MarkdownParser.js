@@ -57,7 +57,7 @@ const DefaultMarkdownWrapper = styled.div`
 
   ul,
   ol {
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 1.4rem;
   }
 
   ul li {
