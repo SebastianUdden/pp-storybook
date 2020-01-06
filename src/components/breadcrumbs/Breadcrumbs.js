@@ -24,6 +24,13 @@ const Crumb = styled.button`
   cursor: pointer;
 `;
 
+const IconPlaceholder = styled.div`
+  width: 1px;
+  height: 1rem;
+  margin: 0 0.5rem;
+  border-right: 1px solid ${p => p.color};
+`;
+
 const Breadcrumbs = ({
   crumbs = [],
   color = "#ffffff55",
@@ -37,13 +44,16 @@ const Breadcrumbs = ({
         if (!crumb || crumb.title === "undefined") return;
         return (
           <Breadcrumb key={crumb._id} onClick={() => onChange(crumb)}>
-            {index !== 0 && (
-              <SVG
-                color={color}
-                {...icon}
-                size={size === "x-small" ? 12 : 24}
-              />
-            )}
+            {index !== 0 &&
+              (icon ? (
+                <SVG
+                  color={color}
+                  {...icon}
+                  size={size === "x-small" ? 12 : 24}
+                />
+              ) : (
+                <IconPlaceholder color={color} />
+              ))}
             <Crumb color={color} size={size}>
               {crumb.title}
             </Crumb>
