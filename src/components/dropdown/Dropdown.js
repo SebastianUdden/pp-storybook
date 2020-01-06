@@ -164,7 +164,14 @@ const SelectWrapper = styled.select`
 //   }
 // };
 
-const Select = ({ backgroundColor, foregroundColor, options, onChange }) => (
+const Select = ({
+  backgroundColor,
+  foregroundColor,
+  options,
+  onChange,
+  label,
+  selected
+}) => (
   <SelectWrapper
     backgroundColor={backgroundColor}
     foregroundColor={foregroundColor}
@@ -172,12 +179,17 @@ const Select = ({ backgroundColor, foregroundColor, options, onChange }) => (
       onChange(e.target.value);
     }}
   >
-    <option value="" selected disabled hidden>
-      Add child
+    <option value="" selected={!selected} disabled hidden>
+      {label}
     </option>
     {options &&
       options.map(option => (
-        <option id={option._id} key={option._id} value={option.title}>
+        <option
+          id={option._id}
+          key={option._id}
+          value={option.title}
+          selected={option.title === selected}
+        >
           {option.title}
         </option>
       ))}
@@ -189,7 +201,7 @@ const Dropdown = ({
   backgroundColor = "inherit",
   backgroundColorHover = "#00c2ff",
   foregroundColor = "inherit",
-  label,
+  label = "Add child",
   options = [],
   selected,
   onChange,
@@ -198,6 +210,8 @@ const Dropdown = ({
   if (native) {
     return (
       <Select
+        label={label}
+        selected={selected}
         backgroundColor={backgroundColor}
         foregroundColor={foregroundColor}
         options={options}
