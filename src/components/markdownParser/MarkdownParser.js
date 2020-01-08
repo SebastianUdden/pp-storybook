@@ -72,6 +72,7 @@ const DefaultMarkdownWrapper = styled.div`
 
   code {
     color: #000000;
+    background-color: #999999;
   }
 
   pre {
@@ -101,6 +102,7 @@ const AMP_REGEX = /&/g;
 const LT_REGEX = /</g;
 const GT_REGEX = />/g;
 const NEWLINE_REGEX = /[\n|\r]/g;
+const PRE_CODE_REGEX = /\`\`\`([^\\`]*)\`\`\`/g;
 const CODE_REGEX = /\`([^\\`]*)\`/g;
 const NEW_CODE_REGEX = /(<pre><code>[^\\<]*<\/code><\/pre>)/g;
 const STRONG_REGEX = /\*\*(\S(.*?\S)?)\*\*/gm;
@@ -163,7 +165,7 @@ const MarkdownParser = ({
         .replace(AMP_REGEX, "&amp;")
         .replace(LT_REGEX, "&lt;")
         .replace(GT_REGEX, "&gt")
-        .replace(CODE_REGEX, "<pre><code>$1</code></pre>");
+        .replace(PRE_CODE_REGEX, "<pre><code>$1</code></pre>");
       const splitCode = noHtml.split(NEW_CODE_REGEX);
       const newLines = splitCode
         .map(s => (s.startsWith("<") ? s : s.split(NEWLINE_REGEX)))
@@ -225,6 +227,7 @@ const MarkdownParser = ({
             .replace(STRONG_REGEX, `<strong>$1</strong>`)
             .replace(EM_REGEX, `<em>$1</em>`)
             .replace(SCRATCH_REGEX, `<strike>$1</strike>`)
+            .replace(CODE_REGEX, `<code>$1</code>`)
         );
       const ulLines = formattedLines.map((l, index) => {
         if (l.includes("<ul>")) {

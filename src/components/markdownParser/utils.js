@@ -12,11 +12,11 @@ const MARKDOWN_TEST = `
 #### Header 4
 ##### Header 5
 ###### Header 6
-This is some awesome-possum markdown that I'm https://www.google.com displaying, it contains both **bold**, *italic*, ~~scratched~~, \`var something = {
+This is some awesome-possum markdown that I'm https://www.google.com displaying, it contains both **bold**, *italic*, ~~scratched~~, \`\`\`var something = {
   prop: "Somenew"
-} \`
+}\`\`\`
 A link to https://www.google.com here \`Some code here \`
-Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing...
+Some cool text about nothing on repeat here, just to get \`\`a sence of the paragraph\`\` spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing... Some cool text about nothing on repeat here, just to get a sence of the paragraph spacing...
 
 ## P/E
 P/E
