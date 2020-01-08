@@ -103,10 +103,6 @@ const GT_REGEX = />/g;
 const NEWLINE_REGEX = /[\n|\r]/g;
 const CODE_REGEX = /\`([^\\`]*)\`/g;
 const NEW_CODE_REGEX = /(<pre><code>(.|\n)*?<\/code><\/pre>)/g;
-const CODE_PRE_REGEX = /\`([^\\`]*)\`/g;
-const OLD_CODE_REGEX = /\`(\S([.|\n|\r]*?\S)?)\`/gm;
-const START_CODE_REGEX = /\`(\S(.*?\S)?)/gm;
-const END_CODE_REGEX = /(\S(.*?\S)?)\`/gm;
 const STRONG_REGEX = /\*\*(\S(.*?\S)?)\*\*/gm;
 const EM_REGEX = /\*(\S(.*?\S)?)\*/gm;
 const SCRATCH_REGEX = /\~\~(\S(.*?\S)?)\~\~/gm;
@@ -120,9 +116,9 @@ const QUOTE_REGEX = /(?:^|\n)[ \t]*>([ \t]*\S(?:(?!\n(\s*\n)+[^>\s])[\s\S])*)/gm
 const UNORDERED_LIST_REGEX = /^-.([å|ä|ö|\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
 const ORDERED_LIST_REGEX = /^\d\.\s([å|ä|ö|\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
 const HORIZONTAL_LINE_REGEX = /([-|_]{3,})/g;
-const IMAGE_REGEX = /!\[(.*)\]\((https:\/\/[^\s]*)(\s"(.*)"\))?{(\d*(px|rem|vw|%)?)}?/g;
-const LINK_REGEX = /\[(.*)\]\((https:\/\/.*)\)/g;
-const SIMPLE_LINK_REGEX = /\s(https:\/\/[^\s]*)/g;
+const IMAGE_REGEX = /!\[(.*)\]\((https?:\/\/[^\s]*)(\s"(.*)"\))?{(\d*(px|rem|vw|%)?)}?/g;
+const LINK_REGEX = /\[(.*)\]\((https?:\/\/.*)\)/g;
+const SIMPLE_LINK_REGEX = /\s(https?:\/\/[^\s]*)/g;
 
 const getL = (list, l, i, regexp) => {
   const isNextLi = regexp.test(list[i + 1]);
