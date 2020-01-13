@@ -66,8 +66,11 @@ const DefaultMarkdownWrapper = styled.div`
 
   a {
     text-decoration: none;
-    color: orange;
+    color: ${p => p.primaryColor};
     font-weight: 600;
+    :hover {
+      border-bottom: 2px solid ${p => p.primaryColor};
+    }
   }
 
   code {
@@ -83,10 +86,10 @@ const DefaultMarkdownWrapper = styled.div`
 
   blockquote {
     background-color: inherit;
-    border-left: 0.3rem solid #ffffff66;
     opacity: 0.8;
     margin: 0;
     padding: 0.5rem 1rem;
+    border-left: 0.3rem solid #ffffff66;
   }
 
   blockquote p {
@@ -114,9 +117,9 @@ const HEADER4_REGEX = /####.(.*)/g;
 const HEADER3_REGEX = /###.(.*)/g;
 const HEADER2_REGEX = /##.(.*)/g;
 const HEADER1_REGEX = /#.(.*)/g;
-const QUOTE_REGEX = /(?:^|\n)[ \t]*>([ \t]*\S(?:(?!\n(\s*\n)+[^>\s])[\s\S])*)/gm;
-const UNORDERED_LIST_REGEX = /^-.([å|ä|ö|\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
-const ORDERED_LIST_REGEX = /^\d\.\s([å|ä|ö|\w|\s|:|\/|\.|\'|\[|\]\(|\)]*)/g;
+const QUOTE_REGEX = /(?:^|\n)[ \t]*(?:&gt)(?:[ \t]\[(info|tip|success|warning|warn|error|danger)\])?([ \t]*\S(?:(?!\n(\s*\n)+[^&gt\s])[\s\S])*)/gm;
+const UNORDERED_LIST_REGEX = /^-\s(.*)/g;
+const ORDERED_LIST_REGEX = /^\d\.\s(.*)/g;
 const HORIZONTAL_LINE_REGEX = /([-|_]{3,})/g;
 const IMAGE_REGEX = /!\[(.*)\]\((https?:\/\/[^\s]*)(?:\s"(.*)")?\)(?:{(\d*(?:px|rem|vw|%))})?/g;
 const LINK_REGEX = /\[(.*)\]\((https?:\/\/.*)\)/g;
@@ -146,8 +149,35 @@ const getL = (list, l, i, regexp) => {
 const getUl = (list, l, i) => getL(list, l, i, UNORDERED_LIST_REGEX);
 const getOl = (list, l, i) => getL(list, l, i, ORDERED_LIST_REGEX);
 
+const getNewLine = (l, highlight) => {
+  if (highlight) {
+    // \\"|"(?:\\"|[^"])*"|(\+) TODO: add this type of regex for results within .HERE.
+    if (l) {
+      const parts = l.split(new RegExp(`(${highlight})`, "gi"));
+
+      return parts
+        .map((p, i) => {
+          if (
+            p.toLowerCase() !== highlight.toLowerCase() ||
+            (i !== 0 &&
+              (parts[i - 1].endsWith("/") || parts[i - 1].endsWith(".")))
+          ) {
+            return p;
+          } else {
+            return `<strong><em>${p}</em></strong>`;
+          }
+        })
+        .join("");
+    } else {
+      return [];
+    }
+  }
+  return l;
+};
+
 const MarkdownParser = ({
   color = "#ffffff",
+  primaryColor = "#7D47DF",
   markdown = { meta: {}, body: "" },
   parse = true,
   StyledWrapper = DefaultMarkdownWrapper,
@@ -196,7 +226,7 @@ const MarkdownParser = ({
             .replace(HEADER3_REGEX, "<h3>$1</h3>")
             .replace(HEADER2_REGEX, "<h2>$1</h2>")
             .replace(HEADER1_REGEX, "<h1>$1</h1>")
-            .replace(QUOTE_REGEX, "<blockquote>$1</blockquote>")
+            .replace(QUOTE_REGEX, `<blockquote class='$1'>$2</blockquote>`)
             .replace(
               UNORDERED_LIST_REGEX,
               `${ul === "first" || ul === "both" ? "<ul>" : ""}<li>$1</li>${
@@ -257,6 +287,7 @@ const MarkdownParser = ({
   return (
     <StyledWrapper
       color={color}
+      primaryColor={primaryColor}
       justifyContent={markdown.meta && markdown.meta.justifyContent}
     >
       {parse &&
@@ -270,26 +301,13 @@ const MarkdownParser = ({
         ))}
       {text &&
         text.map((l, index) => {
-          let newLine = l;
-          if (highlight) {
-            const parts = l ? l.split(new RegExp(`(${highlight})`, "gi")) : [];
-            newLine = parts
-              .map(p => {
-                if (p.toLowerCase() !== highlight.toLowerCase()) {
-                  return p;
-                } else {
-                  return `<strong><em>${p}</em></strong>`;
-                }
-              })
-              .join("");
-          }
           return (
             <>
               {!text[index - 1] && l !== null && <br></br>}
               {l && (
                 <div
                   key={l + Math.random()}
-                  dangerouslySetInnerHTML={{ __html: newLine }}
+                  dangerouslySetInnerHTML={{ __html: getNewLine(l, highlight) }}
                 />
               )}
             </>
