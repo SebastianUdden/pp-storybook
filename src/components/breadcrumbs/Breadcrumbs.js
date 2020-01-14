@@ -33,13 +33,14 @@ const IconPlaceholder = styled.div`
 
 const Breadcrumbs = ({
   crumbs = [],
-  color = "#ffffff55",
+  className = "crumbs",
+  color = "#bbbbbb",
   onChange,
   size = "small",
   icon = arrowRight
 }) => {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       {crumbs.map((crumb, index) => {
         if (!crumb || crumb.title === "undefined") return;
         return (
