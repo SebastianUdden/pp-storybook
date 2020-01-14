@@ -22,6 +22,7 @@ const DefaultMarkdownWrapper = styled.div`
   p {
     text-align: ${p => alignText(p.justifyContent)};
     margin: 0 0 0.6rem 0;
+    width: 100%;
   }
 
   hr {
@@ -74,6 +75,7 @@ const DefaultMarkdownWrapper = styled.div`
   }
 
   code {
+    padding: 0.3rem 0.3rem;
     color: #000000;
     background-color: #999999;
   }
@@ -104,6 +106,16 @@ const DefaultMarkdownWrapper = styled.div`
 const AMP_REGEX = /&/g;
 const LT_REGEX = /</g;
 const GT_REGEX = />/g;
+const LSQB_REGEX = /((?:<code>|\`).*)(\[)(.*(?:<\/code>|\`))/g;
+const RSQB_REGEX = /((?:<code>|\`).*)(\])(.*(?:<\/code>|\`))/g;
+const LPAR_REGEX = /((?:<code>|\`).*)(\()(.*(?:<\/code>|\`))/g;
+const RPAR_REGEX = /((?:<code>|\`).*)(\))(.*(?:<\/code>|\`))/g;
+const EXCL_REGEX = /((?:<code>|\`).*)(\!)(.*(?:<\/code>|\`))/g;
+const DASH_REGEX = /((?:<code>|\`).*)(\-)(.*(?:<\/code>|\`))/g;
+const AST2_REGEX = /((?:<code>|\`).*)(\*\*)(.*(?:<\/code>|\`))/g;
+const AST1_REGEX = /((?:<code>|\`).*)(\*)(.*(?:<\/code>|\`))/g;
+const TILDE_REGEX = /((?:<code>|\`).*)(\~)(.*(?:<\/code>|\`))/g;
+const LOWBAR_REGEX = /((?:<code>|\`).*)(\_\_)(.*(?:<\/code>|\`))/g;
 const NEWLINE_REGEX = /[\n|\r]/g;
 const PRE_CODE_REGEX = /\`\`\`([^\\`]*)\`\`\`/g;
 const CODE_REGEX = /\`([^\\`]*)\`/g;
@@ -111,6 +123,7 @@ const NEW_CODE_REGEX = /(<pre><code>[^\\<]*<\/code><\/pre>)/g;
 const STRONG_REGEX = /\*\*(\S(.*?\S)?)\*\*/gm;
 const EM_REGEX = /\*(\S(.*?\S)?)\*/gm;
 const SCRATCH_REGEX = /\~\~(\S(.*?\S)?)\~\~/gm;
+const UNDERSCORE_REGEX = /\_\_(\S(.*?\S)?)\_\_/gm;
 const HEADER6_REGEX = /######.(.*)/g;
 const HEADER5_REGEX = /#####.(.*)/g;
 const HEADER4_REGEX = /####.(.*)/g;
@@ -121,7 +134,7 @@ const QUOTE_REGEX = /(?:^|\n)[ \t]*(?:&gt)(?:[ \t]\[(info|tip|success|warning|wa
 const UNORDERED_LIST_REGEX = /^-\s(.*)/g;
 const ORDERED_LIST_REGEX = /^\d\.\s(.*)/g;
 const HORIZONTAL_LINE_REGEX = /([-|_]{3,})/g;
-const IMAGE_REGEX = /!\[(.*)\]\((https?:\/\/[^\s]*)(?:\s"(.*)")?\)(?:{(\d*(?:px|rem|vw|%))})?/g;
+const IMAGE_REGEX = /!\[(.*)\]\((https?:\/\/[^\s]*)(?:\s"(.*)")?\)(?:{(?:width: )?(\d*(?:px|rem|vw|%))})?/g;
 const LINK_REGEX = /\[(.*)\]\((https?:\/\/.*)\)/g;
 const SIMPLE_LINK_REGEX = /\s(https?:\/\/[^\s]*)/g;
 
@@ -195,7 +208,26 @@ const MarkdownParser = ({
         .replace(AMP_REGEX, "&amp;")
         .replace(LT_REGEX, "&lt;")
         .replace(GT_REGEX, "&gt")
-        .replace(PRE_CODE_REGEX, "<pre><code>$1</code></pre>");
+        .replace(PRE_CODE_REGEX, "<pre><code>$1</code></pre>")
+        .replace(CODE_REGEX, match =>
+          match
+            .replace(HEADER6_REGEX, "&num;&num;&num;&num;&num;&num; $1")
+            .replace(HEADER5_REGEX, "&num;&num;&num;&num;&num; $1")
+            .replace(HEADER4_REGEX, "&num;&num;&num;&num; $1")
+            .replace(HEADER3_REGEX, "&num;&num;&num; $1")
+            .replace(HEADER2_REGEX, "&num;&num; $1")
+            .replace(HEADER1_REGEX, "&num; $1")
+            .replace(LSQB_REGEX, "$1&lsqb;$3")
+            .replace(RSQB_REGEX, "$1&rsqb;$3")
+            .replace(LPAR_REGEX, "$1&lpar;$3")
+            .replace(RPAR_REGEX, "$1&rpar;$3")
+            .replace(EXCL_REGEX, "$1&excl;$3")
+            .replace(DASH_REGEX, "$1&dash;$3")
+            .replace(AST2_REGEX, "$1&ast;&ast;$3")
+            .replace(AST1_REGEX, "$1&ast;$3")
+            .replace(TILDE_REGEX, "$1&Tilde;$3")
+            .replace(LOWBAR_REGEX, "$1&lowbar;$3")
+        );
       const splitCode = noHtml.split(NEW_CODE_REGEX);
       const newLines = splitCode
         .map(s => (s.startsWith("<") ? s : s.split(NEWLINE_REGEX)))
@@ -238,10 +270,6 @@ const MarkdownParser = ({
               `${ol === "first" || ol === "both" ? "<ol>" : ""}<li>$1</li>${
                 ol === "last" || ol === "both" ? "</ol>" : ""
               }`
-            )
-            .replace(
-              IMAGE_REGEX,
-              "<img src='$2' alt='$1' title='$4' width='$5' />"
             );
         })
         .map(l => {
@@ -252,12 +280,17 @@ const MarkdownParser = ({
         })
         .map(l =>
           l
+            .replace(CODE_REGEX, `<code>$1</code>`)
+            .replace(
+              IMAGE_REGEX,
+              "<img src='$2' alt='$1' title='$3' width='$4' />"
+            )
             .replace(LINK_REGEX, "<a href='$2' target='_blank'>$1</a>")
             .replace(SIMPLE_LINK_REGEX, " <a href='$1' target='_blank'>$1</a>")
             .replace(STRONG_REGEX, `<strong>$1</strong>`)
             .replace(EM_REGEX, `<em>$1</em>`)
             .replace(SCRATCH_REGEX, `<strike>$1</strike>`)
-            .replace(CODE_REGEX, `<code>$1</code>`)
+            .replace(UNDERSCORE_REGEX, `<u>$1</u>`)
         );
       const ulLines = formattedLines.map((l, index) => {
         if (l.includes("<ul>")) {
