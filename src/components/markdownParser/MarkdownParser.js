@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { MEDIA_MAX_MEDIUM, MEDIA_MAX_SMALL } from "../../constants/sizes";
 
 const alignText = justifyContent => {
   if (justifyContent === "flex-start") return "left";
@@ -23,6 +24,13 @@ const DefaultMarkdownWrapper = styled.div`
     text-align: ${p => alignText(p.justifyContent)};
     margin: 0 0 0.6rem 0;
     width: 100%;
+    max-width: 80vw;
+    ${MEDIA_MAX_MEDIUM} {
+      max-width: 75vw;
+    }
+    ${MEDIA_MAX_SMALL} {
+      max-width: 90vw;
+    }
   }
 
   hr {
