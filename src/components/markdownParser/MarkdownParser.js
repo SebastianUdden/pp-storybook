@@ -145,6 +145,7 @@ const HORIZONTAL_LINE_REGEX = /([-|_]{3,})/g;
 const IMAGE_REGEX = /!\[(.*)\]\((https?:\/\/[^\s]*)(?:\s"(.*)")?\)(?:{(?:width: )?(\d*(?:px|rem|vw|%))})?/g;
 const LINK_REGEX = /\[(.*)\]\((https?:\/\/.*)\)/g;
 const SIMPLE_LINK_REGEX = /\s(https?:\/\/[^\s]*)/g;
+const INTERNAL_LINK_REGEX = /\[(.*)\]\((.*)\)/g;
 
 const getL = (list, l, i, regexp) => {
   const isNextLi = regexp.test(list[i + 1]);
@@ -295,6 +296,7 @@ const MarkdownParser = ({
             )
             .replace(LINK_REGEX, "<a href='$2' target='_blank'>$1</a>")
             .replace(SIMPLE_LINK_REGEX, " <a href='$1' target='_blank'>$1</a>")
+            .replace(INTERNAL_LINK_REGEX, "<a href='#selected=$1'>$1</a>")
             .replace(STRONG_REGEX, `<strong>$1</strong>`)
             .replace(EM_REGEX, `<em>$1</em>`)
             .replace(SCRATCH_REGEX, `<strike>$1</strike>`)
