@@ -12,14 +12,14 @@ import { formatListBulleted } from "../../svgs/editor/format-list-bulleted";
 import { formatListNumbered } from "../../svgs/editor/format-list-numbered";
 import { formatSize } from "../../svgs/editor/format-size";
 import { insertLink } from "../../svgs/editor/insert-link";
-import TextButton from "../button/TextButton";
-import { surroundAtCaret, insertAtLineStart } from "./utils";
+import { surroundAtCaret, insertAtLineStart, insertAtCaret } from "./utils";
 
 const FlexWrapper = styled.div`
   display: flex;
   position: sticky;
   top: 0;
   background-color: #333333;
+  justify-content: space-evenly;
 `;
 
 const TextArea = styled.textarea`
@@ -35,10 +35,10 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  padding: 0;
-  margin: 0 0.3rem 0 0;
   background-color: inherit;
   border: none;
+  padding: 0.5rem 0 0;
+  margin-right: 0.2rem;
 `;
 
 const MarkdownEditor = ({
@@ -64,9 +64,13 @@ const MarkdownEditor = ({
               body: markdown.body
             })
           }
-          selected={markdown.meta.justifyContent === "flex-start"}
         >
-          <SVG {...formatAlignLeft} color={color} />
+          <SVG
+            {...formatAlignLeft}
+            color={
+              markdown.meta.justifyContent === "flex-start" ? "orange" : color
+            }
+          />
         </Button>
         <Button
           color={color}
@@ -76,9 +80,11 @@ const MarkdownEditor = ({
               body: markdown.body
             })
           }
-          selected={markdown.meta.justifyContent === "center"}
         >
-          <SVG {...formatAlignCenter} color={color} />
+          <SVG
+            {...formatAlignCenter}
+            color={markdown.meta.justifyContent === "center" ? "orange" : color}
+          />
         </Button>
         <Button
           color={color}
@@ -88,9 +94,13 @@ const MarkdownEditor = ({
               body: markdown.body
             })
           }
-          selected={markdown.meta.justifyContent === "flex-end"}
         >
-          <SVG {...formatAlignRight} color={color} />
+          <SVG
+            {...formatAlignRight}
+            color={
+              markdown.meta.justifyContent === "flex-end" ? "orange" : color
+            }
+          />
         </Button>
         <Button
           color={color}
@@ -147,7 +157,7 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            insertAtLineStart(id, "[]()");
+            insertAtCaret(id, "[]()");
           }}
         >
           <SVG {...insertLink} color={color} />

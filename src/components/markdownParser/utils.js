@@ -54,23 +54,23 @@ const TEMP_TEST = `
   \`with a <p>paragraph</p> inside\`
 `;
 
-export const insertAtCaret = (areaId, text) => {
-  var txtarea = document.getElementById(areaId);
-  const scrollPos = txtarea.scrollTop;
-  var caretPos = txtarea.selectionStart;
+// export const insertAtCaret = (areaId, text) => {
+//   var txtarea = document.getElementById(areaId);
+//   const scrollPos = txtarea.scrollTop;
+//   var caretPos = txtarea.selectionStart;
 
-  var front = txtarea.value.substring(0, caretPos);
-  var back = txtarea.value.substring(
-    txtarea.selectionEnd,
-    txtarea.value.length
-  );
-  txtarea.value = front + text + back;
-  caretPos = caretPos + text.length;
-  txtarea.selectionStart = caretPos;
-  txtarea.selectionEnd = caretPos;
-  txtarea.focus();
-  txtarea.scrollTop = scrollPos;
-};
+//   var front = txtarea.value.substring(0, caretPos);
+//   var back = txtarea.value.substring(
+//     txtarea.selectionEnd,
+//     txtarea.value.length
+//   );
+//   txtarea.value = front + text + back;
+//   caretPos = caretPos + text.length;
+//   txtarea.selectionStart = caretPos;
+//   txtarea.selectionEnd = caretPos;
+//   txtarea.focus();
+//   txtarea.scrollTop = scrollPos;
+// };
 
 export const surroundAtCaret = (areaId, surroundWith) => {
   var txtarea = document.getElementById(areaId);
@@ -83,7 +83,8 @@ export const surroundAtCaret = (areaId, surroundWith) => {
     txtarea.value.length
   );
   const selected = txtarea.value.substring(caretPos, txtarea.selectionEnd);
-  txtarea.value = `${front}${surroundWith}${selected}${surroundWith}${back}`;
+  const text = `${surroundWith}${selected}${surroundWith}`;
+  txtarea.value = `${front}${text}${back}`;
   caretPos = caretPos + text.length;
   txtarea.selectionStart = caretPos;
   txtarea.selectionEnd = caretPos;
@@ -102,7 +103,34 @@ export const insertAtLineStart = (areaId, insert) => {
     txtarea.value.length
   );
   const selected = txtarea.value.substring(caretPos, txtarea.selectionEnd);
-  txtarea.value = `${front}${insert}${selected}${back}`;
+  const text = `${insert}${selected}`;
+  const beforeNewline = front.substring(0, front.lastIndexOf("\n") + 1);
+  const afterNewline = front.substring(
+    front.lastIndexOf("\n") + 1,
+    front.length
+  );
+  txtarea.value = `${beforeNewline}${text}${afterNewline}${back}`;
+  caretPos = caretPos + text.length;
+  txtarea.selectionStart = caretPos;
+  txtarea.selectionEnd = caretPos;
+  txtarea.focus();
+  txtarea.scrollTop = scrollPos;
+};
+
+export const insertAtCaret = (areaId, insert) => {
+  var txtarea = document.getElementById(areaId);
+  const scrollPos = txtarea.scrollTop;
+  var caretPos = txtarea.selectionStart;
+
+  var front = txtarea.value.substring(0, caretPos);
+  var back = txtarea.value.substring(
+    txtarea.selectionEnd,
+    txtarea.value.length
+  );
+  const selected = txtarea.value.substring(caretPos, txtarea.selectionEnd);
+  const text = `${selected}${insert}`;
+  console.log({ text });
+  txtarea.value = `${front}${text}${back}`;
   caretPos = caretPos + text.length;
   txtarea.selectionStart = caretPos;
   txtarea.selectionEnd = caretPos;
