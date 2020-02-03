@@ -54,6 +54,62 @@ const TEMP_TEST = `
   \`with a <p>paragraph</p> inside\`
 `;
 
+export const insertAtCaret = (areaId, text) => {
+  var txtarea = document.getElementById(areaId);
+  const scrollPos = txtarea.scrollTop;
+  var caretPos = txtarea.selectionStart;
+
+  var front = txtarea.value.substring(0, caretPos);
+  var back = txtarea.value.substring(
+    txtarea.selectionEnd,
+    txtarea.value.length
+  );
+  txtarea.value = front + text + back;
+  caretPos = caretPos + text.length;
+  txtarea.selectionStart = caretPos;
+  txtarea.selectionEnd = caretPos;
+  txtarea.focus();
+  txtarea.scrollTop = scrollPos;
+};
+
+export const surroundAtCaret = (areaId, surroundWith) => {
+  var txtarea = document.getElementById(areaId);
+  const scrollPos = txtarea.scrollTop;
+  var caretPos = txtarea.selectionStart;
+
+  var front = txtarea.value.substring(0, caretPos);
+  var back = txtarea.value.substring(
+    txtarea.selectionEnd,
+    txtarea.value.length
+  );
+  const selected = txtarea.value.substring(caretPos, txtarea.selectionEnd);
+  txtarea.value = `${front}${surroundWith}${selected}${surroundWith}${back}`;
+  caretPos = caretPos + text.length;
+  txtarea.selectionStart = caretPos;
+  txtarea.selectionEnd = caretPos;
+  txtarea.focus();
+  txtarea.scrollTop = scrollPos;
+};
+
+export const insertAtLineStart = (areaId, insert) => {
+  var txtarea = document.getElementById(areaId);
+  const scrollPos = txtarea.scrollTop;
+  var caretPos = txtarea.selectionStart;
+
+  var front = txtarea.value.substring(0, caretPos);
+  var back = txtarea.value.substring(
+    txtarea.selectionEnd,
+    txtarea.value.length
+  );
+  const selected = txtarea.value.substring(caretPos, txtarea.selectionEnd);
+  txtarea.value = `${front}${insert}${selected}${back}`;
+  caretPos = caretPos + text.length;
+  txtarea.selectionStart = caretPos;
+  txtarea.selectionEnd = caretPos;
+  txtarea.focus();
+  txtarea.scrollTop = scrollPos;
+};
+
 const FlexWrapper = styled.div`
   display: flex;
   flex-direction: column;

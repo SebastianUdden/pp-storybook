@@ -5,10 +5,21 @@ import SVG from "../svg/SVG";
 import { formatAlignCenter } from "../../svgs/editor/format-align-center";
 import { formatAlignLeft } from "../../svgs/editor/format-align-left";
 import { formatAlignRight } from "../../svgs/editor/format-align-right";
-import ToggleButton from "../button/ToggleButton";
+import { formatBold } from "../../svgs/editor/format-bold";
+import { formatItalic } from "../../svgs/editor/format-italic";
+import { formatUnderlined } from "../../svgs/editor/format-underlined";
+import { formatListBulleted } from "../../svgs/editor/format-list-bulleted";
+import { formatListNumbered } from "../../svgs/editor/format-list-numbered";
+import { formatSize } from "../../svgs/editor/format-size";
+import { insertLink } from "../../svgs/editor/insert-link";
+import TextButton from "../button/TextButton";
+import { surroundAtCaret, insertAtLineStart } from "./utils";
 
 const FlexWrapper = styled.div`
   display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #333333;
 `;
 
 const TextArea = styled.textarea`
@@ -24,10 +35,10 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  width: 100%;
-  border: 1px solid inherit;
+  padding: 0;
+  margin: 0 0.3rem 0 0;
   background-color: inherit;
-  color: ${p => p.color};
+  border: none;
 `;
 
 const MarkdownEditor = ({
@@ -45,7 +56,7 @@ const MarkdownEditor = ({
   return (
     <div>
       <FlexWrapper>
-        <ToggleButton
+        <Button
           color={color}
           onClick={() =>
             setMarkdown({
@@ -56,8 +67,8 @@ const MarkdownEditor = ({
           selected={markdown.meta.justifyContent === "flex-start"}
         >
           <SVG {...formatAlignLeft} color={color} />
-        </ToggleButton>
-        <ToggleButton
+        </Button>
+        <Button
           color={color}
           onClick={() =>
             setMarkdown({
@@ -68,8 +79,8 @@ const MarkdownEditor = ({
           selected={markdown.meta.justifyContent === "center"}
         >
           <SVG {...formatAlignCenter} color={color} />
-        </ToggleButton>
-        <ToggleButton
+        </Button>
+        <Button
           color={color}
           onClick={() =>
             setMarkdown({
@@ -80,7 +91,67 @@ const MarkdownEditor = ({
           selected={markdown.meta.justifyContent === "flex-end"}
         >
           <SVG {...formatAlignRight} color={color} />
-        </ToggleButton>
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            surroundAtCaret(id, "**");
+            setMarkdown({
+              ...markdown,
+              body: body.markdown
+            });
+          }}
+        >
+          <SVG {...formatBold} color={color} />
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            surroundAtCaret(id, "*");
+          }}
+        >
+          <SVG {...formatItalic} color={color} />
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            surroundAtCaret(id, "__");
+          }}
+        >
+          <SVG {...formatUnderlined} color={color} />
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            insertAtLineStart(id, "- ");
+          }}
+        >
+          <SVG {...formatListBulleted} color={color} />
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            insertAtLineStart(id, "1. ");
+          }}
+        >
+          <SVG {...formatListNumbered} color={color} />
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            insertAtLineStart(id, "## ");
+          }}
+        >
+          <SVG {...formatSize} color={color} />
+        </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            insertAtLineStart(id, "[]()");
+          }}
+        >
+          <SVG {...insertLink} color={color} />
+        </Button>
       </FlexWrapper>
       <TextArea
         id={id}
