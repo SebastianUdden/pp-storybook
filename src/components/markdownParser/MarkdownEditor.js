@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { DP6 } from "../../constants/theme";
+import { useShortcutEffect } from "../../hooks/keyboardShortcuts";
 import SVG from "../svg/SVG";
 import { formatAlignCenter } from "../../svgs/editor/format-align-center";
 import { formatAlignLeft } from "../../svgs/editor/format-align-left";
@@ -53,6 +54,44 @@ const MarkdownEditor = ({
   useEffect(() => {
     setHeight(document.getElementById(id).scrollHeight + "px");
   }, []);
+
+  useShortcutEffect(() => {
+    setMarkdown({
+      ...markdown,
+      body: surroundAtCaret(id, "**")
+    });
+  }, "meta+b");
+  useShortcutEffect(() => {
+    setMarkdown({
+      ...markdown,
+      body: surroundAtCaret(id, "*")
+    });
+  }, "meta+i");
+  useShortcutEffect(() => {
+    setMarkdown({
+      ...markdown,
+      body: surroundAtCaret(id, "__")
+    });
+  }, "meta+u");
+  useShortcutEffect(() => {
+    setMarkdown({
+      ...markdown,
+      body: insertAtLineStart(id, "- ")
+    });
+  }, "meta+quote");
+  useShortcutEffect(() => {
+    setMarkdown({
+      ...markdown,
+      body: insertAtLineStart(id, "1. ")
+    });
+  }, "meta+1");
+  useShortcutEffect(() => {
+    setMarkdown({
+      ...markdown,
+      body: insertAtCaret(id, "[]()")
+    });
+  }, "meta+l");
+
   return (
     <div>
       <FlexWrapper>
@@ -105,10 +144,9 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            surroundAtCaret(id, "**");
             setMarkdown({
               ...markdown,
-              body: body.markdown
+              body: surroundAtCaret(id, "**")
             });
           }}
         >
@@ -117,7 +155,10 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            surroundAtCaret(id, "*");
+            setMarkdown({
+              ...markdown,
+              body: surroundAtCaret(id, "*")
+            });
           }}
         >
           <SVG {...formatItalic} color={color} />
@@ -125,7 +166,10 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            surroundAtCaret(id, "__");
+            setMarkdown({
+              ...markdown,
+              body: surroundAtCaret(id, "__")
+            });
           }}
         >
           <SVG {...formatUnderlined} color={color} />
@@ -133,7 +177,10 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            insertAtLineStart(id, "- ");
+            setMarkdown({
+              ...markdown,
+              body: insertAtLineStart(id, "- ")
+            });
           }}
         >
           <SVG {...formatListBulleted} color={color} />
@@ -141,7 +188,10 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            insertAtLineStart(id, "1. ");
+            setMarkdown({
+              ...markdown,
+              body: insertAtLineStart(id, "1. ")
+            });
           }}
         >
           <SVG {...formatListNumbered} color={color} />
@@ -149,7 +199,10 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            insertAtLineStart(id, "## ");
+            setMarkdown({
+              ...markdown,
+              body: insertAtLineStart(id, "## ")
+            });
           }}
         >
           <SVG {...formatSize} color={color} />
@@ -157,7 +210,10 @@ const MarkdownEditor = ({
         <Button
           color={color}
           onClick={() => {
-            insertAtCaret(id, "[]()");
+            setMarkdown({
+              ...markdown,
+              body: insertAtCaret(id, "[]()")
+            });
           }}
         >
           <SVG {...insertLink} color={color} />

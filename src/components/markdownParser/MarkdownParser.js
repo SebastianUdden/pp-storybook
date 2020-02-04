@@ -296,7 +296,10 @@ const MarkdownParser = ({
             )
             .replace(LINK_REGEX, "<a href='$2' target='_blank'>$1</a>")
             .replace(SIMPLE_LINK_REGEX, " <a href='$1' target='_blank'>$1</a>")
-            .replace(INTERNAL_LINK_REGEX, "<a href='#selected=$1'>$1</a>")
+            .replace(INTERNAL_LINK_REGEX, match => {
+              const matchWithoutSpaces = match.replace(/\s/, "&nbsp;");
+              return `<a href='#selected=${matchWithoutSpaces}'>${matchWithoutSpaces}</a>`;
+            })
             .replace(STRONG_REGEX, `<strong>$1</strong>`)
             .replace(EM_REGEX, `<em>$1</em>`)
             .replace(SCRATCH_REGEX, `<strike>$1</strike>`)
