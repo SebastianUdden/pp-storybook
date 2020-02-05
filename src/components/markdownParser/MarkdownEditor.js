@@ -14,6 +14,9 @@ import { formatListNumbered } from "../../svgs/editor/format-list-numbered";
 import { formatSize } from "../../svgs/editor/format-size";
 import { insertLink } from "../../svgs/editor/insert-link";
 import { surroundAtCaret, insertAtLineStart, insertAtCaret } from "./utils";
+import { eyeHide } from "../../svgs/generic/eye-hide";
+import { eyeShow } from "../../svgs/generic/eye-show";
+import MarkdownParser from "./MarkdownParser";
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -38,7 +41,7 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   background-color: inherit;
   border: none;
-  padding: 0.5rem 0 0;
+  padding: 0.3rem 0 0;
   margin-right: 0.2rem;
 `;
 
@@ -51,6 +54,7 @@ const MarkdownEditor = ({
   backgroundColor = "inherit"
 }) => {
   const [height, setHeight] = useState("auto");
+  const [previewMarkdown, setPreviewMarkdown] = useState(false);
   useEffect(() => {
     setHeight(document.getElementById(id).scrollHeight + "px");
   }, []);
@@ -218,21 +222,37 @@ const MarkdownEditor = ({
         >
           <SVG {...insertLink} color={color} />
         </Button>
+        <Button
+          color={color}
+          onClick={() => {
+            setPreviewMarkdown(!previewMarkdown);
+          }}
+        >
+          {previewMarkdown ? (
+            <SVG {...eyeHide} color="orange" />
+          ) : (
+            <SVG {...eyeShow} color={color} />
+          )}
+        </Button>
       </FlexWrapper>
-      <TextArea
-        id={id}
-        placeholder={placeholder}
-        height={height}
-        value={markdown.body}
-        onChange={e => {
-          setMarkdown({
-            meta: markdown.meta,
-            body: e.target.value
-          });
-        }}
-        color={color}
-        backgroundColor={backgroundColor}
-      />
+      {previewMarkdown ? (
+        <MarkdownParser color="#888888" markdown={markdown} />
+      ) : (
+        <TextArea
+          id={id}
+          placeholder={placeholder}
+          height={height}
+          value={markdown.body}
+          onChange={e => {
+            setMarkdown({
+              meta: markdown.meta,
+              body: e.target.value
+            });
+          }}
+          color={color}
+          backgroundColor={backgroundColor}
+        />
+      )}
     </div>
   );
 };

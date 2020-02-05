@@ -49,29 +49,6 @@ There is also additional markdown like
 ----------
 `;
 
-const TEMP_TEST = `
-  \`only text\`
-  \`with a <p>paragraph</p> inside\`
-`;
-
-// export const insertAtCaret = (areaId, text) => {
-//   var txtarea = document.getElementById(areaId);
-//   const scrollPos = txtarea.scrollTop;
-//   var caretPos = txtarea.selectionStart;
-
-//   var front = txtarea.value.substring(0, caretPos);
-//   var back = txtarea.value.substring(
-//     txtarea.selectionEnd,
-//     txtarea.value.length
-//   );
-//   txtarea.value = front + text + back;
-//   caretPos = caretPos + text.length;
-//   txtarea.selectionStart = caretPos;
-//   txtarea.selectionEnd = caretPos;
-//   txtarea.focus();
-//   txtarea.scrollTop = scrollPos;
-// };
-
 export const surroundAtCaret = (areaId, surroundWith) => {
   var txtarea = document.getElementById(areaId);
   const scrollPos = txtarea.scrollTop;
@@ -90,6 +67,7 @@ export const surroundAtCaret = (areaId, surroundWith) => {
   txtarea.selectionEnd = caretPos;
   txtarea.focus();
   txtarea.scrollTop = scrollPos;
+  return txtarea.value;
 };
 
 export const insertAtLineStart = (areaId, insert) => {
@@ -115,6 +93,7 @@ export const insertAtLineStart = (areaId, insert) => {
   txtarea.selectionEnd = caretPos;
   txtarea.focus();
   txtarea.scrollTop = scrollPos;
+  return txtarea.value;
 };
 
 export const insertAtCaret = (areaId, insert) => {
@@ -129,13 +108,13 @@ export const insertAtCaret = (areaId, insert) => {
   );
   const selected = txtarea.value.substring(caretPos, txtarea.selectionEnd);
   const text = `${selected}${insert}`;
-  console.log({ text });
   txtarea.value = `${front}${text}${back}`;
   caretPos = caretPos + text.length;
   txtarea.selectionStart = caretPos;
   txtarea.selectionEnd = caretPos;
   txtarea.focus();
   txtarea.scrollTop = scrollPos;
+  return txtarea.value;
 };
 
 const FlexWrapper = styled.div`
