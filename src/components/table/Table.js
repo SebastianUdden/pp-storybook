@@ -216,6 +216,7 @@ const Table = ({
   const [filterValues, setFilterValues] = useState([]);
   const [headings, setHeadings] = useState(inputHeadings);
   const [data, setData] = useState(inputData);
+  const [maxRows, setMaxRows] = useState(30);
 
   useEffect(() => {
     const modifyHeadings = [...headings];
@@ -251,14 +252,13 @@ const Table = ({
     }
     const rows = inputData.rows.filter(row =>
       filterValues.every(filterValue =>
-        row.cells.some(
-          cell =>
-            cell &&
-            cell
-              .toString()
-              .toLowerCase()
-              .includes(filterValue)
-        )
+        row.cells.some(cell => {
+          if (!cell) return false;
+          return cell
+            .toString()
+            .toLowerCase()
+            .includes(filterValue);
+        })
       )
     );
     setData({
@@ -425,7 +425,16 @@ const Table = ({
             setSelectedRow(row);
             onClick(row);
           }}
+          maxRows={maxRows}
         />
+        <TR>
+          <TH
+            colSpan={headings.length}
+            onClick={() => setMaxRows(maxRows + 30)}
+          >
+            Show more...
+          </TH>
+        </TR>
       </Wrapper>
     </Container>
   );

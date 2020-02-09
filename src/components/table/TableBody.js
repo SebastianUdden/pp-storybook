@@ -101,6 +101,7 @@ class TableBody extends PureComponent {
       lockedColumn,
       data,
       selectedRow,
+      maxRows,
       onClick
     } = this.props;
     return (
@@ -111,16 +112,19 @@ class TableBody extends PureComponent {
         headingBackgroundColor={headingBackgroundColor}
         lockedColumn={lockedColumn !== undefined}
       >
-        {data.rows.map(row => (
-          <TR
-            headingBackgroundColor={headingBackgroundColor}
-            headingForegroundColor={headingForegroundColor}
-            selected={isEquivalent(row, selectedRow)}
-            onClick={() => onClick(row)}
-          >
-            {row.cells.map(cell => formatCell(cell))}
-          </TR>
-        ))}
+        {data.rows.map(
+          (row, index) =>
+            index < maxRows && (
+              <TR
+                headingBackgroundColor={headingBackgroundColor}
+                headingForegroundColor={headingForegroundColor}
+                selected={isEquivalent(row, selectedRow)}
+                onClick={() => onClick(row)}
+              >
+                {row.cells.map(cell => formatCell(cell))}
+              </TR>
+            )
+        )}
       </TBody>
     );
   }
