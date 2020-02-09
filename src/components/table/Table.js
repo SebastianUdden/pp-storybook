@@ -177,6 +177,24 @@ const sortData = (data, sortingMethod) => {
   return data;
 };
 
+const SearchTable = ({ onSubmit }) => {
+  const [value, setValue] = useState("");
+  return (
+    <SearchWrapper>
+      <Search
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        onClose={() => setValue("")}
+        onSubmit={value => {
+          onSubmit(value.toString().toLowerCase());
+          setValue("");
+        }}
+        padding={1}
+      />
+    </SearchWrapper>
+  );
+};
+
 const Table = ({
   headings: inputHeadings,
   data: inputData,
@@ -195,7 +213,6 @@ const Table = ({
     ascending: true
   });
   const [lockedColumn, setLockedColumn] = useState(undefined);
-  const [value, setValue] = useState([]);
   const [filterValues, setFilterValues] = useState([]);
   const [headings, setHeadings] = useState(inputHeadings);
   const [data, setData] = useState(inputData);
@@ -222,7 +239,6 @@ const Table = ({
   const onSubmit = value => {
     if (filterValues.find(filterValue => filterValue === value)) return;
     setFilterValues([...filterValues, value].filter(Boolean));
-    setValue("");
   };
 
   useEffect(() => {
@@ -376,15 +392,7 @@ const Table = ({
                     : headings.length
                 }
               >
-                <SearchWrapper>
-                  <Search
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
-                    onClose={() => setValue("")}
-                    onSubmit={() => onSubmit(value.toString().toLowerCase())}
-                    padding={1}
-                  />
-                </SearchWrapper>
+                <SearchTable onSubmit={onSubmit} />
                 <FlexWrapper>
                   {filterValues.map(fv => (
                     <Chip
