@@ -37,7 +37,7 @@ With `MDX` we can define a story for `Chips` right in the middle of our markdown
       <Chips
         chips={chips}
         onChange={chip => setChips(chips.filter(c => c.title !== chip[0]))}
-        allowMultiple={allowMultiple}
+        allowMultiple
       />
     );
   }}

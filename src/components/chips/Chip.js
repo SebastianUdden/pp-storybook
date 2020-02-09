@@ -39,7 +39,7 @@ const ChipText = styled(Text)`
 
 const Chip = ({
   backgroundColor = "inherit",
-  alternateBackgroundColor = "#111111",
+  alternateBackgroundColor = "inherit",
   foregroundColor = "inherit",
   onClick,
   selected,

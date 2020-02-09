@@ -13,6 +13,13 @@ import { MEDIA_MIN_MEDIUM } from "../../constants/sizes";
 import Search from "../search/Search";
 import { isEquivalent } from "../../utils/object";
 import SVG from "../svg/SVG";
+import Chip from "../chips/Chip";
+import Chips from "../chips/Chips";
+
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -231,11 +238,6 @@ const formatCell = cell => {
   } else {
     displayCell = cell;
   }
-  // if (typeof window === "undefined") return null;
-  // const offsetWidth =
-  //   index === 0 &&
-  //   document.getElementById(headings[0].id) &&
-  //   document.getElementById(headings[0].id).offsetWidth;
   return <TD alignRight={isNumber}>{displayCell}</TD>;
 };
 
@@ -246,9 +248,10 @@ const sortData = (data, sortingMethod) => {
     const b = sortingMethod.ascending ? second : first;
 
     return isString
-      ? a.cells[sortingMethod.column].localeCompare(
-          b.cells[sortingMethod.column]
-        )
+      ? a.cells[sortingMethod.column] &&
+          a.cells[sortingMethod.column].localeCompare(
+            b.cells[sortingMethod.column]
+          )
       : a.cells[sortingMethod.column] - b.cells[sortingMethod.column];
   });
   return data;
@@ -272,7 +275,8 @@ const Table = ({
     ascending: true
   });
   const [lockedColumn, setLockedColumn] = useState(undefined);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState([]);
+  const [filterValues, setFilterValues] = useState([]);
   const [headings, setHeadings] = useState(inputHeadings);
   const [data, setData] = useState(inputData);
 
@@ -296,19 +300,34 @@ const Table = ({
   }, [lockedColumn]);
 
   const onSubmit = value => {
+    if (filterValues.find(filterValue => filterValue === value)) return;
+    setFilterValues([...filterValues, value].filter(Boolean));
+    setValue("");
+  };
+
+  useEffect(() => {
+    if (!filterValues.length) {
+      setData({
+        ...data,
+        rows: inputData.rows
+      });
+      return;
+    }
     const rows = inputData.rows.filter(row =>
-      row.cells.some(cell => {
-        return cell
-          .toString()
-          .toLowerCase()
-          .includes(value);
-      })
+      filterValues.every(filterValue =>
+        row.cells.some(cell =>
+          cell
+            .toString()
+            .toLowerCase()
+            .includes(filterValue)
+        )
+      )
     );
     setData({
       ...data,
       rows: rows.length ? rows : [{ cells: [] }]
     });
-  };
+  }, [filterValues]);
 
   sortData(data, sortingMethod);
   return (
@@ -444,9 +463,22 @@ const Table = ({
                     onClose={() => setValue("")}
                     onSubmit={() => onSubmit(value.toString().toLowerCase())}
                     padding={1}
-                    minimal
                   />
                 </SearchWrapper>
+                <FlexWrapper>
+                  {filterValues.map(fv => (
+                    <Chip
+                      key={fv}
+                      chip={fv}
+                      onClick={e =>
+                        setFilterValues(
+                          filterValues.filter(fv => fv !== e.target.value)
+                        )
+                      }
+                      showRemove
+                    />
+                  ))}
+                </FlexWrapper>
               </TH>
             </TR>
           )}
@@ -458,7 +490,7 @@ const Table = ({
           headingBackgroundColor={headingBackgroundColor}
           lockedColumn={lockedColumn !== undefined}
         >
-          {data.rows.map((row, index) => (
+          {data.rows.map(row => (
             <TR
               headingBackgroundColor={headingBackgroundColor}
               headingForegroundColor={headingForegroundColor}
