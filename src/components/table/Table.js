@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
-import { DP_TYPES, MAIN_THEME } from "../../constants/theme";
+import { DP_TYPES } from "../../constants/theme";
 import { DEFAULT_FONT } from "../../constants/font";
-import { getLinkValues } from "../../utils/markdownParsers";
-import { getNumberWithSpaces, roundTwoDec } from "../../utils/numberParsers";
 import { expandMore } from "../../svgs/navigation/expand-more";
 import { expandLess } from "../../svgs/navigation/expand-less";
 import { lock } from "../../svgs/actions/lock";
@@ -11,10 +9,9 @@ import ActionItem from "../actionItem/ActionItem";
 import { lockOpen } from "../../svgs/actions/lock-open";
 import { MEDIA_MIN_MEDIUM } from "../../constants/sizes";
 import Search from "../search/Search";
-import { isEquivalent } from "../../utils/object";
 import SVG from "../svg/SVG";
 import Chip from "../chips/Chip";
-import Chips from "../chips/Chips";
+import TableBody from "./TableBody";
 
 const FlexWrapper = styled.div`
   display: flex;
@@ -86,51 +83,7 @@ const THead = styled.thead`
     }
   }
 `;
-const TBody = styled.tbody`
-  tr:nth-child(odd) td {
-    background-color: ${p => p.alternateColor};
-  }
-  tr:nth-child(even) td {
-    background-color: ${p => p.backgroundColor};
-  }
-  tr:hover {
-    cursor: pointer;
-    box-shadow: ${DP_TYPES.DP6};
 
-    td {
-      color: ${p => p.headingForegroundColor};
-      background-color: ${p => p.headingBackgroundColor};
-      text-size-adjust: none;
-    }
-  }
-  ${p =>
-    p.lockedColumn &&
-    css`
-      tr td:first-child {
-        position: absolute;
-        left: auto;
-        top: auto;
-        border-top-width: 1px;
-        /*only relevant for first row*/
-        margin-top: -1px;
-        /*compensate for top border*/
-        box-shadow: ${DP_TYPES.DP6};
-        width: 10rem;
-
-        ${MEDIA_MIN_MEDIUM} {
-          width: 20rem;
-        }
-      }
-      tr td:nth-child(2) {
-        padding-left: 13rem;
-
-        ${MEDIA_MIN_MEDIUM} {
-          padding-left: 23rem;
-        }
-        text-size-adjust: none;
-      }
-    `};
-`;
 const TH = styled.th`
   text-align: left;
   padding: 0.5rem !important;
@@ -161,7 +114,7 @@ const TH = styled.th`
     `}
   font-size: medium;
 `;
-const TR = styled.tr`
+export const TR = styled.tr`
   ${p =>
     p.selected &&
     css`
@@ -190,19 +143,6 @@ const TR = styled.tr`
       }
     `};
 `;
-const TD = styled.td`
-  padding: 0.5rem !important;
-  text-align: ${p => (p.alignRight ? "right" : "left")};
-  white-space: nowrap;
-  font-size: medium;
-`;
-
-const Link = styled.a`
-  font-family: ${DEFAULT_FONT.family};
-  color: ${p => p.foregroundColor};
-  text-decoration: none;
-  font-weight: 800;
-`;
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -215,35 +155,9 @@ const LeftBox = styled.div`
   padding: 1rem 0;
 `;
 
-const formatCell = cell => {
-  let displayCell;
-  const isNumber = typeof cell === "number";
-  const isString = typeof cell === "string";
-  if (isString) {
-    const linkValues = getLinkValues(cell);
-    displayCell = linkValues.length ? (
-      <Link
-        foregroundColor={MAIN_THEME.BLACK.color.background}
-        href={linkValues[1]}
-        alt={linkValues[0]}
-        target="_blank"
-      >
-        {linkValues[0]}
-      </Link>
-    ) : (
-      cell
-    );
-  } else if (isNumber) {
-    displayCell = getNumberWithSpaces(roundTwoDec(cell));
-  } else {
-    displayCell = cell;
-  }
-  return <TD alignRight={isNumber}>{displayCell}</TD>;
-};
-
 const sortData = (data, sortingMethod) => {
   const dataPoint = data.rows[0].cells[sortingMethod.column];
-  const numericDataPoint = parseInt(dataPoint);
+  const numericDataPoint = Number(dataPoint);
   const isNan = numericDataPoint !== numericDataPoint;
   const isDate = numericDataPoint != dataPoint;
   const isString = isNan || isDate;
@@ -488,27 +402,19 @@ const Table = ({
             </TR>
           )}
         </THead>
-        <TBody
+        <TableBody
           alternateColor={alternateColor}
           backgroundColor={backgroundColor}
           headingForegroundColor={headingForegroundColor}
           headingBackgroundColor={headingBackgroundColor}
-          lockedColumn={lockedColumn !== undefined}
-        >
-          {data.rows.map(row => (
-            <TR
-              headingBackgroundColor={headingBackgroundColor}
-              headingForegroundColor={headingForegroundColor}
-              selected={isEquivalent(row, selectedRow)}
-              onClick={() => {
-                setSelectedRow(row);
-                onClick(row);
-              }}
-            >
-              {row.cells.map(cell => formatCell(cell))}
-            </TR>
-          ))}
-        </TBody>
+          lockedColumn={lockedColumn}
+          selectedRow={selectedRow}
+          data={data}
+          onClick={row => {
+            setSelectedRow(row);
+            onClick(row);
+          }}
+        />
       </Wrapper>
     </Container>
   );
