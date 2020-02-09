@@ -428,11 +428,13 @@ const Table = ({
           maxRows={maxRows}
         />
         <TR>
-          <TH
-            colSpan={headings.length}
-            onClick={() => setMaxRows(maxRows + 30)}
-          >
-            Show more...
+          {maxRows < data.rows.length && (
+            <TH onClick={() => setMaxRows(maxRows + 20)}>+</TH>
+          )}
+          {maxRows > 20 && <TH onClick={() => setMaxRows(maxRows - 20)}>-</TH>}
+          <TH colSpan={headings.length - 2}>
+            Showing {maxRows > data.rows.length ? data.rows.length : maxRows}{" "}
+            rows
           </TH>
         </TR>
       </Wrapper>
