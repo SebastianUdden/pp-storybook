@@ -440,6 +440,7 @@ export const MOCK_INSIDER = {
     },
     financialStatement: {
       headings: [
+        { id: "0012", title: "ID", alignRight: false },
         { id: "0013", title: "Publiceringsdatum", alignRight: false },
         { id: "0014", title: "Person i ledande ställning", alignRight: false },
         { id: "0015", title: "Befattning", alignRight: false },
@@ -457,6 +458,7 @@ export const MOCK_INSIDER = {
         rows: [
           {
             cells: [
+              "1",
               "2019-10-31",
               "Erik Von Dryghet",
               "CFO",
@@ -473,6 +475,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "2",
               "2019-11-01",
               "Arne Byström",
               "CTO",
@@ -489,6 +492,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "3",
               "2019-11-02",
               "Jan Banan",
               "CEO",
@@ -505,6 +509,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "4",
               "2019-11-03",
               "Jan Banan",
               "CEO",
@@ -521,6 +526,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "4",
               "2019-11-04",
               "Erik Von Dryghet",
               "CFO",
@@ -537,6 +543,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "5",
               "2019-11-05",
               "Jan Banan",
               "CEO",
@@ -553,6 +560,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "6",
               "2019-11-06",
               "Jan Banan",
               "CEO",
@@ -569,6 +577,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "7",
               "2019-11-07",
               "Arne Byström",
               "CTO",
@@ -585,6 +594,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "8",
               "2019-11-08",
               "Jan Banan",
               "CEO",
@@ -601,6 +611,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "9",
               "2019-11-09",
               "Erik Von Dryghet",
               "CFO",
@@ -617,6 +628,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "10",
               "2019-11-10",
               "Arne Byström",
               "CTO",
@@ -633,6 +645,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "11",
               "2019-11-11",
               "Erik Von Dryghet",
               "CFO",
@@ -649,6 +662,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "12",
               "2019-11-12",
               "Arne Byström",
               "CTO",
@@ -665,6 +679,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "13",
               "2019-11-13",
               "Jan Banan",
               "CEO",
@@ -681,6 +696,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "14",
               "2019-11-14",
               "Arne Byström",
               "CTO",
@@ -697,6 +713,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "14",
               "2019-11-15",
               "Jan Banan",
               "CEO",
@@ -713,6 +730,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "15",
               "2019-11-16",
               "Arne Byström",
               "CTO",
@@ -729,6 +747,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "16",
               "2019-11-17",
               "Jan Banan",
               "CEO",
@@ -745,6 +764,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "17",
               "2019-11-18",
               "Arne Byström",
               "CTO",
@@ -761,6 +781,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "18",
               "2019-11-19",
               "Erik Von Dryghet",
               "CFO",
@@ -777,6 +798,7 @@ export const MOCK_INSIDER = {
           },
           {
             cells: [
+              "19",
               "2019-11-20",
               "Jan Banan",
               "CEO",

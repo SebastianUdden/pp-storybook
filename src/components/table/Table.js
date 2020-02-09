@@ -242,7 +242,12 @@ const formatCell = cell => {
 };
 
 const sortData = (data, sortingMethod) => {
-  const isString = typeof data.rows[0].cells[sortingMethod.column] === "string";
+  const dataPoint = data.rows[0].cells[sortingMethod.column];
+  const numericDataPoint = parseInt(dataPoint);
+  const isNan = numericDataPoint !== numericDataPoint;
+  const isDate = numericDataPoint != dataPoint;
+  const isString = isNan || isDate;
+
   data.rows.sort((first, second) => {
     const a = sortingMethod.ascending ? first : second;
     const b = sortingMethod.ascending ? second : first;
