@@ -165,14 +165,15 @@ const sortData = (data, sortingMethod) => {
   data.rows.sort((first, second) => {
     const a = sortingMethod.ascending ? first : second;
     const b = sortingMethod.ascending ? second : first;
-
-    return isString
-      ? a.cells[sortingMethod.column] &&
-          a.cells[sortingMethod.column].localeCompare(
-            b.cells[sortingMethod.column]
-          )
-      : a.cells[sortingMethod.column] - b.cells[sortingMethod.column];
+    if (isString) {
+      const stringA = a.cells[sortingMethod.column] || "";
+      const stringB = b.cells[sortingMethod.column] || "";
+      return stringA.toString().localeCompare(stringB.toString());
+    } else {
+      return a.cells[sortingMethod.column] - b.cells[sortingMethod.column];
+    }
   });
+
   return data;
 };
 
