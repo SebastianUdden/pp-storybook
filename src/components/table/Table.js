@@ -251,11 +251,13 @@ const Table = ({
     }
     const rows = inputData.rows.filter(row =>
       filterValues.every(filterValue =>
-        row.cells.some(cell =>
-          cell
-            .toString()
-            .toLowerCase()
-            .includes(filterValue)
+        row.cells.some(
+          cell =>
+            cell &&
+            cell
+              .toString()
+              .toLowerCase()
+              .includes(filterValue)
         )
       )
     );
